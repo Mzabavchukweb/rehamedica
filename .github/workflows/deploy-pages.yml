@@ -24,6 +24,12 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - name: Podmień domenę na adres podglądu (og/canonical/schema/sitemap)
+        # Tylko dla podglądu github.io. Źródło w repo zostaje z rehamedica.info.pl (produkcja).
+        # Dzięki temu udostępniony link github.io pokazuje NOWĄ stronę, nie starą produkcyjną.
+        run: |
+          find site -type f \( -name '*.html' -o -name '*.xml' -o -name '*.txt' \) \
+            -exec sed -i 's#https://rehamedica\.info\.pl#https://mzabavchukweb.github.io/rehamedica#g' {} +
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
