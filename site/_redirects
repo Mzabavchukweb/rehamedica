@@ -1,0 +1,9 @@
+# Reha Medica — przekierowania (Cloudflare Pages)
+# Placówki tylko psychologiczne → nowy serwis psychologiczny (DOMENA: DO POTWIERDZENIA).
+# Do czasu podania domeny strony są notą przejściową (noindex). Odkomentować i uzupełnić:
+# /placowki/szczecin/    https://[SERWIS-PSYCHOLOGICZNY]/szczecin/    301
+# /placowki/bialogard/   https://[SERWIS-PSYCHOLOGICZNY]/bialogard/   301
+# /placowki/bobolice/    https://[SERWIS-PSYCHOLOGICZNY]/bobolice/    301
+
+# Szczecinek = strona główna (placówka centralna) — DO DECYZJI klienta:
+# /placowki/szczecinek/  /                                            301

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Ankieta satysfakcji — strona formularza (nie usługa). Tytuł opisowy, bez miasta. -->
+<title>Ankieta satysfakcji pacjenta | Reha Medica</title>
+<meta name="description" content="Anonimowa ankieta satysfakcji pacjenta Reha Medica. Trzynaście pytań o rejestrację, wizytę, personel i placówkę. Odpowiedzi pomagają podnosić jakość opieki.">
+<link rel="canonical" href="https://rehamedica.info.pl/ankieta-satysfakcji/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="Reha Medica">
+<meta property="og:url" content="https://rehamedica.info.pl/ankieta-satysfakcji/">
+<meta property="og:title" content="Ankieta satysfakcji pacjenta — Reha Medica">
+<meta property="og:description" content="Anonimowa ankieta satysfakcji pacjenta. Państwa odpowiedzi pomagają doskonalić standardy świadczonych usług.">
+<meta property="og:image" content="https://rehamedica.info.pl/assets/img/og-rehamedica.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="theme-color" content="#483d32">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="preload" href="../assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/style.css?v=82">
+<link rel="stylesheet" href="../css/usluga.css?v=64">
+<script>document.documentElement.className+=' js';</script>
+<!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
+<script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
+
+<!-- Ankieta nie jest usługą ani ofertą: tylko WebPage. Świadomie bez Question/FAQPage —
+     to pytania DO pacjenta, nie odpowiedzi DLA niego. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://rehamedica.info.pl/ankieta-satysfakcji/#page",
+      "url": "https://rehamedica.info.pl/ankieta-satysfakcji/",
+      "name": "Ankieta satysfakcji pacjenta",
+      "inLanguage": "pl-PL",
+      "isPartOf": {
+        "@id": "https://rehamedica.info.pl/#organizacja"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Strona główna",
+      "item": "https://rehamedica.info.pl/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ankieta satysfakcji"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Przejdź do treści</a>
+
+<!-- Sprite ikon — cienka linia, spójna z językiem ikonograficznym marki (Stage 7).
+     Zastępuje Font Awesome z CDN: 9 ikon zamiast całej biblioteki, zero żądań do stron trzecich. -->
+<svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6.6 3.5h3l1.5 3.8-1.9 1.1a11 11 0 0 0 5.4 5.4l1.1-1.9 3.8 1.5v3a1.6 1.6 0 0 1-1.7 1.6A15.9 15.9 0 0 1 5 5.2 1.6 1.6 0 0 1 6.6 3.5Z"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21s6.5-6 6.5-11a6.5 6.5 0 1 0-13 0C5.5 15 12 21 12 21Z"/><circle cx="12" cy="10" r="2.4"/>
+    </symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="8.5"/><path d="M12 7v5.2l3.2 2"/>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="5.5" width="18" height="13" rx="1.6"/><path d="m3.6 6.6 8.4 6 8.4-6"/>
+    </symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m5 9 7 7 7-7"/>
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="10.8" cy="10.8" r="6.3"/><path d="m15.4 15.4 4.1 4.1"/>
+    </symbol>
+    <symbol id="i-survey" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 4.5H7.2a1.7 1.7 0 0 0-1.7 1.7v12.6a1.7 1.7 0 0 0 1.7 1.7h9.6a1.7 1.7 0 0 0 1.7-1.7V6.2a1.7 1.7 0 0 0-1.7-1.7H15"/>
+      <rect x="9" y="2.8" width="6" height="3.4" rx="1"/><path d="M8.8 11h6.4M8.8 15h4.2"/>
+    </symbol>
+    <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 4.5h5.5V10M19.5 4.5 11 13"/><path d="M18 14.4v4.1a1.6 1.6 0 0 1-1.6 1.6H5.5a1.6 1.6 0 0 1-1.6-1.6V7.6A1.6 1.6 0 0 1 5.5 6h4.1"/>
+    </symbol>
+    <!-- strzałka nawigacji — sygnał, że klik w adres prowadzi do map, nie kopiuje tekstu -->
+    <symbol id="i-nav" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3.4 11.2 21 3l-8.2 17.6-2-7.4-7.4-2Z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="site-header" id="site-header">
+  <div class="topstrip">
+    <div class="wrap topstrip__inner">
+      <span class="topstrip__item"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-pin"></use></svg>ul. Kościuszki 57, 78-400 Szczecinek</span>
+      <span class="topstrip__sep" aria-hidden="true"></span>
+      <span class="topstrip__item"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-clock"></use></svg>pon.–pt. 8:00–19:00 · sob. 8:00–18:00</span>
+    </div>
+  </div>
+  <div class="wrap headerbar">
+    <a class="header-call" href="tel:+48943721451" aria-label="Zadzwoń: 94 372 14 51"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-phone"></use></svg></a>
+    <a class="logo" href="../index.html" aria-label="Reha Medica — strona główna">
+      <img class="logo__full" src="../assets/logo.svg" alt="Reha Medica" width="70" height="82">
+      <span class="logo__compact" aria-hidden="true">
+        <img class="logo__mark" src="../assets/logo-mark.svg" alt="" width="30" height="27">
+        <span class="logo__name">Reha<br>Medica</span>
+      </span>
+    </a>
+    <span class="headerbar__rule" aria-hidden="true"></span>
+    <nav class="nav" id="nav" aria-label="Nawigacja główna">
+      <button type="button" class="nav__close" data-nav-close aria-label="Zamknij menu"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-close"></use></svg></button>
+      <ul>
+        <li class="nav__item nav__item--sub">
+          <button type="button" class="nav__top" aria-expanded="false" aria-controls="sub-uslugi">Usługi<svg class="ico nav__chev" aria-hidden="true" focusable="false"><use href="#i-chevron"></use></svg></button>
+          <ul class="nav__sub" id="sub-uslugi">
+            <li><a href="../uslugi/rehabilitacja/poradnia-rehabilitacyjna/" aria-current="page">Poradnia rehabilitacyjna</a></li>
+            <li><a href="../uslugi/poradnia-logopedyczna/">Poradnia logopedyczna</a></li>
+            <li><a href="../uslugi/rehabilitacja/osrodek-rehabilitacji-ogolnoustrojowej/">Ośrodek rehabilitacji ogólnoustrojowej</a></li>
+            <li><a href="../uslugi/rehabilitacja/rehabilitacja-dzieci-i-mlodziezy/">Rehabilitacja dzieci i młodzieży</a></li>
+            <li><a href="../uslugi/rehabilitacja/rehabilitacja-domowa/">Rehabilitacja domowa</a></li>
+            <li><a href="../uslugi/rehabilitacja/rehabilitacja-lecznicza/">Rehabilitacja lecznicza, zabiegi fizjoterapeutyczne</a></li>
+            <li><a href="../uslugi/masaze/">Masaże</a></li>
+          </ul>
+        </li>
+        <li class="nav__item nav__item--sub">
+          <button type="button" class="nav__top" aria-expanded="false" aria-controls="sub-konsultacje">Konsultacje<svg class="ico nav__chev" aria-hidden="true" focusable="false"><use href="#i-chevron"></use></svg></button>
+          <ul class="nav__sub" id="sub-konsultacje">
+            <li><a href="../uslugi/konsultacje/fizjoterapeutyczna/">Konsultacja fizjoterapeutyczna</a></li>
+            <li><a href="../uslugi/konsultacje/ortopedyczna/">Konsultacja ortopedyczna</a></li>
+            <li><a href="../uslugi/konsultacje/logopedyczna-neurologopedyczna/">Konsultacja logopedyczna / neurologopedyczna</a></li>
+            <li><a href="../uslugi/konsultacje/neurologiczna/">Konsultacja neurologiczna</a></li>
+            <li><a href="../uslugi/konsultacje/socjologiczna/">Konsultacja socjologiczna</a></li>
+          </ul>
+        </li>
+        <li class="nav__item nav__item--sub">
+          <button type="button" class="nav__top" aria-expanded="false" aria-controls="sub-odnowa">Odnowa biologiczna<svg class="ico nav__chev" aria-hidden="true" focusable="false"><use href="#i-chevron"></use></svg></button>
+          <ul class="nav__sub" id="sub-odnowa">
+            <li><a href="../uslugi/odnowa-biologiczna/sauny/">Sauny</a></li>
+            <li><a href="../uslugi/odnowa-biologiczna/kriokomora/">Kriokomora</a></li>
+            <li><a href="../uslugi/masaze/">Masaże lecznicze</a></li>
+            <li><a href="../uslugi/odnowa-biologiczna/masaze-relaksacyjne/">Masaże relaksacyjne</a></li>
+          </ul>
+        </li>
+        <li class="nav__item nav__item--sub">
+          <button type="button" class="nav__top" aria-expanded="false" aria-controls="sub-ue">Projekty UE<svg class="ico nav__chev" aria-hidden="true" focusable="false"><use href="#i-chevron"></use></svg></button>
+          <ul class="nav__sub" id="sub-ue">
+            <li><a href="../projekty-ue/">Aktualności – projekty</a></li>
+            <li><a href="../projekty-ue/projekt-mindspots/">Projekt „MINDSpots”</a></li>
+          </ul>
+        </li>
+        <li class="nav__item"><a href="../faq/">FAQ</a></li>
+        <li class="nav__item"><a href="../kontakt/">Kontakt</a></li>
+      </ul>
+      <form class="nav-search" role="search" aria-label="Szukaj usług">
+        <svg class="ico nav-search__ico" aria-hidden="true" focusable="false"><use href="#i-search"></use></svg>
+        <input type="search" id="svc-search" aria-label="Szukaj usługi" placeholder="Szukaj usługi — np. masaż, konsultacja, krioterapia…" autocomplete="off">
+        <button type="button" class="nav-search__close" data-search-close aria-label="Zamknij wyszukiwarkę"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-close"></use></svg></button>
+      </form>
+      <div class="nav__mobile">
+        <a class="btn btn--cream" href="../index.html#placowki">Wybierz placówkę <span class="btn__arrow" aria-hidden="true">→</span></a>
+        <a class="phone-link" href="tel:+48943721451">Infolinia: 94 372 14 51</a>
+        <a class="nav__beauty" href="https://rehabeauty.pl" rel="noopener" target="_blank">Reha Beauty <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-external"></use></svg></a>
+      </div>
+    </nav>
+    <div class="headerbar__cta">
+      <!-- Numer jako przycisk w tym samym rozmiarze co „Umów wizytę", ale wariant outline:
+           dwa identyczne kremowe przyciski obok siebie spłaszczyłyby hierarchię.
+           Tu telefon = akcja drugorzędna, „Umów wizytę" = główna. -->
+      <a class="btn btn--sm btn--outline-light header-phone" href="tel:+48943721451" aria-label="Zadzwoń: 94 372 14 51">94 372 14 51</a>
+      <a class="header-survey" href="./" aria-label="Ankieta satysfakcji pacjenta">
+        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-survey"></use></svg>
+        <span>Ankieta</span>
+      </a>
+      <a class="btn btn--cream btn--sm" href="../index.html#placowki">Umów wizytę <span class="btn__arrow" aria-hidden="true">→</span></a>
+      <button type="button" class="icon-btn" data-search-open aria-label="Szukaj usług"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-search"></use></svg></button>
+    </div>
+    <button class="burger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="uhero uhero--ank">
+  <div class="wrap uhero__inner">
+    <nav class="ubread" aria-label="Ścieżka nawigacji">
+      <ol class="ubread__list">
+        <li><a href="../index.html">Strona główna</a></li>
+        <li><span aria-current="page">Ankieta satysfakcji</span></li>
+      </ol>
+    </nav>
+    <h1 class="uhero__title">Ankieta satysfakcji pacjenta</h1>
+  </div>
+</section>
+
+<article class="usluga">
+  <section class="ank">
+    <div class="wrap ank__wrap">
+
+      <!-- Wstęp 1:1 z archiwum (content/pages/ankieta-satysfakcji.md). Nie przeredagowany. -->
+      <p class="ank__intro cornerframe">W związku z wprowadzeniem w naszych placówkach systemu zarządzania jakością, a także z chęci poznania Państwa potrzeb i oczekiwań, zwracamy się z prośbą o udzielenie anonimowych odpowiedzi na poniższe pytania. Pozyskane w ten sposób informacje pozwolą nam doskonalić standardy świadczonych przez nas usług oraz zwiększyć Państwa satysfakcję.</p>
+
+      <p class="ank__meta">Ankieta jest anonimowa. Nie pytamy o imię, nazwisko ani dane kontaktowe.
+         Wypełnienie zajmuje około trzech minut.</p>
+
+      <form class="ank__form" id="ankieta" novalidate data-endpoint="">
+
+        <!-- Honeypot — nazwa pola i etykieta jak w oryginale (ps_hp). Ukryty dla ludzi,
+             widoczny dla botów. aria-hidden + tabindex, żeby nie trafił do czytnika. -->
+        <div class="ank__hp" aria-hidden="true">
+          <label for="ps_hp">Jeśli jesteś człowiekiem, pozostaw to pole puste</label>
+          <input type="text" id="ps_hp" name="ps_hp" tabindex="-1" autocomplete="off">
+        </div>
+        <input type="hidden" name="ps_ts" data-ts value="">
+
+      <fieldset class="ank__q">
+        <legend class="ank__legend">1. Płeć <span class="ank__req" aria-hidden="true">*</span></legend>
+        <div class="ank__opts">
+          <input class="ank__sr" type="radio" name="ps_gender" id="ps-gender-0" value="kobieta" required><label class="ank__opt" for="ps-gender-0">Kobieta</label>
+          <input class="ank__sr" type="radio" name="ps_gender" id="ps-gender-1" value="mężczyzna" required><label class="ank__opt" for="ps-gender-1">Mężczyzna</label>
+        </div>
+        <p class="ank__err" data-err hidden>Zaznacz odpowiedź, aby przejść dalej.</p>
+      </fieldset>
+
+      <fieldset class="ank__q">
+        <legend class="ank__legend">2. Wiek <span class="ank__req" aria-hidden="true">*</span></legend>
+        <div class="ank__opts">
+          <input class="ank__sr" type="radio" name="ps_age" id="ps-age-0" value="18-29" required><label class="ank__opt" for="ps-age-0">18–29 lat</label>
+          <input class="ank__sr" type="radio" name="ps_age" id="ps-age-1" value="30-49" required><label class="ank__opt" for="ps-age-1">30–49 lat</label>
+          <input class="ank__sr" type="radio" name="ps_age" id="ps-age-2" value="50-70" required><label class="ank__opt" for="ps-age-2">50–70 lat</label>
+          <input class="ank__sr" type="radio" name="ps_age" id="ps-age-3" value="71+" required><label class="ank__opt" for="ps-age-3">powyżej 71 lat</label>
+        </div>
+        <p class="ank__err" data-err hidden>Zaznacz odpowiedź, aby przejść dalej.</p>
+      </fieldset>
+
+      <fieldset class="ank__q">
+        <legend class="ank__legend">3. Wybierz placówkę, której dotyczy ankieta: <span class="ank__req" aria-hidden="true">*</span></legend>
+        <div class="ank__opts">
+          <input class="ank__sr" type="radio" name="ps_facility" id="ps-facility-0" value="Szczecinek" required><label class="ank__opt" for="ps-facility-0">Szczecinek</label>
+          <input class="ank__sr" type="radio" name="ps_facility" id="ps-facility-1" value="Szczecin" required><label class="ank__opt" for="ps-facility-1">Szczecin</label>
+          <input class="ank__sr" type="radio" name="ps_facility" id="ps-facility-2" value="Wałcz" required><label class="ank__opt" for="ps-facility-2">Wałcz</label>
+          <input class="ank__sr" type="radio" name="ps_facility" id="ps-facility-3" value="Białogard" required><label class="ank__opt" for="ps-facility-3">Białogard</label>
+          <input class="ank__sr" type="radio" name="ps_facility" id="ps-facility-4" value="Bobolice" required><label class="ank__opt" for="ps-facility-4">Bobolice</label>
+        </div>
+        <p class="ank__err" data-err hidden>Zaznacz odpowiedź, aby przejść dalej.</p>
+      </fieldset>
+
+      <fieldset class="ank__q">
+        <legend class="ank__legend">4. W jaki sposób zapisałeś się do poradni? <span class="ank__req" aria-hidden="true">*</span></legend>
+        <div class="ank__opts">
+          <input class="ank__sr" type="radio" name="ps_answers[rejestracja-wizyty]" id="ps-rejestracja-wizyty-0" value="W placówce" required><label class="ank__opt" for="ps-rejestracja-wizyty-0">W placówce</label>
+          <input class="ank__sr" type="radio" name="ps_answers[rejestracja-wizyty]" id="ps-rejestracja-wizyty-1" value="Telefonicznie" required><label class="ank__opt" for="ps-rejestracja-wizyty-1">Telefonicznie</label>
+          <input class="ank__sr" type="radio" name="ps_answers[rejestracja-wizyty]" id="ps-rejestracja-wizyty-2" value="E-mail" required><label class="ank__opt" for="ps-rejestracja-wizyty-2">E-mail</label>
+        </div>
+        <p class="ank__err" data-err hidden>Zaznacz odpowiedź, aby przejść dalej.</p>
+      </fieldset>
+
+      <fieldset class="ank__q">
+        <legend class="ank__legend">5. Jak oceniasz łatwość zapisania się na wizytę? <span class="ank__req" aria-hidden="true">*</span></legend>
+        <p class="ank__hint" id="h-rejestracja-wizyty-2">Skala od 1 (najgorzej) do 10 (najlepiej).</p>
+        <div class="ank__scale" role="radiogroup" aria-describedby="h-rejestracja-wizyty-2">
+          <input class="ank__sr" type="radio" name="ps_answers[rejestracja-wizyty-2]" id="ps-rejestracja-wizyty-2-0" value="1" required><label class="ank__scaleopt" for="ps-rejestracja-wizyty-2-0">1</label>
+          <input class="ank__sr" type="radio" name="ps_answers[rejestracja-wizyty-2]" id="ps-rejestracja-wizyty-2-1" value="2" required><label class="ank__scaleopt" for="ps-rejestracja-wizyty-2-1">2</label>
+          <input class="ank__sr" type="radio" name="ps_answers[rejestracja-wizyty-2]" id="ps-rejestracja-wizyty-2-2" value="3" required><label class="ank__scaleopt" for="ps-rejestracja-wizyty-2-2">3</label>
+          <input class="ank__sr" type="radio" name="ps_answers[rejestracja-wizyty-2]" id="ps-rejestracja-wizyty-2-3" value="4" required><label class="ank__scaleopt" for="ps-rejestracja-wizyty-2-3">4</label>
+          <input class="ank__sr" type="radio" name="ps_answers[rejestracja-wizyty-2]" id="ps-rejestracja-wizyty-2-4" value="5" required><label class="ank__scaleopt" for="ps-rejestracja-wizyty-2-4">5</label>
+          <input class="ank__sr" type="radio" name="ps_answers[rejestracja-wizyty-2]" id="ps-rejestracja-wizyty-2-5" value="6" required><label class="ank__scaleopt" for="ps-rejestracja-wizyty-2-5">6</label>
+          <input class="ank__sr" type="radio" name="ps_answers[rejestracja-wizyty-2]" id="ps-rejestracja-wizyty-2-6" value="7" required><label class="ank__scaleopt" for="ps-rejestracja-wizyty-2-6">7</label>
+          <input class="ank__sr" type="radio" name="ps_answers[rejestracja-wizyty-2]" id="ps-rejestracja-wizyty-2-7" value="8" required><label class="ank__scaleopt" for="ps-rejestracja-wizyty-2-7">8</label>
+          <input class="ank__sr" type="radio" name="ps_answers[rejestracja-wizyty-2]" id="ps-rejestracja-wizyty-2-8" value="9" required><label class="ank__scaleopt" for="ps-rejestracja-wizyty-2-8">9</label>
+          <input class="ank__sr" type="radio" name="ps_answers[rejestracja-wizyty-2]" id="ps-rejestracja-wizyty-2-9" value="10" required><label class="ank__scaleopt" for="ps-rejestracja-wizyty-2-9">10</label>
+        </div>
+        <label class="ank__clabel" for="c-rejestracja-wizyty-2">Komentarz (opcjonalny)</label>
+        <input class="ank__comment" type="text" id="c-rejestracja-wizyty-2" name="ps_comments[rejestracja-wizyty-2]" maxlength="500" autocomplete="off">
+        <p class="ank__err" data-err hidden>Zaznacz odpowiedź, aby przejść dalej.</p>
+      </fieldset>
+
+      <fieldset class="ank__q">
+        <legend class="ank__legend">6. Jak oceniasz zaangażowanie pracowników rejestracji? <span class="ank__req" aria-hidden="true">*</span></legend>
+        <p class="ank__hint" id="h-zaangazowanie-pracownikow">Skala od 1 (najgorzej) do 10 (najlepiej).</p>
+        <div class="ank__scale" role="radiogroup" aria-describedby="h-zaangazowanie-pracownikow">
+          <input class="ank__sr" type="radio" name="ps_answers[zaangazowanie-pracownikow]" id="ps-zaangazowanie-pracownikow-0" value="1" required><label class="ank__scaleopt" for="ps-zaangazowanie-pracownikow-0">1</label>
+          <input class="ank__sr" type="radio" name="ps_answers[zaangazowanie-pracownikow]" id="ps-zaangazowanie-pracownikow-1" value="2" required><label class="ank__scaleopt" for="ps-zaangazowanie-pracownikow-1">2</label>
+          <input class="ank__sr" type="radio" name="ps_answers[zaangazowanie-pracownikow]" id="ps-zaangazowanie-pracownikow-2" value="3" required><label class="ank__scaleopt" for="ps-zaangazowanie-pracownikow-2">3</label>
+          <input class="ank__sr" type="radio" name="ps_answers[zaangazowanie-pracownikow]" id="ps-zaangazowanie-pracownikow-3" value="4" required><label class="ank__scaleopt" for="ps-zaangazowanie-pracownikow-3">4</label>
+          <input class="ank__sr" type="radio" name="ps_answers[zaangazowanie-pracownikow]" id="ps-zaangazowanie-pracownikow-4" value="5" required><label class="ank__scaleopt" for="ps-zaangazowanie-pracownikow-4">5</label>
+          <input class="ank__sr" type="radio" name="ps_answers[zaangazowanie-pracownikow]" id="ps-zaangazowanie-pracownikow-5" value="6" required><label class="ank__scaleopt" for="ps-zaangazowanie-pracownikow-5">6</label>
+          <input class="ank__sr" type="radio" name="ps_answers[zaangazowanie-pracownikow]" id="ps-zaangazowanie-pracownikow-6" value="7" required><label class="ank__scaleopt" for="ps-zaangazowanie-pracownikow-6">7</label>
+          <input class="ank__sr" type="radio" name="ps_answers[zaangazowanie-pracownikow]" id="ps-zaangazowanie-pracownikow-7" value="8" required><label class="ank__scaleopt" for="ps-zaangazowanie-pracownikow-7">8</label>
+          <input class="ank__sr" type="radio" name="ps_answers[zaangazowanie-pracownikow]" id="ps-zaangazowanie-pracownikow-8" value="9" required><label class="ank__scaleopt" for="ps-zaangazowanie-pracownikow-8">9</label>
+          <input class="ank__sr" type="radio" name="ps_answers[zaangazowanie-pracownikow]" id="ps-zaangazowanie-pracownikow-9" value="10" required><label class="ank__scaleopt" for="ps-zaangazowanie-pracownikow-9">10</label>
+        </div>
+        <label class="ank__clabel" for="c-zaangazowanie-pracownikow">Komentarz (opcjonalny)</label>
+        <input class="ank__comment" type="text" id="c-zaangazowanie-pracownikow" name="ps_comments[zaangazowanie-pracownikow]" maxlength="500" autocomplete="off">
+        <p class="ank__err" data-err hidden>Zaznacz odpowiedź, aby przejść dalej.</p>
+      </fieldset>
+
+      <fieldset class="ank__q">
+        <legend class="ank__legend">7. Jak oceniasz terminowość realizacji wizyty (czy odbyła się w wyznaczonym czasie)? <span class="ank__req" aria-hidden="true">*</span></legend>
+        <p class="ank__hint" id="h-terminowosc-wizyty">Skala od 1 (najgorzej) do 10 (najlepiej).</p>
+        <div class="ank__scale" role="radiogroup" aria-describedby="h-terminowosc-wizyty">
+          <input class="ank__sr" type="radio" name="ps_answers[terminowosc-wizyty]" id="ps-terminowosc-wizyty-0" value="1" required><label class="ank__scaleopt" for="ps-terminowosc-wizyty-0">1</label>
+          <input class="ank__sr" type="radio" name="ps_answers[terminowosc-wizyty]" id="ps-terminowosc-wizyty-1" value="2" required><label class="ank__scaleopt" for="ps-terminowosc-wizyty-1">2</label>
+          <input class="ank__sr" type="radio" name="ps_answers[terminowosc-wizyty]" id="ps-terminowosc-wizyty-2" value="3" required><label class="ank__scaleopt" for="ps-terminowosc-wizyty-2">3</label>
+          <input class="ank__sr" type="radio" name="ps_answers[terminowosc-wizyty]" id="ps-terminowosc-wizyty-3" value="4" required><label class="ank__scaleopt" for="ps-terminowosc-wizyty-3">4</label>
+          <input class="ank__sr" type="radio" name="ps_answers[terminowosc-wizyty]" id="ps-terminowosc-wizyty-4" value="5" required><label class="ank__scaleopt" for="ps-terminowosc-wizyty-4">5</label>
+          <input class="ank__sr" type="radio" name="ps_answers[terminowosc-wizyty]" id="ps-terminowosc-wizyty-5" value="6" required><label class="ank__scaleopt" for="ps-terminowosc-wizyty-5">6</label>
+          <input class="ank__sr" type="radio" name="ps_answers[terminowosc-wizyty]" id="ps-terminowosc-wizyty-6" value="7" required><label class="ank__scaleopt" for="ps-terminowosc-wizyty-6">7</label>
+          <input class="ank__sr" type="radio" name="ps_answers[terminowosc-wizyty]" id="ps-terminowosc-wizyty-7" value="8" required><label class="ank__scaleopt" for="ps-terminowosc-wizyty-7">8</label>
+          <input class="ank__sr" type="radio" name="ps_answers[terminowosc-wizyty]" id="ps-terminowosc-wizyty-8" value="9" required><label class="ank__scaleopt" for="ps-terminowosc-wizyty-8">9</label>
+          <input class="ank__sr" type="radio" name="ps_answers[terminowosc-wizyty]" id="ps-terminowosc-wizyty-9" value="10" required><label class="ank__scaleopt" for="ps-terminowosc-wizyty-9">10</label>
+        </div>
+        <label class="ank__clabel" for="c-terminowosc-wizyty">Komentarz (opcjonalny)</label>
+        <input class="ank__comment" type="text" id="c-terminowosc-wizyty" name="ps_comments[terminowosc-wizyty]" maxlength="500" autocomplete="off">
+        <p class="ank__err" data-err hidden>Zaznacz odpowiedź, aby przejść dalej.</p>
+      </fieldset>
+
+      <fieldset class="ank__q">
+        <legend class="ank__legend">8. Jak oceniasz zaangażowanie lekarza w rozwiązanie Twojego problemu zdrowotnego? <span class="ank__req" aria-hidden="true">*</span></legend>
+        <p class="ank__hint" id="h-zaangazowanie-lekarza">Skala od 1 (najgorzej) do 10 (najlepiej).</p>
+        <div class="ank__scale" role="radiogroup" aria-describedby="h-zaangazowanie-lekarza">
+          <input class="ank__sr" type="radio" name="ps_answers[zaangazowanie-lekarza]" id="ps-zaangazowanie-lekarza-0" value="1" required><label class="ank__scaleopt" for="ps-zaangazowanie-lekarza-0">1</label>
+          <input class="ank__sr" type="radio" name="ps_answers[zaangazowanie-lekarza]" id="ps-zaangazowanie-lekarza-1" value="2" required><label class="ank__scaleopt" for="ps-zaangazowanie-lekarza-1">2</label>
+          <input class="ank__sr" type="radio" name="ps_answers[zaangazowanie-lekarza]" id="ps-zaangazowanie-lekarza-2" value="3" required><label class="ank__scaleopt" for="ps-zaangazowanie-lekarza-2">3</label>
+          <input class="ank__sr" type="radio" name="ps_answers[zaangazowanie-lekarza]" id="ps-zaangazowanie-lekarza-3" value="4" required><label class="ank__scaleopt" for="ps-zaangazowanie-lekarza-3">4</label>
+          <input class="ank__sr" type="radio" name="ps_answers[zaangazowanie-lekarza]" id="ps-zaangazowanie-lekarza-4" value="5" required><label class="ank__scaleopt" for="ps-zaangazowanie-lekarza-4">5</label>
+          <input class="ank__sr" type="radio" name="ps_answers[zaangazowanie-lekarza]" id="ps-zaangazowanie-lekarza-5" value="6" required><label class="ank__scaleopt" for="ps-zaangazowanie-lekarza-5">6</label>
+          <input class="ank__sr" type="radio" name="ps_answers[zaangazowanie-lekarza]" id="ps-zaangazowanie-lekarza-6" value="7" required><label class="ank__scaleopt" for="ps-zaangazowanie-lekarza-6">7</label>
+          <input class="ank__sr" type="radio" name="ps_answers[zaangazowanie-lekarza]" id="ps-zaangazowanie-lekarza-7" value="8" required><label class="ank__scaleopt" for="ps-zaangazowanie-lekarza-7">8</label>
+          <input class="ank__sr" type="radio" name="ps_answers[zaangazowanie-lekarza]" id="ps-zaangazowanie-lekarza-8" value="9" required><label class="ank__scaleopt" for="ps-zaangazowanie-lekarza-8">9</label>
+          <input class="ank__sr" type="radio" name="ps_answers[zaangazowanie-lekarza]" id="ps-zaangazowanie-lekarza-9" value="10" required><label class="ank__scaleopt" for="ps-zaangazowanie-lekarza-9">10</label>
+        </div>
+        <label class="ank__clabel" for="c-zaangazowanie-lekarza">Komentarz (opcjonalny)</label>
+        <input class="ank__comment" type="text" id="c-zaangazowanie-lekarza" name="ps_comments[zaangazowanie-lekarza]" maxlength="500" autocomplete="off">
+        <p class="ank__err" data-err hidden>Zaznacz odpowiedź, aby przejść dalej.</p>
+      </fieldset>
+
+      <fieldset class="ank__q">
+        <legend class="ank__legend">9. Jak oceniasz zrozumiałość przekazywanych informacji dotyczących Twojego stanu zdrowia, procesu leczenia i zaleceń lekarskich? <span class="ank__req" aria-hidden="true">*</span></legend>
+        <p class="ank__hint" id="h-przekazywanie-informacji">Skala od 1 (najgorzej) do 10 (najlepiej).</p>
+        <div class="ank__scale" role="radiogroup" aria-describedby="h-przekazywanie-informacji">
+          <input class="ank__sr" type="radio" name="ps_answers[przekazywanie-informacji]" id="ps-przekazywanie-informacji-0" value="1" required><label class="ank__scaleopt" for="ps-przekazywanie-informacji-0">1</label>
+          <input class="ank__sr" type="radio" name="ps_answers[przekazywanie-informacji]" id="ps-przekazywanie-informacji-1" value="2" required><label class="ank__scaleopt" for="ps-przekazywanie-informacji-1">2</label>
+          <input class="ank__sr" type="radio" name="ps_answers[przekazywanie-informacji]" id="ps-przekazywanie-informacji-2" value="3" required><label class="ank__scaleopt" for="ps-przekazywanie-informacji-2">3</label>
+          <input class="ank__sr" type="radio" name="ps_answers[przekazywanie-informacji]" id="ps-przekazywanie-informacji-3" value="4" required><label class="ank__scaleopt" for="ps-przekazywanie-informacji-3">4</label>
+          <input class="ank__sr" type="radio" name="ps_answers[przekazywanie-informacji]" id="ps-przekazywanie-informacji-4" value="5" required><label class="ank__scaleopt" for="ps-przekazywanie-informacji-4">5</label>
+          <input class="ank__sr" type="radio" name="ps_answers[przekazywanie-informacji]" id="ps-przekazywanie-informacji-5" value="6" required><label class="ank__scaleopt" for="ps-przekazywanie-informacji-5">6</label>
+          <input class="ank__sr" type="radio" name="ps_answers[przekazywanie-informacji]" id="ps-przekazywanie-informacji-6" value="7" required><label class="ank__scaleopt" for="ps-przekazywanie-informacji-6">7</label>
+          <input class="ank__sr" type="radio" name="ps_answers[przekazywanie-informacji]" id="ps-przekazywanie-informacji-7" value="8" required><label class="ank__scaleopt" for="ps-przekazywanie-informacji-7">8</label>
+          <input class="ank__sr" type="radio" name="ps_answers[przekazywanie-informacji]" id="ps-przekazywanie-informacji-8" value="9" required><label class="ank__scaleopt" for="ps-przekazywanie-informacji-8">9</label>
+          <input class="ank__sr" type="radio" name="ps_answers[przekazywanie-informacji]" id="ps-przekazywanie-informacji-9" value="10" required><label class="ank__scaleopt" for="ps-przekazywanie-informacji-9">10</label>
+        </div>
+        <label class="ank__clabel" for="c-przekazywanie-informacji">Komentarz (opcjonalny)</label>
+        <input class="ank__comment" type="text" id="c-przekazywanie-informacji" name="ps_comments[przekazywanie-informacji]" maxlength="500" autocomplete="off">
+        <p class="ank__err" data-err hidden>Zaznacz odpowiedź, aby przejść dalej.</p>
+      </fieldset>
+
+      <fieldset class="ank__q">
+        <legend class="ank__legend">10. Jak oceniasz wyposażenie poczekalni (np. oznakowanie, miejsca siedzące)? <span class="ank__req" aria-hidden="true">*</span></legend>
+        <p class="ank__hint" id="h-wyposazenie-poczekalni">Skala od 1 (najgorzej) do 10 (najlepiej).</p>
+        <div class="ank__scale" role="radiogroup" aria-describedby="h-wyposazenie-poczekalni">
+          <input class="ank__sr" type="radio" name="ps_answers[wyposazenie-poczekalni]" id="ps-wyposazenie-poczekalni-0" value="1" required><label class="ank__scaleopt" for="ps-wyposazenie-poczekalni-0">1</label>
+          <input class="ank__sr" type="radio" name="ps_answers[wyposazenie-poczekalni]" id="ps-wyposazenie-poczekalni-1" value="2" required><label class="ank__scaleopt" for="ps-wyposazenie-poczekalni-1">2</label>
+          <input class="ank__sr" type="radio" name="ps_answers[wyposazenie-poczekalni]" id="ps-wyposazenie-poczekalni-2" value="3" required><label class="ank__scaleopt" for="ps-wyposazenie-poczekalni-2">3</label>
+          <input class="ank__sr" type="radio" name="ps_answers[wyposazenie-poczekalni]" id="ps-wyposazenie-poczekalni-3" value="4" required><label class="ank__scaleopt" for="ps-wyposazenie-poczekalni-3">4</label>
+          <input class="ank__sr" type="radio" name="ps_answers[wyposazenie-poczekalni]" id="ps-wyposazenie-poczekalni-4" value="5" required><label class="ank__scaleopt" for="ps-wyposazenie-poczekalni-4">5</label>
+          <input class="ank__sr" type="radio" name="ps_answers[wyposazenie-poczekalni]" id="ps-wyposazenie-poczekalni-5" value="6" required><label class="ank__scaleopt" for="ps-wyposazenie-poczekalni-5">6</label>
+          <input class="ank__sr" type="radio" name="ps_answers[wyposazenie-poczekalni]" id="ps-wyposazenie-poczekalni-6" value="7" required><label class="ank__scaleopt" for="ps-wyposazenie-poczekalni-6">7</label>
+          <input class="ank__sr" type="radio" name="ps_answers[wyposazenie-poczekalni]" id="ps-wyposazenie-poczekalni-7" value="8" required><label class="ank__scaleopt" for="ps-wyposazenie-poczekalni-7">8</label>
+          <input class="ank__sr" type="radio" name="ps_answers[wyposazenie-poczekalni]" id="ps-wyposazenie-poczekalni-8" value="9" required><label class="ank__scaleopt" for="ps-wyposazenie-poczekalni-8">9</label>
+          <input class="ank__sr" type="radio" name="ps_answers[wyposazenie-poczekalni]" id="ps-wyposazenie-poczekalni-9" value="10" required><label class="ank__scaleopt" for="ps-wyposazenie-poczekalni-9">10</label>
+        </div>
+        <label class="ank__clabel" for="c-wyposazenie-poczekalni">Komentarz (opcjonalny)</label>
+        <input class="ank__comment" type="text" id="c-wyposazenie-poczekalni" name="ps_comments[wyposazenie-poczekalni]" maxlength="500" autocomplete="off">
+        <p class="ank__err" data-err hidden>Zaznacz odpowiedź, aby przejść dalej.</p>
+      </fieldset>
+
+      <fieldset class="ank__q">
+        <legend class="ank__legend">11. Jak oceniasz czystość w gabinecie, w łazience, w poczekalni? <span class="ank__req" aria-hidden="true">*</span></legend>
+        <p class="ank__hint" id="h-czystość-w-placowce">Skala od 1 (najgorzej) do 10 (najlepiej).</p>
+        <div class="ank__scale" role="radiogroup" aria-describedby="h-czystość-w-placowce">
+          <input class="ank__sr" type="radio" name="ps_answers[czystość-w-placowce]" id="ps-czystość-w-placowce-0" value="1" required><label class="ank__scaleopt" for="ps-czystość-w-placowce-0">1</label>
+          <input class="ank__sr" type="radio" name="ps_answers[czystość-w-placowce]" id="ps-czystość-w-placowce-1" value="2" required><label class="ank__scaleopt" for="ps-czystość-w-placowce-1">2</label>
+          <input class="ank__sr" type="radio" name="ps_answers[czystość-w-placowce]" id="ps-czystość-w-placowce-2" value="3" required><label class="ank__scaleopt" for="ps-czystość-w-placowce-2">3</label>
+          <input class="ank__sr" type="radio" name="ps_answers[czystość-w-placowce]" id="ps-czystość-w-placowce-3" value="4" required><label class="ank__scaleopt" for="ps-czystość-w-placowce-3">4</label>
+          <input class="ank__sr" type="radio" name="ps_answers[czystość-w-placowce]" id="ps-czystość-w-placowce-4" value="5" required><label class="ank__scaleopt" for="ps-czystość-w-placowce-4">5</label>
+          <input class="ank__sr" type="radio" name="ps_answers[czystość-w-placowce]" id="ps-czystość-w-placowce-5" value="6" required><label class="ank__scaleopt" for="ps-czystość-w-placowce-5">6</label>
+          <input class="ank__sr" type="radio" name="ps_answers[czystość-w-placowce]" id="ps-czystość-w-placowce-6" value="7" required><label class="ank__scaleopt" for="ps-czystość-w-placowce-6">7</label>
+          <input class="ank__sr" type="radio" name="ps_answers[czystość-w-placowce]" id="ps-czystość-w-placowce-7" value="8" required><label class="ank__scaleopt" for="ps-czystość-w-placowce-7">8</label>
+          <input class="ank__sr" type="radio" name="ps_answers[czystość-w-placowce]" id="ps-czystość-w-placowce-8" value="9" required><label class="ank__scaleopt" for="ps-czystość-w-placowce-8">9</label>
+          <input class="ank__sr" type="radio" name="ps_answers[czystość-w-placowce]" id="ps-czystość-w-placowce-9" value="10" required><label class="ank__scaleopt" for="ps-czystość-w-placowce-9">10</label>
+        </div>
+        <label class="ank__clabel" for="c-czystość-w-placowce">Komentarz (opcjonalny)</label>
+        <input class="ank__comment" type="text" id="c-czystość-w-placowce" name="ps_comments[czystość-w-placowce]" maxlength="500" autocomplete="off">
+        <p class="ank__err" data-err hidden>Zaznacz odpowiedź, aby przejść dalej.</p>
+      </fieldset>
+
+      <fieldset class="ank__q">
+        <legend class="ank__legend">12. Jak oceniasz respektowanie praw pacjenta, szczególnych uprawnień i potrzeb przez personel medyczny? <span class="ank__req" aria-hidden="true">*</span></legend>
+        <p class="ank__hint" id="h-prawa-pacjenta">Skala od 1 (najgorzej) do 10 (najlepiej).</p>
+        <div class="ank__scale" role="radiogroup" aria-describedby="h-prawa-pacjenta">
+          <input class="ank__sr" type="radio" name="ps_answers[prawa-pacjenta]" id="ps-prawa-pacjenta-0" value="1" required><label class="ank__scaleopt" for="ps-prawa-pacjenta-0">1</label>
+          <input class="ank__sr" type="radio" name="ps_answers[prawa-pacjenta]" id="ps-prawa-pacjenta-1" value="2" required><label class="ank__scaleopt" for="ps-prawa-pacjenta-1">2</label>
+          <input class="ank__sr" type="radio" name="ps_answers[prawa-pacjenta]" id="ps-prawa-pacjenta-2" value="3" required><label class="ank__scaleopt" for="ps-prawa-pacjenta-2">3</label>
+          <input class="ank__sr" type="radio" name="ps_answers[prawa-pacjenta]" id="ps-prawa-pacjenta-3" value="4" required><label class="ank__scaleopt" for="ps-prawa-pacjenta-3">4</label>
+          <input class="ank__sr" type="radio" name="ps_answers[prawa-pacjenta]" id="ps-prawa-pacjenta-4" value="5" required><label class="ank__scaleopt" for="ps-prawa-pacjenta-4">5</label>
+          <input class="ank__sr" type="radio" name="ps_answers[prawa-pacjenta]" id="ps-prawa-pacjenta-5" value="6" required><label class="ank__scaleopt" for="ps-prawa-pacjenta-5">6</label>
+          <input class="ank__sr" type="radio" name="ps_answers[prawa-pacjenta]" id="ps-prawa-pacjenta-6" value="7" required><label class="ank__scaleopt" for="ps-prawa-pacjenta-6">7</label>
+          <input class="ank__sr" type="radio" name="ps_answers[prawa-pacjenta]" id="ps-prawa-pacjenta-7" value="8" required><label class="ank__scaleopt" for="ps-prawa-pacjenta-7">8</label>
+          <input class="ank__sr" type="radio" name="ps_answers[prawa-pacjenta]" id="ps-prawa-pacjenta-8" value="9" required><label class="ank__scaleopt" for="ps-prawa-pacjenta-8">9</label>
+          <input class="ank__sr" type="radio" name="ps_answers[prawa-pacjenta]" id="ps-prawa-pacjenta-9" value="10" required><label class="ank__scaleopt" for="ps-prawa-pacjenta-9">10</label>
+        </div>
+        <label class="ank__clabel" for="c-prawa-pacjenta">Komentarz (opcjonalny)</label>
+        <input class="ank__comment" type="text" id="c-prawa-pacjenta" name="ps_comments[prawa-pacjenta]" maxlength="500" autocomplete="off">
+        <p class="ank__err" data-err hidden>Zaznacz odpowiedź, aby przejść dalej.</p>
+      </fieldset>
+
+      <fieldset class="ank__q">
+        <legend class="ank__legend">13. Jakie jest prawdopodobieństwo, że polecisz tę placówkę znajomym lub rodzinie? <span class="ank__req" aria-hidden="true">*</span></legend>
+        <div class="ank__opts">
+          <input class="ank__sr" type="radio" name="ps_answers[rekomendacja-placowki]" id="ps-rekomendacja-placowki-0" value="Chętnie polecę" required><label class="ank__opt" for="ps-rekomendacja-placowki-0">Chętnie polecę</label>
+          <input class="ank__sr" type="radio" name="ps_answers[rekomendacja-placowki]" id="ps-rekomendacja-placowki-1" value="Zdecydowanie nie polecę" required><label class="ank__opt" for="ps-rekomendacja-placowki-1">Zdecydowanie nie polecę</label>
+        </div>
+        <p class="ank__err" data-err hidden>Zaznacz odpowiedź, aby przejść dalej.</p>
+      </fieldset>
+
+        <div class="ank__submit">
+          <button class="btn ank__send" type="submit">Wyślij ankietę</button>
+          <p class="ank__status" data-status role="status" aria-live="polite"></p>
+        </div>
+      </form>
+
+    </div>
+  </section>
+</article>
+
+</main>
+
+<footer class="site-footer" id="kontakt">
+  <!-- główna stopka -->
+  <div class="wrap footer__top">
+    <div class="footer__brand">
+      <img src="../assets/logo.svg" alt="Reha Medica" width="72" height="84">
+      <p class="footer__desc">Opieka rehabilitacyjna i medyczna w pięciu placówkach na Pomorzu Zachodnim.</p>
+      <a class="footer__call" href="tel:+48943721451"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-phone"></use></svg> 94 372 14 51</a>
+    </div>
+    <nav class="footer__nav" aria-label="Placówki">
+      <h2 class="footer__h">Placówki</h2>
+      <ul>
+        <li><a href="../placowki/szczecinek/">Szczecinek</a></li>
+        <li><a href="../placowki/szczecin/">Szczecin</a></li>
+        <li><a href="../placowki/walcz/">Wałcz</a></li>
+        <li><a href="../placowki/bialogard/">Białogard</a></li>
+        <li><a href="../placowki/bobolice/">Bobolice</a></li>
+      </ul>
+    </nav>
+    <nav class="footer__nav" aria-label="Serwis">
+      <h2 class="footer__h">Serwis</h2>
+      <ul>
+        <li><a href="../uslugi/">Usługi</a></li>
+        <li><a href="../uslugi/konsultacje/">Konsultacje</a></li>
+        <li><a href="../uslugi/odnowa-biologiczna/">Odnowa biologiczna</a></li>
+        <li><a href="../projekty-ue/">Projekty UE</a></li>
+        <li><a href="../faq/">FAQ</a></li>
+        <li><a href="https://rehabeauty.pl" rel="noopener">Reha Beauty ↗</a></li>
+      </ul>
+    </nav>
+    <nav class="footer__nav" aria-label="Kontakt i informacje">
+      <h2 class="footer__h">Kontakt i informacje</h2>
+      <ul>
+        <li><a href="../index.html#placowki">Wybierz placówkę</a></li>
+        <li><a href="../index.html#placowki">Umów wizytę</a></li>
+        <li><a href="./">Ankieta satysfakcji pacjenta</a></li>
+        <li><a href="../index.html#newsletter">Newsletter</a></li>
+        <li><a href="../index.html#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- C. pasek prawny -->
+  <div class="wrap footer__bottom">
+    <p class="footer__copy">© 2026 Reha Medica. Wszelkie prawa zastrzeżone.</p>
+    <p class="footer__by">Realizacja: <a href="https://codingmaks.com" target="_blank" rel="noopener">codingmaks.com</a></p>
+    <nav class="footer__legal" aria-label="Informacje prawne">
+      <a href="../polityka-prywatnosci/">Polityka prywatności</a>
+      <a href="../assets/documents/regulamin-organizacyjny.pdf" target="_blank" rel="noopener">Regulamin organizacyjny <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-external"></use></svg><span class="visually-hidden"> (PDF, otwiera się w nowej karcie)</span></a>
+      <a href="../standardy-ochrony-dzieci/">Standardy ochrony dzieci</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- zagięty róg strony: ankieta satysfakcji (desktop) -->
+<a class="dogear" href="./" aria-label="Wypełnij ankietę satysfakcji pacjenta">
+  <span class="dogear__fold" aria-hidden="true"></span>
+  <span class="dogear__label">Ankieta<br>satysfakcji</span>
+</a>
+
+<!-- pływający przycisk zadzwoń (mobile) -->
+<!-- Sama ikona — słuchawka czytelnie niesie „zadzwoń", napis był zbędny.
+     Nazwa dla czytników ekranu zostaje w aria-label. -->
+<a class="callfab" href="tel:+48943721451" aria-label="Zadzwoń do Reha Medica: 94 372 14 51">
+  <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-phone"></use></svg>
+</a>
+
+<!-- boczna zakładka: siostrzana marka Reha Beauty -->
+<a class="beautytab" href="https://rehabeauty.pl" rel="noopener" aria-label="Reha Beauty — serwis odnowy biologicznej (otwiera się w nowej karcie)">
+  <span class="beautytab__text">Reha Beauty</span>
+  <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-external"></use></svg>
+</a>
+
+
+<!-- PANEL WYBORU PLACÓWKI
+     wszystkie placówki naraz i jednym tapnięciem dostaje numer — bez cofania się.
+     Żadna placówka NIE jest preselektowana (reguła CLAUDE.md).
+     Etykiety pochodzą z serwisu („Wybierz placówkę", „Umów wizytę"), nic nie wymyślono. -->
+<!-- data-bk-places: placówki świadczące TĘ usługę wg macierzy etapu 3 (potwierdzona 2026-07-14).
+     Poradnia rehabilitacyjna = tylko Szczecinek. Nie dopisywać placówek bez wpisu w macierzy. -->
+<!-- Menu dostępności — self-hosted, zero stron trzecich. Logika: js/main.js. -->
+<button class="a11y-fab" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="a11y-panel" aria-label="Menu dostępności">
+  <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+    <circle cx="12" cy="3.6" r="2.15"/>
+    <path d="M20.4 6.35c-2.6.56-5.4.95-8.4.95s-5.8-.39-8.4-.95a1.05 1.05 0 0 0-.45 2.05c1.9.42 3.9.72 5.85.87V13l-1.6 6.9a1.15 1.15 0 0 0 2.24.52L11 15h2l1.36 5.42a1.15 1.15 0 0 0 2.24-.52L15 13V9.27c1.95-.15 3.95-.45 5.85-.87a1.05 1.05 0 0 0-.45-2.05z"/>
+  </svg>
+</button>
+<div class="a11y-panel" id="a11y-panel" role="dialog" aria-modal="false" aria-label="Menu dostępności">
+  <div class="a11y-panel__head">
+    <span class="a11y-panel__title">Dostępność</span>
+    <button class="a11y-panel__close" type="button" data-a11y-close aria-label="Zamknij menu dostępności">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="a11y-row">
+    <span class="a11y-row__label" id="a11y-l-scale">Rozmiar tekstu</span>
+    <div class="a11y-step" role="group" aria-labelledby="a11y-l-scale">
+      <button class="a11y-step__btn" type="button" data-dec="scale" aria-label="Zmniejsz: rozmiar tekstu">A−</button>
+      <span class="a11y-step__val" data-val="scale" aria-live="polite">100%</span>
+      <button class="a11y-step__btn" type="button" data-inc="scale" aria-label="Zwiększ: rozmiar tekstu">A+</button>
+    </div>
+  </div>
+  <div class="a11y-row">
+    <span class="a11y-row__label" id="a11y-l-space">Odstępy liter</span>
+    <div class="a11y-step" role="group" aria-labelledby="a11y-l-space">
+      <button class="a11y-step__btn" type="button" data-dec="space" aria-label="Zmniejsz: odstępy liter">−</button>
+      <span class="a11y-step__val" data-val="space" aria-live="polite">wył.</span>
+      <button class="a11y-step__btn" type="button" data-inc="space" aria-label="Zwiększ: odstępy liter">+</button>
+    </div>
+  </div>
+  <div class="a11y-row">
+    <span class="a11y-row__label" id="a11y-l-lineh">Interlinia</span>
+    <div class="a11y-step" role="group" aria-labelledby="a11y-l-lineh">
+      <button class="a11y-step__btn" type="button" data-dec="lineh" aria-label="Zmniejsz: interlinia">−</button>
+      <span class="a11y-step__val" data-val="lineh" aria-live="polite">wył.</span>
+      <button class="a11y-step__btn" type="button" data-inc="lineh" aria-label="Zwiększ: interlinia">+</button>
+    </div>
+  </div>
+  <div class="a11y-row">
+    <button class="a11y-toggle" type="button" data-a11y-contrast aria-pressed="false"><span>Wysoki kontrast</span><span class="a11y-toggle__sw" aria-hidden="true"></span></button>
+  </div>
+  <div class="a11y-row">
+    <button class="a11y-toggle" type="button" data-a11y-invert aria-pressed="false"><span>Odwróć kolory</span><span class="a11y-toggle__sw" aria-hidden="true"></span></button>
+  </div>
+  <div class="a11y-row">
+    <button class="a11y-toggle" type="button" data-a11y-gray aria-pressed="false"><span>Skala szarości</span><span class="a11y-toggle__sw" aria-hidden="true"></span></button>
+  </div>
+  <div class="a11y-row">
+    <button class="a11y-toggle" type="button" data-a11y-underline aria-pressed="false"><span>Podkreśl odnośniki</span><span class="a11y-toggle__sw" aria-hidden="true"></span></button>
+  </div>
+  <div class="a11y-row">
+    <button class="a11y-toggle" type="button" data-a11y-font aria-pressed="false"><span>Czytelna czcionka</span><span class="a11y-toggle__sw" aria-hidden="true"></span></button>
+  </div>
+  <div class="a11y-row">
+    <button class="a11y-toggle" type="button" data-a11y-cursor aria-pressed="false"><span>Powiększ kursor</span><span class="a11y-toggle__sw" aria-hidden="true"></span></button>
+  </div>
+  <div class="a11y-row">
+    <button class="a11y-toggle" type="button" data-a11y-hideimg aria-pressed="false"><span>Ukryj obrazy</span><span class="a11y-toggle__sw" aria-hidden="true"></span></button>
+  </div>
+  <div class="a11y-row">
+    <button class="a11y-toggle" type="button" data-a11y-guide aria-pressed="false"><span>Przewodnik czytania</span><span class="a11y-toggle__sw" aria-hidden="true"></span></button>
+  </div>
+  <div class="a11y-row">
+    <button class="a11y-toggle" type="button" data-a11y-reduce aria-pressed="false"><span>Ogranicz ruch</span><span class="a11y-toggle__sw" aria-hidden="true"></span></button>
+  </div>
+  <button class="a11y-reset" type="button" data-a11y-reset>Przywróć ustawienia domyślne</button>
+</div>
+<script src="../js/main.js?v=87"></script>
+</body>
+</html>

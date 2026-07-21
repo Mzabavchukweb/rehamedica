@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Mapa strony — jedyne źródło adresów dla wyszukiwarki.
+# Zawiera wyłącznie strony, które realnie istnieją.
+Sitemap: https://rehamedica.info.pl/sitemap.xml

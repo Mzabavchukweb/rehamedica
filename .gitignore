@@ -1,0 +1,37 @@
+# === DANE WRAŻLIWE — NIGDY nie commitować (repo jest PUBLICZNE) ===
+DOSTEPY-PRYWATNE.md
+private-quarantine/
+wp-config.php
+*.sql
+*.sql.gz
+.env
+.env*
+
+# Prywatne archiwum źródłowe starej strony WordPress (196 MB, treści klienta,
+# odwołanie do hasła WP) — NIE na publiczne repozytorium
+rehamedica-source-archive/
+
+# Zrzuty ekranu z iteracji projektowych (tylko w korzeniu repo)
+/*.jpeg
+/*.jpg
+/*.png
+
+# macOS / narzędzia
+.DS_Store
+**/.DS_Store
+.playwright-mcp/
+**/.playwright-mcp/
+node_modules/
+
+# Konfiguracja/narzędzia Claude Code (allowlist lokalny) — nie deliverable
+.claude/
+
+# Zrzuty deweloperskie w site/ — nieużywane przez stronę
+site/screenshots/
+
+# Dokumenty wewnętrzne (audyty, matryce, anomalie, DO POTWIERDZENIA, strategia) — lokalnie,
+# nie na publiczne repo (decyzja: publikujemy tylko gotową stronę)
+working-docs/
+reviews/
+BRIEF-developer-archiwizacja.md
+CLAUDE.md

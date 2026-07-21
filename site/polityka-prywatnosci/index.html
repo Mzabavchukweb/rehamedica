@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Wzorzec z etapu 6: {Usługa} + miasto. Miasto = Szczecinek, bo wg matrycy etapu 3
+     to jedyna placówka świadcząca tę usługę. Bez NFZ w meta: dostępność NFZ per usługa
+     jest wciąż DO POTWIERDZENIA (#10/#11). -->
+<title>Polityka prywatności | Reha Medica</title>
+<meta name="description" content="Zasady przetwarzania danych osobowych pacjentów Reha Medica, podstawy prawne, okresy przechowywania i prawa osób, których dane dotyczą.">
+<link rel="canonical" href="https://rehamedica.info.pl/polityka-prywatnosci/">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="Reha Medica">
+<meta property="og:url" content="https://rehamedica.info.pl/polityka-prywatnosci/">
+<meta property="og:title" content="Polityka prywatności | Reha Medica">
+<meta property="og:description" content="Zasady przetwarzania danych osobowych pacjentów Reha Medica, podstawy prawne, okresy przechowywania i prawa osób, których dane dotyczą.">
+<meta property="og:image" content="https://rehamedica.info.pl/assets/img/og-rehamedica.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="theme-color" content="#483d32">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="preload" href="../assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/style.css?v=82">
+<link rel="stylesheet" href="../css/usluga.css?v=64">
+<script>document.documentElement.className+=' js';</script>
+<!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
+<script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
+
+<!-- Okruszki dla wyszukiwarki — Google pokazuje ścieżkę zamiast surowego URL-a.
+     Wyłącznie odwzorowanie widocznej nawigacji, zero dodanych twierdzeń. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Strona główna",
+      "item": "https://rehamedica.info.pl/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Polityka prywatności"
+    }
+  ]
+}
+</script>
+
+<!-- Schemat usługi wg etapu 6. Zasada: wyłącznie fakty potwierdzone.
+     - powiązanie z placówką: matryca etapu 3 (Poradnia rehabilitacyjna = tylko Szczecinek),
+     - NAP Szczecinka: potwierdzony, identyczny jak w całym serwisie,
+     - BEZ offers/price (niepotwierdzone), BEZ openingHours dla poradni (DO POTWIERDZENIA),
+     - BEZ physician (nazwiska specjalistów niepotwierdzone). -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://rehamedica.info.pl/polityka-prywatnosci/#page",
+  "url": "https://rehamedica.info.pl/polityka-prywatnosci/",
+  "name": "Polityka prywatności",
+  "inLanguage": "pl-PL",
+  "description": "Zasady przetwarzania danych osobowych pacjentów Reha Medica, podstawy prawne, okresy przechowywania i prawa osób, których dane dotyczą."
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Przejdź do treści</a>
+
+<!-- Sprite ikon — cienka linia, spójna z językiem ikonograficznym marki (Stage 7).
+     Zastępuje Font Awesome z CDN: 9 ikon zamiast całej biblioteki, zero żądań do stron trzecich. -->
+<svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6.6 3.5h3l1.5 3.8-1.9 1.1a11 11 0 0 0 5.4 5.4l1.1-1.9 3.8 1.5v3a1.6 1.6 0 0 1-1.7 1.6A15.9 15.9 0 0 1 5 5.2 1.6 1.6 0 0 1 6.6 3.5Z"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21s6.5-6 6.5-11a6.5 6.5 0 1 0-13 0C5.5 15 12 21 12 21Z"/><circle cx="12" cy="10" r="2.4"/>
+    </symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="8.5"/><path d="M12 7v5.2l3.2 2"/>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="5.5" width="18" height="13" rx="1.6"/><path d="m3.6 6.6 8.4 6 8.4-6"/>
+    </symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m5 9 7 7 7-7"/>
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="10.8" cy="10.8" r="6.3"/><path d="m15.4 15.4 4.1 4.1"/>
+    </symbol>
+    <symbol id="i-survey" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 4.5H7.2a1.7 1.7 0 0 0-1.7 1.7v12.6a1.7 1.7 0 0 0 1.7 1.7h9.6a1.7 1.7 0 0 0 1.7-1.7V6.2a1.7 1.7 0 0 0-1.7-1.7H15"/>
+      <rect x="9" y="2.8" width="6" height="3.4" rx="1"/><path d="M8.8 11h6.4M8.8 15h4.2"/>
+    </symbol>
+    <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 4.5h5.5V10M19.5 4.5 11 13"/><path d="M18 14.4v4.1a1.6 1.6 0 0 1-1.6 1.6H5.5a1.6 1.6 0 0 1-1.6-1.6V7.6A1.6 1.6 0 0 1 5.5 6h4.1"/>
+    </symbol>
+    <!-- strzałka nawigacji — sygnał, że klik w adres prowadzi do map, nie kopiuje tekstu -->
+    <symbol id="i-nav" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3.4 11.2 21 3l-8.2 17.6-2-7.4-7.4-2Z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="site-header" id="site-header">
+  <div class="topstrip">
+    <div class="wrap topstrip__inner">
+      <span class="topstrip__item"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-pin"></use></svg>ul. Kościuszki 57, 78-400 Szczecinek</span>
+      <span class="topstrip__sep" aria-hidden="true"></span>
+      <span class="topstrip__item"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-clock"></use></svg>pon.–pt. 8:00–19:00 · sob. 8:00–18:00</span>
+    </div>
+  </div>
+  <div class="wrap headerbar">
+    <a class="header-call" href="tel:+48943721451" aria-label="Zadzwoń: 94 372 14 51"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-phone"></use></svg></a>
+    <a class="logo" href="../index.html" aria-label="Reha Medica — strona główna">
+      <img class="logo__full" src="../assets/logo.svg" alt="Reha Medica" width="70" height="82">
+      <span class="logo__compact" aria-hidden="true">
+        <img class="logo__mark" src="../assets/logo-mark.svg" alt="" width="30" height="27">
+        <span class="logo__name">Reha<br>Medica</span>
+      </span>
+    </a>
+    <span class="headerbar__rule" aria-hidden="true"></span>
+    <nav class="nav" id="nav" aria-label="Nawigacja główna">
+      <button type="button" class="nav__close" data-nav-close aria-label="Zamknij menu"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-close"></use></svg></button>
+      <ul>
+        <li class="nav__item nav__item--sub">
+          <button type="button" class="nav__top" aria-expanded="false" aria-controls="sub-uslugi">Usługi<svg class="ico nav__chev" aria-hidden="true" focusable="false"><use href="#i-chevron"></use></svg></button>
+          <ul class="nav__sub" id="sub-uslugi">
+            <li><a href="../uslugi/rehabilitacja/poradnia-rehabilitacyjna/" aria-current="page">Poradnia rehabilitacyjna</a></li>
+            <li><a href="../uslugi/poradnia-logopedyczna/">Poradnia logopedyczna</a></li>
+            <li><a href="../uslugi/rehabilitacja/osrodek-rehabilitacji-ogolnoustrojowej/">Ośrodek rehabilitacji ogólnoustrojowej</a></li>
+            <li><a href="../uslugi/rehabilitacja/rehabilitacja-dzieci-i-mlodziezy/">Rehabilitacja dzieci i młodzieży</a></li>
+            <li><a href="../uslugi/rehabilitacja/rehabilitacja-domowa/">Rehabilitacja domowa</a></li>
+            <li><a href="../uslugi/rehabilitacja/rehabilitacja-lecznicza/">Rehabilitacja lecznicza, zabiegi fizjoterapeutyczne</a></li>
+            <li><a href="../uslugi/masaze/">Masaże</a></li>
+          </ul>
+        </li>
+        <li class="nav__item nav__item--sub">
+          <button type="button" class="nav__top" aria-expanded="false" aria-controls="sub-konsultacje">Konsultacje<svg class="ico nav__chev" aria-hidden="true" focusable="false"><use href="#i-chevron"></use></svg></button>
+          <ul class="nav__sub" id="sub-konsultacje">
+            <li><a href="../uslugi/konsultacje/fizjoterapeutyczna/">Konsultacja fizjoterapeutyczna</a></li>
+            <li><a href="../uslugi/konsultacje/ortopedyczna/">Konsultacja ortopedyczna</a></li>
+            <li><a href="../uslugi/konsultacje/logopedyczna-neurologopedyczna/">Konsultacja logopedyczna / neurologopedyczna</a></li>
+            <li><a href="../uslugi/konsultacje/neurologiczna/">Konsultacja neurologiczna</a></li>
+            <li><a href="../uslugi/konsultacje/socjologiczna/">Konsultacja socjologiczna</a></li>
+          </ul>
+        </li>
+        <li class="nav__item nav__item--sub">
+          <button type="button" class="nav__top" aria-expanded="false" aria-controls="sub-odnowa">Odnowa biologiczna<svg class="ico nav__chev" aria-hidden="true" focusable="false"><use href="#i-chevron"></use></svg></button>
+          <ul class="nav__sub" id="sub-odnowa">
+            <li><a href="../uslugi/odnowa-biologiczna/sauny/">Sauny</a></li>
+            <li><a href="../uslugi/odnowa-biologiczna/kriokomora/">Kriokomora</a></li>
+            <li><a href="../uslugi/masaze/">Masaże lecznicze</a></li>
+            <li><a href="../uslugi/odnowa-biologiczna/masaze-relaksacyjne/">Masaże relaksacyjne</a></li>
+          </ul>
+        </li>
+        <li class="nav__item nav__item--sub">
+          <button type="button" class="nav__top" aria-expanded="false" aria-controls="sub-ue">Projekty UE<svg class="ico nav__chev" aria-hidden="true" focusable="false"><use href="#i-chevron"></use></svg></button>
+          <ul class="nav__sub" id="sub-ue">
+            <li><a href="../projekty-ue/">Aktualności – projekty</a></li>
+            <li><a href="../projekty-ue/projekt-mindspots/">Projekt „MINDSpots”</a></li>
+          </ul>
+        </li>
+        <li class="nav__item"><a href="../faq/">FAQ</a></li>
+        <li class="nav__item"><a href="../kontakt/">Kontakt</a></li>
+      </ul>
+      <form class="nav-search" role="search" aria-label="Szukaj usług">
+        <svg class="ico nav-search__ico" aria-hidden="true" focusable="false"><use href="#i-search"></use></svg>
+        <input type="search" id="svc-search" aria-label="Szukaj usługi" placeholder="Szukaj usługi — np. masaż, konsultacja, krioterapia…" autocomplete="off">
+        <button type="button" class="nav-search__close" data-search-close aria-label="Zamknij wyszukiwarkę"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-close"></use></svg></button>
+      </form>
+      <div class="nav__mobile">
+        <a class="btn btn--cream" href="../index.html#placowki">Wybierz placówkę <span class="btn__arrow" aria-hidden="true">→</span></a>
+        <a class="phone-link" href="tel:+48943721451">Infolinia: 94 372 14 51</a>
+        <a class="nav__beauty" href="https://rehabeauty.pl" rel="noopener" target="_blank">Reha Beauty <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-external"></use></svg></a>
+      </div>
+    </nav>
+    <div class="headerbar__cta">
+      <!-- Numer jako przycisk w tym samym rozmiarze co „Umów wizytę", ale wariant outline:
+           dwa identyczne kremowe przyciski obok siebie spłaszczyłyby hierarchię.
+           Tu telefon = akcja drugorzędna, „Umów wizytę" = główna. -->
+      <a class="btn btn--sm btn--outline-light header-phone" href="tel:+48943721451" aria-label="Zadzwoń: 94 372 14 51">94 372 14 51</a>
+      <a class="header-survey" href="../ankieta-satysfakcji/" aria-label="Ankieta satysfakcji pacjenta">
+        <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-survey"></use></svg>
+        <span>Ankieta</span>
+      </a>
+      <a class="btn btn--cream btn--sm" href="../index.html#placowki">Umów wizytę <span class="btn__arrow" aria-hidden="true">→</span></a>
+      <button type="button" class="icon-btn" data-search-open aria-label="Szukaj usług"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-search"></use></svg></button>
+    </div>
+    <button class="burger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="uhero">
+  <div class="uhero__media" aria-hidden="true">
+    <div class="uhero__img" style="background-image:url('../assets/img/budynek-rehamedica.webp')"></div>
+    <div class="uhero__tint"></div>
+  </div>
+  <div class="wrap uhero__inner">
+    <nav class="ubread" aria-label="Ścieżka nawigacji">
+      <ol class="ubread__list">
+        <li><a href="../index.html">Strona główna</a></li>
+        <li><span aria-current="page">Polityka prywatności</span></li>
+      </ol>
+    </nav>
+    <h1 class="uhero__title">Polityka prywatności</h1>
+  </div>
+</section>
+
+<article class="usluga">
+
+  <div class="doc">
+    <div class="wrap doc__wrap">
+      <nav class="doc__spis" aria-labelledby="spis-h">
+        <h2 class="doc__spis-h" id="spis-h">Spis treści</h2>
+        <ol class="doc__spis-lista">
+          <li><a href="#administrator-danych-osobowych">Administrator Danych Osobowych</a></li>
+          <li><a href="#inspektor-ochrony-danych">Inspektor Ochrony Danych</a></li>
+          <li><a href="#odbiorcy-danych-osobowych">Odbiorcy Danych Osobowych</a></li>
+          <li><a href="#cele-oraz-podstawy-przetwarzania-danych-osobow">Cele oraz podstawy przetwarzania Danych Osobowych</a></li>
+          <li><a href="#okres-przetwarzania-danych-osobowych">Okres przetwarzania danych osobowych</a></li>
+          <li><a href="#prawa-osob-ktorych-dane-dotycza">Prawa osób, których dane dotyczą</a></li>
+          <li><a href="#przekazywanie-danych-poza-teren-unii-europejsk">Przekazywanie danych poza teren Unii Europejskiej</a></li>
+          <li><a href="#zautomatyzowane-podejmowanie-decyzji">Zautomatyzowane podejmowanie decyzji</a></li>
+          <li><a href="#informacja-o-plikach-cookies">Informacja o plikach cookies</a></li>
+          <li><a href="#pliki-cookies-wykorzystywane-sa-w-nastepujacyc">Pliki cookies wykorzystywane są w następujących celach:</a></li>
+          <li><a href="#w-ramach-serwisu-stosowane-sa-dwa-zasadnicze-r">W ramach Serwisu stosowane są dwa zasadnicze rodzaje plików cookies:</a></li>
+          <li><a href="#informacja-o-zagrozeniach-wynikajacych-ze-swia">Informacja o zagrożeniach wynikających ze świadczenia usług drogą elektroniczną/ elektronicznych kanałów dostępu</a></li>
+          <li><a href="#podstawowe-zasady-bezpieczenstwa">Podstawowe zasady bezpieczeństwa:</a></li>
+          <li><a href="#nota-prawna">Nota prawna</a></li>
+        </ol>
+      </nav>
+
+      <div class="doc__wstep">
+        <p class="doc__p">Szanujemy Państwa prawo do prywatności, w szczególności dbamy o ochronę danych osobowych oraz stosujemy odpowiednie rozwiązania organizacyjne i techniczne zapobiegające ingerencji w prywatność Państwa przez osoby trzecie. Nasze działania są ukierunkowane na zagwarantowanie Państwu poczucia pełnego bezpieczeństwa na poziomie odpowiednim do obowiązującego prawa, a w szczególności rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (RODO).</p>
+        <p class="doc__p">Poniżej prezentujemy Politykę prywatności oraz wykorzystania plików Cookies w naszym serwisie internetowym rehamedica.info.pl, Klauzulę informacyjną związaną z RODO stosowaną w naszej firmie oraz Notę prawną.</p>
+        <p class="doc__p">W przypadku umieszczenia na stronie internetowej rehamedica.info.pl odnośników do innych stron WWW, nie ponosimy odpowiedzialności za zasady zachowania prywatności obowiązujące na tych stronach. Po wejściu na strony internetowe innych podmiotów rekomendujemy zapoznanie się z polityką prywatności tam ustaloną.</p>
+        <p class="doc__p">Polityka prywatności opisuje zasady przetwarzania przez nas informacji na Twój temat, w tym danych osobowych oraz ciasteczek, czyli tzw. cookies.</p>
+      </div>
+
+      <section class="doc__sek" id="administrator-danych-osobowych">
+        <h2 class="doc__h">Administrator Danych Osobowych</h2>
+        <p class="doc__p">Administratorem danych osobowych jest: REHA MEDICA CENTRUM REHABILITACYJNO-MEDYCZNE Piotr Łoziński, adres: ul. Kościuszki 57, 78-400 Szczecinek, email: kontakt@rehamedica.info.pl Kontakt z Administratorem jest możliwy pisemnie lub za pośrednictwem adresu e-mail na podane powyżej adresy.</p>
+      </section>
+
+      <section class="doc__sek" id="inspektor-ochrony-danych">
+        <h2 class="doc__h">Inspektor Ochrony Danych</h2>
+        <p class="doc__p">Powołaliśmy Inspektora Ochrony Danych, z którym można skontaktować się pod adresem Administratora Danych Osobowych.</p>
+      </section>
+
+      <section class="doc__sek" id="odbiorcy-danych-osobowych">
+        <h2 class="doc__h">Odbiorcy Danych Osobowych</h2>
+        <p class="doc__p">W związku z prowadzeniem działalności wymagającej przetwarzania dane osobowe są ujawniane zewnętrznym podmiotom, w tym w szczególności dostawcom odpowiedzialnym za obsługę systemów informatycznych i sprzętu, podmiotom świadczącym usługi prawne, księgowe, lub doradcze, kurierom.</p>
+        <p class="doc__p">W związku ze specyfikacją portalu Facebook, informacje o osobach obserwujących fanpage, o polubieniach, a także treści komentarzy, posty i inne informacje dostarczane przez użytkowników są jawne.</p>
+        <p class="doc__p">Administrator zastrzega sobie prawo ujawnienia wybranych informacji dotyczących osoby, której dane dotyczą, właściwym organom bądź osobom trzecim, które zgłoszą żądanie udzielenia takich informacji, opierając się na odpowiedniej podstawie prawnej, lub upoważnieniu osoby, której dane dotyczą, oraz zgodnie z przepisami obowiązującego prawa.</p>
+      </section>
+
+      <section class="doc__sek" id="cele-oraz-podstawy-przetwarzania-danych-osobow">
+        <h2 class="doc__h">Cele oraz podstawy przetwarzania Danych Osobowych</h2>
+        <p class="doc__p">Pacjenci. Pani/Pana dane osobowe są przetwarzane, w następujących celach:</p>
+        <ul class="doc__ul">
+          <li>świadczenia usług medycznych, ochrony zdrowia, profilaktyki zdrowotnej oraz zarządzania tymi usługami – podstawą prawną przetwarzania są przepisy prawa, w szczególności: ustawy o działalności leczniczej, ustawy o prawach pacjenta i Rzeczniku Praw Pacjenta i odbywa się w związku z art. 9 ust. 2 lit. H RODO,</li>
+          <li>rozliczania finansowego i podatkowego prowadzonej działalności gospodarczej – podstawą prawną przetwarzania jest obowiązek prawny ciążący na Administratorze (art. 6 ust. 1 lit c RODO w związku z przepisami o rachunkowości i podatkowymi),</li>
+          <li>obsługi skarg, reklamacji, wniosków i zgłoszeń – na podstawie art. 6 ust. 1 lit. f) RODO – podstawą prawną przetwarzania jest prawnie usprawiedliwiony interes Administratora,</li>
+          <li>przekazywania materiałów o produktach i usługach – podstawą prawną przetwarzania jest zgoda (art. 6 ust. 1 lit a RODO),</li>
+          <li>archiwizowania danych – podstawą prawną przetwarzania jest obowiązek prawny ciążący na Administratorze (art. 6 ust. 1 lit c RODO),</li>
+          <li>prowadzenia badania jakości i satysfakcji – na podstawie art. 6 ust. 1 lit. f) RODO – prawnie usprawiedliwiony interes Administratora,</li>
+          <li>ustalenia, dochodzenia lub obrony przed roszczeniami – na podstawie art. 6 ust. 1 lit. f) RODO – prawnie usprawiedliwiony interes Administratora,</li>
+          <li>zapewnienia bezpieczeństwa osób i mienia w szczególności poprzez monitoring wizyjny – na podstawie art. 6 ust. 1 lit. f) RODO – prawnie usprawiedliwiony interes Administratora.</li>
+        </ul>
+        <p class="doc__p">W przypadku korzystania z usług medycznych podanie danych osobowych jest wymogiem przepisów prawa. Podanie danych w innym celu, jest dobrowolne, jednak niepodanie danych uniemożliwi wykonanie usługi lub zawarcie umowy.</p>
+        <p class="doc__p">Kontrahenci (dostawcy usług i klienci, np. odnowy biologicznej). Dane osobowe są przetwarzane:</p>
+        <ul class="doc__ul">
+          <li>w celu realizacji umowy – art. 6 ust. 1 lit. b) RODO – dane niezbędne do realizacji umowy,</li>
+          <li>w celu wykonania obowiązków wynikających z przepisów prawa, w tym przede wszystkim podatkowych – podstawą prawną przetwarzania jest obowiązek prawny ciążący na Administratorze (art. 6 ust. 1 lit c RODO w związku z przepisami podatkowymi),</li>
+          <li>przekazywania materiałów o produktach i usługach – podstawą prawną przetwarzania jest zgoda (art. 6 ust. 1 lit a RODO),</li>
+          <li>archiwizowania danych – podstawą prawną przetwarzania jest obowiązek prawny ciążący na Administratorze (art. 6 ust. 1 lit c RODO),</li>
+          <li>w celu prawnie usprawiedliwionego interesu Administratora – na podstawie art. 6 ust. 1 lit. f) RODO – obrona i dochodzenie roszczeń,</li>
+          <li>prowadzenia badania jakości i satysfakcji – na podstawie art. 6 ust. 1 lit. f) RODO – prawnie usprawiedliwiony interes Administratora,</li>
+          <li>obsługi skarg, reklamacji, wniosków i zgłoszeń – na podstawie art. 6 ust. 1 lit. f) RODO – podstawą prawną przetwarzania jest prawnie usprawiedliwiony interes Administratora,</li>
+          <li>zapewnienia bezpieczeństwa osób i mienia w szczególności poprzez monitoring wizyjny – na podstawie art. 6 ust. 1 lit. f) RODO – prawnie usprawiedliwiony interes Administratora.</li>
+        </ul>
+        <p class="doc__p">Podanie danych osobowych jest dobrowolne, jednakże odmowa podania danych może skutkować odmową zawarcia/ realizacji umowy.</p>
+        <p class="doc__p">Fanpage Facebook. Administrator prowadzi fanpage pod nazwą „Reha Medica – Centrum Rehabilitacyjno Medyczne” i przetwarza dane osobowe użytkowników w celu:</p>
+        <ul class="doc__ul">
+          <li>prowadzenia fanpage’a na portalu społecznościowym Facebook, na warunkach i zasadach określonych przez Facebook Inc.,</li>
+          <li>informowania o aktywności administratora, promowaniu różnych wydarzeń które organizuje administrator,</li>
+          <li>informowania o produktach i usługach administratora,</li>
+          <li>budowania i utrzymania społeczności związanej z administratorem,</li>
+          <li>komunikacji za pośrednictwem dostępnych funkcjonalności serwisu Facebook (komentarze, chat, wiadomości),</li>
+          <li>ewentualnego ustalania, dochodzenia roszczeń lub obrony przed roszczeniami,</li>
+          <li>analiz funkcjonowania, popularności, sposobu korzystania z fanpage’a.</li>
+        </ul>
+        <p class="doc__p">Podstawą prawną przetwarzania danych osobowych jest:</p>
+        <ul class="doc__ul">
+          <li>zgoda użytkownika, wyrażona poprzez wyraźne działanie potwierdzające jakim jest dokonanie subskrypcji fanpage poprzez kliknięcie ikony „Lubię to” lub „Obserwuj” lub poprzez opublikowanie swojego komentarza pod którymkolwiek z postów zamieszczonych na fanpage’u administratora (art. 6 ust. 1 lit a RODO),</li>
+          <li>prawnie uzasadniony interes administratora lub strony trzeciej, którym jest: prowadzenie fanpage’a oraz konieczność zapewnienia kontaktu pomiędzy użytkownikami a administratorem, a także marketing bezpośredni oraz ochrona praw i roszczeń (art. 6 ust. 1 lit f RODO).</li>
+        </ul>
+        <p class="doc__p">Podanie danych osobowych jest dobrowolne, lecz niezbędne do obserwowania fanpage’a Administratora.</p>
+        <p class="doc__p">Kandydaci do pracy (rekrutacja). W ramach procesów rekrutacyjnych Administrator oczekuje przekazywania danych osobowych (np. w CV lub życiorysie) jedynie w zakresie określonym w przepisach prawa pracy. W związku z tym nie należy przekazywać informacji w szerszym zakresie. W razie, gdy przesłane aplikacje będą zawierać dodatkowe dane, nie będą one wykorzystywane ani uwzględniane w procesie rekrutacyjnym. Dane osobowe są przetwarzane:</p>
+        <ul class="doc__ul">
+          <li>w celu wykonania obowiązków wynikających z przepisów prawa, związanych z procesem zatrudnienia, w tym przede wszystkim Kodeksu pracy – podstawą prawną przetwarzania jest obowiązek prawny ciążący na Administratorze (art. 6 ust. 1 lit c RODO w związku z przepisami Kodeksu pracy);</li>
+          <li>w celu przeprowadzenia procesu rekrutacji w zakresie danych niewymaganych przepisami prawa, a także dla celów przyszłych procesów rekrutacyjnych – podstawą prawną przetwarzania jest zgoda (art. 6 ust. 1 lit a RODO);</li>
+          <li>w celu ustalenia lub dochodzenia ewentualnych roszczeń lub obrony przed takimi roszczeniami – podstawą prawną przetwarzania danych jest prawnie uzasadniony interes Administratora (art. 6 ust. 1 lit f RODO),</li>
+        </ul>
+        <p class="doc__p">Podanie danych osobowych w zakresie wynikającym z art. 22(1) Kodeksu pracy jest niezbędne, aby uczestniczyć w postępowaniu rekrutacyjnym. Podanie innych danych jest dobrowolne.</p>
+        <p class="doc__p">Pracownicy zatrudnieni na podstawie stosunku pracy. Dane osobowe są przetwarzane:</p>
+        <ul class="doc__ul">
+          <li>w celu wykonania obowiązków wynikających z przepisów prawa, związanych z procesem zatrudnienia, w tym przede wszystkim Kodeksu pracy – podstawą prawną przetwarzania jest obowiązek prawny ciążący na Administratorze (art. 6 ust. 1 lit c RODO w związku z przepisami Kodeksu pracy);</li>
+          <li>pozostałe dane, np. publikacja wizerunku – podstawą prawną przetwarzania jest zgoda (art. 6 ust. 1 lit a RODO);</li>
+          <li>w celu ustalenia lub dochodzenia ewentualnych roszczeń lub obrony przed takimi roszczeniami – podstawą prawną przetwarzania danych jest prawnie uzasadniony interes Administratora (art. 6 ust. 1 lit f RODO),</li>
+          <li>archiwizowania danych – podstawą prawną przetwarzania jest obowiązek prawny ciążący na Administratorze (art. 6 ust. 1 lit c RODO),</li>
+          <li>obsługi skarg, reklamacji, wniosków i zgłoszeń – na podstawie art. 6 ust. 1 lit. f) RODO – podstawą prawną przetwarzania jest prawnie usprawiedliwiony interes Administratora,</li>
+          <li>zapewnienia bezpieczeństwa osób i mienia w szczególności poprzez monitoring wizyjny – na podstawie art. 6 ust. 1 lit. f) RODO – prawnie usprawiedliwiony interes Administratora.</li>
+        </ul>
+        <p class="doc__p">Podanie danych osobowych w zakresie wynikającym z Kodeksu pracy jest niezbędne, w celu zatrudnienia. Podanie innych danych jest dobrowolne.</p>
+        <p class="doc__p">Pracownicy zatrudnieni na podstawie stosunku cywilnoprawnego. Dane osobowe są przetwarzane:</p>
+        <ul class="doc__ul">
+          <li>w celu wykonania obowiązków wynikających z przepisów prawa, związanych z procesem zatrudnienia, w tym przede wszystkim na potrzeby ZUS i US – podstawą prawną przetwarzania jest obowiązek prawny ciążący na Administratorze (art. 6 ust. 1 lit c RODO w związku z przepisami o ubezpieczeniach społecznych i zdrowotnym),</li>
+          <li>w celu realizacji umowy – art. 6 ust. 1 lit. b) RODO – dane niezbędne do realizacji umowy,</li>
+          <li>pozostałe dane, np. publikacja wizerunku – podstawą prawną przetwarzania jest zgoda (art. 6 ust. 1 lit a RODO),</li>
+          <li>w celu ustalenia lub dochodzenia ewentualnych roszczeń lub obrony przed takimi roszczeniami – podstawą prawną przetwarzania danych jest prawnie uzasadniony interes Administratora (art. 6 ust. 1 lit f RODO),</li>
+          <li>archiwizowania danych – podstawą prawną przetwarzania jest obowiązek prawny ciążący na Administratorze (art. 6 ust. 1 lit c RODO),</li>
+          <li>obsługi skarg, reklamacji, wniosków i zgłoszeń – na podstawie art. 6 ust. 1 lit. f) RODO – podstawą prawną przetwarzania jest prawnie usprawiedliwiony interes Administratora,</li>
+          <li>zapewnienia bezpieczeństwa osób i mienia w szczególności poprzez monitoring wizyjny – na podstawie art. 6 ust. 1 lit. f) RODO – prawnie usprawiedliwiony interes Administratora.</li>
+        </ul>
+        <p class="doc__p">Podanie danych osobowych na potrzeby ZUS i US jest niezbędne, w celu zatrudnienia. Podanie innych danych jest dobrowolne.</p>
+        <p class="doc__p">W przypadku kierowania do Administratora za pośrednictwem poczty e-mail lub tradycyjnej korespondencji niezwiązanej z usługami świadczonymi na rzecz nadawcy lub inną zawartą z nim umową, dane osobowe zawarte w tej korespondencji są przetwarzane wyłącznie w celu komunikacji i rozwiązania sprawy, której dotyczy korespondencja.</p>
+        <ul class="doc__ul">
+          <li>Podstawą prawną przetwarzania jest uzasadniony interes Administratora (art. 6 ust. 1 lit f RODO) polegający na prowadzeniu korespondencji kierowanej do niego w związku z jego działalnością gospodarczą.</li>
+        </ul>
+        <p class="doc__p">W przypadku kontaktowania się z Administratorem drogą telefoniczną, w sprawach niezwiązanych z zawartą umową lub świadczonymi usługami, Administrator może żądać podania danych osobowych tylko wówczas, gdy będzie to niezbędne do obsługi sprawy, której dotyczy kontakt.</p>
+        <ul class="doc__ul">
+          <li>Podstawą prawną jest w takim wypadku uzasadniony interes Administratora (art. 6 ust. 1 lit f RODO) polegający na konieczności rozwiązania zgłoszonej sprawy związanej z prowadzoną przez niego działalnością gospodarczą.</li>
+        </ul>
+        <p class="doc__p">W związku z prowadzoną działalnością Administrator zbiera dane osobowe także w innych przypadkach – np. podczas spotkań biznesowych, czy poprzez wymianę wizytówek – w celach związanych z inicjowaniem i utrzymywaniem kontaktów biznesowych.</p>
+        <ul class="doc__ul">
+          <li>Podstawą prawną przetwarzania jest w tym wypadku uzasadniony interes Administratora (art. 6 ust. 1 lit f RODO) polegający na tworzeniu sieci kontaktów w związku z prowadzoną działalnością.</li>
+        </ul>
+      </section>
+
+      <section class="doc__sek" id="okres-przetwarzania-danych-osobowych">
+        <h2 class="doc__h">Okres przetwarzania danych osobowych</h2>
+        <p class="doc__p">Okres przetwarzania danych przez Administratora zależy od rodzaju świadczonej usługi i celu przetwarzania. Okres przetwarzania danych może także wynikać z przepisów, gdy stanowią one podstawę przetwarzania. W przypadku przetwarzania danych na podstawie uzasadnionego interesu Administratora – np. ze względów bezpieczeństwa – dane przetwarzane są przez okres umożliwiający realizację tego interesu lub do zgłoszenia skutecznego sprzeciwu względem przetwarzania danych. Jeśli przetwarzanie odbywa się na podstawie zgody, dane przetwarzane są do jej wycofania. Gdy podstawę przetwarzania stanowi niezbędność do zawarcia i wykonania umowy, dane są przetwarzane do momentu jej rozwiązania. W celach podatkowych i rachunkowych w zakresie i przez czas zgodny z obowiązującymi przepisami prawa.</p>
+        <p class="doc__p">Twoje dane będziemy przetwarzać, co do zasady:</p>
+        <ul class="doc__ul">
+          <li>przez 20 lat – w związku z prowadzeniem i archiwizacją dokumentacji medycznej od dokonania w niej ostatniego wpisu,</li>
+          <li>przez 6 lat – w dochodzeniem i obroną przed roszczeniami w związku ze zrealizowanymi usługami,</li>
+          <li>przez 5 lat – na potrzeby rachunkowości oraz ze względów podatkowych, okres liczony jest od końca roku kalendarzowego, w którym powstał obowiązek podatkowy,</li>
+          <li>przez 14 dni – w związku z prowadzonym monitoringiem wizyjnym,</li>
+          <li>do czasu wniesienia sprzeciwu lub cofnięcia zgody na przetwarzanie danych osobowych, jeśli Twoje dane przetwarzaliśmy na takiej podstawie.</li>
+        </ul>
+        <p class="doc__p">Okres przetwarzania danych może być przedłużony w przypadku, gdy przetwarzanie jest niezbędne do ustalenia lub dochodzenia roszczeń lub obrony przed roszczeniami, a po tym okresie – jedynie w przypadku i w zakresie, w jakim będą wymagać tego przepisy prawa.</p>
+      </section>
+
+      <section class="doc__sek" id="prawa-osob-ktorych-dane-dotycza">
+        <h2 class="doc__h">Prawa osób, których dane dotyczą</h2>
+        <p class="doc__p">Osobom, których dane dotyczą, przysługują następujące prawa:</p>
+        <ul class="doc__ul">
+          <li>prawo dostępu do danych, w tym uzyskania kopii danych,</li>
+          <li>prawo żądania sprostowania danych,</li>
+          <li>prawo do usunięcia danych(prawo do bycia zapomnianym), tylko w sytuacji jeśli nie będziemy zobligowani przepisami prawa do ich przetwarzania,</li>
+          <li>prawo wniesienia skargi do organu nadzorczego ochrony danych osobowych, jakim jest w Polsce Prezes Urzędu Ochrony Danych Osobowych,</li>
+          <li>prawo do ograniczenia przetwarzania danych,</li>
+          <li>prawo do wniesienia sprzeciwu wobec przetwarzania danych w celach marketingowych lub badania jakości i satysfakcji – jako że przetwarzamy Twoje dane na podstawie prawnie uzasadnionego interesu,</li>
+          <li>prawo do wniesienia sprzeciwu wobec przetwarzania danych ze względu na szczególną sytuację – w przypadkach, kiedy przetwarzamy Twoje dane na podstawie naszego prawnie uzasadnionego interesu w celach innych niż marketingowych lub badania jakości i satysfakcji,</li>
+        </ul>
+        <p class="doc__p">Jeżeli Twoje dane są przetwarzane na podstawie zgody:</p>
+        <ul class="doc__ul">
+          <li>masz prawo do wycofania zgody. Wycofanie zgody nie ma wpływu na zgodność z prawem przetwarzania, którego dokonano na podstawie zgody przed jej wycofaniem.</li>
+        </ul>
+        <p class="doc__p">Jeżeli Twoje dane są przetwarzane na podstawie zgody lub w celu realizacji umowy (niezbędne w celu świadczenia usługi):</p>
+        <ul class="doc__ul">
+          <li>masz prawo do przenoszenia danych osobowych, prawo otrzymania od nas Twoich danych osobowych, w ustrukturyzowanym, powszechnie używanym formacie informatycznym nadającym się do odczytu maszynowego. Możesz przesłać te dane innemu administratorowi danych lub zażądać, abyśmy przesłali Twoje dane do innego administratora. Jednakże zrobimy to tylko jeśli takie przesłanie jest technicznie możliwe.</li>
+        </ul>
+        <p class="doc__p">W celu realizacji powyższych praw należy skontaktować się z nami pod adresy wskazane na wstępie.</p>
+        <p class="doc__p">W przypadku żądania sprostowania, usunięcia lub ograniczenia przetwarzania danych osobowych, poinformujemy odbiorców tych danych, którym ujawniono dane osobowe, chyba że okaże się to niemożliwe lub będzie wymagać niewspółmiernie dużego wysiłku, a także na Twoje żądanie dotyczące Twoich danych poinformujemy Cię o tych odbiorcach.</p>
+      </section>
+
+      <section class="doc__sek" id="przekazywanie-danych-poza-teren-unii-europejsk">
+        <h2 class="doc__h">Przekazywanie danych poza teren Unii Europejskiej</h2>
+        <p class="doc__p">W celu zapewnienia jak najwyższej jakości naszych usług korzystamy z innych dostawców, np. w zakresie wsparcia IT. W związku z tym Twoje dane osobowe mogą być przekazywane poza teren Unii Europejskiej. Zapewniamy, że w takim przypadku przekazywanie danych odbywać się będzie w oparciu o stosowną umowę pomiędzy Nami a takim podmiotem, zawierającą standardowe klauzule ochrony danych przyjęte przez Komisję Europejską, bądź na podstawie odpowiedniej decyzji Komisji Europejskiej.</p>
+      </section>
+
+      <section class="doc__sek" id="zautomatyzowane-podejmowanie-decyzji">
+        <h2 class="doc__h">Zautomatyzowane podejmowanie decyzji</h2>
+        <p class="doc__p">Zasadniczo, dane nie podlegają zautomatyzowanemu podejmowaniu decyzji, w tym profilowaniu, z zastrzeżeniem Fanpage Facebook, gdzie zautomatyzowane podejmowanie decyzji będzie odbywało się na zasadach określonych w regulaminie Facebook.</p>
+      </section>
+
+      <section class="doc__sek" id="informacja-o-plikach-cookies">
+        <h2 class="doc__h">Informacja o plikach cookies</h2>
+        <p class="doc__p">Serwis korzysta z plików cookies.</p>
+        <p class="doc__p">Pliki cookies (tzw. „ciasteczka”) stanowią dane informatyczne, w szczególności pliki tekstowe, które przechowywane są w urządzeniu końcowym Użytkownika Serwisu i przeznaczone są do korzystania ze stron internetowych Serwisu. Cookies zazwyczaj zawierają nazwę strony internetowej, z której pochodzą, czas przechowywania ich na urządzeniu końcowym oraz unikalny numer.</p>
+        <p class="doc__p">Podmiotem zamieszczającym na urządzeniu końcowym Użytkownika Serwisu pliki cookies oraz uzyskującym do nich dostęp jest operator Serwisu.</p>
+      </section>
+
+      <section class="doc__sek" id="pliki-cookies-wykorzystywane-sa-w-nastepujacyc">
+        <h2 class="doc__h">Pliki cookies wykorzystywane są w następujących celach:</h2>
+        <ul class="doc__ul">
+          <li>niezbędne do działania usługi i aplikacji – umożliwiające korzystanie z naszych usług, np. uwierzytelniające pliki cookies wykorzystywane do usług wymagających uwierzytelniania;</li>
+          <li>pliki służące do zapewnienia bezpieczeństwa, np. wykorzystywane do wykrywania nadużyć w zakresie uwierzytelniania;</li>
+          <li>wydajnościowe – umożliwiające zbieranie informacji o sposobie korzystania ze stron internetowych i aplikacji;</li>
+          <li>funkcjonalne – umożliwiające “zapamiętanie” wybranych przez Użytkownika ustawień i personalizację interfejsu Użytkownika, np. w zakresie wybranego języka lub regionu, z którego pochodzi Użytkownik, rozmiaru czcionki, wyglądu strony internetowej i aplikacji itp.;</li>
+          <li>reklamowe – umożliwiające dostarczanie Użytkownikom treści reklamowych bardziej dostosowanych do ich zainteresowań;</li>
+          <li>statystyczne – służące do zliczana statystyk dotyczących stron internetowych i aplikacji.</li>
+        </ul>
+      </section>
+
+      <section class="doc__sek" id="w-ramach-serwisu-stosowane-sa-dwa-zasadnicze-r">
+        <h2 class="doc__h">W ramach Serwisu stosowane są dwa zasadnicze rodzaje plików cookies:</h2>
+        <ul class="doc__ul">
+          <li>Cookies „sesyjne” są plikami tymczasowymi, które przechowywane są w urządzeniu końcowym Użytkownika do czasu wylogowania, opuszczenia strony internetowej lub wyłączenia oprogramowania (przeglądarki internetowej).</li>
+          <li>„Stałe” pliki cookies przechowywane są w urządzeniu końcowym Użytkownika przez czas określony w parametrach plików cookies lub do czasu ich usunięcia przez Użytkownika.</li>
+        </ul>
+        <p class="doc__p">Oprogramowanie do przeglądania stron internetowych (przeglądarka internetowa) zazwyczaj domyślnie dopuszcza przechowywanie plików cookies w urządzeniu końcowym Użytkownika. Użytkownicy Serwisu mogą dokonać zmiany ustawień w tym zakresie. Przeglądarka internetowa umożliwia usunięcie plików cookies. Możliwe jest także automatyczne blokowanie plików cookies Szczegółowe informacje na ten temat zawiera pomoc lub dokumentacja przeglądarki internetowej.</p>
+        <p class="doc__p">Ograniczenia stosowania plików cookies mogą wpłynąć na niektóre funkcjonalności dostępne na stronach internetowych Serwisu.</p>
+        <p class="doc__p">Pliki cookies zamieszczane w urządzeniu końcowym Użytkownika Serwisu wykorzystywane mogą być również przez współpracujące z operatorem Serwisu podmioty, w szczególności dotyczy to firm: Google (Google Inc. z siedzibą w USA), Facebook (Facebook Inc. z siedzibą w USA), Twitter (Twitter Inc. z siedzibą w USA).</p>
+        <p class="doc__p">Jeśli użytkownik nie chce otrzymywać plików cookies, może zmienić ustawienia przeglądarki. Zastrzegamy, że wyłączenie obsługi plików cookies niezbędnych dla procesów uwierzytelniania, bezpieczeństwa, utrzymania preferencji użytkownika może utrudnić, a w skrajnych przypadkach może uniemożliwić korzystanie ze stron www</p>
+        <p class="doc__p">W celu zarządzania ustawienia cookies postępuj zgodnie z instrukcją przeglądarki internetowej.</p>
+      </section>
+
+      <section class="doc__sek" id="informacja-o-zagrozeniach-wynikajacych-ze-swia">
+        <h2 class="doc__h">Informacja o zagrożeniach wynikających ze świadczenia usług drogą elektroniczną/ elektronicznych kanałów dostępu</h2>
+        <p class="doc__p">Podstawowe zagrożenia związane z korzystaniem z usług w internecie – w tym usług oferowanych przez REHA MEDICA CENTRUM REHABILITACYJNO MEDYCZNE w ramach elektronicznych kanałów dostępu – to:</p>
+        <ul class="doc__ul">
+          <li>działanie oprogramowania szpiegującego,</li>
+          <li>podszywanie się w celu wyłudzenia informacji,</li>
+          <li>wirusy komputerowe.</li>
+        </ul>
+        <p class="doc__p">Zagrożenia dotyczą nie tylko komputerów, ale też innego sprzętu przenośnego, np. smartfonów, tabletów.</p>
+        <p class="doc__p">Oprogramowanie szpiegujące to takie, które w sposób ukryty może zostać zainstalowane na urządzeniu użytkownika np. przez wejście na spreparowaną stronę lub uruchomienie pliku przesłanego w poczcie. Może monitorować/przesyłać do atakującego zarówno dane umieszczone na urządzeniu, jak i nasze działania: ruchy myszką, tekst wpisywany z klawiatury, uruchamiać podgląd/podsłuch z kamery i mikrofonu.</p>
+        <p class="doc__p">Podszywanie się (ang. phishing) to umieszczenie w internecie fałszywych stron naśladujących oryginalne i nakłanianiu użytkowników do zalogowania się na nie np. przez wysłanie spreparowanej wiadomości pocztowej, która udaje komunikat od autentycznej instytucji lub osoby. Celem jest przechwycenie danych dostępowych do usługi (loginu, hasła).</p>
+        <p class="doc__p">Wirus komputerowy to oprogramowanie złośliwe, które przenosi się poprzez zapis zainfekowanego pliku na nośniku danych np. dysku twardym, pendrive. Celem wirusa jest kradzież lub usunięcie danych, zakłócenie pracy urządzenia lub przejęcie kontroli nad komputerem. Najczęściej do zarażenia wirusem elektronicznym dochodzi po pobieraniu plików z niezaufanego źródła internetowego lub otwarciu załącznika w poczcie elektronicznej.</p>
+        <p class="doc__p">Spam to niezamawiane lub niepotrzebne wiadomości elektroniczne rozsyłane jednocześnie do wielu odbiorców. Często przenoszą wirusy komputerowe, oprogramowanie szpiegujące, odnośniki do złośliwych stron.</p>
+      </section>
+
+      <section class="doc__sek" id="podstawowe-zasady-bezpieczenstwa">
+        <h2 class="doc__h">Podstawowe zasady bezpieczeństwa:</h2>
+        <ul class="doc__ul">
+          <li>Każdy użytkownik internetu powinien dbać o bezpieczeństwo swojego urządzenia. Komputer powinien posiadać program antywirusowy z aktualną bazą definicji wirusów, aktualną i bezpieczną wersję przeglądarki internetowej oraz włączoną zaporę sieciową (ang. firewall). Użytkownik powinien ponadto cyklicznie sprawdzać, czy system operacyjny i programy zainstalowane na nim posiadają najnowsze aktualizacje, ponieważ w atakach wykorzystywane są błędy wykryte w zainstalowanym oprogramowaniu. Producenci programów starają się eliminować takie podatności za pomocą aktualizacji.</li>
+          <li>Dane dostępowe do usług oferowanych w internecie – np. loginy, hasła, PIN, certyfikaty elektroniczne itp., – powinny być zabezpieczone. Nie należy ich ujawniać lub przechowywać na urządzeniu w formie, która umożliwia łatwy dostęp i odczyt.</li>
+          <li>Zaleca się ostrożność podczas otwierania załączników lub klikania odnośników w wiadomościach, których się nie spodziewaliśmy np. od nieznanych nadawców. W przypadku jakichkolwiek wątpliwości warto się skontaktować z nadawcą.</li>
+          <li>Zaleca się uruchomienie w przeglądarce internetowej narzędzi, które sprawdzają, czy wyświetlona strona internetowa nie wyłudza informacji, np. poprzez podszywanie się pod osobę lub instytucję. Zastosowanie filtrów antyphishingowych znacznie zmniejsza ryzyko kradzieży danych.</li>
+          <li>Ważne jest korzystanie z programów antywirusowych, które zabezpieczają komputery przed szkodliwym oprogramowaniem oraz z zapory sieciowej (tzw. firewall), która kontroluje przesyłanie informacji do i z internetu, dzięki czemu zapobiega przekazywaniu poufnych danych.</li>
+          <li>Pliki powinny być pobierane tylko z zaufanych miejsc. Wysoce ryzykowne jest instalowanie oprogramowania z niezweryfikowanych źródeł. Dotyczy to również urządzeń przenośnych, np. smartfonów, tabletów.</li>
+          <li>Podczas używania domowej sieci bezprzewodowej (Wi-Fi) należy ustalić bezpieczne i trudne do złamania hasło dostępu do sieci. Rekomenduje się także korzystanie z zaufanych standardów szyfrowania sieci bezprzewodowych Wi-Fi np. WPA2.</li>
+          <li>Istotne jest też utrzymanie w miarę możliwości fizycznej kontroli dostępu nad sprzętem. Jeśli osoba niepowołana dołącza do niego jakieś dodatkowe urządzenia, manipuluje nim, może dojść do zainfekowania złośliwym programem lub podłączenia urządzeń szpiegujących np. keyloggerów, które służą do przechwytywania tekstu wpisywanego na klawiaturze.</li>
+        </ul>
+      </section>
+
+      <section class="doc__sek" id="nota-prawna">
+        <h2 class="doc__h">Nota prawna</h2>
+        <p class="doc__p">REHA MEDICA CENTRUM REHABILITACYJNO-MEDYCZNEUl. Kościuszki 5778-400 SzczecinekNIP 6731202980</p>
+        <ul class="doc__ul">
+          <li>Strona internetowa rehamedica.info.pl oraz fanpage w serwisie Facebook, to moje prywatne kanały informacyjne. Wszystkie informacje dostępne w materiałach video, wpisach w mediach społecznościowych (Facebook, Instagram, YouTube i innych) jak i na stronie rehamedica.info.pl mają wyłącznie charakter informacyjno-edukacyjny.</li>
+          <li>Oferta zamieszczona na naszej stronie internetowej ma charakter informacyjny i nie stanowi oferty handlowej w rozumieniu art. 66 § 1 Kodeksu cywilnego oraz innych właściwych przepisów prawnych. Mimo dołożenia wszelkich starań nie gwarantujemy, że publikowane dane produktów nie zawierają uchybień lub błędów, które nie mogą jednak być podstawą do roszczeń.</li>
+          <li>Korzystanie z naszej strony internetowej jest równoznaczne z wyrażeniem zgody na przedstawione poniżej warunki, bez możliwości zgłaszania jakichkolwiek zastrzeżeń co do ich treści. Jeśli użytkownik (odwiedzający stronę) nie akceptuje poniższych warunków nie jest uprawniony do korzystania ze Strony.</li>
+          <li>Niniejsza strona internetowa/witryna ma charakter wyłącznie informacyjny, a zawarte na niej informacje były aktualizowane na dzień ich publikacji.</li>
+          <li>Zastrzegamy sobie prawo wprowadzania zmian na niniejszej stronie w dowolnym czasie i bez uprzedzenia. Wprowadzane zmiany mogą dotyczyć wszystkich elementów witryny, w tym m.in. zastrzegamy sobie prawo do dodania, zmiany lub wycofania produktów prezentowanych na niniejszej stronie.</li>
+          <li>Zawartość niniejszej witryny jest chroniona prawnie. Wszelkie utwory, znaki towarowe, logo, znaki usługowe, geograficzne oznaczenia pochodzenia itp. zawarte w niniejszej witrynie stanowią własność naszą lub osób trzecich. Ich używanie, kopiowanie i/lub rozpowszechnianie czy inne wykorzystywanie bez uprzedniej zgody właściwego podmiotu jest niedozwolone. Zwracamy Państwa uwagę, iż korzystanie z niniejszej witryny nie jest równoznaczne z uzyskaniem jakiejkolwiek licencji na wykorzystanie własności intelektualnej i/lub przemysłowej należącej do nas lub osób trzecich.</li>
+          <li>Mimo dołożenia starań, by informacje publikowane na stronie były prawdziwe oraz dokładne, nie ponosimy odpowiedzialności za dokładność lub aktualność jakichkolwiek informacji zawartych na niniejszej stronie.</li>
+          <li>Nie ponosimy odpowiedzialności za jakiekolwiek szkody wynikłe z dostępu do i/lub korzystania z niniejszej witryny w tym za szkody powstałe wskutek wykorzystania jakichkolwiek informacji umieszczonych w witrynie lub uzyskanych za jej pośrednictwem, z wyjątkiem sytuacji, gdy powstałe szkody są rezultatem działań bezpośrednio przez nas zawinionych. Polecamy Państwu zapoznanie się z treścią niniejszej noty prawnej przed jakimkolwiek wykorzystaniem informacji zawartych w niniejszej witrynie. Nie ponosimy również odpowiedzialności za jakiekolwiek uszkodzenia lub wirusy, jakie mogą zainfekować Państwa sprzęt komputerowy lub inne urządzenia w związku z dostępem do tej witryny, korzystaniem z niej lub pobieraniem ze strony jakichkolwiek materiałów, danych, zdjęć, tekstów, plików itp., o ile nie będzie to rezultatem działań bezpośrednio przez nas zawinionych. Wykluczamy odpowiedzialność za treść, politykę w zakresie ochrony poufności oraz funkcjonowanie wszelkich zewnętrznych stron/witryn internetowych administrowanych przez osoby trzecie, do których odsyłacze (linki) zamieszczone mogą być w niniejszej witrynie.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <section class="uend uend--cicha">
+    <div class="wrap uend__inner">
+      <a class="uend__back" href="../index.html"><span aria-hidden="true">←</span> Wróć do strony głównej</a>
+      <a class="uend__obok" href="../kontakt/">Kontakt <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+</article>
+
+</main>
+
+<footer class="site-footer" id="kontakt">
+  <!-- główna stopka -->
+  <div class="wrap footer__top">
+    <div class="footer__brand">
+      <img src="../assets/logo.svg" alt="Reha Medica" width="72" height="84">
+      <p class="footer__desc">Opieka rehabilitacyjna i medyczna w pięciu placówkach na Pomorzu Zachodnim.</p>
+      <a class="footer__call" href="tel:+48943721451"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-phone"></use></svg> 94 372 14 51</a>
+    </div>
+    <nav class="footer__nav" aria-label="Placówki">
+      <h2 class="footer__h">Placówki</h2>
+      <ul>
+        <li><a href="../placowki/szczecinek/">Szczecinek</a></li>
+        <li><a href="../placowki/szczecin/">Szczecin</a></li>
+        <li><a href="../placowki/walcz/">Wałcz</a></li>
+        <li><a href="../placowki/bialogard/">Białogard</a></li>
+        <li><a href="../placowki/bobolice/">Bobolice</a></li>
+      </ul>
+    </nav>
+    <nav class="footer__nav" aria-label="Serwis">
+      <h2 class="footer__h">Serwis</h2>
+      <ul>
+        <li><a href="../uslugi/">Usługi</a></li>
+        <li><a href="../uslugi/konsultacje/">Konsultacje</a></li>
+        <li><a href="../uslugi/odnowa-biologiczna/">Odnowa biologiczna</a></li>
+        <li><a href="../projekty-ue/">Projekty UE</a></li>
+        <li><a href="../faq/">FAQ</a></li>
+        <li><a href="https://rehabeauty.pl" rel="noopener">Reha Beauty ↗</a></li>
+      </ul>
+    </nav>
+    <nav class="footer__nav" aria-label="Kontakt i informacje">
+      <h2 class="footer__h">Kontakt i informacje</h2>
+      <ul>
+        <li><a href="../index.html#placowki">Wybierz placówkę</a></li>
+        <li><a href="../index.html#placowki">Umów wizytę</a></li>
+        <li><a href="../ankieta-satysfakcji/">Ankieta satysfakcji pacjenta</a></li>
+        <li><a href="../index.html#newsletter">Newsletter</a></li>
+        <li><a href="../index.html#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- C. pasek prawny -->
+  <div class="wrap footer__bottom">
+    <p class="footer__copy">© 2026 Reha Medica. Wszelkie prawa zastrzeżone.</p>
+    <p class="footer__by">Realizacja: <a href="https://codingmaks.com" target="_blank" rel="noopener">codingmaks.com</a></p>
+    <nav class="footer__legal" aria-label="Informacje prawne">
+      <a href="../polityka-prywatnosci/">Polityka prywatności</a>
+      <a href="../assets/documents/regulamin-organizacyjny.pdf" target="_blank" rel="noopener">Regulamin organizacyjny <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-external"></use></svg><span class="visually-hidden"> (PDF, otwiera się w nowej karcie)</span></a>
+      <a href="../standardy-ochrony-dzieci/">Standardy ochrony dzieci</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- zagięty róg strony: ankieta satysfakcji (desktop) -->
+<a class="dogear" href="../ankieta-satysfakcji/" aria-label="Wypełnij ankietę satysfakcji pacjenta">
+  <span class="dogear__fold" aria-hidden="true"></span>
+  <span class="dogear__label">Ankieta<br>satysfakcji</span>
+</a>
+
+<!-- pływający przycisk zadzwoń (mobile) -->
+<!-- Sama ikona — słuchawka czytelnie niesie „zadzwoń", napis był zbędny.
+     Nazwa dla czytników ekranu zostaje w aria-label. -->
+<a class="callfab" href="tel:+48943721451" aria-label="Zadzwoń do Reha Medica: 94 372 14 51">
+  <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-phone"></use></svg>
+</a>
+
+<!-- boczna zakładka: siostrzana marka Reha Beauty -->
+<a class="beautytab" href="https://rehabeauty.pl" rel="noopener" aria-label="Reha Beauty — serwis odnowy biologicznej (otwiera się w nowej karcie)">
+  <span class="beautytab__text">Reha Beauty</span>
+  <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-external"></use></svg>
+</a>
+
+
+<!-- PANEL WYBORU PLACÓWKI
+     wszystkie placówki naraz i jednym tapnięciem dostaje numer — bez cofania się.
+     Żadna placówka NIE jest preselektowana (reguła CLAUDE.md).
+     Etykiety pochodzą z serwisu („Wybierz placówkę", „Umów wizytę"), nic nie wymyślono. -->
+<!-- data-bk-places: placówki świadczące TĘ usługę wg macierzy etapu 3 (potwierdzona 2026-07-14).
+     Poradnia rehabilitacyjna = tylko Szczecinek. Nie dopisywać placówek bez wpisu w macierzy. -->
+<!-- Menu dostępności — self-hosted, zero stron trzecich. Logika: js/main.js. -->
+<button class="a11y-fab" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="a11y-panel" aria-label="Menu dostępności">
+  <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+    <circle cx="12" cy="3.6" r="2.15"/>
+    <path d="M20.4 6.35c-2.6.56-5.4.95-8.4.95s-5.8-.39-8.4-.95a1.05 1.05 0 0 0-.45 2.05c1.9.42 3.9.72 5.85.87V13l-1.6 6.9a1.15 1.15 0 0 0 2.24.52L11 15h2l1.36 5.42a1.15 1.15 0 0 0 2.24-.52L15 13V9.27c1.95-.15 3.95-.45 5.85-.87a1.05 1.05 0 0 0-.45-2.05z"/>
+  </svg>
+</button>
+<div class="a11y-panel" id="a11y-panel" role="dialog" aria-modal="false" aria-label="Menu dostępności">
+  <div class="a11y-panel__head">
+    <span class="a11y-panel__title">Dostępność</span>
+    <button class="a11y-panel__close" type="button" data-a11y-close aria-label="Zamknij menu dostępności">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="a11y-row">
+    <span class="a11y-row__label" id="a11y-l-scale">Rozmiar tekstu</span>
+    <div class="a11y-step" role="group" aria-labelledby="a11y-l-scale">
+      <button class="a11y-step__btn" type="button" data-dec="scale" aria-label="Zmniejsz: rozmiar tekstu">A−</button>
+      <span class="a11y-step__val" data-val="scale" aria-live="polite">100%</span>
+      <button class="a11y-step__btn" type="button" data-inc="scale" aria-label="Zwiększ: rozmiar tekstu">A+</button>
+    </div>
+  </div>
+  <div class="a11y-row">
+    <span class="a11y-row__label" id="a11y-l-space">Odstępy liter</span>
+    <div class="a11y-step" role="group" aria-labelledby="a11y-l-space">
+      <button class="a11y-step__btn" type="button" data-dec="space" aria-label="Zmniejsz: odstępy liter">−</button>
+      <span class="a11y-step__val" data-val="space" aria-live="polite">wył.</span>
+      <button class="a11y-step__btn" type="button" data-inc="space" aria-label="Zwiększ: odstępy liter">+</button>
+    </div>
+  </div>
+  <div class="a11y-row">
+    <span class="a11y-row__label" id="a11y-l-lineh">Interlinia</span>
+    <div class="a11y-step" role="group" aria-labelledby="a11y-l-lineh">
+      <button class="a11y-step__btn" type="button" data-dec="lineh" aria-label="Zmniejsz: interlinia">−</button>
+      <span class="a11y-step__val" data-val="lineh" aria-live="polite">wył.</span>
+      <button class="a11y-step__btn" type="button" data-inc="lineh" aria-label="Zwiększ: interlinia">+</button>
+    </div>
+  </div>
+  <div class="a11y-row">
+    <button class="a11y-toggle" type="button" data-a11y-contrast aria-pressed="false"><span>Wysoki kontrast</span><span class="a11y-toggle__sw" aria-hidden="true"></span></button>
+  </div>
+  <div class="a11y-row">
+    <button class="a11y-toggle" type="button" data-a11y-invert aria-pressed="false"><span>Odwróć kolory</span><span class="a11y-toggle__sw" aria-hidden="true"></span></button>
+  </div>
+  <div class="a11y-row">
+    <button class="a11y-toggle" type="button" data-a11y-gray aria-pressed="false"><span>Skala szarości</span><span class="a11y-toggle__sw" aria-hidden="true"></span></button>
+  </div>
+  <div class="a11y-row">
+    <button class="a11y-toggle" type="button" data-a11y-underline aria-pressed="false"><span>Podkreśl odnośniki</span><span class="a11y-toggle__sw" aria-hidden="true"></span></button>
+  </div>
+  <div class="a11y-row">
+    <button class="a11y-toggle" type="button" data-a11y-font aria-pressed="false"><span>Czytelna czcionka</span><span class="a11y-toggle__sw" aria-hidden="true"></span></button>
+  </div>
+  <div class="a11y-row">
+    <button class="a11y-toggle" type="button" data-a11y-cursor aria-pressed="false"><span>Powiększ kursor</span><span class="a11y-toggle__sw" aria-hidden="true"></span></button>
+  </div>
+  <div class="a11y-row">
+    <button class="a11y-toggle" type="button" data-a11y-hideimg aria-pressed="false"><span>Ukryj obrazy</span><span class="a11y-toggle__sw" aria-hidden="true"></span></button>
+  </div>
+  <div class="a11y-row">
+    <button class="a11y-toggle" type="button" data-a11y-guide aria-pressed="false"><span>Przewodnik czytania</span><span class="a11y-toggle__sw" aria-hidden="true"></span></button>
+  </div>
+  <div class="a11y-row">
+    <button class="a11y-toggle" type="button" data-a11y-reduce aria-pressed="false"><span>Ogranicz ruch</span><span class="a11y-toggle__sw" aria-hidden="true"></span></button>
+  </div>
+  <button class="a11y-reset" type="button" data-a11y-reset>Przywróć ustawienia domyślne</button>
+</div>
+<script src="../js/main.js?v=87"></script>
+</body>
+</html>
