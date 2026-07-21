@@ -858,7 +858,14 @@ main{--t-tekst:1.06rem;--t-meta:.92rem;--t-lead:1.16rem}
 .sbody__p{color:var(--color-text-2);line-height:1.66;margin-bottom:14px}
 .sbody__fig{margin:0}
 .sbody__fig img{width:100%;height:auto;border-radius:var(--radius-img);display:block}
-@media(max-width:60em){ .sbody__grid{grid-template-columns:1fr} .sbody__fig{order:-1} }
+/* mobile: grid MUSI zejść do 1 kolumny. Selektor z :has, bo inaczej reguła
+   :has(.sbody__fig) (wyższa specyficzność) trzyma 2 kolumny i tekst ląduje
+   w wąskim pasku po prawej. */
+@media(max-width:60em){
+  .sbody__grid,
+  .sbody__grid:has(.sbody__fig){display:block}
+  .sbody__fig{margin-top:clamp(18px,3vw,26px)}
+}
 
 /* listy wyliczeniowe w treści usługi (wykazy ze źródła: świadczenia, prądy, zabiegi) */
 .sbody__intro{color:var(--color-text-2);line-height:1.62;margin:2px 0 6px;font-weight:var(--fw-semibold)}
