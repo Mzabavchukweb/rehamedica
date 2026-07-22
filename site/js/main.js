@@ -136,15 +136,9 @@ var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches || (f
   var hero = document.getElementById('hero');
   var slides = Array.prototype.slice.call(document.querySelectorAll('.hero__slide'));
   var dots = Array.prototype.slice.call(document.querySelectorAll('.hero__dot'));
-  var sub = document.querySelector('[data-hero-sub]');
   if (slides.length < 2) return;
-  // H1 jest stały (semantyka strony). Ze slajdem zmienia się wyłącznie podtytuł —
-  // niesie temat zdjęcia, więc treść slajdów nie ginie.
-  var SUBS = [
-    'Pełen zakres rehabilitacji, fizjoterapii i opieki medycznej w pięciu placówkach na Pomorzu Zachodnim.',
-    'Odnowa biologiczna — sauna, masaże, drenaż limfatyczny i hydroterapia wspierające regenerację.',
-    'Współpraca z Medicover — rehabilitacja, masaże i odnowa biologiczna także w ramach pakietów.'
-  ];
+  // H1 i podtytuł są STAŁE — jeden krótki, czytelny komunikat (zgodnie z referencją).
+  // Ze slajdem zmienia się wyłącznie zdjęcie; tekst zostaje niezmienny.
   var i = 0, timer = null, userPaused = false, DELAY = 6000;
   if (dots[0]) dots[0].setAttribute('aria-current', 'true');
 
@@ -158,13 +152,6 @@ var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches || (f
     if (dots[i]) dots[i].setAttribute('aria-current', 'true');
     // leniwe: dociągnij sąsiedni slajd dopiero, gdy jest potrzebny
     load(i); load((i + 1) % slides.length);
-    if (sub && SUBS[i]) {
-      sub.classList.add('is-swapping');
-      setTimeout(function () {
-        sub.textContent = SUBS[i];
-        sub.classList.remove('is-swapping');
-      }, 460);
-    }
   }
   function load(n) {
     var s = slides[n];
@@ -263,12 +250,14 @@ var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches || (f
     }
     var see = scope.querySelector('[data-see]');
     if (see) {
-      // strony placówek już istnieją — kierujemy na właściwą zamiast zostawiać pusty odnośnik
       var slugMiasta = d.city.toLowerCase()
         .replace(/ą/g,'a').replace(/ć/g,'c').replace(/ę/g,'e').replace(/ł/g,'l')
         .replace(/ń/g,'n').replace(/ó/g,'o').replace(/ś/g,'s').replace(/[źż]/g,'z');
       // prefiks ścieżki: pusty na stronie głównej, „../../" na stronie placówki (data-link-prefix)
       var linkPrefix = card.getAttribute('data-link-prefix') || '';
+      // Każda placówka ma widoczny link „Przejdź do placówki".
+      // Szczecinek = centrala: /placowki/szczecinek/ jest przekierowaniem 301 na stronę główną.
+      see.style.display = '';
       see.setAttribute('href', linkPrefix + 'placowki/' + slugMiasta + '/');
       see.setAttribute('aria-label', 'Przejdź do placówki ' + d.city);
     }

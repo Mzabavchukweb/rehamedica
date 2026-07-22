@@ -25,8 +25,8 @@
 <link rel="icon" href="../../../assets/favicon.png">
 <link rel="preload" href="../../../assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../../assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../../css/style.css?v=82">
-<link rel="stylesheet" href="../../../css/usluga.css?v=65">
+<link rel="stylesheet" href="../../../css/style.css?v=104">
+<link rel="stylesheet" href="../../../css/usluga.css?v=85">
 <script>document.documentElement.className+=' js';</script>
 <!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
 <script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
@@ -297,23 +297,48 @@
 
 <article class="usluga">
 
-  <section class="sbody">
-    <div class="wrap">
-      <div class="sbody__grid">
-        <div class="sbody__text">
-          <p class="sbody__p">Socjoterapia skierowana jest do wszystkich osób, które doświadczają różnego rodzaju trudności w kontaktach społecznych. Mogą to być problemy spowodowane zarówno krótko- jak i długotrwale doświadczanymi negatywnymi sytuacjami, problemami natury osobistej lub psychicznej. Można tu wskazać:</p>
-          <p class="sbody__p">Socjoterapeuci mogą również przeprowadzać zajęcia edukacyjne z rodzicami lub opiekunami, wspomagając tym samym proces leczenia.</p>
-          <p class="sbody__p">W trakcie konsultacji socjoterapeuta rozmawia z rodzicami, zbiera wywiad, czyli wszystkie niezbędne informacje dotyczące funkcjonowania dziecka oraz rozmawia z dzieckiem. Na tej podstawie kieruje do odpowiedniej grupy oraz planuje oddziaływania terapeutyczne.</p>
-          <p class="sbody__p">Socjoterapia ma na celu ukształtowanie prawidłowych wzorców zachowań społecznych. Dzięki nim osoba chora poznaje zasady funkcjonowania w społeczeństwie, uczy się odczytywać własne emocje i odpowiednio je wyrażać, buduje pewność siebie, poczucie własnej wartości, dzięki przynależności do grupy, która rozumie jej potrzeby i z którą może dzielić się swoimi spostrzeżeniami.</p>
-          <p class="sbody__p">Pozwala odreagować emocjonalnie negatywne sytuacje, które dotykają ją poza grupą, równocześnie ucząc się zasad jej funkcjonowania, co wspomaga proces integracji społecznej. Można więc wskazać trzy główne cele socjoterapii:</p>
-          <ul class="sbody__list">
-          <li>terapeutyczny – rozmowa, odreagowanie, integracja,</li>
-          <li>edukacyjny – zasady funkcjonowania w grupie, rozpoznawanie emocji,</li>
-          <li>rozwojowy – kształtowanie nowych umiejętności.</li>
-          </ul>
+  <!-- Opis usługi w rytmie edytorskim (wariant .lintro--rytm): otwarcie → wyróżnik →
+       panel celów. Zdania pochodzą z akapitów źródłowych bez zmian. -->
+  <section class="lsec lsec--ivory">
+    <div class="wrap lintro lintro--rytm">
+
+      <!-- TAKT 1 — otwarcie: do kogo skierowana jest socjoterapia. Kadr obok leadu. -->
+      <div class="lintro__open">
+        <div class="lintro__head">
+          <p class="lkick">Dla kogo</p>
+          <p class="lintro__lead">Socjoterapia skierowana jest do wszystkich osób, które doświadczają różnego rodzaju trudności w kontaktach społecznych.</p>
         </div>
-        <figure class="sbody__fig"><img width="1200" height="801" src="../../../assets/img/uslugi/konsultacja-socjologiczna.webp" alt="Konsultacja socjologiczna w Reha Medica Szczecinek" loading="lazy" decoding="async"></figure>
+        <figure class="lintro__fig">
+          <img width="1200" height="801" src="../../../assets/img/uslugi/konsultacja-socjologiczna.webp" alt="Konsultacja socjologiczna w Reha Medica Szczecinek" loading="lazy" decoding="async">
+        </figure>
+        <div class="lintro__body">
+          <p class="lintro__p">Mogą to być problemy spowodowane zarówno krótko- jak i długotrwale doświadczanymi negatywnymi sytuacjami, problemami natury osobistej lub psychicznej. Można tu wskazać:</p>
+          <p class="lintro__p">Socjoterapeuci mogą również przeprowadzać zajęcia edukacyjne z rodzicami lub opiekunami, wspomagając tym samym proces leczenia.</p>
+          <p class="lintro__p">W trakcie konsultacji socjoterapeuta rozmawia z rodzicami, zbiera wywiad, czyli wszystkie niezbędne informacje dotyczące funkcjonowania dziecka oraz rozmawia z dzieckiem. Na tej podstawie kieruje do odpowiedniej grupy oraz planuje oddziaływania terapeutyczne.</p>
+        </div>
       </div>
+
+      <!-- TAKT 2 — wyróżnik: pierwsze zdanie akapitu o celu socjoterapii podniesione do rangi
+           cytatu, reszta akapitu zostaje obok jako rozwinięcie. Tekst niezmieniony. -->
+      <div class="lpull">
+        <p class="lpull__q">Socjoterapia ma na celu ukształtowanie prawidłowych wzorców zachowań społecznych.</p>
+        <div>
+          <p class="lpull__p">Dzięki nim osoba chora poznaje zasady funkcjonowania w społeczeństwie, uczy się odczytywać własne emocje i odpowiednio je wyrażać, buduje pewność siebie, poczucie własnej wartości, dzięki przynależności do grupy, która rozumie jej potrzeby i z którą może dzielić się swoimi spostrzeżeniami.</p>
+          <p class="lpull__p">Pozwala odreagować emocjonalnie negatywne sytuacje, które dotykają ją poza grupą, równocześnie ucząc się zasad jej funkcjonowania, co wspomaga proces integracji społecznej.</p>
+        </div>
+      </div>
+
+      <!-- TAKT 3 — panel składowych: trzy cele wyliczone w akapicie źródłowym, rozpisane na
+           siatkę. Zapis pozycji bez zmian, żadnej nie dodano ani nie ujęto. -->
+      <div class="lparts">
+        <h2 class="lparts__h">Można więc wskazać trzy główne cele socjoterapii</h2>
+        <ul class="lparts__grid">
+          <li>Terapeutyczny – rozmowa, odreagowanie, integracja</li>
+          <li>Edukacyjny – zasady funkcjonowania w grupie, rozpoznawanie emocji</li>
+          <li>Rozwojowy – kształtowanie nowych umiejętności</li>
+        </ul>
+      </div>
+
     </div>
   </section>
 
@@ -488,6 +513,6 @@
   </div>
   <button class="a11y-reset" type="button" data-a11y-reset>Przywróć ustawienia domyślne</button>
 </div>
-<script src="../../../js/main.js?v=87"></script>
+<script src="../../../js/main.js?v=91"></script>
 </body>
 </html>

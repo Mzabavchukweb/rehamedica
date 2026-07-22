@@ -27,7 +27,7 @@
 <link rel="icon" href="assets/favicon.png">
 <link rel="preload" href="assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=82">
+<link rel="stylesheet" href="css/style.css?v=104">
 <script>document.documentElement.className+=' js';</script>
 <!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
 <script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
@@ -275,7 +275,7 @@
 }
 </script>
 </head>
-<body>
+<body class="is-home">
 
 <a class="skip-link" href="#main">Przejdź do treści</a>
 
@@ -414,12 +414,13 @@
   <div class="wrap">
     <div class="hero__shell">
       <div class="hero__stage" aria-hidden="true">
-        <!-- 3 slajdy, nie 4: w archiwum nie ma ani jednej dobrej SCENY terapii manualnej
-             (każdy kandydat to makro nagiej skóry albo baner z uciętymi głowami).
-             Lepiej pokazać trzy mocne kadry niż czwarty słaby. -->
-        <div class="hero__slide is-active" data-bg="assets/img/hero-1-fizjoterapia.webp"></div>
-        <div class="hero__slide" data-bg="assets/img/hero-2-odnowa.webp"></div>
-        <div class="hero__slide" data-bg="assets/img/hero-3-pakiety.webp"></div>
+        <!-- Autentyczne grafiki ze starej strony (źródło), w TEJ SAMEJ kolejności co slider:
+             1) rehabilitacja (homebg-1), 2) terapia manualna, 3) odnowa biologiczna (hydro-to).
+             Pominięte slajdy źródła: psychologia (poza scope), Medicover i MINDSpots (stock/UE – do potwierdzenia). -->
+        <div class="hero__slide is-active" data-bg="assets/img/hero-1-rehabilitacja.webp"></div>
+        <div class="hero__slide" data-bg="assets/img/hero-2-terapia-manualna.webp"></div>
+        <div class="hero__slide" data-bg="assets/img/hero-3-odnowa.webp"></div>
+        <div class="hero__slide" data-bg="assets/img/hero-4-wspolpraca.webp"></div>
       </div>
       <div class="hero__tint" aria-hidden="true"></div>
 
@@ -469,9 +470,10 @@
           <a class="btn btn--outline hero__cta" href="#uslugi">Znajdź usługę</a>
         </div>
         <div class="hero__dots" aria-label="Zmień zdjęcie w nagłówku">
-          <button class="hero__dot" type="button" data-slide="0" aria-label="Zdjęcie 1: konsultacja fizjoterapeutyczna"></button>
-          <button class="hero__dot" type="button" data-slide="1" aria-label="Zdjęcie 2: odnowa biologiczna"></button>
-          <button class="hero__dot" type="button" data-slide="2" aria-label="Zdjęcie 3: zabieg w ramach pakietu"></button>
+          <button class="hero__dot" type="button" data-slide="0" aria-label="Zdjęcie 1: rehabilitacja"></button>
+          <button class="hero__dot" type="button" data-slide="1" aria-label="Zdjęcie 2: terapia manualna"></button>
+          <button class="hero__dot" type="button" data-slide="2" aria-label="Zdjęcie 3: odnowa biologiczna"></button>
+          <button class="hero__dot" type="button" data-slide="3" aria-label="Zdjęcie 4: fizjoterapia"></button>
         </div>
       </div>
       </div>
@@ -488,7 +490,7 @@
       <p class="needs__lead">Powiedz, co Ci dolega. Pokierujemy Cię do właściwej opieki w jednej z pięciu placówek Reha Medica.</p>
       <a class="btn btn--cream needs__cta" href="#placowki">Umów wizytę <span aria-hidden="true">→</span></a>
     </div>
-    <ul class="needs__list" data-animate data-animate-delay="120">
+    <ul class="needs__list cornerframe" data-animate data-animate-delay="120">
       <li><a class="needs__item" href="uslugi/rehabilitacja/rehabilitacja-bolu/">
         <span class="needs__txt">
           <span class="needs__name">Ból kręgosłupa i stawów</span>
@@ -610,7 +612,7 @@
 </section>
 
 <!-- O REHA MEDICA -->
-<section class="section o-nas" id="o-nas" aria-labelledby="about-h">
+<section class="section section--beige o-nas" id="o-nas" aria-labelledby="about-h">
   <div class="wrap about__grid">
     <figure class="about__figure" data-animate="scale-reveal">
       <img class="about__main" src="assets/img/budynek-rehamedica.webp" alt="Budynek Reha Medica z oznakowaniem placówki" width="1400" height="933" loading="lazy" decoding="async">
@@ -892,6 +894,6 @@
   </div>
   <button class="a11y-reset" type="button" data-a11y-reset>Przywróć ustawienia domyślne</button>
 </div>
-<script src="js/main.js?v=87"></script>
+<script src="js/main.js?v=91"></script>
 </body>
 </html>

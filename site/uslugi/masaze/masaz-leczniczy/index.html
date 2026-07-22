@@ -25,8 +25,8 @@
 <link rel="icon" href="../../../assets/favicon.png">
 <link rel="preload" href="../../../assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../../assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../../css/style.css?v=82">
-<link rel="stylesheet" href="../../../css/usluga.css?v=65">
+<link rel="stylesheet" href="../../../css/style.css?v=104">
+<link rel="stylesheet" href="../../../css/usluga.css?v=85">
 <script>document.documentElement.className+=' js';</script>
 <!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
 <script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
@@ -297,14 +297,30 @@
 
 <article class="usluga">
 
-  <section class="sbody">
-    <div class="wrap">
-      <div class="sbody__grid">
-        <div class="sbody__text">
-          <p class="sbody__p">Masaż leczniczy polega na ręcznej mechanicznej stymulacji tkanek organizmu bezpośrednio przez skórę pacjenta. Masaż leczniczy jest wykonywany na obszarze ciała zajętego chorobą lub niedomaganiem oraz na tkankach sąsiadujących. Podczas zabiegu wykorzystywane są między innymi techniki jak rozcieranie, ugniatanie, głaskanie, uciski, wyciskanie, oklepywanie i wałkowanie, które mają wyeliminować przyczynę bólu i usprawnić ruchomość stawów i kręgosłupa.</p>
-          <p class="sbody__p">Masaż leczniczy polecany jest osobom, które odczuwają ból i dyskomfort w obrębie kręgosłupa, głowy, barków, ramion czy nóg. Mogą one przynieść naprawdę bardzo dobre efekty w terapii osób, które są długo unieruchomione. Poleca się je cierpiącym na bóle reumatyczne, osobom po złamaniach czy udarach mózgu. Sprawdzi się także w przypadku osób, które prowadzą siedzący tryb życia, są narażone na nadmierny stres lub zmagają się z depresją.</p>
+  <section class="lsec lsec--ivory">
+    <div class="wrap lintro lintro--rytm">
+
+      <!-- TAKT 1 — otwarcie: pierwszy akapit źródłowy. Brak kadru: w źródle nie ma zdjęcia. -->
+      <div class="lintro__open">
+        <div class="lintro__head">
+          <p class="lkick">Na czym polega</p>
+          <p class="lintro__lead">Masaż leczniczy polega na ręcznej mechanicznej stymulacji tkanek organizmu bezpośrednio przez skórę pacjenta.</p>
+        </div>
+        <div class="lintro__body">
+          <p class="lintro__p">Masaż leczniczy jest wykonywany na obszarze ciała zajętego chorobą lub niedomaganiem oraz na tkankach sąsiadujących. Podczas zabiegu wykorzystywane są między innymi techniki jak rozcieranie, ugniatanie, głaskanie, uciski, wyciskanie, oklepywanie i wałkowanie, które mają wyeliminować przyczynę bólu i usprawnić ruchomość stawów i kręgosłupa.</p>
         </div>
       </div>
+
+      <!-- TAKT 2 — drugi akapit źródłowy: pierwsze zdanie podniesione do rangi cytatu,
+           pozostałe zdania tego samego akapitu zostają obok. Tekst niezmieniony. -->
+      <div class="lpull">
+        <p class="lpull__q">Masaż leczniczy polecany jest osobom, które odczuwają ból i dyskomfort w obrębie kręgosłupa, głowy, barków, ramion czy nóg.</p>
+        <div>
+          <p class="lpull__p">Mogą one przynieść naprawdę bardzo dobre efekty w terapii osób, które są długo unieruchomione. Poleca się je cierpiącym na bóle reumatyczne, osobom po złamaniach czy udarach mózgu.</p>
+          <p class="lpull__p">Sprawdzi się także w przypadku osób, które prowadzą siedzący tryb życia, są narażone na nadmierny stres lub zmagają się z depresją.</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -479,6 +495,6 @@
   </div>
   <button class="a11y-reset" type="button" data-a11y-reset>Przywróć ustawienia domyślne</button>
 </div>
-<script src="../../../js/main.js?v=87"></script>
+<script src="../../../js/main.js?v=91"></script>
 </body>
 </html>

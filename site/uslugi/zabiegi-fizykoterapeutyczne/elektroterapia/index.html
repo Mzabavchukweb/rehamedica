@@ -25,8 +25,8 @@
 <link rel="icon" href="../../../assets/favicon.png">
 <link rel="preload" href="../../../assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../../assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../../css/style.css?v=82">
-<link rel="stylesheet" href="../../../css/usluga.css?v=65">
+<link rel="stylesheet" href="../../../css/style.css?v=104">
+<link rel="stylesheet" href="../../../css/usluga.css?v=85">
 <script>document.documentElement.className+=' js';</script>
 <!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
 <script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
@@ -297,28 +297,58 @@
 
 <article class="usluga">
 
-  <section class="sbody">
-    <div class="wrap">
-      <div class="sbody__grid">
-        <div class="sbody__text">
-          <p class="sbody__p">Elektroterapia to stymulacja i leczenie schorzeń za pomocą prądów leczniczych stałych i zmiennych o różnej częstotliwości. Podstawowym celem terapii jest lokalne zmniejszenie bólu i stanu zapalnego oraz poprawa ukrwienia stymulowanej tkanki. Metoda jest również stosowana w terapii leczenia obrzęków oraz wysięków śródstawowych.</p>
-          <p class="sbody__p">Zabiegi elektroterapii przynosząc ulgę w dolegliwościach bólowych oraz stanach zapalnych. Działanie prądu sprawia, że substancje lecznicze lepiej się wchłaniają, dając dobre efekty terapii. Zabiegi stanowią doskonałe uzupełnienie terapii opartych na pracy z innymi urządzeniami.</p>
-          <p class="sbody__p">Prądy stosowane w terapii:</p>
-          <p class="sbody__p">Zabieg elektroterapii polega na założeniu w odpowiednich miejscach na ciele pacjenta, specjalnych elektrod, przez które przepływa prąd. Pod elektrodami początkowo następuje zwężenie naczyń krwionośnych, a następnie ich gwałtowne rozszerzenie. Najpierw prąd dociera do naczyń płytko w skórze, a następnie obejmuje tkanki położone głębiej. W celu lepszego przewodzenia prądu, elektrody umieszcza się na specjalnie nasączonych podkładach. Podczas zabiegu pacjent powinien siedzieć bądź leżeć nieruchomo, aby nie doprowadzić do przesunięcia się elektrod.</p>
-          <p class="sbody__p">Zabiegi tego rodzaju działają przede wszystkim przeciwbólowo. Dochodzi przy tym również do zmniejszenia napięcia mięśni, przyśpieszenia regeneracji tkanek, a także lepszego wchłaniania się obrzęków.</p>
-          <p class="sbody__intro">Prądy stosowane w terapii:</p>
-          <ul class="sbody__list">
-          <li>prądy galwaniczne (rodzaj prądu stałego, wpływa na rozszerzenie naczyń krwionośnych, poprawia odżywienie tkanek, przyspiesza regenerację, zwiększa wchłanianie się krwiaków i obrzęków, działa przeciwbólowo),</li>
-          <li>prądy diadynamiczne, czyli prądy Bernarda, diadynamik (obniżają napięcie mięśniowe, przyspieszają wchłanianie krwiaków w stanach pourazowych, zwiększają ukrwienie mięśni),</li>
-          <li>prądy TENS, czyli przezskórnej elektrycznej stymulacji nerwów (leczeniu bólu różnego pochodzenia, szczególnie po przebytych uszkodzeniach nerwów obwodowych lub po amputacjach),</li>
-          <li>prądy interferencyjne (działanie przeciwbólowe wykazuje w szczególności prąd o częstotliwości 90-100 Hz.),</li>
-          <li>jonoforeza, dzięki której lek (np. przeciwbólowy) skuteczniej transportowany jest do uszkodzonych komórek,</li>
-          <li>elektrostymulacja EMS (stały prąd impulsowy, wywołuje skurcze mięśni, aby je pobudzić, zmniejszyć napięcie, a także poprawić ich ukrwienie).</li>
-          </ul>
+  <!-- Opis usługi w rytmie edytorskim (wariant .lintro--rytm): otwarcie → wyróżnik →
+       panel składowych → domknięcie. Zdania pochodzą z akapitów źródłowych bez zmian.
+       Nagłówek taktu 3 przejmuje zdanie „Prądy stosowane w terapii:", które w źródle
+       stało dwa razy (raz jako akapit, raz jako zapowiedź listy). -->
+  <section class="lsec lsec--ivory">
+    <div class="wrap lintro lintro--rytm">
 
+      <!-- TAKT 1 — otwarcie: czym jest zabieg i jak przebiega. -->
+      <div class="lintro__open">
+        <div class="lintro__head">
+          <p class="lkick">Na czym polega</p>
+          <p class="lintro__lead">Elektroterapia to stymulacja i leczenie schorzeń za pomocą prądów leczniczych stałych i zmiennych o różnej częstotliwości.</p>
         </div>
-        <figure class="sbody__fig"><img width="1200" height="1127" src="../../../assets/img/uslugi/elektroterapia.webp" alt="Elektroterapia w Reha Medica Szczecinek" loading="lazy" decoding="async"></figure>
+        <figure class="lintro__fig">
+          <img width="1200" height="1127" src="../../../assets/img/uslugi/elektroterapia.webp" alt="Elektroterapia w Reha Medica Szczecinek" loading="lazy" decoding="async">
+        </figure>
+        <div class="lintro__body">
+          <p class="lintro__p">Podstawowym celem terapii jest lokalne zmniejszenie bólu i stanu zapalnego oraz poprawa ukrwienia stymulowanej tkanki. Metoda jest również stosowana w terapii leczenia obrzęków oraz wysięków śródstawowych.</p>
+          <p class="lintro__p">Zabieg elektroterapii polega na założeniu w odpowiednich miejscach na ciele pacjenta, specjalnych elektrod, przez które przepływa prąd. Pod elektrodami początkowo następuje zwężenie naczyń krwionośnych, a następnie ich gwałtowne rozszerzenie. Najpierw prąd dociera do naczyń płytko w skórze, a następnie obejmuje tkanki położone głębiej. W celu lepszego przewodzenia prądu, elektrody umieszcza się na specjalnie nasączonych podkładach. Podczas zabiegu pacjent powinien siedzieć bądź leżeć nieruchomo, aby nie doprowadzić do przesunięcia się elektrod.</p>
+        </div>
       </div>
+
+      <!-- TAKT 2 — wyróżnik: pierwsze zdanie akapitu o efektach, reszta akapitu obok. -->
+      <div class="lpull">
+        <p class="lpull__q">Zabiegi elektroterapii przynosząc ulgę w dolegliwościach bólowych oraz stanach zapalnych.</p>
+        <div>
+          <p class="lpull__p">Działanie prądu sprawia, że substancje lecznicze lepiej się wchłaniają, dając dobre efekty terapii.</p>
+          <p class="lpull__p">Zabiegi stanowią doskonałe uzupełnienie terapii opartych na pracy z innymi urządzeniami.</p>
+        </div>
+      </div>
+
+      <!-- TAKT 3 — lista prądów ze źródła, pozycja w pozycję. -->
+      <div class="lparts">
+        <h2 class="lparts__h">Prądy stosowane w terapii</h2>
+        <ul class="lparts__grid">
+          <li>Prądy galwaniczne (rodzaj prądu stałego, wpływa na rozszerzenie naczyń krwionośnych, poprawia odżywienie tkanek, przyspiesza regenerację, zwiększa wchłanianie się krwiaków i obrzęków, działa przeciwbólowo)</li>
+          <li>Prądy diadynamiczne, czyli prądy Bernarda, diadynamik (obniżają napięcie mięśniowe, przyspieszają wchłanianie krwiaków w stanach pourazowych, zwiększają ukrwienie mięśni)</li>
+          <li>Prądy TENS, czyli przezskórnej elektrycznej stymulacji nerwów (leczeniu bólu różnego pochodzenia, szczególnie po przebytych uszkodzeniach nerwów obwodowych lub po amputacjach)</li>
+          <li>Prądy interferencyjne (działanie przeciwbólowe wykazuje w szczególności prąd o częstotliwości 90-100 Hz.)</li>
+          <li>Jonoforeza, dzięki której lek (np. przeciwbólowy) skuteczniej transportowany jest do uszkodzonych komórek</li>
+          <li>Elektrostymulacja EMS (stały prąd impulsowy, wywołuje skurcze mięśni, aby je pobudzić, zmniejszyć napięcie, a także poprawić ich ukrwienie)</li>
+        </ul>
+      </div>
+
+      <!-- TAKT 4 — domknięcie w wąskiej mierze. -->
+      <div class="lcoda">
+        <div class="lcoda__inner">
+          <p class="lcoda__lead">Zabiegi tego rodzaju działają przede wszystkim przeciwbólowo.</p>
+          <p class="lcoda__p">Dochodzi przy tym również do zmniejszenia napięcia mięśni, przyśpieszenia regeneracji tkanek, a także lepszego wchłaniania się obrzęków.</p>
+        </div>
+      </div>
+
     </div>
   </section>
   <section class="sufolds">
@@ -518,6 +548,6 @@
   </div>
   <button class="a11y-reset" type="button" data-a11y-reset>Przywróć ustawienia domyślne</button>
 </div>
-<script src="../../../js/main.js?v=87"></script>
+<script src="../../../js/main.js?v=91"></script>
 </body>
 </html>

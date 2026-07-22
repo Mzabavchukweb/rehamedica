@@ -25,8 +25,8 @@
 <link rel="icon" href="../../../assets/favicon.png">
 <link rel="preload" href="../../../assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../../assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../../css/style.css?v=82">
-<link rel="stylesheet" href="../../../css/usluga.css?v=65">
+<link rel="stylesheet" href="../../../css/style.css?v=104">
+<link rel="stylesheet" href="../../../css/usluga.css?v=85">
 <script>document.documentElement.className+=' js';</script>
 <!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
 <script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
@@ -275,78 +275,90 @@
 </section>
 
 <!-- NA TACY: gdzie i jak umówić (+ wymagania) — od razu widoczne -->
-<section class="splate">
-  <div class="wrap splate__inner">
-    <div class="splate__head">
-      <span class="splate__label">Dostępne w placówce</span>
-      <span class="splate__nfz">Usługi komercyjne oraz w ramach <img src="../../../assets/nfz.svg" alt="Narodowy Fundusz Zdrowia" height="20"></span>
-    </div>
-    <div class="splate__grid">
-      <div class="splate__cards">
-        <article class="pcard">
-          <p class="pcard__city">Szczecinek</p>
-          <p class="pcard__row"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-pin"></use></svg><span>ul. Kościuszki 57, 78-400 Szczecinek</span></p>
-          <a class="pcard__row" href="tel:+48943721451"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-phone"></use></svg><span>94 372 14 51</span></a>
-          <a class="pcard__row" href="mailto:szczecinek@rehamedica.info.pl"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-mail"></use></svg><span>szczecinek@rehamedica.info.pl</span></a>
-          <div class="pcard__cta"><a class="btn btn--brand" href="../../../index.html#placowki" data-booking>Umów wizytę <span class="btn__arrow" aria-hidden="true">→</span></a></div>
-        </article>
+<div class="lnfz">Usługi komercyjne oraz w ramach <img src="../../../assets/nfz.svg" alt="Narodowy Fundusz Zdrowia" height="20"></div>
+
+<!-- Treść usługi — szeroki układ edytorski -->
+<section class="lsec lsec--ivory">
+  <div class="wrap lintro lintro--rytm">
+
+    <!-- TAKT 1 — otwarcie: kto i po co. Kadr obok leadu, tekst w mierze ~34em. -->
+    <div class="lintro__open">
+      <div class="lintro__head">
+        <p class="lkick">Dla kogo</p>
+        <p class="lintro__lead">Rehabilitacja reumatologiczna stosowana jest wobec osób borykających się ze schorzeniami reumatycznymi: metabolicznymi, zapalnymi, zwyrodnieniowo-wytwórczymi układu kostno-stawowego oraz stanami zapalnymi tkanki łącznej.</p>
+      </div>
+      <figure class="lintro__fig">
+        <img width="1200" height="1081" src="../../../assets/img/uslugi/rehabilitacja-reumatologiczna.webp" alt="Rehabilitacja reumatologiczna w Reha Medica Szczecinek" loading="lazy" decoding="async">
+      </figure>
+      <div class="lintro__body">
+        <p class="lintro__p">Rehabilitacja w takich przypadkach jest procesem o podłożu medyczno-społecznym, którego działania skierowane są na redukcje dolegliwości bólowych, poprawę zdolności lokomocji i samoobsługi, a także zwiększenie wydolności oddechowej i krążeniowej.</p>
+        <p class="lintro__p">Istotnym celem rehabilitacji reumatologicznej jest zapewnienie osobom chorym godnego życia w oparciu o poczucie użyteczności społecznej oraz zawodowej, przywrócenie sprawności fizycznej i psychicznej w możliwie największym zakresie.</p>
       </div>
     </div>
+
+    <!-- TAKT 2 — wyróżnik: pierwsze zdanie akapitu o czasie podniesione do rangi cytatu,
+         reszta akapitu zostaje obok jako rozwinięcie. Tekst niezmieniony. -->
+    <div class="lpull">
+      <p class="lpull__q">Szybkie rozpoczęcie leczenia i rehabilitacji jest ważne w przypadku chorób reumatycznych, które mogą prowadzić do nieodwracalnych zmian, a nawet do niepełnosprawności.</p>
+      <div>
+        <p class="lpull__p">Nie należy ignorować objawów chorób reumatycznych, gdyż nieleczone mogą w dużym stopniu ograniczyć naszą sprawność.</p>
+        <p class="lpull__p">Tymczasem przy zastosowaniu kinezyterapii, połączonej z metodami fizykoterapeutycznymi, możliwe jest osiągnięcie dobrych efektów dla zachowania prawidłowej ruchomości stawów.</p>
+      </div>
+    </div>
+
+    <!-- TAKT 3 — składowe wymienione w zdaniu źródłowym („składa się z farmakoterapii,
+         terapii ruchem…"), rozpisane na siatkę. Żadnej pozycji nie dodano ani nie ujęto. -->
+    <div class="lparts">
+      <h2 class="lparts__h">Co składa się na rehabilitację reumatologiczną</h2>
+      <ul class="lparts__grid">
+        <li>Farmakoterapia</li>
+        <li>Terapia ruchem</li>
+        <li>Fizykoterapia</li>
+        <li>Zaopatrzenie w wyroby wspomagające funkcjonowanie</li>
+        <li>Ćwiczenia grupowe</li>
+        <li>Działania na rzecz integracji społecznej</li>
+      </ul>
+    </div>
+
+    <!-- TAKT 4 — domknięcie w wąskiej mierze -->
+    <div class="lcoda">
+      <div class="lcoda__inner">
+      <p class="lcoda__lead">Podstawową metodą rehabilitacyjną w leczeniu chorób o podłożu reumatycznym jest kinezyterapia, gdyż zachowanie ruchomości stawu i dobrej kondycji ogólnej poprawia stan chorego stawu.</p>
+      <p class="lcoda__p">W procesie leczenia chorób reumatycznych ważna jest ciągłość i kompleksowość rehabilitacji, aby utrzymać jak najlepszą sprawność stawu pomimo choroby.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<article class="usluga">
+<!-- WSKAZANIA — numerowana siatka -->
+<section class="loffer">
+  <div class="wrap">
+    <h2 class="loffer__h">Wskazania</h2>
+    <ol class="loffer__grid">
+      <li><span class="loffer__num">01</span><span class="loffer__txt">Reumatoidalne zapalenie stawów</span></li>
+      <li><span class="loffer__num">02</span><span class="loffer__txt">Młodzieńcze idiopatyczne zapalenie stawów</span></li>
+      <li><span class="loffer__num">03</span><span class="loffer__txt">Twardzina układowa</span></li>
+      <li><span class="loffer__num">04</span><span class="loffer__txt">Zapalenie wielomięśniowe</span></li>
+      <li><span class="loffer__num">05</span><span class="loffer__txt">Zapalenie skórno-mięśniowe</span></li>
+      <li><span class="loffer__num">06</span><span class="loffer__txt">Zespół Sjogrena</span></li>
+      <li><span class="loffer__num">07</span><span class="loffer__txt">Choroba Kawasakiego</span></li>
+      <li><span class="loffer__num">08</span><span class="loffer__txt">Toczeń układowy</span></li>
+      <li><span class="loffer__num">09</span><span class="loffer__txt">Martwice i choroby zapalne naczyń</span></li>
+      <li><span class="loffer__num">10</span><span class="loffer__txt">Zapalenie stawów z zajęciem kręgosłupa (zesztywniające zapalenie stawów kręgosłupa, łuszczycowe zapalenie stawów, enteropatyczne zapalenie stawów, reaktywne zapalenie stawów)</span></li>
+      <li><span class="loffer__num">11</span><span class="loffer__txt">Choroby układu ruchu związane z procesem starzenia (choroba zwyrodnieniowa, uszkodzenia tkanek miękkich)</span></li>
+      <li><span class="loffer__num">12</span><span class="loffer__txt">Choroby o podłożu dokrewnym lub metabolicznym (dna moczanowa, alkaptonuria, osteoartropatia przerostowa, dysplazja kości i stawów, złuszczenie głowy nasady kości udowej)</span></li>
+      <li><span class="loffer__num">13</span><span class="loffer__txt">Zespoły bólowe tkanek miękkich (fibromialgia, polimialgia reumatyczna, zespół bólu regionalnego, entezopatie)</span></li>
+    </ol>
+  </div>
+</section>
 
-  <section class="sbody">
-    <div class="wrap">
-      <div class="sbody__grid">
-        <div class="sbody__text">
-          <p class="sbody__p">Rehabilitacja reumatologiczna stosowana jest wobec osób borykających się ze schorzeniami reumatycznymi: metabolicznymi, zapalnymi, zwyrodnieniowo-wytwórczymi układu kostno-stawowego oraz stanami zapalnymi tkanki łącznej. Rehabilitacja w takich przypadkach jest procesem o podłożu medyczno-społecznym, którego działania skierowane są na redukcje dolegliwości bólowych, poprawę zdolności lokomocji i samoobsługi, a także zwiększenie wydolności oddechowej i krążeniowej.</p>
-          <p class="sbody__p">Istotnym celem rehabilitacji reumatologicznej jest zapewnienie osobom chorym godnego życia w oparciu o poczucie użyteczności społecznej oraz zawodowej, przywrócenie sprawności fizycznej i psychicznej w możliwie największym zakresie.</p>
-          <p class="sbody__p">Szybkie rozpoczęcie leczenia i rehabilitacji jest ważne w przypadku chorób reumatycznych, które mogą prowadzić do nieodwracalnych zmian, a nawet do niepełnosprawności. Nie należy ignorować objawów chorób reumatycznych, gdyż nieleczone mogą w dużym stopniu ograniczyć naszą sprawność. Tymczasem przy zastosowaniu kinezyterapii, połączonej z metodami fizykoterapeutycznymi, możliwe jest osiągnięcie dobrych efektów dla zachowania prawidłowej ruchomości stawów.</p>
-          <p class="sbody__p">Rehabilitacja reumatologiczna składa się z farmakoterapii, terapii ruchem, fizykoterapii, zaopatrzenia w wyroby wspomagające funkcjonowanie, ćwiczeń grupowych i działań na rzecz integracji społecznej.</p>
-          <p class="sbody__p">Podstawową metodą rehabilitacyjną w leczeniu chorób o podłożu reumatycznym jest kinezyterapia, gdyż zachowanie ruchomości stawu i dobrej kondycji ogólnej poprawia stan chorego stawu. W procesie leczenia chorób reumatycznych ważna jest ciągłość i kompleksowość rehabilitacji, aby utrzymać jak najlepszą sprawność stawu pomimo choroby.</p>
-        </div>
-        <figure class="sbody__fig"><img width="1200" height="1081" src="../../../assets/img/uslugi/rehabilitacja-reumatologiczna.webp" alt="Rehabilitacja reumatologiczna w Reha Medica Szczecinek" loading="lazy" decoding="async"></figure>
-      </div>
-    </div>
-  </section>
-  <section class="sufolds">
-    <div class="wrap sufolds__wrap">
-      <div class="sufold">
-        <button class="sufold__sum" id="acc-wsk-b" type="button" aria-expanded="false" aria-controls="acc-wsk-p">Wskazania</button>
-        <div class="sufold__panel" id="acc-wsk-p" role="region" aria-labelledby="acc-wsk-b">
-          <div class="sufold__body"><div class="sufold__inner">
-            <ul class="sufold__list">
-            <li>Reumatoidalne zapalenie stawów.</li>
-            <li>Młodzieńcze idiopatyczne zapalenie stawów.</li>
-            <li>Twardzina układowa.</li>
-            <li>Zapalenie wielomięśniowe.</li>
-            <li>Zapalenie skórno-mięśniowe.</li>
-            <li>Zespół Sjogrena.</li>
-            <li>Choroba Kawasakiego.</li>
-            <li>Toczeń układowy.</li>
-            <li>Martwice i choroby zapalne naczyń.</li>
-            <li>Zapalenie stawów z zajęciem kręgosłupa (zesztywniające zapalenie stawów kręgosłupa, łuszczycowe zapalenie stawów, enteropatyczne zapalenie stawów, reaktywne zapalenie stawów).</li>
-            <li>Choroby układu ruchu związane z procesem starzenia (choroba zwyrodnieniowa, uszkodzenia tkanek miękkich).</li>
-            <li>Choroby o podłożu dokrewnym lub metabolicznym (dna moczanowa, alkaptonuria, osteoartropatia przerostowa, dysplazja kości i stawów, złuszczenie głowy nasady kości udowej).</li>
-            <li>Zespoły bólowe tkanek miękkich (fibromialgia, polimialgia reumatyczna, zespół bólu regionalnego, entezopatie).</li>
-            </ul>
-          </div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="uend">
-    <div class="wrap uend__inner">
-      <a class="btn btn--brand uend__btn" href="../../../index.html#placowki" data-booking>Umów wizytę <span class="btn__arrow" aria-hidden="true">→</span></a>
-      <a class="uend__back" href="../../../index.html"><span aria-hidden="true">←</span> Wróć do strony głównej</a>
-    </div>
-  </section>
-
-</article>
+<section class="uend">
+  <div class="wrap uend__inner">
+    <a class="btn btn--brand uend__btn" href="../../../index.html#placowki" data-booking>Umów wizytę <span class="btn__arrow" aria-hidden="true">→</span></a>
+    <a class="uend__back" href="../../../index.html"><span aria-hidden="true">←</span> Wróć do strony głównej</a>
+  </div>
+</section>
 
 </main>
 
@@ -510,6 +522,6 @@
   </div>
   <button class="a11y-reset" type="button" data-a11y-reset>Przywróć ustawienia domyślne</button>
 </div>
-<script src="../../../js/main.js?v=87"></script>
+<script src="../../../js/main.js?v=91"></script>
 </body>
 </html>

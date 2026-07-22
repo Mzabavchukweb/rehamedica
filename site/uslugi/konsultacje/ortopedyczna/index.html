@@ -25,8 +25,8 @@
 <link rel="icon" href="../../../assets/favicon.png">
 <link rel="preload" href="../../../assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../../assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../../css/style.css?v=82">
-<link rel="stylesheet" href="../../../css/usluga.css?v=65">
+<link rel="stylesheet" href="../../../css/style.css?v=104">
+<link rel="stylesheet" href="../../../css/usluga.css?v=85">
 <script>document.documentElement.className+=' js';</script>
 <!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
 <script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
@@ -297,32 +297,62 @@
 
 <article class="usluga">
 
-  <section class="sbody">
-    <div class="wrap">
-      <div class="sbody__grid">
-        <div class="sbody__text">
-          <p class="sbody__p">Ortopeda zajmuje się profilaktyką, diagnozowaniem i leczeniem nieprawidłowości ze strony układu szkieletowego (bez kości czaszki) oraz w obrębie więzadeł, stawów, mięśni, ścięgien i innych elementów układu ruchu. Skupia się także na działaniach związanych z minimalizowaniem skutków niepełnosprawności, czyli np. na doborze odpowiedniego sprzętu rehabilitacyjnego, a w przypadku amputacji kończyn – dopasowaniu protezy.</p>
-          <p class="sbody__intro">W ramach konsultacji ortopedycznej możliwe jest m.in.:</p>
-          <ul class="sbody__list">
-          <li>opatrywanie urazów narządów ruchu, powikłań pourazowych, szacowanie czasu rekonwalescencji zajętych patologią tkanek,</li>
-          <li>badanie funkcjonalne FMS,</li>
-          <li>dobranie zaopatrzenia ortopedycznego,</li>
-          <li>USG stawów biodrowych,</li>
-          <li>leczenie koncentratem autologicznego osocza bogatopłytkowego,</li>
-          <li>wystawienie skierowania na zabiegi chirurgiczne (m.in. operacja stopy, kończyny dolnej i górnej, miednicy i biodra oraz barku), a także zabiegi wstawienia endoprotezy stawów biodrowych i kolanowych,</li>
-          <li>udzielenie zaleceń,</li>
-          <li>przepisanie recepty,</li>
-          <li>wydawanie skierowań do innych specjalistów, np. neurologa czy rehabilitanta,</li>
-          <li>zlecanie zabiegów fizykoterapeutycznych, takich jak m.in. kinesiotaping, kinezyterapia, pole magnetyczne, ultradźwięki czy elektroterapia.</li>
-          </ul>
+  <!-- Opis usługi w rytmie edytorskim (wariant .lintro--rytm): otwarcie → panel składowych
+       → wyróżnik → domknięcie. Kolejność taktów idzie za kolejnością akapitów źródłowych. -->
+  <section class="lsec lsec--ivory">
+    <div class="wrap lintro lintro--rytm">
 
-          <p class="sbody__p">Wskazania do wizyty u ortopedy są bardzo różne. Z jednej strony to urazy i kontuzje układu ruchu, z drugiej uciążliwe dolegliwości, jak ból kręgosłupa, drętwienie kończyn, ograniczenie ruchomości stawów, obrzęki stawowe, sztywnienie mięśni. Warto skonsultować się z ortopedą również wtedy, gdy doświadcza się trzaskania, chrupania, strzelania w stawach. Wizytę należy odbyć jak najszybciej, jeśli niepokojące objawy występują od dłuższego czasu lub gdy mają charakter nasilający się.</p>
-          <p class="sbody__p">Do wizyty u ortopedy najczęściej skłania ból – w większości przypadków to właśnie on sygnalizuje, że z ciałem dzieje się coś niedobrego. Zdecydowanie najprostsze do zdiagnozowania są urazy – do ich rozpoznania wystarczy zazwyczaj już wywiad lekarski, badanie palpacyjne oraz proste badanie obrazowe – RTG w przypadku tkanek twardych oraz USG w przypadku tkanek miękkich. Jeśli mamy do czynienia z chorobą układu ruchu, konieczna bywa bardziej szczegółowa diagnostyka. Ortopeda może więc zlecić tomografię komputerową, rezonans magnetyczny czy artrografię.</p>
-          <p class="sbody__p">W zależności od postawionej diagnozy, leczenie może objąć farmakologię, skierowanie pacjenta na fizjoterapię, metody zachowawcze, np. unieruchomienie kończyny w ortezie, niekiedy konieczne bywają zabiegi chirurgiczne. Po zakończeniu leczenia pacjent z reguły przejść musi również rehabilitację.</p>
-          <p class="sbody__p">Na pierwszą wizytę u ortopedy nie musisz się specjalnie przygotowywać. Przynieś aktualną dokumentację medyczną, w tym badania obrazowe i laboratoryjne, o ile wcześniej zostały zlecone. Pomocna może okazać się lista przyjmowanych na stałe leków. Na wizytę ortopedyczną załóż wygodne, niekrępujące ruchów ubranie.</p>
+      <!-- TAKT 1 — otwarcie: czym zajmuje się ortopeda. Kadr obok leadu. -->
+      <div class="lintro__open">
+        <div class="lintro__head">
+          <p class="lkick">Na czym polega</p>
+          <p class="lintro__lead">Ortopeda zajmuje się profilaktyką, diagnozowaniem i leczeniem nieprawidłowości ze strony układu szkieletowego (bez kości czaszki) oraz w obrębie więzadeł, stawów, mięśni, ścięgien i innych elementów układu ruchu.</p>
         </div>
-        <figure class="sbody__fig"><img width="1200" height="800" src="../../../assets/img/uslugi/konsultacja-ortopedyczna.webp" alt="Konsultacja ortopedyczna w Reha Medica Szczecinek" loading="lazy" decoding="async"></figure>
+        <figure class="lintro__fig">
+          <img width="1200" height="800" src="../../../assets/img/uslugi/konsultacja-ortopedyczna.webp" alt="Konsultacja ortopedyczna w Reha Medica Szczecinek" loading="lazy" decoding="async">
+        </figure>
+        <div class="lintro__body">
+          <p class="lintro__p">Skupia się także na działaniach związanych z minimalizowaniem skutków niepełnosprawności, czyli np. na doborze odpowiedniego sprzętu rehabilitacyjnego, a w przypadku amputacji kończyn – dopasowaniu protezy.</p>
+        </div>
       </div>
+
+      <!-- TAKT 2 — panel składowych: wyliczenie z akapitu źródłowego rozpisane na siatkę.
+           Żadnej pozycji nie dodano ani nie ujęto, zapis pozycji bez zmian. -->
+      <div class="lparts">
+        <h2 class="lparts__h">W ramach konsultacji ortopedycznej możliwe jest m.in.</h2>
+        <ul class="lparts__grid">
+          <li>Opatrywanie urazów narządów ruchu, powikłań pourazowych, szacowanie czasu rekonwalescencji zajętych patologią tkanek</li>
+          <li>Badanie funkcjonalne FMS</li>
+          <li>Dobranie zaopatrzenia ortopedycznego</li>
+          <li>USG stawów biodrowych</li>
+          <li>Leczenie koncentratem autologicznego osocza bogatopłytkowego</li>
+          <li>Wystawienie skierowania na zabiegi chirurgiczne (m.in. operacja stopy, kończyny dolnej i górnej, miednicy i biodra oraz barku), a także zabiegi wstawienia endoprotezy stawów biodrowych i kolanowych</li>
+          <li>Udzielenie zaleceń</li>
+          <li>Przepisanie recepty</li>
+          <li>Wydawanie skierowań do innych specjalistów, np. neurologa czy rehabilitanta</li>
+          <li>Zlecanie zabiegów fizykoterapeutycznych, takich jak m.in. kinesiotaping, kinezyterapia, pole magnetyczne, ultradźwięki czy elektroterapia</li>
+        </ul>
+      </div>
+
+      <!-- TAKT 3 — wyróżnik: pierwsze zdanie akapitu o wskazaniach podniesione do rangi cytatu,
+           reszta akapitów o objawach i diagnostyce zostaje obok. Tekst niezmieniony. -->
+      <div class="lpull">
+        <p class="lpull__q">Wskazania do wizyty u ortopedy są bardzo różne.</p>
+        <div>
+          <p class="lpull__p">Z jednej strony to urazy i kontuzje układu ruchu, z drugiej uciążliwe dolegliwości, jak ból kręgosłupa, drętwienie kończyn, ograniczenie ruchomości stawów, obrzęki stawowe, sztywnienie mięśni. Warto skonsultować się z ortopedą również wtedy, gdy doświadcza się trzaskania, chrupania, strzelania w stawach. Wizytę należy odbyć jak najszybciej, jeśli niepokojące objawy występują od dłuższego czasu lub gdy mają charakter nasilający się.</p>
+          <p class="lpull__p">Do wizyty u ortopedy najczęściej skłania ból – w większości przypadków to właśnie on sygnalizuje, że z ciałem dzieje się coś niedobrego. Zdecydowanie najprostsze do zdiagnozowania są urazy – do ich rozpoznania wystarczy zazwyczaj już wywiad lekarski, badanie palpacyjne oraz proste badanie obrazowe – RTG w przypadku tkanek twardych oraz USG w przypadku tkanek miękkich. Jeśli mamy do czynienia z chorobą układu ruchu, konieczna bywa bardziej szczegółowa diagnostyka. Ortopeda może więc zlecić tomografię komputerową, rezonans magnetyczny czy artrografię.</p>
+        </div>
+      </div>
+
+      <!-- TAKT 4 — domknięcie w wąskiej mierze: leczenie i przygotowanie do wizyty. -->
+      <div class="lcoda">
+        <div class="lcoda__inner">
+          <p class="lcoda__lead">W zależności od postawionej diagnozy, leczenie może objąć farmakologię, skierowanie pacjenta na fizjoterapię, metody zachowawcze, np. unieruchomienie kończyny w ortezie, niekiedy konieczne bywają zabiegi chirurgiczne.</p>
+          <p class="lcoda__p">Po zakończeniu leczenia pacjent z reguły przejść musi również rehabilitację.</p>
+          <p class="lcoda__p">Na pierwszą wizytę u ortopedy nie musisz się specjalnie przygotowywać. Przynieś aktualną dokumentację medyczną, w tym badania obrazowe i laboratoryjne, o ile wcześniej zostały zlecone. Pomocna może okazać się lista przyjmowanych na stałe leków. Na wizytę ortopedyczną załóż wygodne, niekrępujące ruchów ubranie.</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -497,6 +527,6 @@
   </div>
   <button class="a11y-reset" type="button" data-a11y-reset>Przywróć ustawienia domyślne</button>
 </div>
-<script src="../../../js/main.js?v=87"></script>
+<script src="../../../js/main.js?v=91"></script>
 </body>
 </html>

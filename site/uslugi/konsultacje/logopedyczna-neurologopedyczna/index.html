@@ -25,8 +25,8 @@
 <link rel="icon" href="../../../assets/favicon.png">
 <link rel="preload" href="../../../assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../../assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../../css/style.css?v=82">
-<link rel="stylesheet" href="../../../css/usluga.css?v=65">
+<link rel="stylesheet" href="../../../css/style.css?v=104">
+<link rel="stylesheet" href="../../../css/usluga.css?v=85">
 <script>document.documentElement.className+=' js';</script>
 <!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
 <script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
@@ -297,23 +297,55 @@
 
 <article class="usluga">
 
-  <section class="sbody">
-    <div class="wrap">
-      <div class="sbody__grid">
-        <div class="sbody__text">
-          <p class="sbody__p">W przypadku dzieci, warto wybrać się do logopedy na konsultację, jeśli Twoje dziecko:</p>
-          <p class="sbody__p">oraz jeśli jako osoba dorosła:</p>
-          <p class="sbody__p">Konsultacja neurologopedyczna kierowana jest do osób z trudnościami spowodowanymi dysfunkcjami neurologicznymi:</p>
-          <p class="sbody__p">Najważniejszą częścią konsultacji logopedycznej jest wywiad. W przypadku dziecka jest to wywiad z rodzicem. Logopeda będzie pytał m.in. o choroby matki w ciąży, przebieg ciąży i porodu, zdrowie dziecka, sposób karmienia dziecka, przebieg rozwoju psychoruchowego dziecka, rozwój mowy oraz czy w rodzinie dziecka występują wady wymowy. Wywiad jest konieczny, żeby pomóc logopedzie określić przyczynę wady wymowy i opracować skuteczny plan terapii.</p>
-          <p class="sbody__p">Kolejnym etapami konsultacji jest badanie mowy i umiejętności komunikacyjnych. Forma badania jest dostosowana do wieku badanego. Na jego podstawie logopeda wstępnie oceni umiejętności nawiązywania kontaktów przez dziecko, sprawność aparatu artykulacyjnego, sposób artykulacji, zasób słownictwa i umiejętność formułowania wypowiedzi. W przypadku dzieci szkolnych logopeda sprawdzi też, czy ewentualna wada wymowy wpływa na umiejętności czytania i pisania. W razie potrzeby zostaną przeprowadzone badania uzupełniające.</p>
-          <p class="sbody__p">Bardzo ważnym elementem konsultacji logopedycznej jest obserwacja prowadzona przez cały czas jej trwania.</p>
-          <p class="sbody__p">Na konsultację neurologopedyczną składają się pogłębiony wywiad, przeprowadzenie badania, dostosowanego do potrzeb i możliwości badanego, obserwacja oraz sformułowanie i omówienie wniosków z przeprowadzonych badań.</p>
-          <p class="sbody__p">Na spotkanie z neurologopedą, ze względu na pogłębiony wywiad, proszę przynieść dotychczasową dokumentację medyczną taką jak: wyniki badań słuchu, wyniki badań EEG, fMRI, MRI i innych, jeśli były przeprowadzane, opinie specjalistów, karty wypisowe ze szpitali, a w przypadku dzieci książeczkę zdrowia dziecka.</p>
-          <p class="sbody__p">Logopeda to terapeuta zajmujący się wadami wymowy. Wspiera rozwój prawidłowej mowy, uczy jak poprawnie wymawiać określone dźwięki, by na koniec dotrzeć wraz z pacjentem do płynnej, swobodnej wymowy. Jednak jego rolą nie jest skupienie się wyłącznie na problemach z wypowiadaniem głosek. Najpierw musi on poznać przyczynę trudności. Bada sprawność aparatu artykulacyjnego, jego budowę, przebieg funkcji fizjologicznych w jego obszarze (jedzenie/picie/połykanie/oddychanie), nawyki i wzorce, bada również sprawność słuchową.</p>
-          <p class="sbody__p">Neurologopeda zaś zajmuje się szerszym spektrum – diagnozą i terapią różnych postaci zaburzeń mowy, języka i komunikacji spowodowanych opóźnionym dojrzewaniem lub uszkodzeniem ośrodkowego układu nerwowego zarówno u dzieci jak i dorosłych.</p>
-          <p class="sbody__p">Zatem pacjentami neurologopedy mogą być zarówno dzieci, jak i dorośli, cierpiący na całościowe zaburzenia, które mogą poważnie odbijać się na umiejętności mowy czy komunikacji (udary, urazy, guzy mózgu czy niedotlenienia, obciążony wywiad okołoporodowy, niepełnosprawność intelektualna, całościowe zaburzenia rozwoju).</p>
+  <!-- Opis usługi w rytmie edytorskim (wariant .lintro--rytm): otwarcie → wyróżnik →
+       panel tematyczny → domknięcie. Zdania pochodzą z akapitów źródłowych bez zmian.
+       Bez kadru — w źródle nie ma zdjęcia opisu, więc otwarcie idzie na jedną kolumnę. -->
+  <section class="lsec lsec--ivory">
+    <div class="wrap lintro lintro--rytm">
+
+      <!-- TAKT 1 — otwarcie: kto i kiedy powinien przyjść na konsultację. -->
+      <div class="lintro__open">
+        <div class="lintro__head">
+          <p class="lkick">Dla kogo</p>
+          <p class="lintro__lead">W przypadku dzieci, warto wybrać się do logopedy na konsultację, jeśli Twoje dziecko:</p>
+        </div>
+        <div class="lintro__body">
+          <p class="lintro__p">oraz jeśli jako osoba dorosła:</p>
+          <p class="lintro__p">Konsultacja neurologopedyczna kierowana jest do osób z trudnościami spowodowanymi dysfunkcjami neurologicznymi:</p>
         </div>
       </div>
+
+      <!-- TAKT 2 — wyróżnik: pierwsze zdanie akapitu o wywiadzie podniesione do rangi cytatu,
+           reszta akapitów o przebiegu konsultacji zostaje obok. Tekst niezmieniony. -->
+      <div class="lpull">
+        <p class="lpull__q">Najważniejszą częścią konsultacji logopedycznej jest wywiad.</p>
+        <div>
+          <p class="lpull__p">W przypadku dziecka jest to wywiad z rodzicem. Logopeda będzie pytał m.in. o choroby matki w ciąży, przebieg ciąży i porodu, zdrowie dziecka, sposób karmienia dziecka, przebieg rozwoju psychoruchowego dziecka, rozwój mowy oraz czy w rodzinie dziecka występują wady wymowy. Wywiad jest konieczny, żeby pomóc logopedzie określić przyczynę wady wymowy i opracować skuteczny plan terapii.</p>
+          <p class="lpull__p">Kolejnym etapami konsultacji jest badanie mowy i umiejętności komunikacyjnych. Forma badania jest dostosowana do wieku badanego. Na jego podstawie logopeda wstępnie oceni umiejętności nawiązywania kontaktów przez dziecko, sprawność aparatu artykulacyjnego, sposób artykulacji, zasób słownictwa i umiejętność formułowania wypowiedzi. W przypadku dzieci szkolnych logopeda sprawdzi też, czy ewentualna wada wymowy wpływa na umiejętności czytania i pisania. W razie potrzeby zostaną przeprowadzone badania uzupełniające.</p>
+          <p class="lpull__p">Bardzo ważnym elementem konsultacji logopedycznej jest obserwacja prowadzona przez cały czas jej trwania.</p>
+        </div>
+      </div>
+
+      <!-- TAKT 3 — panel tematyczny prozą: z czego składa się konsultacja neurologopedyczna
+           i co przynieść na spotkanie. Zdania przeniesione bez zmian. -->
+      <div class="lparts">
+        <h2 class="lparts__h">Konsultacja neurologopedyczna</h2>
+        <div class="lparts__prose">
+          <p class="lparts__p">Na konsultację neurologopedyczną składają się pogłębiony wywiad, przeprowadzenie badania, dostosowanego do potrzeb i możliwości badanego, obserwacja oraz sformułowanie i omówienie wniosków z przeprowadzonych badań.</p>
+          <p class="lparts__p">Na spotkanie z neurologopedą, ze względu na pogłębiony wywiad, proszę przynieść dotychczasową dokumentację medyczną taką jak: wyniki badań słuchu, wyniki badań EEG, fMRI, MRI i innych, jeśli były przeprowadzane, opinie specjalistów, karty wypisowe ze szpitali, a w przypadku dzieci książeczkę zdrowia dziecka.</p>
+        </div>
+      </div>
+
+      <!-- TAKT 4 — domknięcie w wąskiej mierze: czym zajmuje się logopeda, a czym neurologopeda. -->
+      <div class="lcoda">
+        <div class="lcoda__inner">
+          <p class="lcoda__lead">Logopeda to terapeuta zajmujący się wadami wymowy.</p>
+          <p class="lcoda__p">Wspiera rozwój prawidłowej mowy, uczy jak poprawnie wymawiać określone dźwięki, by na koniec dotrzeć wraz z pacjentem do płynnej, swobodnej wymowy. Jednak jego rolą nie jest skupienie się wyłącznie na problemach z wypowiadaniem głosek. Najpierw musi on poznać przyczynę trudności. Bada sprawność aparatu artykulacyjnego, jego budowę, przebieg funkcji fizjologicznych w jego obszarze (jedzenie/picie/połykanie/oddychanie), nawyki i wzorce, bada również sprawność słuchową.</p>
+          <p class="lcoda__p">Neurologopeda zaś zajmuje się szerszym spektrum – diagnozą i terapią różnych postaci zaburzeń mowy, języka i komunikacji spowodowanych opóźnionym dojrzewaniem lub uszkodzeniem ośrodkowego układu nerwowego zarówno u dzieci jak i dorosłych.</p>
+          <p class="lcoda__p">Zatem pacjentami neurologopedy mogą być zarówno dzieci, jak i dorośli, cierpiący na całościowe zaburzenia, które mogą poważnie odbijać się na umiejętności mowy czy komunikacji (udary, urazy, guzy mózgu czy niedotlenienia, obciążony wywiad okołoporodowy, niepełnosprawność intelektualna, całościowe zaburzenia rozwoju).</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -488,6 +520,6 @@
   </div>
   <button class="a11y-reset" type="button" data-a11y-reset>Przywróć ustawienia domyślne</button>
 </div>
-<script src="../../../js/main.js?v=87"></script>
+<script src="../../../js/main.js?v=91"></script>
 </body>
 </html>

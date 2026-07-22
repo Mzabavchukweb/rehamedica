@@ -25,8 +25,8 @@
 <link rel="icon" href="../../../assets/favicon.png">
 <link rel="preload" href="../../../assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../../assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../../css/style.css?v=82">
-<link rel="stylesheet" href="../../../css/usluga.css?v=65">
+<link rel="stylesheet" href="../../../css/style.css?v=104">
+<link rel="stylesheet" href="../../../css/usluga.css?v=85">
 <script>document.documentElement.className+=' js';</script>
 <!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
 <script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
@@ -297,18 +297,51 @@
 
 <article class="usluga">
 
-  <section class="sbody">
-    <div class="wrap">
-      <div class="sbody__grid">
-        <div class="sbody__text">
-          <p class="sbody__p">Laseroterapia opiera się na dobroczynnym wpływie energii świetlnej skierowanej punktowo do głębszych partii tkanek. Laser przyspiesza gojenia ran na skórze oraz uszkodzeń kości i stawów. Światło lasera jest również skuteczne przy bólach związanych z porażeniem nerwu twarzowego.</p>
-          <p class="sbody__p">Ze względu na specyfikę urządzeń, dolegliwości bólowe po terapii ustępują znacznie szybciej, często już po pierwszym zabiegu. Zabiegi wykonywane laserem są krótkie i dają długotrwałe rezultaty. W połączeniu z pozostałymi elementami terapii, zabiegi gwarantują wzmocnienie efektu terapeutycznego.</p>
-          <p class="sbody__p">Terapia laserem najczęściej wykorzystywana jest w redukcji bólu, wszelkiego rodzaju obrzęków oraz przeciwzapalnie – m.in. przy skręceniach, naderwaniach, chorobie zwyrodnieniowej stawów, kręgosłupa, rwie kulszowej.</p>
-          <p class="sbody__p">Przed rozpoczęciem zabiegu laseroterapii pacjent zakłada specjalne okulary ochronne. Nie można ich zdejmować aż do zakończenia sesji. Podczas zabiegu fizjoterapeuta kilkakrotnie kieruje wiązkę lasera w leczone, odsłonięte miejsce na ciele. Zabieg jest całkowicie bezbolesny i bezpieczny. Nie powoduje także żadnego dyskomfortu.</p>
-          <p class="sbody__p">Czas trwania biostymulacji laserowej jest uzależniony od leczonej okolicy. Zwykle zabieg trwa od 5 do 10 minut.</p>
+  <!-- Opis usługi w rytmie edytorskim (wariant .lintro--rytm): otwarcie → wyróżnik →
+       panel o przebiegu zabiegu → domknięcie. Zdania przepisane ze źródła bez zmian. -->
+  <section class="lsec lsec--ivory">
+    <div class="wrap lintro lintro--rytm">
+
+      <!-- TAKT 1 — otwarcie: na czym polega i przy czym się sprawdza. -->
+      <div class="lintro__open">
+        <div class="lintro__head">
+          <p class="lkick">Na czym polega</p>
+          <p class="lintro__lead">Laseroterapia opiera się na dobroczynnym wpływie energii świetlnej skierowanej punktowo do głębszych partii tkanek.</p>
         </div>
-        <figure class="sbody__fig"><img width="1200" height="1150" src="../../../assets/img/uslugi/laseroterapia.webp" alt="Laseroterapia w Reha Medica Szczecinek" loading="lazy" decoding="async"></figure>
+        <figure class="lintro__fig">
+          <img width="1200" height="1150" src="../../../assets/img/uslugi/laseroterapia.webp" alt="Laseroterapia w Reha Medica Szczecinek" loading="lazy" decoding="async">
+        </figure>
+        <div class="lintro__body">
+          <p class="lintro__p">Laser przyspiesza gojenia ran na skórze oraz uszkodzeń kości i stawów. Światło lasera jest również skuteczne przy bólach związanych z porażeniem nerwu twarzowego.</p>
+          <p class="lintro__p">Terapia laserem najczęściej wykorzystywana jest w redukcji bólu, wszelkiego rodzaju obrzęków oraz przeciwzapalnie – m.in. przy skręceniach, naderwaniach, chorobie zwyrodnieniowej stawów, kręgosłupa, rwie kulszowej.</p>
+        </div>
       </div>
+
+      <!-- TAKT 2 — wyróżnik: pierwsze zdanie akapitu o efektach, reszta akapitu obok. -->
+      <div class="lpull">
+        <p class="lpull__q">Ze względu na specyfikę urządzeń, dolegliwości bólowe po terapii ustępują znacznie szybciej, często już po pierwszym zabiegu.</p>
+        <div>
+          <p class="lpull__p">Zabiegi wykonywane laserem są krótkie i dają długotrwałe rezultaty.</p>
+          <p class="lpull__p">W połączeniu z pozostałymi elementami terapii, zabiegi gwarantują wzmocnienie efektu terapeutycznego.</p>
+        </div>
+      </div>
+
+      <!-- TAKT 3 — akapit o przebiegu zabiegu: spójny blok, więc wariant prozą. -->
+      <div class="lparts">
+        <h2 class="lparts__h">Jak przebiega zabieg</h2>
+        <div class="lparts__prose">
+          <p class="lparts__p">Przed rozpoczęciem zabiegu laseroterapii pacjent zakłada specjalne okulary ochronne. Nie można ich zdejmować aż do zakończenia sesji. Podczas zabiegu fizjoterapeuta kilkakrotnie kieruje wiązkę lasera w leczone, odsłonięte miejsce na ciele. Zabieg jest całkowicie bezbolesny i bezpieczny. Nie powoduje także żadnego dyskomfortu.</p>
+        </div>
+      </div>
+
+      <!-- TAKT 4 — domknięcie w wąskiej mierze. -->
+      <div class="lcoda">
+        <div class="lcoda__inner">
+          <p class="lcoda__lead">Czas trwania biostymulacji laserowej jest uzależniony od leczonej okolicy.</p>
+          <p class="lcoda__p">Zwykle zabieg trwa od 5 do 10 minut.</p>
+        </div>
+      </div>
+
     </div>
   </section>
   <section class="sufolds">
@@ -510,6 +543,6 @@
   </div>
   <button class="a11y-reset" type="button" data-a11y-reset>Przywróć ustawienia domyślne</button>
 </div>
-<script src="../../../js/main.js?v=87"></script>
+<script src="../../../js/main.js?v=91"></script>
 </body>
 </html>

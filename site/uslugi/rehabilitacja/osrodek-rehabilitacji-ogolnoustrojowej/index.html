@@ -25,8 +25,8 @@
 <link rel="icon" href="../../../assets/favicon.png">
 <link rel="preload" href="../../../assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../../assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../../css/style.css?v=82">
-<link rel="stylesheet" href="../../../css/usluga.css?v=65">
+<link rel="stylesheet" href="../../../css/style.css?v=104">
+<link rel="stylesheet" href="../../../css/usluga.css?v=85">
 <script>document.documentElement.className+=' js';</script>
 <!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
 <script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
@@ -297,17 +297,34 @@
 
 <article class="usluga">
 
-  <section class="sbody">
-    <div class="wrap">
-      <div class="sbody__grid">
-        <div class="sbody__text">
-          <p class="sbody__p">Rehabilitacja w Reha Medica na oddziale dziennym przysługuje pacjentowi, którego stan zdrowia nie pozwala na rehabilitację w warunkach ambulatoryjnych, a pacjent nie wymaga całodobowego nadzoru medycznego.</p>
-          <p class="sbody__p">Rehabilitacja ogólnoustrojowa dedykowana jest także określonym grupom pacjentów, w szczególności po leczeniu raka piersi, ze stwardnieniem rozsianym, dysfunkcją ręki, z obrzękiem limfatycznym o różnej etiologii i umiejscowieniu.</p>
-          <p class="sbody__p">Czas trwania rehabilitacji ogólnoustrojowej wynosi od 15 do 30 dni zabiegowych, średnio 5 zabiegów fizjoterapeutycznych dziennie. W przypadku uzasadnionym względami medycznymi i koniecznością osiągnięcia celu leczniczego, rehabilitacja może zostać przedłużona decyzją lekarza prowadzącego, za pisemną zgodą dyrektora właściwego oddziału NFZ.</p>
-          <p class="sbody__p">Czas trwania rehabilitacji pacjentów z obrzękiem limfatycznym wynosi do 40 dni zabiegowych w roku kalendarzowym.</p>
+  <!-- Opis usługi w rytmie edytorskim (wariant .lintro--rytm).
+       Tekst jeden do jednego z akapitów źródłowych — takty tylko porządkują to, co już jest. -->
+  <section class="lsec lsec--ivory">
+    <div class="wrap lintro lintro--rytm">
+
+      <!-- TAKT 1 — otwarcie: pierwsze zdanie źródła jako lead, reszta obok kadru. -->
+      <div class="lintro__open">
+        <div class="lintro__head">
+          <p class="lkick">Dla kogo</p>
+          <p class="lintro__lead">Rehabilitacja w Reha Medica na oddziale dziennym przysługuje pacjentowi, którego stan zdrowia nie pozwala na rehabilitację w warunkach ambulatoryjnych, a pacjent nie wymaga całodobowego nadzoru medycznego.</p>
         </div>
-        <figure class="sbody__fig"><img src="../../../assets/img/osrodek-band.webp" alt="Fizjoterapeutka ocenia ustawienie barków i postawę pacjentki" width="1400" height="979" loading="lazy" decoding="async"></figure>
+        <figure class="lintro__fig">
+          <img src="../../../assets/img/osrodek-band.webp" alt="Fizjoterapeutka ocenia ustawienie barków i postawę pacjentki" width="1400" height="979" loading="lazy" decoding="async">
+        </figure>
+        <div class="lintro__body">
+          <p class="lintro__p">Rehabilitacja ogólnoustrojowa dedykowana jest także określonym grupom pacjentów, w szczególności po leczeniu raka piersi, ze stwardnieniem rozsianym, dysfunkcją ręki, z obrzękiem limfatycznym o różnej etiologii i umiejscowieniu.</p>
+        </div>
       </div>
+
+      <!-- TAKT 2 — wyróżnik: jedno zdanie źródłowe podniesione do rangi cytatu. -->
+      <div class="lpull">
+        <p class="lpull__q">Czas trwania rehabilitacji ogólnoustrojowej wynosi od 15 do 30 dni zabiegowych, średnio 5 zabiegów fizjoterapeutycznych dziennie.</p>
+        <div>
+          <p class="lpull__p">W przypadku uzasadnionym względami medycznymi i koniecznością osiągnięcia celu leczniczego, rehabilitacja może zostać przedłużona decyzją lekarza prowadzącego, za pisemną zgodą dyrektora właściwego oddziału NFZ.</p>
+          <p class="lpull__p">Czas trwania rehabilitacji pacjentów z obrzękiem limfatycznym wynosi do 40 dni zabiegowych w roku kalendarzowym.</p>
+        </div>
+      </div>
+
     </div>
   </section>
   <section class="sufolds">
@@ -500,6 +517,6 @@
   </div>
   <button class="a11y-reset" type="button" data-a11y-reset>Przywróć ustawienia domyślne</button>
 </div>
-<script src="../../../js/main.js?v=87"></script>
+<script src="../../../js/main.js?v=91"></script>
 </body>
 </html>

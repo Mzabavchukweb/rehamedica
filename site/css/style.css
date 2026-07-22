@@ -145,21 +145,25 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
 
 /* --- przyciski --- */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-body);font-weight:var(--fw-semibold);font-size:1.0625rem;line-height:1.2;white-space:nowrap;
-  padding:14px 28px;border:1px solid transparent;cursor:pointer;transition:background .2s,border-color .2s,color .2s,transform .2s;min-height:48px;letter-spacing:0}
-.btn--cream:hover{transform:translateY(-1px)}
+  padding:14px 28px;border:1px solid transparent;cursor:pointer;transition:none;min-height:48px;letter-spacing:0}
 .btn--sm{padding:10px 18px;font-size:.92rem;min-height:44px}
 .btn--outline{border-color:var(--color-brand);color:var(--color-brand);background:transparent}
-.btn--outline:hover{background:var(--color-brand);color:#fff}
 .btn--cream{background:#f3ecdf;color:var(--color-brand)}
 /* outline na ciemnym tle — para z .btn--cream: główna akcja kremowa, drugorzędna obrysowana */
 .btn--outline-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.38)}
-.btn--outline-light:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.6);color:#fff}
-.btn--cream:hover{background:#fff}
 
 /* ============================================================ HEADER (fixed, przezroczysty nad hero → solidny na scroll) */
 .site-header{position:fixed;top:0;left:0;right:0;z-index:100;color:#f3ede2;background:var(--color-brand);
   transition:background .45s cubic-bezier(.65,0,.35,1),box-shadow .45s cubic-bezier(.65,0,.35,1)}
 .site-header.is-scrolled{background:var(--color-brand-dark);box-shadow:0 10px 30px -18px rgba(0,0,0,.72);border-bottom:1px solid rgba(255,255,255,.06)}
+/* Header zlewa się z hero na starcie na KAŻDEJ stronie z ciemnym hero (główna + podstrony:
+   .hero/.shero/.uhero) — przezroczysty z delikatnym gradientem dla czytelności napisów.
+   Po scrollu wraca solidny brąz (reguła wyżej). Wyjątek: strony BEZ hero (.no-hero,
+   np. stuby placówek o jasnym tle) — header zostaje solidny. */
+.site-header:not(.is-scrolled){background:linear-gradient(180deg,rgba(30,22,14,.55) 0%,rgba(30,22,14,.22) 55%,rgba(30,22,14,0) 100%)}
+.site-header:not(.is-scrolled) .topstrip::after{opacity:0}
+.no-hero .site-header:not(.is-scrolled){background:var(--color-brand)}
+.no-hero .site-header:not(.is-scrolled) .topstrip::after{opacity:1}
 
 /* utility row — cicha */
 .topstrip{position:relative;z-index:1;overflow:hidden;height:38px;
@@ -205,6 +209,8 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
 .nav__sub li:last-child a{border-bottom:0}
 .nav__sub a:focus-visible{background:rgba(72,61,50,.055);color:var(--color-brand)}
 .headerbar__cta{display:flex;align-items:center;gap:22px}
+/* desktop: para CTA (94 372 14 51 + Umów wizytę) nieco większa dla wagi (mobile ma własne reguły niżej) */
+.headerbar__cta .btn{padding:13px 26px;font-size:1rem;min-height:50px}
 /* Tuż nad progiem menu mobilnego header jest ciasny — zagęszczamy odstępy,
    inaczej „Umów wizytę" i lupa wypadają poza ekran (na 1280px było o 9px za mało). */
 @media(min-width:75.0625em) and (max-width:87.5em){
@@ -228,26 +234,32 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
 .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
 
 .btn__arrow{display:inline-block;margin-left:3px;transition:transform .28s ease}
-.btn:hover .btn__arrow{transform:translateX(4px)}
 
 /* ============================================================ HERO (kompozycja referencyjna: karta placówek lewy-góra · zdjęcie prawa · biały cut z nagłówkiem lewy-dół · CTA prawy-dół) */
-.hero{padding:130px 0 44px;background:var(--color-bg-ivory)}
-.hero > .wrap{max-width:1600px}
-.hero__shell{position:relative;height:clamp(628px,77vh,792px);border-radius:0;overflow:hidden;background:var(--color-bg-ivory)}
+/* FULL-WIDTH: zdjęcie od krawędzi do krawędzi, bez cięć i odstępów; obraz wchodzi POD
+   przezroczysty header (zlanie się z hero). --gx = margines do siatki treści strony. */
+.hero{padding:0;background:var(--color-bg-ivory)}
+.hero > .wrap{max-width:none;padding:0}
+.hero__shell{position:relative;width:100%;height:clamp(700px,96vh,1010px);border-radius:0;overflow:hidden;background:var(--color-brand);
+  /* --gx = lewa krawędź siatki treści (jak .wrap: --wrap 1180 + padding 34) → tytuł równa się z sekcjami niżej i omija pasek „Reha Beauty" */
+  --gx:max(34px,calc((100% - 1180px) / 2 + 34px))}
 .hero__inner{display:contents}
 
 .hero__stage{position:absolute;inset:0;z-index:0;overflow:hidden}
-.hero__slide{position:absolute;inset:0;background-size:cover;background-position:48% 30%;opacity:0;transition:opacity .9s ease}
+.hero__slide{position:absolute;inset:0;background-size:cover;background-position:50% 42%;opacity:0;transition:opacity .9s ease}
 .hero__slide.is-active{opacity:1;animation:heroKen 8s ease-out both}
 @keyframes heroKen{from{transform:scale(1.06)}to{transform:scale(1)}}
-/* przyciemnienie hero — mocniejsze niż pierwotne .20/.06/.16, ciepły brąz zachowany */
+/* Nakładka na tło = brąz marki jak w źródle (.home-slide:after #483d32).
+   Źródło ma jednolite ~62%; my dajemy gradient tej samej barwy: lżej u góry (jaśniej,
+   zdjęcie oddycha), mocniej u dołu, gdzie leży biały tekst — dzięki temu WCAG AA jest
+   spełnione niezależnie od jasności slajdu. */
 .hero__tint{position:absolute;inset:0;z-index:1;
-  background:linear-gradient(180deg,rgba(38,30,23,.34) 0%,rgba(42,34,26,.20) 45%,rgba(46,37,29,.34) 100%)}
+  background:linear-gradient(180deg,rgba(72,61,50,.34) 0%,rgba(64,51,36,.42) 28%,rgba(50,39,26,.60) 50%,rgba(40,30,20,.82) 80%,rgba(34,25,16,.9) 100%)}
 
-/* premium karta placówek (prawa strona) */
-.hero__card{position:absolute;top:32px;right:34px;width:416px;z-index:3;
-  background:var(--color-bg-ivory);border-radius:0;padding:28px 32px 24px;
-  box-shadow:0 24px 48px -26px rgba(32,20,10,.55);border:1px solid rgba(255,255,255,.55)}
+/* premium karta placówek — pływa przy prawej krawędzi siatki treści (gutter --gx) */
+.hero__card{position:absolute;top:clamp(150px,17vh,184px);right:var(--gx);width:404px;z-index:3;
+  background:var(--color-bg-ivory);border-radius:0;padding:26px 30px 22px;
+  box-shadow:0 26px 54px -24px rgba(20,12,5,.62);border:1px solid rgba(255,255,255,.55)}
 .hcard__label{font-family:var(--font-body);font-size:.8125rem;font-weight:var(--fw-bold);letter-spacing:.16em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:12px}
 /* taby placówek — świadoma siatka 3+2 (bez sieroty) */
 .hcard__tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:2px 6px;border-bottom:1px solid var(--color-line);margin-bottom:14px}
@@ -273,28 +285,30 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
 .hcard__nfz{display:flex;align-items:center;gap:10px;margin-top:16px;padding-top:14px;border-top:1px solid var(--color-line);font-size:.9rem;color:var(--color-text-2)}
 .hcard__nfz img{height:20px;width:auto}
 
-/* biały cut-out z nagłówkiem (zaokrąglony róg = cut) */
-.hero__cut{position:absolute;left:0;bottom:0;width:49%;min-height:200px;z-index:2;
-  background:var(--color-bg-ivory);border-radius:0;border-top-right-radius:var(--hero-notch-x,300px) var(--hero-notch-y,225px);
-  padding:28px 46px 26px;display:flex;flex-direction:column;justify-content:center}
-.hero__title{font-family:var(--font-display);font-weight:var(--fw-regular);font-size:clamp(2.35rem,3.25vw,3.35rem);line-height:1.02;letter-spacing:.25px;color:var(--color-text);max-width:21ch;transition:opacity .5s ease,transform .5s ease}
+/* Treść hero = nakładka nad zdjęciem (bez wycinka): biały tekst wyrównany do lewej
+   krawędzi siatki treści, zakotwiczony u dołu — nad mocniejszą częścią nakładki. */
+/* treść wyśrodkowana w pionie — ten sam poziom niezależnie od długości tytułu
+   (krótki tytuł placówki i długi tytuł homepage lądują na tej samej wysokości) */
+.hero__cut{position:absolute;left:0;right:auto;top:0;bottom:0;width:auto;max-width:min(660px,58%);z-index:2;
+  background:none;border-radius:0;padding:clamp(124px,15vh,152px) 24px clamp(56px,8vh,88px) var(--gx);
+  display:flex;flex-direction:column;justify-content:center}
+.hero__title{font-family:var(--font-display);font-weight:var(--fw-regular);font-size:clamp(2.5rem,4.2vw,4rem);line-height:1.03;letter-spacing:.25px;color:#fff;max-width:16ch;text-shadow:0 2px 26px rgba(18,11,5,.5),0 1px 3px rgba(18,11,5,.4);transition:opacity .5s ease,transform .5s ease}
 .hero__title.is-swapping{opacity:0;transform:translateY(10px)}
-.hero__sub{font-family:var(--font-body);font-size:1.05rem;font-weight:var(--fw-regular);line-height:1.5;color:var(--color-text-2);max-width:48ch;margin-top:14px;transition:opacity .5s ease .05s,transform .5s ease .05s}
+.hero__sub{font-family:var(--font-body);font-size:1.08rem;font-weight:var(--fw-regular);line-height:1.55;color:rgba(255,255,255,.92);max-width:46ch;margin-top:16px;text-shadow:0 1px 16px rgba(18,11,5,.55);transition:opacity .5s ease .05s,transform .5s ease .05s}
 .hero__sub.is-swapping{opacity:0;transform:translateY(10px)}
-/* CTA + wskaźniki w jednym, zawsze widocznym rzędzie */
-.hero__ctarow{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:24px}
+/* CTA + wskaźniki w jednym, zawsze widocznym rzędzie — przyciski na jasnym: kremowy + outline-light */
+.hero__ctarow{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:26px}
 .hero__cta{min-height:54px;padding:15px 28px}
-.hero__cta.btn--brand{box-shadow:0 18px 40px -20px rgba(0,0,0,.4)}
-/* desktop: „Umów wizytę" jest już w karcie placówek i w nagłówku — w hero zostaje samo „Znajdź usługę" */
-@media(min-width:75.0625em){.hero__ctarow .btn--brand{display:none}}
-/* kropki: pasek zostaje 4px, ale cel dotykowy ma pełne 24px wysokości (WCAG 2.5.8) */
-.hero__dots{display:flex;gap:10px;margin-top:16px}
+.hero__cut .btn--brand{background:#fff;color:var(--color-brand);box-shadow:0 18px 40px -22px rgba(0,0,0,.55)}
+.hero__cut .btn--outline{border-color:rgba(255,255,255,.6);color:#fff;background:rgba(255,255,255,.08)}
+/* kropki: biały wskaźnik na nakładce; pasek 4px, cel dotykowy 24px (WCAG 2.5.8) */
+.hero__dots{display:flex;gap:10px;margin-top:20px}
 .hero__dot{width:30px;height:24px;border:0;background:none;cursor:pointer;padding:10px 0;
-  background-clip:content-box;background-color:var(--color-line);border-radius:3px;
+  background-clip:content-box;background-color:rgba(255,255,255,.5);border-radius:3px;
   transition:background-color .3s,width .3s}
-.hero__dot[aria-current="true"]{background-color:var(--color-brand);width:42px}
-.hero__dot:hover{background-color:var(--color-text-2)}
-.hero__dot:focus-visible{outline:2px solid var(--color-brand);outline-offset:3px}
+.hero__dot[aria-current="true"]{background-color:#fff;width:42px}
+.hero__dot:hover{background-color:rgba(255,255,255,.8)}
+.hero__dot:focus-visible{outline:2px solid #fff;outline-offset:3px}
 
 /* zagięty róg strony — ankieta satysfakcji */
 .dogear{position:fixed;right:0;bottom:0;z-index:90;width:142px;height:142px;text-decoration:none}
@@ -336,7 +350,6 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
 
 /* wspólne przyciski */
 .btn--brand{background:var(--color-brand);color:#fff}
-.btn--brand:hover{background:var(--color-brand-hover)}
 
 /* --- motion --- */
 @keyframes heroUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
@@ -345,23 +358,29 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
 .hero__card{animation-delay:.25s}
 
 /* ============================================================ BODŹCE — potrzeby pacjenta (ciemny akcent) */
-.needs{background:var(--color-brand-dark);color:#e8ddcb}
+/* JASNA sekcja (feedback): kremowe tło, ciemny tekst, klamry narożne (cięcie) widoczne */
+.needs{background:var(--color-cream)}
 .needs__grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(40px,5vw,84px);align-items:start}
-.needs__h{color:#fff;font-size:clamp(2.3rem,3.35vw,3rem);text-decoration:underline;text-decoration-color:#c6b087;text-decoration-thickness:2px;text-underline-offset:14px}
-.needs__lead{font-family:var(--font-body);font-size:1.1rem;color:#d7c9b2;font-weight:var(--fw-regular);line-height:1.62;margin:18px 0 28px;max-width:36ch}
-.needs__list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border-top:1px solid rgba(255,255,255,.14)}
-.needs__item{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px 4px;border-bottom:1px solid rgba(255,255,255,.14);color:#e8ddcb;text-decoration:none;min-height:44px}
+.needs__h{color:var(--color-text);font-size:clamp(2.3rem,3.35vw,3rem);text-decoration:underline;text-decoration-color:var(--color-brand-taupe);text-decoration-thickness:2px;text-underline-offset:14px}
+.needs__lead{font-family:var(--font-body);font-size:1.1rem;color:var(--color-text-2);font-weight:var(--fw-regular);line-height:1.62;margin:18px 0 28px;max-width:36ch}
+/* lista w klamrach — cięcie edytorskie, dobrze widoczne na jasnym tle */
+.needs__list{list-style:none;margin:0;display:flex;flex-direction:column;--cfa:22px;--cft:2px}
+.needs__item{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px 6px;border-bottom:1px solid var(--color-line);color:var(--color-text);text-decoration:none;min-height:44px}
+.needs__item:first-child{border-top:1px solid var(--color-line)}
 .needs__txt{display:flex;flex-direction:column;gap:6px;min-width:0}
-.needs__name{font-family:var(--font-display);font-size:clamp(1.42rem,1.9vw,1.8rem);color:#f0e7d5;line-height:1.14;transition:color .2s}
-.needs__to{font-family:var(--font-body);font-size:.78rem;font-weight:var(--fw-semibold);letter-spacing:.1em;text-transform:uppercase;color:#a1957e;transition:color .2s}
-.needs__arrow{color:#f0e7d5;opacity:.32;flex:0 0 auto;font-size:1.15rem;transition:opacity .2s}
-.needs__item:hover .needs__name,.needs__item:focus-visible .needs__name{color:#fff}
-.needs__item:hover .needs__to,.needs__item:focus-visible .needs__to{color:#cdbc9f}
-.needs__item:hover .needs__arrow,.needs__item:focus-visible .needs__arrow{opacity:1}
-.needs__item:focus-visible{outline:2px solid #f0e7d5;outline-offset:-2px}
-.needs__note{font-family:var(--font-body);font-size:.92rem;color:#b6aa92;margin-top:24px}
-.needs__note a{color:#f0e7d5;font-weight:var(--fw-semibold);border-bottom:1px solid rgba(240,231,213,.4);padding-bottom:1px;white-space:nowrap;transition:border-color .2s}
-.needs__note a:hover,.needs__note a:focus-visible{border-color:#f0e7d5}
+.needs__name{font-family:var(--font-display);font-size:clamp(1.42rem,1.9vw,1.8rem);color:var(--color-text);line-height:1.14;transition:color .2s}
+.needs__to{font-family:var(--font-body);font-size:.78rem;font-weight:var(--fw-semibold);letter-spacing:.1em;text-transform:uppercase;color:var(--color-text-muted);transition:color .2s}
+.needs__arrow{color:var(--color-brand);opacity:.5;flex:0 0 auto;font-size:1.15rem;transition:opacity .2s,transform .2s}
+.needs__item:hover .needs__name,.needs__item:focus-visible .needs__name{color:var(--color-brand)}
+.needs__item:hover .needs__to,.needs__item:focus-visible .needs__to{color:var(--color-brand-taupe)}
+.needs__item:hover .needs__arrow,.needs__item:focus-visible .needs__arrow{opacity:1;transform:translateX(3px)}
+.needs__item:focus-visible{outline:2px solid var(--color-brand);outline-offset:-2px}
+.needs .kicker--light{color:var(--color-brand)}
+.needs__cta{background:var(--color-brand);color:#fff;border-color:var(--color-brand)}
+.needs__cta:hover{background:var(--color-brand-hover)}
+.needs__note{font-family:var(--font-body);font-size:.92rem;color:var(--color-text-muted);margin-top:24px}
+.needs__note a{color:var(--color-brand);font-weight:var(--fw-semibold);border-bottom:1px solid rgba(72,61,50,.4);padding-bottom:1px;white-space:nowrap;transition:border-color .2s}
+.needs__note a:hover,.needs__note a:focus-visible{border-color:var(--color-brand)}
 
 /* ============================================================ USŁUGI — editorial explorer */
 .svc__head{margin-bottom:clamp(22px,2.6vw,34px)}
@@ -703,33 +722,38 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
   .site-header.search-open .headerbar__cta .icon-btn{opacity:0;pointer-events:none;transition-delay:0s;transition-duration:.15s}
   /* HERO mobile — duże zdjęcie full-bleed, tekst + CTA jako overlay na dole zdjęcia */
   .hero > .wrap{padding:0}
-  .hero{padding:128px 0 30px;--hmh:clamp(500px,76vh,620px)}
+  /* obraz wchodzi POD header także na mobile — header zlewa się z hero jak na desktopie */
+  .hero{padding:0 0 30px;--hmh:clamp(560px,84vh,720px)}
   .hero__shell{height:auto;display:block;position:relative;background:transparent;border-radius:0;overflow:visible}
   .hero__stage{position:relative;width:100%;height:var(--hmh);border-radius:0;overflow:hidden}
-  /* kadrowanie zdjęć per slajd pod pion mobile — fokus na twarz/dłonie, nie na pustą biel */
-  .hero__slide{filter:contrast(1.05) brightness(.9)}
-  /* slajd 1: kadr na dłoń fizjoterapeutki na barku pacjentki — sedno ujęcia.
-     Sprawdzone 42/48/54/60% — przy 54%+ bark wychodzi z kadru i zostaje samo okno. */
-  .hero__slide:nth-child(1){background-position:45% 45%}   /* 1: dłoń fizjoterapeutki na barku */
-  .hero__slide:nth-child(2){background-position:48% 33%}   /* 2: hydroterapia — twarz i wanna */
-  .hero__slide:nth-child(3){background-position:50% 40%}   /* 3: drenaż limfatyczny — twarz i sprzęt */
+  /* mobile: header zlewa się z hero IDENTYCZNIE jak na desktopie — przezroczysty gradient,
+     tu nieco mocniejszy u góry, żeby jasne napisy były czytelne nad zdjęciem. */
+  .site-header:not(.is-scrolled){background:linear-gradient(180deg,rgba(24,17,10,.82) 0%,rgba(24,17,10,.5) 52%,rgba(24,17,10,0) 100%)}
+  /* kadrowanie nowych grafik źródła pod pion mobile */
+  .hero__slide{filter:none}
+  .hero__slide:nth-child(1){background-position:48% 60%}   /* 1: rehabilitacja — dłonie na plecach pod headerem */
+  .hero__slide:nth-child(2){background-position:50% 52%}   /* 2: terapia manualna */
+  .hero__slide:nth-child(3){background-position:52% 46%}   /* 3: odnowa (hydro) */
+  .hero__slide:nth-child(4){background-position:52% 48%}   /* 4: fizjoterapia (mobilizacja barku) */
   .hero__tint{display:none}
-  .hero__cut{position:absolute;top:0;left:0;right:0;width:auto;bottom:auto;height:var(--hmh);border-radius:0;display:flex;flex-direction:column;justify-content:flex-end;margin:0;padding:0 24px 36px;z-index:2;pointer-events:none;background:linear-gradient(to bottom,rgba(10,7,4,0) 0%,rgba(10,7,4,.1) 30%,rgba(10,7,4,.46) 60%,rgba(10,7,4,.82) 84%,rgba(10,7,4,.93) 100%)}
+  /* Nakładka = brąz jak w źródle (spójnie z desktopem): lżej u góry, mocniej u dołu,
+     gdzie leży biały tekst — WCAG AA niezależnie od slajdu. */
+  .hero__cut{position:absolute;top:0;left:0;right:0;width:auto;max-width:none;bottom:auto;height:var(--hmh);border-radius:0;display:flex;flex-direction:column;justify-content:flex-end;margin:0;padding:0 24px 36px;z-index:2;pointer-events:none;background:linear-gradient(to bottom,rgba(72,61,50,.26) 0%,rgba(60,48,34,.44) 36%,rgba(38,29,19,.8) 68%,rgba(28,20,12,.92) 100%)}
   .hero__cut > *{pointer-events:auto}
-  .hero__title{color:#fff;font-size:clamp(2rem,7.8vw,2.4rem);line-height:1.06;letter-spacing:-.017em;hyphens:manual;overflow-wrap:normal;text-shadow:0 2px 20px rgba(0,0,0,.45)}
-  .hero__sub{color:rgba(255,255,255,.88);font-size:1rem;font-weight:400;line-height:1.55;margin-top:13px;max-width:33ch;text-shadow:0 1px 12px rgba(0,0,0,.55)}
-  .hero__ctarow{flex-direction:column;align-items:stretch;gap:11px;margin-top:26px}
-  .hero__ctarow .btn{width:100%;padding:16px 22px;font-size:1rem;letter-spacing:.01em;box-shadow:none;min-height:54px}
+  .hero__title{order:1;color:#fff;font-size:clamp(2.35rem,8.8vw,3rem);line-height:1.04;letter-spacing:-.02em;hyphens:manual;overflow-wrap:normal;text-shadow:0 2px 22px rgba(12,7,3,.62)}
+  .hero__title::after{content:none}
+  .hero__sub{order:3;color:#fff;font-size:1.2rem;font-weight:400;line-height:1.5;margin-top:16px;max-width:32ch;text-shadow:0 1px 16px rgba(12,7,3,.72)}
+  /* przyciski obok siebie (nie jeden pod drugim) — równa szerokość */
+  .hero__ctarow{order:4;flex-direction:row;align-items:stretch;gap:10px;margin-top:24px}
+  .hero__ctarow .btn{flex:1 1 0;min-width:0;padding:15px 12px;font-size:.95rem;letter-spacing:.01em;box-shadow:none;min-height:54px}
+  /* przyciski na nakładce: kremowy (Umów wizytę) + outline-light (Znajdź usługę) */
   .hero__ctarow .btn--brand{background:#fff;color:var(--color-brand)}
-  .hero__ctarow .btn--brand:hover{background:#f3ecdf}
-  .hero__ctarow .btn--outline{border:1px solid rgba(255,255,255,.42);color:#fff;background:rgba(255,255,255,.06)}
-  .hero__ctarow .btn--outline:hover{background:rgba(255,255,255,.14);border-color:#fff;color:#fff}
-  /* kropki jako wskaźnik slajdów na górze zdjęcia */
-  .hero__dots{position:absolute;top:18px;left:24px;margin:0;z-index:3;gap:7px;justify-content:flex-start}
-  /* pasek zostaje cienki (3px), ale cel dotykowy ma 24px — malujemy tylko content-box */
+  .hero__ctarow .btn--outline{border:1.5px solid rgba(255,255,255,.6);color:#fff;background:rgba(255,255,255,.08)}
+  /* kropki: w bloku treści, tuż POD tytułem */
+  .hero__dots{position:static;order:2;margin:14px 0 4px;z-index:3;gap:7px;justify-content:flex-start}
   .hero__dot{width:24px;height:24px;padding:10.5px 0;background-color:rgba(255,255,255,.55)}
   .hero__dot[aria-current="true"]{background-color:#fff;width:34px}
-  .hero__dot:hover{background-color:rgba(255,255,255,.8)}
+  .hero__dot:hover{background-color:rgba(255,255,255,.85)}
   .hero__card{position:static;width:auto;background:transparent;border:0;box-shadow:none;border-radius:0;padding:26px 20px 0;margin-top:0}
   .about__grid,.fin__grid,.news,.needs__grid{grid-template-columns:1fr;gap:40px}
   .fin__aside{justify-self:start;max-width:100%}
@@ -761,7 +785,7 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
   /* wstążka ankiety → pływający przycisk Zadzwoń (jak w referencji) */
   .dogear{display:none}
   .callfab{display:inline-flex;position:fixed;right:16px;bottom:16px;z-index:91}
-  .hero{padding:120px 0 30px}
+  .hero{padding:0 0 30px}   /* obraz pod header — blend jak na desktopie */
   .news__feature{border-top:2px solid var(--color-brand)}
   .beautytab{display:none}
   .svc>.wrap,.kons>.wrap{padding-left:44px}
@@ -798,7 +822,7 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
   .headerbar{gap:16px}
   .headerbar__cta{gap:16px}
   .headerbar__cta .header-phone{font-size:.9rem}
-  .hero{padding:120px 0 30px}
+  .hero{padding:0 0 30px}   /* obraz pod header — blend jak na desktopie */
   .hcard__tabs button{padding:8px 9px;font-size:.88rem}
   .section__title{font-size:2.25rem}
 

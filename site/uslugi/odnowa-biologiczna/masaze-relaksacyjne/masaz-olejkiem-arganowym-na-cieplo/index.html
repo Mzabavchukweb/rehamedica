@@ -25,8 +25,8 @@
 <link rel="icon" href="../../../../assets/favicon.png">
 <link rel="preload" href="../../../../assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../../../assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../../../css/style.css?v=82">
-<link rel="stylesheet" href="../../../../css/usluga.css?v=65">
+<link rel="stylesheet" href="../../../../css/style.css?v=104">
+<link rel="stylesheet" href="../../../../css/usluga.css?v=85">
 <script>document.documentElement.className+=' js';</script>
 <!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
 <script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
@@ -303,15 +303,24 @@
 
 <article class="usluga">
 
-  <section class="sbody">
-    <div class="wrap">
-      <div class="sbody__grid">
-        <div class="sbody__text">
-          <p class="sbody__p">Masaż ciepłym olejem to jeden z najpopularniejszych masaży, to czarodziejski, zmysłowy rytuał dla ciała, duszy i umysłu. Głęboko relaksuje, odpręża, przywraca siły i energię. W zależności od upodobań naszych Gości, masaż możemy wykonać bardzo delikatnie lub mocniej – ponieważ każdy z nas inaczej postrzega relaks. Olejek rozpieszcza skórę przyjemnym ciepłem. Masaż wykonywany jest w wolnym tempie, miękkimi, rytmicznymi ruchami. Eliminuje napięcie mięśni, niweluje stres, odpręża i wprawia w doskonałe samopoczucie. Ma pozytywny wpływ na układ nerwowy, przywraca prawidłowy rytm serca, poprawia krążenie i stan skóry.</p>
+  <!-- Opis usługi w rytmie edytorskim (wariant .lintro--rytm). Tekst jeden do jednego
+       z akapitu źródłowego: pierwsze zdanie jako lead, reszta jako akapit obok kadru. -->
+  <section class="lsec lsec--ivory">
+    <div class="wrap lintro lintro--rytm">
 
+      <div class="lintro__open">
+        <div class="lintro__head">
+          <p class="lkick">Na czym polega</p>
+          <p class="lintro__lead">Masaż ciepłym olejem to jeden z najpopularniejszych masaży, to czarodziejski, zmysłowy rytuał dla ciała, duszy i umysłu.</p>
         </div>
-        <figure class="sbody__fig"><img width="1200" height="800" src="../../../../assets/img/uslugi/masaz-olejkiem-arganowym-na-cieplo.webp" alt="Masaż olejkiem arganowym na ciepło w Reha Medica Szczecinek" loading="lazy" decoding="async"></figure>
+        <figure class="lintro__fig">
+          <img width="1200" height="800" src="../../../../assets/img/uslugi/masaz-olejkiem-arganowym-na-cieplo.webp" alt="Masaż olejkiem arganowym na ciepło w Reha Medica Szczecinek" loading="lazy" decoding="async">
+        </figure>
+        <div class="lintro__body">
+          <p class="lintro__p">Głęboko relaksuje, odpręża, przywraca siły i energię. W zależności od upodobań naszych Gości, masaż możemy wykonać bardzo delikatnie lub mocniej – ponieważ każdy z nas inaczej postrzega relaks. Olejek rozpieszcza skórę przyjemnym ciepłem. Masaż wykonywany jest w wolnym tempie, miękkimi, rytmicznymi ruchami. Eliminuje napięcie mięśni, niweluje stres, odpręża i wprawia w doskonałe samopoczucie. Ma pozytywny wpływ na układ nerwowy, przywraca prawidłowy rytm serca, poprawia krążenie i stan skóry.</p>
+        </div>
       </div>
+
     </div>
   </section>
 
@@ -486,6 +495,6 @@
   </div>
   <button class="a11y-reset" type="button" data-a11y-reset>Przywróć ustawienia domyślne</button>
 </div>
-<script src="../../../../js/main.js?v=87"></script>
+<script src="../../../../js/main.js?v=91"></script>
 </body>
 </html>

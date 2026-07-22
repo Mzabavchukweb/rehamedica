@@ -25,8 +25,8 @@
 <link rel="icon" href="../../assets/favicon.png">
 <link rel="preload" href="../../assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../css/style.css?v=82">
-<link rel="stylesheet" href="../../css/usluga.css?v=65">
+<link rel="stylesheet" href="../../css/style.css?v=104">
+<link rel="stylesheet" href="../../css/usluga.css?v=85">
 <script>document.documentElement.className+=' js';</script>
 <!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
 <script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
@@ -268,72 +268,79 @@
   </div>
 </section>
 
-<!-- NA TACY: gdzie i jak umówić (+ wymagania) — od razu widoczne -->
-<section class="splate">
-  <div class="wrap splate__inner">
-    <div class="splate__head">
-      <span class="splate__label">Dostępne w placówce</span>
-      <span class="splate__nfz">Usługi komercyjne oraz w ramach <img src="../../assets/nfz.svg" alt="Narodowy Fundusz Zdrowia" height="20"></span>
-    </div>
-    <div class="splate__grid">
-      <div class="splate__cards">
-        <article class="pcard">
-          <p class="pcard__city">Szczecinek</p>
-          <p class="pcard__row"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-pin"></use></svg><span>ul. Kościuszki 57, 78-400 Szczecinek</span></p>
-          <a class="pcard__row" href="tel:+48943721451"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-phone"></use></svg><span>94 372 14 51</span></a>
-          <a class="pcard__row" href="mailto:szczecinek@rehamedica.info.pl"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-mail"></use></svg><span>szczecinek@rehamedica.info.pl</span></a>
-          <div class="pcard__cta"><a class="btn btn--brand" href="../../index.html#placowki" data-booking>Umów wizytę <span class="btn__arrow" aria-hidden="true">→</span></a></div>
-        </article>
+<div class="lnfz">Usługi komercyjne oraz w ramach <img src="../../assets/nfz.svg" alt="Narodowy Fundusz Zdrowia" height="20"></div>
+
+<!-- INTRO — tekst + kadr z przesuniętą ramką -->
+<section class="lsec lsec--ivory">
+  <div class="wrap lintro lintro--rytm">
+
+    <!-- TAKT 1 — otwarcie: zakres pomocy i jej odbiorcy. Kadr obok leadu. -->
+    <div class="lintro__open">
+      <div class="lintro__head">
+        <p class="lkick">Na czym polega</p>
+        <p class="lintro__lead">W Reha Medica oferujemy kompleksowe wsparcie w zakresie neurologopedii i logopedii ogólnej.</p>
       </div>
-      <aside class="splate__req">
-        <p class="splate__reqLabel"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-survey"></use></svg>Przed wizytą</p>
-        <p class="splate__reqP">Do poradni logopedycznej w Reha Medica wymagane jest skierowanie od lekarza POZ lub innej poradni specjalistycznej lub ze szpitala.</p>
-        <p class="splate__reqP">Pacjenci zobowiązani są dostarczyć skierowanie w ciągu 14 dni roboczych od daty rejestracji. Jeżeli skierowanie nie zostanie dostarczone w wyznaczonym terminie, pacjent zostanie skreślony z listy oczekujących.</p>
-      </aside>
+      <figure class="lintro__fig">
+        <img src="../../assets/img/logopedia-band.webp" alt="Logopedka pokazuje dziecku ułożenie warg podczas ćwiczeń artykulacyjnych" width="756" height="592" loading="lazy" decoding="async">
+      </figure>
+      <div class="lintro__body">
+        <p class="lintro__p">Nasz zespół przygotowany jest do pracy z każdego rodzaju problemem z zakresu zaburzeń komunikacyjnych. Prowadzimy działania diagnostyczne i terapeutyczne u osób, które z różnych przyczyn mają zaburzenia mowy utrudniające im komunikowanie się z innymi.</p>
+        <p class="lintro__p">Pomoc logopedyczna jest skierowana do osób w różnym wieku, od niemowląt do osób dorosłych, posiadających różnego typu zaburzenia mowy i artykulacji wynikające m.in. z wad zgryzu, rozszczepienia podniebienia, uszkodzenia słuchu czy też upośledzenia umysłowego.</p>
+      </div>
     </div>
+
+    <aside class="callout">
+      <p class="callout__label"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-survey"></use></svg>Przed wizytą</p>
+      <p class="callout__p">Do poradni logopedycznej w Reha Medica wymagane jest skierowanie od lekarza POZ lub innej poradni specjalistycznej lub ze szpitala.</p>
+      <p class="callout__p">Pacjenci zobowiązani są dostarczyć skierowanie w ciągu 14 dni roboczych od daty rejestracji. Jeżeli skierowanie nie zostanie dostarczone w wyznaczonym terminie, pacjent zostanie skreślony z listy oczekujących.</p>
+    </aside>
+
   </div>
 </section>
 
-<article class="usluga">
+<!-- ZAKRES — beżowy pas, numerowana siatka -->
+<section class="loffer">
+  <div class="wrap">
+    <h2 class="loffer__h">Poradnia Reha Medica oferuje m.in.</h2>
+    <ol class="loffer__grid">
+      <li><span class="loffer__num">01</span><span class="loffer__txt">diagnozę i terapię zaburzeń mowy</span></li>
+      <li><span class="loffer__num">02</span><span class="loffer__txt">diagnozę procesów neurologopedycznych</span></li>
+      <li><span class="loffer__num">03</span><span class="loffer__txt">diagnozę zaburzeń procesów funkcji pokarmowych</span></li>
+      <li><span class="loffer__num">04</span><span class="loffer__txt">korektę wad wymowy</span></li>
+      <li><span class="loffer__num">05</span><span class="loffer__txt">terapię jąkania</span></li>
+      <li><span class="loffer__num">06</span><span class="loffer__txt">diagnozę i terapię dysleksji</span></li>
+      <li><span class="loffer__num">07</span><span class="loffer__txt">stymulowanie rozwoju mowy</span></li>
+      <li><span class="loffer__num">08</span><span class="loffer__txt">terapię opóźnionego i niezakończonego rozwoju mowy</span></li>
+      <li><span class="loffer__num">09</span><span class="loffer__txt">terapię poudarową</span></li>
+      <li><span class="loffer__num">10</span><span class="loffer__txt">wspomaganie rozwoju komunikacji u dzieci z zaburzeniami ze spektrum autyzmu</span></li>
+      <li><span class="loffer__num">11</span><span class="loffer__txt">terapię w dyzartrii, alalii, niedosłuchu, oligofazji</span></li>
+      <li><span class="loffer__num">12</span><span class="loffer__txt">wspomaganie rozwoju mowy za pomocą komunikacji alternatywnej i wspomagającej</span></li>
+    </ol>
+  </div>
+</section>
 
-  <section class="sbody">
-    <div class="wrap">
-      <div class="sbody__grid">
-        <div class="sbody__text">
-          <p class="sbody__p">W Reha Medica oferujemy kompleksowe wsparcie w zakresie neurologopedii i logopedii ogólnej.</p>
-          <p class="sbody__p">Nasz zespół przygotowany jest do pracy z każdego rodzaju problemem z zakresu zaburzeń komunikacyjnych. Prowadzimy działania diagnostyczne i terapeutyczne u osób, które z różnych przyczyn mają zaburzenia mowy utrudniające im komunikowanie się z innymi.</p>
-          <p class="sbody__p">Pomoc logopedyczna jest skierowana do osób w różnym wieku, od niemowląt do osób dorosłych , posiadających różnego typu zaburzenia mowy i artykulacji wynikające m.in. z wad zgryzu, rozszczepienia podniebienia, uszkodzenia słuchu czy też upośledzenia umysłowego.</p>
-          <p class="sbody__intro">Poradnia Reha Medica oferuje m.in.:</p>
-          <ul class="sbody__list">
-          <li>diagnozę i terapię zaburzeń mowy,</li>
-          <li>diagnozę procesów neurologopedycznych,</li>
-          <li>diagnozę zaburzeń procesów funkcji pokarmowych,</li>
-          <li>korektę wad wymowy,</li>
-          <li>terapię jąkania,</li>
-          <li>diagnozę i terapię dysleksji,</li>
-          <li>stymulowanie rozwoju mowy,</li>
-          <li>terapię opóźnionego i niezakończonego rozwoju mowy,</li>
-          <li>terapię poudarową</li>
-          <li>wspomaganie rozwoju komunikacji u dzieci z zaburzeniami ze spektrum autyzmu,</li>
-          <li>terapię w dyzartrii, alalii, niedosłuchu, oligofazji,</li>
-          <li>wspomaganie rozwoju mowy za pomocą komunikacji alternatywnej i wspomagającej.</li>
-          </ul>
-          <p class="sbody__p">Metody, którymi pracujemy w naszych gabinetach są zawsze dobierane odpowiednio do wieku i umiejętności pacjenta. Każde zajęcia są dokładnie przemyślane i realizowane według zamierzonego planu, by w jak największym stopniu zrealizować założone cele, które z kolei wynikają z dokładnej diagnozy zaburzeń, umiejętności i możliwości każdego pacjenta.</p>
-
-        </div>
-        <figure class="sbody__fig"><img src="../../assets/img/logopedia-band.webp" alt="Logopedka pokazuje dziecku ułożenie warg podczas ćwiczeń artykulacyjnych" width="756" height="592" loading="lazy" decoding="async"></figure>
+<!-- METODA — domknięcie tym samym komponentem co na pozostałych stronach usług.
+     Po przeniesieniu calloutu „Przed wizytą" do bloku opisu został tu jeden akapit,
+     a siatka .lclose (1.1fr/.9fr) zostawiała pustą prawą kolumnę. -->
+<section class="lsec lsec--ivory">
+  <div class="wrap">
+    <div class="lcoda lcoda--sama">
+      <div class="lcoda__inner">
+        <p class="lcoda__lead">Metody, którymi pracujemy w naszych gabinetach są zawsze dobierane odpowiednio do wieku i umiejętności pacjenta.</p>
+        <p class="lcoda__p">Każde zajęcia są dokładnie przemyślane i realizowane według zamierzonego planu, by w jak największym stopniu zrealizować założone cele, które z kolei wynikają z dokładnej diagnozy zaburzeń, umiejętności i możliwości każdego pacjenta.</p>
       </div>
     </div>
-  </section>
 
-  <section class="uend">
-    <div class="wrap uend__inner">
-      <a class="btn btn--brand uend__btn" href="../../index.html#placowki" data-booking>Umów wizytę <span class="btn__arrow" aria-hidden="true">→</span></a>
-      <a class="uend__back" href="../../index.html"><span aria-hidden="true">←</span> Wróć do strony głównej</a>
-    </div>
-  </section>
+  </div>
+</section>
 
-</article>
+<!-- CTA końcowe — pas jak wcześniej -->
+<section class="uend">
+  <div class="wrap uend__inner">
+    <a class="btn btn--brand uend__btn" href="../../index.html#placowki" data-booking>Umów wizytę <span class="btn__arrow" aria-hidden="true">→</span></a>
+    <a class="uend__back" href="../../index.html"><span aria-hidden="true">←</span> Wróć do strony głównej</a>
+  </div>
+</section>
 
 </main>
 
@@ -497,6 +504,6 @@
   </div>
   <button class="a11y-reset" type="button" data-a11y-reset>Przywróć ustawienia domyślne</button>
 </div>
-<script src="../../js/main.js?v=87"></script>
+<script src="../../js/main.js?v=91"></script>
 </body>
 </html>

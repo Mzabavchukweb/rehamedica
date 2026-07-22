@@ -25,8 +25,8 @@
 <link rel="icon" href="../../../assets/favicon.png">
 <link rel="preload" href="../../../assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../../assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../../css/style.css?v=82">
-<link rel="stylesheet" href="../../../css/usluga.css?v=65">
+<link rel="stylesheet" href="../../../css/style.css?v=104">
+<link rel="stylesheet" href="../../../css/usluga.css?v=85">
 <script>document.documentElement.className+=' js';</script>
 <!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
 <script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
@@ -297,18 +297,49 @@
 
 <article class="usluga">
 
-  <section class="sbody">
-    <div class="wrap">
-      <div class="sbody__grid">
-        <div class="sbody__text">
-          <p class="sbody__p">Kriokomora to profesjonalna, nowoczesna komora kriogeniczna, zasilana ciekłym syntetycznym powietrzem, wykorzystywana w terapii zimnem. W kriokomorze przeprowadzane są terapie ogólnoustrojowe. Krioterapia ogólnoustrojowa polega na oddziaływaniu zimna (od -130 do -160 stopni Celsjusza) na całą powierzchnię ciała.</p>
-          <p class="sbody__p">Zabiegi w kriokomorze spowalniają procesy starzenia, poprawiają mikrokrążenie, zwiększają odporność organizmu, regulują pracę układu hormonalnego, obniżają napięcie mięśniowe, wspierają terapie łagodzące ból i obrzęki. W organizmie poddanym niskiej temperaturze dochodzi do wzrostu poziomu B-endorfin, produkcji ACTH, kortyzonu, adrenaliny i noradrenaliny (a u mężczyzn testosteronu). U chorych poddanych krioterapii obserwuje się poprawę nastroju, zmniejszenie odczucia zmęczenia, ustąpienie problemów z zasypianiem i snem.</p>
-          <p class="sbody__p">Zabiegi w kriokomorze, mimo że trwają krótko (ok. 3 min.), cechują się wysoką skutecznością. Są idealnym uzupełnieniem regularnych ćwiczeń i indywidualnych terapii.</p>
-          <p class="sbody__p">Zabieg polega na oddziaływaniu na ciało bardzo niskiej temperatury (od -130 do -160 stopni Celsjusza) w specjalnej kriokomorze, w której przebywa się maksymalnie do 3 minut. Wewnątrz kriokomory należy spokojnie i powoli maszerować, oddychając powoli i płytko, tak aby lodowate powietrze nie dostało się w nadmiarze do płuc. Zasada oddychania w kriokomorze: dwa razy dłuższy wydech niż wdech. Takie postępowanie zapobiega wystąpieniu duszności. Zabieg w kriokomorze jest przez cały czas nadzorowany przez personel medyczny, dlatego w każdej chwili można go przerwać.</p>
-          <p class="sbody__p">Nie wolno dotykać ścian kriokomory, ponieważ w tak niskiej temperaturze grozi to odmrożeniem i uszkodzeniem skóry.</p>
-          <p class="sbody__p">Zabieg jest bezbolesny i dobrze tolerowany przez organizm. Po wyjściu z komory wskazane są intensywne ćwiczenia ruchowe przez ok. 20-30 min.</p>
+  <section class="lsec lsec--ivory">
+    <div class="wrap lintro lintro--rytm">
+
+      <!-- TAKT 1 — otwarcie: czym jest kriokomora. Bez kadru w źródle, więc jedna kolumna. -->
+      <div class="lintro__open">
+        <div class="lintro__head">
+          <p class="lkick">Na czym polega</p>
+          <p class="lintro__lead">Kriokomora to profesjonalna, nowoczesna komora kriogeniczna, zasilana ciekłym syntetycznym powietrzem, wykorzystywana w terapii zimnem.</p>
+        </div>
+        <div class="lintro__body">
+          <p class="lintro__p">W kriokomorze przeprowadzane są terapie ogólnoustrojowe. Krioterapia ogólnoustrojowa polega na oddziaływaniu zimna (od -130 do -160 stopni Celsjusza) na całą powierzchnię ciała.</p>
         </div>
       </div>
+
+      <!-- TAKT 2 — pierwsze zdanie akapitu o działaniu podniesione do rangi cytatu,
+           pozostałe zdania tego samego akapitu zostają obok. Tekst niezmieniony. -->
+      <div class="lpull">
+        <p class="lpull__q">Zabiegi w kriokomorze spowalniają procesy starzenia, poprawiają mikrokrążenie, zwiększają odporność organizmu, regulują pracę układu hormonalnego, obniżają napięcie mięśniowe, wspierają terapie łagodzące ból i obrzęki.</p>
+        <div>
+          <p class="lpull__p">W organizmie poddanym niskiej temperaturze dochodzi do wzrostu poziomu B-endorfin, produkcji ACTH, kortyzonu, adrenaliny i noradrenaliny (a u mężczyzn testosteronu).</p>
+          <p class="lpull__p">U chorych poddanych krioterapii obserwuje się poprawę nastroju, zmniejszenie odczucia zmęczenia, ustąpienie problemów z zasypianiem i snem.</p>
+        </div>
+      </div>
+
+      <!-- TAKT 3 — akapity o przebiegu zabiegu; to spójna proza, nie wyliczenie,
+           więc panel w wariancie prozy (wrapper .lparts__prose obowiązkowy). -->
+      <div class="lparts">
+        <h2 class="lparts__h">Przebieg zabiegu</h2>
+        <div class="lparts__prose">
+        <p class="lparts__p">Zabiegi w kriokomorze, mimo że trwają krótko (ok. 3 min.), cechują się wysoką skutecznością. Są idealnym uzupełnieniem regularnych ćwiczeń i indywidualnych terapii.</p>
+        <p class="lparts__p">Zabieg polega na oddziaływaniu na ciało bardzo niskiej temperatury (od -130 do -160 stopni Celsjusza) w specjalnej kriokomorze, w której przebywa się maksymalnie do 3 minut. Wewnątrz kriokomory należy spokojnie i powoli maszerować, oddychając powoli i płytko, tak aby lodowate powietrze nie dostało się w nadmiarze do płuc. Zasada oddychania w kriokomorze: dwa razy dłuższy wydech niż wdech. Takie postępowanie zapobiega wystąpieniu duszności. Zabieg w kriokomorze jest przez cały czas nadzorowany przez personel medyczny, dlatego w każdej chwili można go przerwać.</p>
+        <p class="lparts__p">Nie wolno dotykać ścian kriokomory, ponieważ w tak niskiej temperaturze grozi to odmrożeniem i uszkodzeniem skóry.</p>
+        </div>
+      </div>
+
+      <!-- TAKT 4 — domknięcie w wąskiej mierze -->
+      <div class="lcoda">
+        <div class="lcoda__inner">
+          <p class="lcoda__lead">Zabieg jest bezbolesny i dobrze tolerowany przez organizm.</p>
+          <p class="lcoda__p">Po wyjściu z komory wskazane są intensywne ćwiczenia ruchowe przez ok. 20-30 min.</p>
+        </div>
+      </div>
+
     </div>
   </section>
   <section class="sufolds">
@@ -512,6 +543,6 @@
   </div>
   <button class="a11y-reset" type="button" data-a11y-reset>Przywróć ustawienia domyślne</button>
 </div>
-<script src="../../../js/main.js?v=87"></script>
+<script src="../../../js/main.js?v=91"></script>
 </body>
 </html>

@@ -5,5 +5,5 @@
 # /placowki/bialogard/   https://[SERWIS-PSYCHOLOGICZNY]/bialogard/   301
 # /placowki/bobolice/    https://[SERWIS-PSYCHOLOGICZNY]/bobolice/    301
 
-# Szczecinek = strona główna (placówka centralna) — DO DECYZJI klienta:
-# /placowki/szczecinek/  /                                            301
+# Szczecinek = centrala = strona główna: osobna podstrona usunięta, 301 na główną.
+/placowki/szczecinek/  /  301

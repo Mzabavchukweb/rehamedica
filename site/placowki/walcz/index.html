@@ -25,8 +25,8 @@
 <link rel="icon" href="../../assets/favicon.png">
 <link rel="preload" href="../../assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../css/style.css?v=82">
-<link rel="stylesheet" href="../../css/usluga.css?v=65">
+<link rel="stylesheet" href="../../css/style.css?v=104">
+<link rel="stylesheet" href="../../css/usluga.css?v=85">
 <script>document.documentElement.className+=' js';</script>
 <!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
 <script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
@@ -262,9 +262,10 @@
   <div class="wrap">
     <div class="hero__shell">
       <div class="hero__stage" aria-hidden="true">
-        <div class="hero__slide is-active" data-bg="../../assets/img/hero-1-fizjoterapia.webp"></div>
-        <div class="hero__slide" data-bg="../../assets/img/hero-2-odnowa.webp"></div>
-        <div class="hero__slide" data-bg="../../assets/img/hero-3-pakiety.webp"></div>
+        <div class="hero__slide is-active" data-bg="../../assets/img/hero-1-rehabilitacja.webp"></div>
+        <div class="hero__slide" data-bg="../../assets/img/hero-2-terapia-manualna.webp"></div>
+        <div class="hero__slide" data-bg="../../assets/img/hero-3-odnowa.webp"></div>
+        <div class="hero__slide" data-bg="../../assets/img/hero-4-wspolpraca.webp"></div>
       </div>
       <div class="hero__tint" aria-hidden="true"></div>
       <div class="hero__inner">
@@ -294,14 +295,16 @@
         </div>
         <div class="hero__cut">
           <h1 class="hero__title">Reha Medica Wałcz</h1>
+          <p class="hero__sub">Rehabilitacja domowa w Wałczu. Umów wizytę w recepcji placówki.</p>
           <div class="hero__ctarow">
             <a class="btn btn--brand hero__cta" href="#placowki">Umów wizytę <span class="btn__arrow" aria-hidden="true">→</span></a>
             <a class="btn btn--outline hero__cta" href="../">Wszystkie placówki</a>
           </div>
           <div class="hero__dots" aria-label="Zmień zdjęcie w nagłówku">
-            <button class="hero__dot" type="button" data-slide="0" aria-label="Zdjęcie 1: fizjoterapia"></button>
-            <button class="hero__dot" type="button" data-slide="1" aria-label="Zdjęcie 2: odnowa biologiczna"></button>
-            <button class="hero__dot" type="button" data-slide="2" aria-label="Zdjęcie 3: pakiety"></button>
+            <button class="hero__dot" type="button" data-slide="0" aria-label="Zdjęcie 1: rehabilitacja"></button>
+            <button class="hero__dot" type="button" data-slide="1" aria-label="Zdjęcie 2: terapia manualna"></button>
+            <button class="hero__dot" type="button" data-slide="2" aria-label="Zdjęcie 3: odnowa biologiczna"></button>
+            <button class="hero__dot" type="button" data-slide="3" aria-label="Zdjęcie 4: fizjoterapia"></button>
           </div>
         </div>
       </div>
@@ -309,40 +312,34 @@
   </div>
 </section>
 
-<article class="usluga">
-
-  <div class="wrap uopen">
-    <h2 class="uover">Kontakt</h2>
-    <div class="plac">
-      <p class="plac__row plac__row--tel">
-        <a class="plac__tel" href="tel:+48530661982"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-phone"></use></svg><span>530 661 982</span></a>
-      </p>
-      <p class="plac__row">
-        <a class="plac__mail" href="mailto:walcz@rehamedica.info.pl">
-          <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-mail"></use></svg>
-          <span>walcz@rehamedica.info.pl</span>
-        </a>
-      </p>
+<!-- Body placówki — szeroki feature edytorski (zdjęcie z ramką + nachodzący panel). Kontakt jest w karcie hero. -->
+<section class="pwide">
+  <div class="wrap">
+    <div class="pwide__head">
+      <p class="pwide__kicker">Reha Medica Wałcz</p>
+      <h2 class="pwide__h">Usługi w tej placówce</h2>
+    </div>
+    <div class="pfeat2">
+      <div class="pfeat2__media">
+        <div class="pfeat2__frame" aria-hidden="true"></div>
+        <div class="pfeat2__img" role="img" aria-label="Rehabilitacja domowa w Reha Medica Wałcz" style="background-image:url('../../assets/img/domowa-feature.webp')"></div>
+      </div>
+      <div class="pfeat2__panel">
+        <p class="pfeat2__label">Rehabilitacja</p>
+        <h3 class="pfeat2__name">Rehabilitacja domowa</h3>
+        <p class="pfeat2__desc">Centrum Rehabilitacyjno-Medyczne Reha Medica w ramach zawartych umów z Narodowym Funduszem Zdrowia prowadzi rehabilitację w warunkach domowych dla pacjentów, którzy nie mogą uczestniczyć i skorzystać z rehabilitacji w warunkach ambulatoryjnych.</p>
+        <a class="pfeat2__link" href="../../uslugi/rehabilitacja/rehabilitacja-domowa/">Przejdź do usługi <span aria-hidden="true">→</span></a>
+      </div>
     </div>
   </div>
+</section>
 
-  <section class="uhub">
-    <div class="wrap">
-      <h2 class="uhub__h">Usługi w tej placówce</h2>
-      <ul class="uhub__list">
-        <li class="uhub__item"><a class="uhub__link" href="../../uslugi/rehabilitacja/rehabilitacja-domowa/"><span>Rehabilitacja domowa</span><svg class="ico uhub__arr" aria-hidden="true" focusable="false"><use href="#i-chevron"></use></svg></a></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="uend">
-    <div class="wrap uend__inner">
-      <a class="btn btn--brand uend__btn" href="../../index.html#placowki" data-booking>Umów wizytę <span class="btn__arrow" aria-hidden="true">→</span></a>
-      <a class="uend__back" href="../../placowki/"><span aria-hidden="true">←</span> Wszystkie placówki</a>
-    </div>
-  </section>
-
-</article>
+<section class="uend">
+  <div class="wrap uend__inner">
+    <a class="btn btn--brand uend__btn" href="../../index.html#placowki" data-booking>Umów wizytę <span class="btn__arrow" aria-hidden="true">→</span></a>
+    <a class="uend__back" href="../../placowki/"><span aria-hidden="true">←</span> Wszystkie placówki</a>
+  </div>
+</section>
 
 </main>
 
@@ -506,6 +503,6 @@
   </div>
   <button class="a11y-reset" type="button" data-a11y-reset>Przywróć ustawienia domyślne</button>
 </div>
-<script src="../../js/main.js?v=87"></script>
+<script src="../../js/main.js?v=91"></script>
 </body>
 </html>

@@ -25,8 +25,8 @@
 <link rel="icon" href="../../../assets/favicon.png">
 <link rel="preload" href="../../../assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../../assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../../css/style.css?v=82">
-<link rel="stylesheet" href="../../../css/usluga.css?v=65">
+<link rel="stylesheet" href="../../../css/style.css?v=104">
+<link rel="stylesheet" href="../../../css/usluga.css?v=85">
 <script>document.documentElement.className+=' js';</script>
 <!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
 <script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
@@ -297,20 +297,52 @@
 
 <article class="usluga">
 
-  <section class="sbody">
-    <div class="wrap">
-      <div class="sbody__grid">
-        <div class="sbody__text">
-          <p class="sbody__p">Rehabilitacja sportowa ma na celu przywrócenie pełnej sprawności po kontuzjach sportowych. Silnie eksploatowany organizm sportowców jest bardziej narażony na urazy i kontuzje, ponieważ brak mu wystarczającej ilości czasu do regeneracji. Rehabilitacja sportowa obejmuje szereg działań fizjoterapeutycznych oraz fizykoterapeutycznych, które mają na celu zregenerować i odnowić organizm sportowca.</p>
-          <p class="sbody__p">Najczęstszą przyczyną występowania kontuzji jest nieodpowiednia rozgrzewka, źle dobrane obuwie sportowe, przeciążenia, niewłaściwie skomponowany zestaw ćwiczeń. Proces rehabilitacji pomoże nam znaleźć słabe punkty w naszym planie. To jednocześnie najlepszy sposób, aby poradzić sobie z przeciążonymi mięśniami i skutecznie je rozluźnić. Zabiegi pomagają pozbyć się bólu, obrzęków oraz skurczy. Jeśli mamy problem z powracającymi urazami, również mamy możliwość zidentyfikowania ich przyczyny i pozbycia się.</p>
-          <p class="sbody__p">Fizjoterapeuci pracujący ze sportowcami działają w znacznie szybszym tempie. Praca jest bardziej intensywna, tak aby powrót do pełnej sprawności nastąpił najszybciej jak to możliwe.</p>
-          <p class="sbody__p">W rehabilitacji sportowej wykorzystywane są zarówno działania fizjoterapeutyczne, jak i fizykoterapeutyczne. Pozwalają one na zregenerowanie organizmu i przyspieszenie odnowy biologicznej.</p>
-          <p class="sbody__p">Podstawą rehabilitacji sportowej są techniki powięziowo-mięśniowe i trening personalny, które poprawiają kondycję, szybkość i zwinność, poszerzają zakres wykonywanego ruchu, poprawiają siłę, wytrzymałość oraz elastyczność, zwiększają kontrolę nerwowo-mięśniową, np. równowagę i koordynację, usprawniają wykonywanie ruchów typowych w danym sporcie, korygują nieprawidłowe schematy ruchowe, zwiększają i utrzymują wydolność układu krążeniowo-oddechowego.</p>
-          <p class="sbody__p">Spośród zabiegów fizykoterapeutycznych wskazać należy m.in.:</p>
-          <p class="sbody__p">Rehabilitacja sportowa jest zawsze dobierana indywidualnie. Konkretne metody, techniki i ćwiczenia zależą od celu treningu, a także ogólnej kondycji i stanu zdrowia. Najważniejszą cechą fizjoterapii w sporcie jest funkcjonalność, czyli skupienie na poprawieniu tych funkcji narządu ruchu, które są najważniejsze w danej dyscyplinie – m.in. siły, elastyczności, wytrzymałości, szybkości albo precyzji.</p>
+  <!-- Opis usługi w rytmie edytorskim (wariant .lintro--rytm).
+       Tekst jeden do jednego z akapitów źródłowych — takty tylko porządkują to, co już jest. -->
+  <section class="lsec lsec--ivory">
+    <div class="wrap lintro lintro--rytm">
+
+      <!-- TAKT 1 — otwarcie: pierwsze zdanie źródła jako lead, reszta obok kadru. -->
+      <div class="lintro__open">
+        <div class="lintro__head">
+          <p class="lkick">Na czym polega</p>
+          <p class="lintro__lead">Rehabilitacja sportowa ma na celu przywrócenie pełnej sprawności po kontuzjach sportowych.</p>
         </div>
-        <figure class="sbody__fig"><img width="1200" height="1034" src="../../../assets/img/uslugi/rehabilitacja-sportowa.webp" alt="Rehabilitacja sportowa w Reha Medica Szczecinek" loading="lazy" decoding="async"></figure>
+        <figure class="lintro__fig">
+          <img width="1200" height="1034" src="../../../assets/img/uslugi/rehabilitacja-sportowa.webp" alt="Rehabilitacja sportowa w Reha Medica Szczecinek" loading="lazy" decoding="async">
+        </figure>
+        <div class="lintro__body">
+          <p class="lintro__p">Silnie eksploatowany organizm sportowców jest bardziej narażony na urazy i kontuzje, ponieważ brak mu wystarczającej ilości czasu do regeneracji. Rehabilitacja sportowa obejmuje szereg działań fizjoterapeutycznych oraz fizykoterapeutycznych, które mają na celu zregenerować i odnowić organizm sportowca.</p>
+          <p class="lintro__p">Najczęstszą przyczyną występowania kontuzji jest nieodpowiednia rozgrzewka, źle dobrane obuwie sportowe, przeciążenia, niewłaściwie skomponowany zestaw ćwiczeń. Proces rehabilitacji pomoże nam znaleźć słabe punkty w naszym planie. To jednocześnie najlepszy sposób, aby poradzić sobie z przeciążonymi mięśniami i skutecznie je rozluźnić. Zabiegi pomagają pozbyć się bólu, obrzęków oraz skurczy. Jeśli mamy problem z powracającymi urazami, również mamy możliwość zidentyfikowania ich przyczyny i pozbycia się.</p>
+        </div>
       </div>
+
+      <!-- TAKT 2 — wyróżnik: jedno zdanie źródłowe podniesione do rangi cytatu. -->
+      <div class="lpull">
+        <p class="lpull__q">Fizjoterapeuci pracujący ze sportowcami działają w znacznie szybszym tempie.</p>
+        <div>
+          <p class="lpull__p">Praca jest bardziej intensywna, tak aby powrót do pełnej sprawności nastąpił najszybciej jak to możliwe.</p>
+          <p class="lpull__p">W rehabilitacji sportowej wykorzystywane są zarówno działania fizjoterapeutyczne, jak i fizykoterapeutyczne. Pozwalają one na zregenerowanie organizmu i przyspieszenie odnowy biologicznej.</p>
+        </div>
+      </div>
+
+      <!-- TAKT 3 — panel: treść z akapitów źródłowych, bez zmian w zdaniach. -->
+      <div class="lparts">
+        <h2 class="lparts__h">Podstawa rehabilitacji sportowej</h2>
+        <div class="lparts__prose">
+          <p class="lparts__p">Podstawą rehabilitacji sportowej są techniki powięziowo-mięśniowe i trening personalny, które poprawiają kondycję, szybkość i zwinność, poszerzają zakres wykonywanego ruchu, poprawiają siłę, wytrzymałość oraz elastyczność, zwiększają kontrolę nerwowo-mięśniową, np. równowagę i koordynację, usprawniają wykonywanie ruchów typowych w danym sporcie, korygują nieprawidłowe schematy ruchowe, zwiększają i utrzymują wydolność układu krążeniowo-oddechowego.</p>
+          <p class="lparts__p">Spośród zabiegów fizykoterapeutycznych wskazać należy m.in.:</p>
+        </div>
+      </div>
+
+      <!-- TAKT 4 — domknięcie w wąskiej mierze. -->
+      <div class="lcoda">
+        <div class="lcoda__inner">
+          <p class="lcoda__lead">Rehabilitacja sportowa jest zawsze dobierana indywidualnie.</p>
+          <p class="lcoda__p">Konkretne metody, techniki i ćwiczenia zależą od celu treningu, a także ogólnej kondycji i stanu zdrowia. Najważniejszą cechą fizjoterapii w sporcie jest funkcjonalność, czyli skupienie na poprawieniu tych funkcji narządu ruchu, które są najważniejsze w danej dyscyplinie – m.in. siły, elastyczności, wytrzymałości, szybkości albo precyzji.</p>
+        </div>
+      </div>
+
     </div>
   </section>
   <section class="sufolds">
@@ -513,6 +545,6 @@
   </div>
   <button class="a11y-reset" type="button" data-a11y-reset>Przywróć ustawienia domyślne</button>
 </div>
-<script src="../../../js/main.js?v=87"></script>
+<script src="../../../js/main.js?v=91"></script>
 </body>
 </html>

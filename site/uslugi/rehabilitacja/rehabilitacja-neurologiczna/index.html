@@ -25,8 +25,8 @@
 <link rel="icon" href="../../../assets/favicon.png">
 <link rel="preload" href="../../../assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../../assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../../css/style.css?v=82">
-<link rel="stylesheet" href="../../../css/usluga.css?v=65">
+<link rel="stylesheet" href="../../../css/style.css?v=104">
+<link rel="stylesheet" href="../../../css/usluga.css?v=85">
 <script>document.documentElement.className+=' js';</script>
 <!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
 <script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
@@ -275,82 +275,95 @@
 </section>
 
 <!-- NA TACY: gdzie i jak umówić (+ wymagania) — od razu widoczne -->
-<section class="splate">
-  <div class="wrap splate__inner">
-    <div class="splate__head">
-      <span class="splate__label">Dostępne w placówce</span>
-      <span class="splate__nfz">Usługi komercyjne oraz w ramach <img src="../../../assets/nfz.svg" alt="Narodowy Fundusz Zdrowia" height="20"></span>
-    </div>
-    <div class="splate__grid">
-      <div class="splate__cards">
-        <article class="pcard">
-          <p class="pcard__city">Szczecinek</p>
-          <p class="pcard__row"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-pin"></use></svg><span>ul. Kościuszki 57, 78-400 Szczecinek</span></p>
-          <a class="pcard__row" href="tel:+48943721451"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-phone"></use></svg><span>94 372 14 51</span></a>
-          <a class="pcard__row" href="mailto:szczecinek@rehamedica.info.pl"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-mail"></use></svg><span>szczecinek@rehamedica.info.pl</span></a>
-          <div class="pcard__cta"><a class="btn btn--brand" href="../../../index.html#placowki" data-booking>Umów wizytę <span class="btn__arrow" aria-hidden="true">→</span></a></div>
-        </article>
+<div class="lnfz">Usługi komercyjne oraz w ramach <img src="../../../assets/nfz.svg" alt="Narodowy Fundusz Zdrowia" height="20"></div>
+
+<!-- Treść usługi — szeroki układ edytorski.
+     Opis w rytmie edytorskim (wariant .lintro--rytm): otwarcie → wyróżnik → panel metod →
+     domknięcie. Zdania pochodzą z akapitów źródłowych bez zmian, w tej samej kolejności. -->
+<section class="lsec lsec--ivory">
+  <div class="wrap lintro lintro--rytm">
+
+    <!-- TAKT 1 — otwarcie: pierwsze zdanie akapitu jako lead, reszta akapitu i akapit
+         kolejny w kolumnie obok kadru. Tekst niezmieniony. -->
+    <div class="lintro__open">
+      <div class="lintro__head">
+        <p class="lkick">Na czym polega</p>
+        <p class="lintro__lead">Zdiagnozowanie zmian chorobowych w ośrodkowym lub obwodowym układzie nerwowym wielu osobom wciąż kojarzy się z nieodwracalnym kalectwem.</p>
+      </div>
+      <figure class="lintro__fig">
+        <img width="1200" height="1127" src="../../../assets/img/uslugi/rehabilitacja-neurologiczna.webp" alt="Rehabilitacja neurologiczna w Reha Medica Szczecinek" loading="lazy" decoding="async">
+      </figure>
+      <div class="lintro__body">
+        <p class="lintro__p">Przebyty udar lub wypadek, w wyniku którego doszło do uszkodzenia mózgowia dla dużej rzeszy pacjentów brzmi jak wyrok. W tym miejscu warto zwrócić uwagę na fakt, iż ludzka tkanka nerwowa charakteryzuje się neuroplastycznością czyli zdolnością wykształcania nowych połączeń nerwowych oraz przebudowy istniejących.</p>
+        <p class="lintro__p">Dzięki tym cechom układu nerwowego możliwe jest przywrócenie utraconych funkcji lub hamowanie procesów degeneracyjnych w przypadku chorób postępujących takich jak np. stwardnienie rozsiane, dystrofie mięśniowe, stwardnienie zanikowe boczne, choroba Parkinson. W praktyce oznacza to, że odpowiednio wcześnie podjęta rehabilitacja w wielu przypadkach daje pacjentom dotkniętym chorobami lub po przebytych uszkodzeniach układu nerwowego szanse na znaczną poprawę jakości życia.</p>
       </div>
     </div>
+
+    <!-- TAKT 2 — wyróżnik: zdanie o celu rehabilitacji podniesione do rangi cytatu,
+         akapit o indywidualnym planie terapii zostaje obok jako rozwinięcie. -->
+    <div class="lpull">
+      <p class="lpull__q">Rehabilitacja neurologiczna dorosłych i dzieci ma na celu odtworzenie utraconych funkcji, wykształcenie wzorców adaptacyjnych u osób dotkniętych niepełnosprawnością oraz podtrzymywanie pozostałych funkcji pacjenta dotkniętego chorobą o podłożu neurologicznym.</p>
+      <div>
+        <p class="lpull__p">Każdy przypadek zachorowania jest inny, dlatego terapeuta po dokładnym zapoznaniu się z stanem zdrowia pacjenta oraz historią choroby dobiera indywidualny plan rehabilitacji odpowiedni dla jego wieku, kondycji oraz stopnia zaawansowania zaistniałych zmian.</p>
+      </div>
+    </div>
+
+    <!-- TAKT 3 — metody wyliczone w zdaniu źródłowym („Stosowane metody neurorehabilitacji
+         to na przykład: …") rozpisane na siatkę; zdanie zastąpione listą, nie zdublowane.
+         Sekcja „Wskazania" niżej wymienia jednostki chorobowe, więc nic się nie powtarza. -->
+    <div class="lparts">
+      <h2 class="lparts__h">Przykładowe metody neurorehabilitacji</h2>
+      <ul class="lparts__grid">
+        <li>Metoda Bobath</li>
+        <li>PNF</li>
+        <li>Techniki osteopatyczne (np. czaszkowo-krzyżowa)</li>
+        <li>Terapia manualna</li>
+        <li>Neuromobilizacja</li>
+      </ul>
+    </div>
+
+    <!-- TAKT 4 — domknięcie w wąskiej mierze: ostatnie zdanie akapitu o metodach -->
+    <div class="lcoda">
+      <div class="lcoda__inner">
+        <p class="lcoda__lead">Ponadto u chorych sprawdzają się techniki rozluźniania na poziomie mięśniowo-powięziowym oraz kinesiology taping.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<article class="usluga">
+<!-- WSKAZANIA — numerowana siatka -->
+<section class="loffer">
+  <div class="wrap">
+    <h2 class="loffer__h">Wskazania</h2>
+    <ol class="loffer__grid">
+      <li><span class="loffer__num">01</span><span class="loffer__txt">Udar niedokrwienny mózgu</span></li>
+      <li><span class="loffer__num">02</span><span class="loffer__txt">Udar krwotoczny mózgu</span></li>
+      <li><span class="loffer__num">03</span><span class="loffer__txt">Choroba Parkinsona, zespół parkinsonowski</span></li>
+      <li><span class="loffer__num">04</span><span class="loffer__txt">Alzheimer</span></li>
+      <li><span class="loffer__num">05</span><span class="loffer__txt">Stwardnienie rozsiane</span></li>
+      <li><span class="loffer__num">06</span><span class="loffer__txt">Stwardnienie zanikowe boczne</span></li>
+      <li><span class="loffer__num">07</span><span class="loffer__txt">Jamistość rdzenia kręgowego</span></li>
+      <li><span class="loffer__num">08</span><span class="loffer__txt">Zapalenie opon mózgowych</span></li>
+      <li><span class="loffer__num">09</span><span class="loffer__txt">Zespół Guillaina-Barrego</span></li>
+      <li><span class="loffer__num">10</span><span class="loffer__txt">Polineuropatie</span></li>
+      <li><span class="loffer__num">11</span><span class="loffer__txt">Neuropatie</span></li>
+      <li><span class="loffer__num">12</span><span class="loffer__txt">Dyskopatie</span></li>
+      <li><span class="loffer__num">13</span><span class="loffer__txt">Uszkodzenia nerwów obwodowych</span></li>
+      <li><span class="loffer__num">14</span><span class="loffer__txt">Uszkodzenie ośrodkowego układu nerwowego</span></li>
+      <li><span class="loffer__num">15</span><span class="loffer__txt">Porażenie nerwu twarzowego</span></li>
+      <li><span class="loffer__num">16</span><span class="loffer__txt">Po urazach czaszkowo-mózgowych i/lub rdzenia kręgowego</span></li>
+      <li><span class="loffer__num">17</span><span class="loffer__txt">Choroba Huntingtona</span></li>
+    </ol>
+  </div>
+</section>
 
-  <section class="sbody">
-    <div class="wrap">
-      <div class="sbody__grid">
-        <div class="sbody__text">
-          <p class="sbody__p">Zdiagnozowanie zmian chorobowych w ośrodkowym lub obwodowym układzie nerwowym wielu osobom wciąż kojarzy się z nieodwracalnym kalectwem. Przebyty udar lub wypadek, w wyniku którego doszło do uszkodzenia mózgowia dla dużej rzeszy pacjentów brzmi jak wyrok. W tym miejscu warto zwrócić uwagę na fakt, iż ludzka tkanka nerwowa charakteryzuje się neuroplastycznością czyli zdolnością wykształcania nowych połączeń nerwowych oraz przebudowy istniejących.</p>
-          <p class="sbody__p">Dzięki tym cechom układu nerwowego możliwe jest przywrócenie utraconych funkcji lub hamowanie procesów degeneracyjnych w przypadku chorób postępujących takich jak np. stwardnienie rozsiane, dystrofie mięśniowe, stwardnienie zanikowe boczne, choroba Parkinson. W praktyce oznacza to, że odpowiednio wcześnie podjęta rehabilitacja w wielu przypadkach daje pacjentom dotkniętym chorobami lub po przebytych uszkodzeniach układu nerwowego szanse na znaczną poprawę jakości życia.</p>
-          <p class="sbody__p">Rehabilitacja neurologiczna dorosłych i dzieci ma na celu odtworzenie utraconych funkcji, wykształcenie wzorców adaptacyjnych u osób dotkniętych niepełnosprawnością oraz podtrzymywanie pozostałych funkcji pacjenta dotkniętego chorobą o podłożu neurologicznym.</p>
-          <p class="sbody__p">Każdy przypadek zachorowania jest inny, dlatego terapeuta po dokładnym zapoznaniu się z stanem zdrowia pacjenta oraz historią choroby dobiera indywidualny plan rehabilitacji odpowiedni dla jego wieku, kondycji oraz stopnia zaawansowania zaistniałych zmian.</p>
-          <p class="sbody__p">Stosowane metody neurorehabilitacji to na przykład: Metoda Bobath, PNF, techniki osteopatyczne (np. czaszkowo-krzyżowa), terapia manualna czy neuromobilizacja. Ponadto u chorych sprawdzają się techniki rozluźniania na poziomie mięśniowo-powięziowym oraz kinesiology taping.</p>
-        </div>
-        <figure class="sbody__fig"><img width="1200" height="1127" src="../../../assets/img/uslugi/rehabilitacja-neurologiczna.webp" alt="Rehabilitacja neurologiczna w Reha Medica Szczecinek" loading="lazy" decoding="async"></figure>
-      </div>
-    </div>
-  </section>
-  <section class="sufolds">
-    <div class="wrap sufolds__wrap">
-      <div class="sufold">
-        <button class="sufold__sum" id="acc-wsk-b" type="button" aria-expanded="false" aria-controls="acc-wsk-p">Wskazania</button>
-        <div class="sufold__panel" id="acc-wsk-p" role="region" aria-labelledby="acc-wsk-b">
-          <div class="sufold__body"><div class="sufold__inner">
-            <ul class="sufold__list">
-            <li>Udar niedokrwienny mózgu.</li>
-            <li>Udar krwotoczny mózgu.</li>
-            <li>Choroba Parkinsona, zespół parkinsonowski.</li>
-            <li>Alzheimer.</li>
-            <li>Stwardnienie rozsiane.</li>
-            <li>Stwardnienie zanikowe boczne.</li>
-            <li>Jamistość rdzenia kręgowego.</li>
-            <li>Zapalenie opon mózgowych.</li>
-            <li>Zespół Guillaina-Barrego.</li>
-            <li>Polineuropatie.</li>
-            <li>Neuropatie.</li>
-            <li>Dyskopatie.</li>
-            <li>Uszkodzenia nerwów obwodowych.</li>
-            <li>Uszkodzenie ośrodkowego układu nerwowego.</li>
-            <li>Porażenie nerwu twarzowego.</li>
-            <li>Po urazach czaszkowo-mózgowych i/lub rdzenia kręgowego.</li>
-            <li>Choroba Huntingtona.</li>
-            </ul>
-          </div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="uend">
-    <div class="wrap uend__inner">
-      <a class="btn btn--brand uend__btn" href="../../../index.html#placowki" data-booking>Umów wizytę <span class="btn__arrow" aria-hidden="true">→</span></a>
-      <a class="uend__back" href="../../../index.html"><span aria-hidden="true">←</span> Wróć do strony głównej</a>
-    </div>
-  </section>
-
-</article>
+<section class="uend">
+  <div class="wrap uend__inner">
+    <a class="btn btn--brand uend__btn" href="../../../index.html#placowki" data-booking>Umów wizytę <span class="btn__arrow" aria-hidden="true">→</span></a>
+    <a class="uend__back" href="../../../index.html"><span aria-hidden="true">←</span> Wróć do strony głównej</a>
+  </div>
+</section>
 
 </main>
 
@@ -514,6 +527,6 @@
   </div>
   <button class="a11y-reset" type="button" data-a11y-reset>Przywróć ustawienia domyślne</button>
 </div>
-<script src="../../../js/main.js?v=87"></script>
+<script src="../../../js/main.js?v=91"></script>
 </body>
 </html>

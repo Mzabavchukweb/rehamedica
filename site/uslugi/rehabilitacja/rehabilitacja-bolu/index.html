@@ -25,8 +25,8 @@
 <link rel="icon" href="../../../assets/favicon.png">
 <link rel="preload" href="../../../assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../../assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../../css/style.css?v=82">
-<link rel="stylesheet" href="../../../css/usluga.css?v=65">
+<link rel="stylesheet" href="../../../css/style.css?v=104">
+<link rel="stylesheet" href="../../../css/usluga.css?v=85">
 <script>document.documentElement.className+=' js';</script>
 <!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
 <script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
@@ -274,42 +274,43 @@
   </div>
 </section>
 
-<!-- NA TACY: gdzie i jak umówić (+ wymagania) — od razu widoczne -->
-<section class="splate">
-  <div class="wrap splate__inner">
-    <div class="splate__head">
-      <span class="splate__label">Dostępne w placówce</span>
-      <span class="splate__nfz">Usługi komercyjne oraz w ramach <img src="../../../assets/nfz.svg" alt="Narodowy Fundusz Zdrowia" height="20"></span>
-    </div>
-    <div class="splate__grid">
-      <div class="splate__cards">
-        <article class="pcard">
-          <p class="pcard__city">Szczecinek</p>
-          <p class="pcard__row"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-pin"></use></svg><span>ul. Kościuszki 57, 78-400 Szczecinek</span></p>
-          <a class="pcard__row" href="tel:+48943721451"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-phone"></use></svg><span>94 372 14 51</span></a>
-          <a class="pcard__row" href="mailto:szczecinek@rehamedica.info.pl"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-mail"></use></svg><span>szczecinek@rehamedica.info.pl</span></a>
-          <div class="pcard__cta"><a class="btn btn--brand" href="../../../index.html#placowki" data-booking>Umów wizytę <span class="btn__arrow" aria-hidden="true">→</span></a></div>
-        </article>
+<!-- Opis usługi w rytmie edytorskim (wariant .lintro--rytm). Źródło to jeden akapit,
+     więc rytm ma dwa takty: otwarcie (lead + kadr + rozwinięcie) i wyróżnik.
+     Zdania przeniesione dosłownie, w kolejności źródłowej; żadnego nie dodano. -->
+<section class="lsec lsec--ivory">
+  <div class="wrap lintro lintro--rytm">
+
+    <!-- TAKT 1 — otwarcie: pierwsze zdanie akapitu jako lead, kadr obok -->
+    <div class="lintro__open">
+      <div class="lintro__head">
+        <p class="lkick">Na czym polega</p>
+        <p class="lintro__lead">Fizjoterapia oferuje szeroki wachlarz zabiegów, które w różny sposób i w różnym stopniu łagodzą ból, niezależnie od jego pochodzenia, w tym także ból przewlekły.</p>
+      </div>
+      <figure class="lintro__fig">
+        <img width="1200" height="860" src="../../../assets/img/uslugi/rehabilitacja-bolu.webp" alt="Rehabilitacja bólu w Reha Medica Szczecinek" loading="lazy" decoding="async">
+      </figure>
+      <div class="lintro__body">
+        <p class="lintro__p">Metody są dobierane indywidualnie, po uwzględnieniu ewentualnych schorzeń towarzyszących i wykluczeniu przeciwwskazań do zastosowania konkretnej terapii.</p>
       </div>
     </div>
+
+    <!-- TAKT 2 — wyróżnik: zdanie o łączeniu metod podniesione do rangi cytatu,
+         ostatnie zdanie akapitu zostaje obok jako rozwinięcie. -->
+    <div class="lpull">
+      <p class="lpull__q">Zwykle rehabilitacja bólu nie zamyka się w jednej metodzie.</p>
+      <div>
+        <p class="lpull__p">Najczęściej łączy się ją z innego rodzaju zabiegami, masażami lub terapią manualną.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<article class="usluga">
+<!-- Treść usługi — wąska kolumna edytorska (redesign) -->
+<article class="uart">
+  <div class="uart__col">
 
-  <section class="sbody">
-    <div class="wrap">
-      <div class="sbody__grid">
-        <div class="sbody__text">
-          <p class="sbody__p">Fizjoterapia oferuje szeroki wachlarz zabiegów, które w różny sposób i w różnym stopniu łagodzą ból, niezależnie od jego pochodzenia, w tym także ból przewlekły. Metody są dobierane indywidualnie, po uwzględnieniu ewentualnych schorzeń towarzyszących i wykluczeniu przeciwwskazań do zastosowania konkretnej terapii. Zwykle rehabilitacja bólu nie zamyka się w jednej metodzie. Najczęściej łączy się ją z innego rodzaju zabiegami, masażami lub terapią manualną.</p>
-
-        </div>
-        <figure class="sbody__fig"><img width="1200" height="860" src="../../../assets/img/uslugi/rehabilitacja-bolu.webp" alt="Rehabilitacja bólu w Reha Medica Szczecinek" loading="lazy" decoding="async"></figure>
-      </div>
-    </div>
-  </section>
-  <section class="sufolds">
-    <div class="wrap sufolds__wrap">
+    <div class="uart__acc">
       <div class="sufold">
         <button class="sufold__sum" id="acc-wsk-b" type="button" aria-expanded="false" aria-controls="acc-wsk-p">Wskazania</button>
         <div class="sufold__panel" id="acc-wsk-p" role="region" aria-labelledby="acc-wsk-b">
@@ -328,16 +329,22 @@
         </div>
       </div>
     </div>
-  </section>
 
+    <aside class="ubook" aria-label="Umów wizytę w placówce">
+      <p class="ubook__label">Umów wizytę w placówce</p>
+      <p class="ubook__city">Szczecinek</p>
+      <p class="ubook__row"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-pin"></use></svg><span>ul. Kościuszki 57, 78-400 Szczecinek</span></p>
+      <a class="ubook__row" href="tel:+48943721451"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-phone"></use></svg><span>94 372 14 51</span></a>
+      <a class="ubook__row" href="mailto:szczecinek@rehamedica.info.pl"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-mail"></use></svg><span>szczecinek@rehamedica.info.pl</span></a>
+      <a class="btn btn--brand ubook__cta" href="../../../index.html#placowki" data-booking>Umów wizytę <span class="btn__arrow" aria-hidden="true">→</span></a>
+      <p class="ubook__nfz">Usługi komercyjne oraz w ramach <img src="../../../assets/nfz.svg" alt="Narodowy Fundusz Zdrowia" height="18"></p>
+    </aside>
 
-  <section class="uend">
-    <div class="wrap uend__inner">
-      <a class="btn btn--brand uend__btn" href="../../../index.html#placowki" data-booking>Umów wizytę <span class="btn__arrow" aria-hidden="true">→</span></a>
-      <a class="uend__back" href="../../../index.html"><span aria-hidden="true">←</span> Wróć do strony głównej</a>
+    <div class="uart__end">
+      <a class="uart__back" href="../../../index.html"><span aria-hidden="true">←</span> Wróć do strony głównej</a>
     </div>
-  </section>
 
+  </div>
 </article>
 
 </main>
@@ -502,6 +509,6 @@
   </div>
   <button class="a11y-reset" type="button" data-a11y-reset>Przywróć ustawienia domyślne</button>
 </div>
-<script src="../../../js/main.js?v=87"></script>
+<script src="../../../js/main.js?v=91"></script>
 </body>
 </html>

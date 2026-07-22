@@ -111,6 +111,255 @@
 .uend__back span{transition:transform .24s}
 .uend__back:hover span,.uend__back:focus-visible span{transform:translateX(-4px)}
 
+/* ══════════════════════════════════════════════════════════════════
+   STRONA USŁUGI — redesign: wąska kolumna edytorska (jak magazyn).
+   Zastępuje misz-masz .splate/.sbody/.uend czystym, spokojnym układem.
+   ══════════════════════════════════════════════════════════════════ */
+.uart{background:var(--color-bg-ivory);padding:clamp(46px,6vw,84px) 0 clamp(52px,7vw,94px)}
+.uart__col{max-width:726px;margin-inline:auto;padding-inline:clamp(22px,5vw,34px)}
+/* lead — pierwszy akapit jako duży, edytorski wstęp */
+.uart__lead{font-family:var(--font-body);font-size:clamp(1.16rem,1.55vw,1.36rem);line-height:1.64;color:var(--color-text);font-weight:var(--fw-regular);margin:0}
+.uart__lead + .uart__lead{margin-top:1.05em}
+/* zdjęcie — pełna szerokość kolumny */
+.uart__fig{margin:clamp(34px,4.4vw,54px) 0 0}
+.uart__fig img{display:block;width:100%;height:auto}
+.uart__fig figcaption{margin-top:10px;font-size:.86rem;color:var(--color-text-muted);text-align:center}
+/* akordeony — sekcja detali */
+.uart__acc{margin-top:clamp(34px,4.4vw,54px);display:flex;flex-direction:column;gap:0}
+/* karta „umów w placówce" — spokojna, kremowa, z hairline */
+.ubook{margin-top:clamp(40px,5vw,62px);background:var(--color-cream);border:1px solid var(--color-line);padding:clamp(26px,3.4vw,40px)}
+.ubook__label{font-family:var(--font-body);font-size:.8rem;font-weight:var(--fw-bold);letter-spacing:.16em;text-transform:uppercase;color:var(--color-text-muted);margin:0 0 14px}
+.ubook__city{font-family:var(--font-display);font-size:clamp(1.5rem,2vw,1.85rem);color:var(--color-text);margin:0 0 18px;line-height:1.1}
+.ubook__row{display:flex;align-items:center;gap:12px;font-size:1.02rem;color:var(--color-text-2);margin:0 0 12px;text-decoration:none;word-break:break-word}
+.ubook__row svg{color:var(--color-brand);flex:0 0 auto;width:20px;height:20px}
+.ubook__row[href]:focus-visible{outline:2px solid var(--color-brand);outline-offset:3px;border-radius:3px}
+.ubook__cta{margin-top:18px;min-height:54px;padding:15px 30px}
+.ubook__nfz{display:flex;align-items:center;gap:10px;margin:20px 0 0;padding-top:16px;border-top:1px solid var(--color-line);font-size:.9rem;color:var(--color-text-2)}
+.ubook__nfz img{height:18px;width:auto}
+/* koniec — cichy powrót */
+.uart__end{margin-top:clamp(36px,4.6vw,54px);padding-top:clamp(22px,2.8vw,30px);border-top:1px solid var(--color-line);display:flex;justify-content:center}
+.uart__back{font-family:var(--font-body);font-size:.82rem;font-weight:var(--fw-bold);letter-spacing:.1em;text-transform:uppercase;color:var(--color-brand);text-decoration:none;display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.uart__back:focus-visible{outline:2px solid var(--color-brand);outline-offset:3px}
+/* nagłówek sekcji w kolumnie edytorskiej */
+.uart__h{font-family:var(--font-display);font-weight:var(--fw-regular);font-size:clamp(1.5rem,2.2vw,2rem);color:var(--color-text);margin:0 0 clamp(16px,1.8vw,24px);line-height:1.12}
+/* lista usług placówki — elegancka, hairline + serif */
+.plist{list-style:none;margin:0;padding:0;border-top:1px solid var(--color-line)}
+.plist__link{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:clamp(16px,1.9vw,22px) 6px;border-bottom:1px solid var(--color-line);color:var(--color-text);text-decoration:none;font-family:var(--font-display);font-size:clamp(1.22rem,1.6vw,1.55rem);line-height:1.16;min-height:44px}
+.plist__arr{color:var(--color-brand);width:20px;height:20px;flex:0 0 auto;transform:rotate(-90deg)}
+.plist__link:focus-visible{outline:2px solid var(--color-brand);outline-offset:-2px}
+.plist__link--brak{color:var(--color-text-2);cursor:default}
+/* usługa placówki z opisem — nazwa + „czym to jest" + link do strony usługi */
+.pserv{padding:clamp(24px,3vw,34px) 0;border-bottom:1px solid var(--color-line)}
+.pserv:first-of-type{border-top:1px solid var(--color-line)}
+.pserv__name{font-family:var(--font-display);font-weight:var(--fw-regular);font-size:clamp(1.4rem,1.9vw,1.75rem);color:var(--color-text);margin:0 0 10px;line-height:1.16}
+.pserv__desc{font-family:var(--font-body);font-size:1.04rem;line-height:1.62;color:var(--color-text-2);margin:0 0 16px}
+.pserv__link{font-family:var(--font-body);font-size:.8rem;font-weight:var(--fw-bold);letter-spacing:.1em;text-transform:uppercase;color:var(--color-brand);text-decoration:none;display:inline-flex;align-items:center;gap:8px;min-height:32px}
+.pserv__link:focus-visible{outline:2px solid var(--color-brand);outline-offset:3px;border-radius:3px}
+/* usługa placówki jako FEATURE — zdjęcie w klamrach narożnych + opis + link (edytorsko, pod hero) */
+.pfeat{margin-top:clamp(6px,1.4vw,14px)}
+.pfeat__fig{margin:0 0 clamp(24px,3vw,36px);padding:15px 17px;--cf:var(--color-brand);--cfa:22px;--cft:2px}
+.pfeat__fig img{display:block;width:100%;aspect-ratio:2/1;object-fit:cover}
+.pfeat__name{font-family:var(--font-display);font-weight:var(--fw-regular);font-size:clamp(1.6rem,2.3vw,2.05rem);color:var(--color-text);margin:0 0 14px;line-height:1.12}
+.pfeat__desc{font-family:var(--font-body);font-size:clamp(1.05rem,1.35vw,1.18rem);line-height:1.66;color:var(--color-text-2);margin:0 0 24px}
+.pfeat__link{font-family:var(--font-body);font-size:.82rem;font-weight:var(--fw-bold);letter-spacing:.12em;text-transform:uppercase;color:var(--color-brand);text-decoration:none;display:inline-flex;align-items:center;gap:9px;min-height:40px;border-bottom:2px solid var(--color-brand);padding-bottom:3px}
+.pfeat__link:focus-visible{outline:2px solid var(--color-brand);outline-offset:4px}
+
+/* ── USŁUGI W PLACÓWCE — szeroki feature edytorski (zdjęcie z ramką + nachodzący panel) ── */
+.pwide{background:var(--color-bg-ivory);padding:clamp(52px,6.5vw,96px) 0}
+.pwide__head{text-align:center;margin:0 0 clamp(34px,4vw,56px)}
+.pwide__kicker{font-family:var(--font-body);font-size:.8rem;font-weight:var(--fw-bold);letter-spacing:.2em;text-transform:uppercase;color:var(--color-text-muted);margin:0 0 12px}
+.pwide__h{font-family:var(--font-display);font-weight:var(--fw-regular);font-size:clamp(1.9rem,2.8vw,2.6rem);color:var(--color-text);margin:0;line-height:1.08}
+/* jeden feature */
+.pfeat2{position:relative;display:grid;grid-template-columns:repeat(12,1fr);align-items:center;margin-top:clamp(30px,3.4vw,46px)}
+.pfeat2:first-of-type{margin-top:0}
+.pfeat2__media{grid-column:1/8;grid-row:1;position:relative;height:clamp(360px,40vw,520px)}
+.pfeat2__frame{position:absolute;left:-22px;bottom:-22px;width:64%;height:64%;background:var(--color-bg-beige-2);z-index:0}
+.pfeat2__img{position:absolute;inset:0;background-size:cover;background-position:center;z-index:1}
+.pfeat2__panel{grid-column:7/13;grid-row:1;z-index:2;background:var(--color-cream);padding:clamp(30px,3.2vw,50px);box-shadow:0 34px 74px -48px rgba(54,45,36,.5);margin-left:clamp(-72px,-4.5vw,-44px);--cfa:20px;--cft:2px}
+.pfeat2__label{font-family:var(--font-body);font-size:.76rem;font-weight:var(--fw-bold);letter-spacing:.16em;text-transform:uppercase;color:var(--color-brand-taupe);margin:0 0 12px}
+.pfeat2__name{font-family:var(--font-display);font-weight:var(--fw-regular);font-size:clamp(1.7rem,2.4vw,2.2rem);color:var(--color-text);margin:0 0 16px;line-height:1.12}
+.pfeat2__desc{font-family:var(--font-body);font-size:clamp(1.04rem,1.25vw,1.14rem);line-height:1.66;color:var(--color-text-2);margin:0 0 26px}
+.pfeat2__link{font-family:var(--font-body);font-size:.82rem;font-weight:var(--fw-bold);letter-spacing:.12em;text-transform:uppercase;color:var(--color-brand);text-decoration:none;display:inline-flex;align-items:center;gap:10px;min-height:40px;border-bottom:2px solid var(--color-brand);padding-bottom:3px}
+.pfeat2__link:focus-visible{outline:2px solid var(--color-brand);outline-offset:4px}
+/* naprzemienny rytm dla kolejnych usług */
+.pfeat2:nth-of-type(even) .pfeat2__media{grid-column:6/13}
+.pfeat2:nth-of-type(even) .pfeat2__frame{left:auto;right:-22px}
+.pfeat2:nth-of-type(even) .pfeat2__panel{grid-column:1/7;margin-left:0;margin-right:clamp(-72px,-4.5vw,-44px)}
+@media(max-width:60em){
+  .pfeat2,.pfeat2:nth-of-type(even){display:block;margin-top:clamp(40px,7vw,60px)}
+  .pfeat2__media{height:clamp(240px,58vw,380px)}
+  .pfeat2:nth-of-type(even) .pfeat2__media{grid-column:auto}
+  .pfeat2__frame{left:-14px;right:auto;bottom:-14px;width:56%;height:58%}
+  .pfeat2:nth-of-type(even) .pfeat2__frame{left:-14px;right:auto}
+  .pfeat2__panel,.pfeat2:nth-of-type(even) .pfeat2__panel{margin:-46px 16px 0;position:relative}
+}
+
+/* ── Strona usługi: akapity treści + zakres (siatka) + callout ── */
+.uart__p{font-family:var(--font-body);font-size:1.07rem;line-height:1.7;color:var(--color-text-2);margin:1.05em 0 0}
+.uart__lead + .uart__p{margin-top:1.15em}
+/* zakres pomocy — czytelna siatka 2-kolumnowa z markerami */
+.cap{margin-top:clamp(38px,4.6vw,58px)}
+.cap__h{font-family:var(--font-display);font-weight:var(--fw-regular);font-size:clamp(1.42rem,2vw,1.85rem);color:var(--color-text);margin:0 0 clamp(16px,2vw,24px);line-height:1.14}
+.cap__grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(26px,3vw,48px);border-bottom:1px solid var(--color-line)}
+.cap__grid li{position:relative;padding:15px 0 15px 26px;border-top:1px solid var(--color-line);font-family:var(--font-body);font-size:1.02rem;line-height:1.5;color:var(--color-text)}
+.cap__grid li::before{content:"";position:absolute;left:0;top:23px;width:12px;height:2px;background:var(--color-brand);border-radius:1px}
+/* callout — ważna informacja (np. skierowanie) */
+.callout{margin-top:clamp(40px,4.8vw,60px);background:var(--color-cream);border:1px solid var(--color-line);padding:clamp(24px,3vw,36px)}
+.callout__label{display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:.82rem;font-weight:var(--fw-bold);letter-spacing:.14em;text-transform:uppercase;color:var(--color-brand);margin:0 0 14px}
+.callout__label svg{width:20px;height:20px;flex:0 0 auto}
+.callout__p{font-family:var(--font-body);font-size:1rem;line-height:1.62;color:var(--color-text-2);margin:12px 0 0}
+.callout__p:first-of-type{margin-top:0}
+@media(max-width:48em){.cap__grid{grid-template-columns:1fr}}
+
+/* ══ Szeroki układ treściowej usługi (logopedia itp.) — bez wąskiej kolumny i kresek ══ */
+/* NFZ na górze — komercyjnie oraz w ramach NFZ (po hero) */
+/* Pasek NFZ pod hero — ten sam beżowy pas co .unfz na rozdrożach. Wcześniej była tu
+   sama linijka na tle ivory, przez co trzy strony bez karty placówki odstawały od reszty. */
+.lnfz{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;
+  background:var(--color-bg-beige);border-bottom:1px solid var(--color-line);
+  padding:15px 24px;font-family:var(--font-body);font-size:var(--t-meta);
+  color:var(--color-text-2);text-align:center}
+.lnfz img{height:22px;width:auto}
+.lsec{padding:clamp(46px,5.6vw,86px) 0}
+.lsec--ivory{background:var(--color-bg-ivory)}
+/* intro: układ magazynowy — kadr wpuszczony w tekst (float), tekst opływa i płynie dalej */
+.lintro{display:block;max-width:900px;margin-inline:auto}
+.lintro::after{content:"";display:block;clear:both}
+.lintro__lead{font-family:var(--font-body);font-weight:var(--fw-regular);font-size:1.14rem;line-height:1.75;color:var(--color-text);margin:0 0 17px}
+.lintro__p{font-family:var(--font-body);font-size:1.08rem;line-height:1.76;color:var(--color-text-2);margin:0 0 17px}
+.lintro__p:last-child{margin-bottom:0}
+.lintro__fig{float:right;width:min(400px,42%);margin:6px 0 18px clamp(30px,3.4vw,52px);position:relative}
+.lintro__fig::before{content:"";position:absolute;right:-16px;bottom:-16px;width:58%;height:56%;background:var(--color-bg-beige-2);z-index:0}
+.lintro__fig img{position:relative;z-index:1;display:block;width:100%;height:auto}
+
+/* ── Wariant „rytm": opis usługi w czterech taktach zamiast ściany akapitów ──
+   1. otwarcie (nadtytuł + lead + kadr obok)  2. wyróżnik (zdanie-cytat + akapit)
+   3. panel składowych (siatka terminów)      4. domknięcie (wąska miara).
+   Cały tekst pochodzi z akapitów źródłowych — takty tylko porządkują to, co już jest.
+   Miara wiersza pilnowana wszędzie (~34em): bez tego 1180px daje ~110 znaków w wierszu. */
+.lintro--rytm{max-width:none}
+.lintro--rytm::after{content:none}
+
+.lintro__open{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
+  grid-template-rows:auto 1fr;grid-template-areas:"lead kadr" "body kadr";
+  column-gap:clamp(32px,4vw,64px);row-gap:clamp(16px,1.8vw,22px);align-items:start}
+/* bez kadru — jedna kolumna w czytelnej mierze, bez pustej rynny po prawej */
+.lintro__open:not(:has(.lintro__fig)){grid-template-columns:minmax(0,1fr);
+  grid-template-areas:"lead" "body"}
+.lintro__head{grid-area:lead;min-width:0;max-width:34em}
+.lintro__body{grid-area:body;min-width:0;max-width:34em}
+.lintro--rytm .lintro__fig{grid-area:kadr;float:none;width:auto;margin:6px 0 0}
+.lintro--rytm .lintro__fig::before{right:-18px;bottom:-18px;width:60%;height:58%}
+/* kadr przycięty do 4:3 — natywne 1200×1081 byłoby wyższe niż kolumna tekstu
+   i zostawiało pustą rynnę przed kolejnym taktem */
+.lintro--rytm .lintro__fig img{aspect-ratio:4/3;object-fit:cover;object-position:50% 50%}
+
+/* nadtytuł taktu — mała etykieta z kreską dobiegającą do końca kolumny */
+.lkick{display:flex;align-items:center;gap:14px;font-family:var(--font-body);font-size:.76rem;
+  font-weight:var(--fw-bold);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--color-text-muted);margin:0 0 clamp(14px,1.6vw,18px)}
+.lkick::after{content:"";flex:1;height:1px;background:var(--color-line)}
+
+.lintro--rytm .lintro__lead{font-size:clamp(1.16rem,1.4vw,1.32rem);line-height:1.62;margin:0}
+.lintro--rytm .lintro__p{font-size:1.06rem;line-height:1.75;margin:1.05em 0 0;max-width:34em}
+.lintro--rytm .lintro__body > .lintro__p:first-child{margin-top:0}
+
+/* takt 2 — jedno zdanie źródłowe podniesione do rangi cytatu, obok akapit rozwijający */
+.lpull{margin-top:clamp(46px,5.4vw,84px);padding-top:clamp(30px,3.4vw,44px);
+  border-top:1px solid var(--color-line);display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,3.6vw,60px);align-items:start}
+.lpull__q{font-family:var(--font-display);font-weight:var(--fw-regular);
+  font-size:clamp(1.4rem,2.3vw,2rem);line-height:1.26;color:var(--color-text);margin:0;text-wrap:balance}
+.lpull__q::before{content:"";display:block;width:46px;height:2px;background:var(--color-sand);
+  margin-bottom:clamp(16px,1.8vw,22px)}
+.lpull__p{font-family:var(--font-body);font-size:1.06rem;line-height:1.75;
+  color:var(--color-text-2);margin:0;max-width:34em}
+.lpull__p + .lpull__p{margin-top:1.05em}
+
+/* takt 3 — składowe wymienione w zdaniu źródłowym, rozpisane na kremowy panel */
+.lparts{margin-top:clamp(46px,5.4vw,84px);background:var(--color-cream);
+  border:1px solid var(--color-line);
+  padding:clamp(26px,3vw,42px) clamp(24px,3vw,44px) clamp(28px,3.2vw,44px)}
+.lparts__h{font-family:var(--font-display);font-weight:var(--fw-regular);
+  font-size:clamp(1.3rem,1.9vw,1.66rem);line-height:1.2;color:var(--color-text);
+  margin:0 0 clamp(20px,2.4vw,30px);max-width:24em}
+.lparts__grid{list-style:none;margin:0;padding:0;display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(22px,2.6vw,40px);
+  border-bottom:1px solid var(--color-line)}
+.lparts__grid li{position:relative;padding:15px 0 15px 24px;border-top:1px solid var(--color-line);
+  font-family:var(--font-display);font-size:clamp(1.04rem,1.25vw,1.2rem);line-height:1.35;
+  color:var(--color-text)}
+.lparts__grid li::before{content:"";position:absolute;left:0;top:23px;width:12px;height:2px;
+  background:var(--color-sand)}
+/* podgrupy w jednym panelu — źródło potrafi dzielić wyliczenie na nazwane kategorie.
+   Cztery osobne panele obok siebie czytały się jak cztery puste pudełka, więc grupy
+   siedzą w jednym panelu, rozdzielone szeryfowym śródtytułem. */
+.lparts__sub{font-family:var(--font-display);font-weight:var(--fw-regular);
+  font-size:clamp(1.06rem,1.3vw,1.24rem);line-height:1.28;color:var(--color-text);
+  margin:clamp(28px,3.2vw,40px) 0 clamp(12px,1.4vw,17px);max-width:32em}
+.lparts__h + .lparts__sub{margin-top:0}
+/* wariant prozą — gdy akapit źródłowy jest spójnym blokiem tematycznym, a nie wyliczeniem.
+   Rozbijanie takiego akapitu na punkty wymagałoby przepisania zdań, więc zostaje prozą.
+   Nagłówek idzie wtedy do lewej kolumny: proza w mierze 38em nie wypełniłaby panelu
+   na całą szerokość i zostawiała pustą prawą połowę. */
+.lparts:has(.lparts__prose){display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.5fr);
+  column-gap:clamp(28px,3.6vw,58px);align-items:start}
+.lparts:has(.lparts__prose) .lparts__h{margin-bottom:0}
+.lparts__p{font-family:var(--font-body);font-size:1.06rem;line-height:1.75;
+  color:var(--color-text-2);margin:0;max-width:38em}
+.lparts__p + .lparts__p{margin-top:1.05em}
+
+/* takt 4 — domknięcie: spokojny akapit w wąskiej mierze, oddzielony kreską */
+.lcoda{margin-top:clamp(46px,5.4vw,84px);padding-top:clamp(28px,3.2vw,40px);
+  border-top:1px solid var(--color-line)}
+.lcoda__inner{max-width:36em;margin-inline:auto}
+/* domknięcie otwierające własną sekcję — nie potrzebuje kreski ani odstępu od taktu wyżej */
+.lcoda--sama{margin-top:0;padding-top:0;border-top:0}
+.lcoda__lead{font-family:var(--font-body);font-size:clamp(1.08rem,1.25vw,1.18rem);
+  line-height:1.66;color:var(--color-text);margin:0}
+.lcoda__p{font-family:var(--font-body);font-size:1.06rem;line-height:1.75;
+  color:var(--color-text-2);margin:1.05em 0 0}
+
+@media(max-width:60em){
+  .lintro__open{grid-template-columns:1fr;grid-template-rows:auto;
+    grid-template-areas:"lead" "kadr" "body";row-gap:clamp(22px,4.5vw,30px)}
+  .lintro__head,.lintro__body{max-width:none}
+  .lintro--rytm .lintro__fig{margin:0}
+  .lintro--rytm .lintro__fig::before{display:none}
+  .lpull{grid-template-columns:1fr;gap:clamp(22px,4vw,32px)}
+  .lparts__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .lparts:has(.lparts__prose){grid-template-columns:1fr;row-gap:clamp(18px,3vw,26px)}
+  .lparts:has(.lparts__prose) .lparts__h{margin-bottom:0}
+}
+@media(max-width:40em){
+  .lparts__grid{grid-template-columns:1fr}
+}
+
+/* oferta: beżowy pas + numerowana siatka (żadnych linii) */
+.loffer{background:var(--color-bg-beige);padding:clamp(50px,5.6vw,90px) 0}
+.loffer__h{font-family:var(--font-display);font-weight:var(--fw-regular);font-size:clamp(1.7rem,2.6vw,2.4rem);color:var(--color-text);margin:0 0 clamp(30px,3.6vw,50px);text-align:center;line-height:1.1}
+/* jednakowe odstępy w każdą stronę (góra=dół=bok), żeby pozycje się nie zlewały */
+.loffer__grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(30px,3.4vw,48px)}
+.loffer__grid li{display:flex;gap:18px;align-items:flex-start}
+.loffer__num{font-family:var(--font-display);font-size:clamp(1.6rem,2.1vw,2.1rem);line-height:1;color:var(--color-brand-taupe);flex:0 0 auto;min-width:2.4ch;padding-top:1px}
+.loffer__txt{font-family:var(--font-body);font-size:1.06rem;line-height:1.5;color:var(--color-text)}
+/* close: metody (duży cytat) + callout obok */
+.lclose{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(34px,4.4vw,64px);align-items:start}
+.lclose__lead{font-family:var(--font-display);font-weight:var(--fw-regular);font-size:clamp(1.28rem,1.9vw,1.7rem);line-height:1.42;color:var(--color-text);margin:0}
+.lclose .callout{margin-top:0}
+/* booking: wyśrodkowana karta + powrót */
+.lbook{margin-top:clamp(44px,5.2vw,76px)}
+.lbook .ubook{max-width:560px;margin-inline:auto;margin-top:0}
+.lback{display:flex;justify-content:center;margin-top:clamp(30px,3.6vw,46px)}
+@media(max-width:60em){
+  .lclose{grid-template-columns:1fr;gap:clamp(28px,5vw,40px)}
+  .lintro{max-width:none}
+  .lintro__fig{float:none;width:auto;margin:0 0 clamp(22px,4.5vw,30px)}
+  .lintro__fig::before{display:none}
+  .loffer__grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:40em){.loffer__grid{grid-template-columns:1fr}}
+
 /* ============================================================ MOBILE */
 @media(max-width:75em){
   /* header jest wtedy niższy — brak drugiego rzędu nawigacji */
@@ -125,9 +374,15 @@
   .ucols{grid-template-columns:1fr;gap:clamp(20px,3.4vw,28px)}
   .ufig::before{left:-10px;bottom:-10px}
   .uind__row{gap:14px}
-  .uend__inner{flex-direction:column;align-items:stretch;text-align:center}
-  .uend__btn{width:100%;justify-content:center}
-  .uend__back{justify-content:center}
+  /* CTA i powrót zostają w jednym rzędzie także na telefonie — kolumna rozbijała
+     parę „akcja główna / wyjście" na dwa niepowiązane bloki. Zamiast zawijać w pion
+     zmniejszamy padding przycisku i skalę linku powrotu; link może złamać się na
+     dwie linie i nadal mieści się obok przycisku przy 360 px. */
+  .uend__inner{flex-wrap:nowrap;align-items:center;justify-content:space-between;gap:14px}
+  .uend__btn{flex:0 0 auto;padding:16px 22px;font-size:1rem;min-height:54px}
+  .uend__back{flex:0 1 auto;font-size:.7rem;letter-spacing:.06em;text-align:right;
+    align-items:flex-start;line-height:1.35}
+  .uend__back span{padding-top:1px}
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -261,18 +516,38 @@
    Sama nawigacja: wykaz podstron. Bez kart i ramek — lista z hairline'ami,
    spójna z rytmem „Wskazań" i „Efektów". */
 .uhub{padding:clamp(46px,5.4vw,78px) 0}
-.uhub__h{font-family:var(--font-body);font-size:.78rem;font-weight:var(--fw-bold);
-  letter-spacing:.16em;text-transform:uppercase;color:var(--color-brand);margin:0 0 clamp(16px,2vw,24px)}
-.uhub__list{list-style:none;margin:0;padding:0;max-width:900px;border-top:1px solid var(--color-line)}
-.uhub__item{border-bottom:1px solid var(--color-line)}
-.uhub__link{display:flex;align-items:center;justify-content:space-between;gap:18px;
-  padding:clamp(16px,1.9vw,22px) 0;min-height:56px;
-  font-family:var(--font-display);font-size:clamp(1.2rem,1.7vw,1.5rem);line-height:1.25;
+/* Etykieta „Wybierz usługę" w tym samym kroju co nadtytuł taktu na stronach usług
+   (.lkick) — rozdroże i strona usługi otwierają się identycznym sygnałem. */
+.uhub__h{display:flex;align-items:center;gap:14px;font-family:var(--font-body);
+  font-size:.76rem;font-weight:var(--fw-bold);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--color-text-muted);margin:0 0 clamp(14px,1.8vw,20px)}
+.uhub__h::after{content:"";flex:1;height:1px;background:var(--color-line)}
+/* Indeks w dwóch kolumnach — jedna kolumna w 900 px zostawiała pustą prawą połowę
+   ekranu. Włoskowate linie i piaskowy znacznik jak w panelu .lparts na stronach usług. */
+.uhub__list{list-style:none;margin:0;padding:0;max-width:none;display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(30px,3.6vw,58px);
+  border-top:0;border-bottom:1px solid var(--color-line)}
+.uhub__item{border-top:1px solid var(--color-line);border-bottom:0}
+.uhub__link{position:relative;display:flex;align-items:center;justify-content:space-between;gap:18px;
+  padding:clamp(15px,1.8vw,21px) 0 clamp(15px,1.8vw,21px) 26px;min-height:56px;
+  font-family:var(--font-display);font-size:clamp(1.1rem,1.45vw,1.34rem);line-height:1.28;
   color:var(--color-text);transition:color .2s}
+.uhub__link::before{content:"";position:absolute;left:0;top:50%;margin-top:-1px;
+  width:12px;height:2px;background:var(--color-sand);transition:width .24s}
 .uhub__arr{width:.62em;height:.62em;flex:0 0 auto;color:var(--color-brand);
   transform:rotate(-90deg);transition:transform .24s}
-@media(hover:hover){.uhub__link:hover{color:var(--color-brand)}}
+@media(hover:hover){
+  .uhub__link:hover{color:var(--color-brand)}
+  .uhub__link:hover::before{width:19px}
+  .uhub__link:hover .uhub__arr{transform:rotate(-90deg) translateY(-3px)}
+}
 .uhub__link:focus-visible{outline:3px solid var(--color-brand);outline-offset:3px}
+@media(max-width:56em){
+  .uhub__list{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .uhub__link::before,.uhub__arr{transition:none}
+}
 
 /* ── DŁUGOŚĆ WIERSZA ──────────────────────────────────────────────────────────
    Zmierzone: akapity w sekcjach rozciągały się na 97–136 znaków, bo .ubody
@@ -840,12 +1115,29 @@ main{--t-tekst:1.06rem;--t-meta:.92rem;--t-lead:1.16rem}
 .pcard{flex:1 1 300px;max-width:360px;display:flex;flex-direction:column;gap:9px;padding:clamp(18px,2vw,24px);
   background:#fff;border:1px solid var(--color-line)}
 .pcard__city{font-family:var(--font-display);font-size:1.4rem;line-height:1.1;color:var(--color-text)}
-.pcard__row{display:flex;align-items:flex-start;gap:9px;font-size:.98rem;color:var(--color-text-2);line-height:1.4}
+/* min-height 24px: telefon i e-mail w karcie mierzyły ~19 px wysokości — poniżej progu
+   WCAG 2.2 AA „Target Size (Minimum)". Ten sam wymiar dla adresu, żeby rytm się zgadzał. */
+.pcard__row{display:flex;align-items:flex-start;gap:9px;min-height:24px;
+  font-size:.98rem;color:var(--color-text-2);line-height:1.4}
 .pcard__row .ico{width:18px;height:18px;flex:0 0 auto;margin-top:2px;color:var(--color-text-muted)}
 .pcard a.pcard__row{text-decoration:none}
 .pcard a.pcard__row:focus-visible{outline:3px solid var(--color-brand);outline-offset:2px}
 .pcard__cta{margin-top:6px}
 .pcard__cta .btn{width:100%}
+
+/* Jedna placówka i brak kolumny wymagań (35 z 36 stron usług): pionowa karta zostawiała
+   dwie trzecie pasa pustych. Wtedy karta rozkłada się poziomo na całą szerokość —
+   miasto, dane kontaktowe, przycisk w jednej linii. Te same dane, inny układ. */
+@media(min-width:52em){
+  .splate__grid:not(:has(.splate__req)) .pcard:only-child{
+    flex:1 1 100%;max-width:none;flex-direction:row;flex-wrap:wrap;align-items:center;
+    gap:10px clamp(20px,2.6vw,38px);padding-block:clamp(16px,1.8vw,20px)}
+  .splate__grid:not(:has(.splate__req)) .pcard:only-child .pcard__city{flex:0 0 auto}
+  .splate__grid:not(:has(.splate__req)) .pcard:only-child .pcard__row{flex:0 1 auto;align-items:center}
+  .splate__grid:not(:has(.splate__req)) .pcard:only-child .pcard__row .ico{margin-top:0}
+  .splate__grid:not(:has(.splate__req)) .pcard:only-child .pcard__cta{margin:0 0 0 auto}
+  .splate__grid:not(:has(.splate__req)) .pcard:only-child .pcard__cta .btn{width:auto}
+}
 
 /* --- TREŚĆ: zwarta, ale ta sama typografia --- */
 .sbody{padding-block:clamp(40px,5vw,72px)}

@@ -25,8 +25,8 @@
 <link rel="icon" href="../../../../assets/favicon.png">
 <link rel="preload" href="../../../../assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../../../assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../../../css/style.css?v=82">
-<link rel="stylesheet" href="../../../../css/usluga.css?v=65">
+<link rel="stylesheet" href="../../../../css/style.css?v=104">
+<link rel="stylesheet" href="../../../../css/usluga.css?v=85">
 <script>document.documentElement.className+=' js';</script>
 <!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
 <script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
@@ -303,15 +303,34 @@
 
 <article class="usluga">
 
-  <section class="sbody">
-    <div class="wrap">
-      <div class="sbody__grid">
-        <div class="sbody__text">
-          <p class="sbody__p">Sauna infrared, inaczej nazywana sauną na podczerwień lub IR, to alternatywa dla tradycyjnej sauny. W urządzeniu infrared energia cieplna jest wytwarzana przez promieniowanie podczerwone. Jest ono często wykorzystywane do leczenia bólu, stanów zapalnych w organizmie czy urazów. W przeciwieństwie do sauny suchej, w saunie infrared podgrzewane jest ciało, a nie powietrze w pomieszczeniu. Temperatura w saunie nie jest bardzo wysoka (między 30-60 st. C.), dlatego mogą z niej korzystać osoby, które nie lubią gorąca, seniorzy oraz dzieci.</p>
-          <p class="sbody__p">Jedna sesja w saunie infrared powinna trwać 30 minut. Warto powtarzać seans 2-3 razy w tygodniu. Do sauny infrared należy wejść bez ubrania i zabrać ze sobą niewielki ręcznik. Przed seansem należy umyć ciało, aby pozbawić je zanieczyszczeń, pozostałości po kosmetykach czy makijażu. Promienie podczerwone przenikają do organizmu na głębokość 4 cm, dzięki oczyszczeniu skóry pory otworzą się i działanie będzie silniejsze. Pod wpływem ciepła rozszerzają się również naczynia krwionośne oraz wzrasta tętno. Człowiek poci się, organizm pozbywa się toksyn, wzrasta tempo spalania kalorii. Po zakończonym seansie warto odpocząć i dopiero wówczas schłodzić ciało.</p>
+  <section class="lsec lsec--ivory">
+    <div class="wrap lintro lintro--rytm">
+
+      <!-- TAKT 1 — otwarcie: czym jest sauna infrared. Kadr obok leadu. -->
+      <div class="lintro__open">
+        <div class="lintro__head">
+          <p class="lkick">Na czym polega</p>
+          <p class="lintro__lead">Sauna infrared, inaczej nazywana sauną na podczerwień lub IR, to alternatywa dla tradycyjnej sauny.</p>
         </div>
-        <figure class="sbody__fig"><img width="1200" height="800" src="../../../../assets/img/uslugi/sauna-infrared.webp" alt="Sauna Infrared w Reha Medica Szczecinek" loading="lazy" decoding="async"></figure>
+        <figure class="lintro__fig">
+          <img width="1200" height="800" src="../../../../assets/img/uslugi/sauna-infrared.webp" alt="Sauna Infrared w Reha Medica Szczecinek" loading="lazy" decoding="async">
+        </figure>
+        <div class="lintro__body">
+          <p class="lintro__p">W urządzeniu infrared energia cieplna jest wytwarzana przez promieniowanie podczerwone. Jest ono często wykorzystywane do leczenia bólu, stanów zapalnych w organizmie czy urazów.</p>
+          <p class="lintro__p">W przeciwieństwie do sauny suchej, w saunie infrared podgrzewane jest ciało, a nie powietrze w pomieszczeniu. Temperatura w saunie nie jest bardzo wysoka (między 30-60 st. C.), dlatego mogą z niej korzystać osoby, które nie lubią gorąca, seniorzy oraz dzieci.</p>
+        </div>
       </div>
+
+      <!-- TAKT 2 — akapit o przebiegu seansu; spójna proza, nie wyliczenie,
+           więc panel w wariancie prozy (wrapper .lparts__prose obowiązkowy). -->
+      <div class="lparts">
+        <h2 class="lparts__h">Jak wygląda seans</h2>
+        <div class="lparts__prose">
+        <p class="lparts__p">Jedna sesja w saunie infrared powinna trwać 30 minut. Warto powtarzać seans 2-3 razy w tygodniu. Do sauny infrared należy wejść bez ubrania i zabrać ze sobą niewielki ręcznik. Przed seansem należy umyć ciało, aby pozbawić je zanieczyszczeń, pozostałości po kosmetykach czy makijażu.</p>
+        <p class="lparts__p">Promienie podczerwone przenikają do organizmu na głębokość 4 cm, dzięki oczyszczeniu skóry pory otworzą się i działanie będzie silniejsze. Pod wpływem ciepła rozszerzają się również naczynia krwionośne oraz wzrasta tętno. Człowiek poci się, organizm pozbywa się toksyn, wzrasta tempo spalania kalorii. Po zakończonym seansie warto odpocząć i dopiero wówczas schłodzić ciało.</p>
+        </div>
+      </div>
+
     </div>
   </section>
   <section class="sufolds">
@@ -507,6 +526,6 @@
   </div>
   <button class="a11y-reset" type="button" data-a11y-reset>Przywróć ustawienia domyślne</button>
 </div>
-<script src="../../../../js/main.js?v=87"></script>
+<script src="../../../../js/main.js?v=91"></script>
 </body>
 </html>
