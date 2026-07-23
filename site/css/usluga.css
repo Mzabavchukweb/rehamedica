@@ -1255,8 +1255,32 @@ html:not(.js) .sufold__panel{grid-template-rows:1fr}
    ============================================================ */
 
 /* — Intro EMS: film zamiast zdjęcia w prawej kolumnie taktu otwarcia — */
-.lintro__fig:has(.vidfacade){align-self:center}
-.lintro__fig:has(.vidfacade)::before{display:none}
+.lintro__fig:has(.emsembed){align-self:center}
+.lintro__fig:has(.emsembed)::before{display:none}
+
+/* — Pasek liczb: trzy fakty ze źródła (30 min ≈ 3 h, wszystkie mięśnie naraz,
+     indywidualnie/parami). Rozbija ścianę tekstu, serifowe liczby, włoskowate linie. — */
+.emsstats{margin-top:clamp(40px,4.8vw,72px);display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--color-line);
+  border-bottom:1px solid var(--color-line)}
+.emsstat{padding:clamp(22px,2.6vw,32px) clamp(20px,2.2vw,30px)}
+.emsstat + .emsstat{border-left:1px solid var(--color-line)}
+.emsstat__n{font-family:var(--font-display);font-weight:var(--fw-regular);
+  font-size:clamp(1.9rem,3.2vw,2.8rem);line-height:1;color:var(--color-text);margin:0 0 10px}
+.emsstat__t{font-family:var(--font-body);font-size:.98rem;line-height:1.5;
+  color:var(--color-text-2);margin:0}
+@media(max-width:52em){
+  .emsstats{grid-template-columns:1fr}
+  .emsstat + .emsstat{border-left:0;border-top:1px solid var(--color-line)}
+}
+
+/* — Pas ze zdjęciem placówki między sekcjami: autentyczne wnętrze/budynek
+     Reha Medica z rzetelnym podpisem (miejsce, nie sesja EMS). — */
+.emsband{margin-top:clamp(40px,4.8vw,72px);position:relative}
+.emsband__img{display:block;width:100%;height:clamp(240px,32vw,420px);object-fit:cover;
+  border:1px solid var(--color-line)}
+.emsband__cap{margin:12px 0 0;font-family:var(--font-body);font-size:.88rem;
+  line-height:1.5;color:var(--color-text-muted)}
 
 /* — Sekcje artykułu EMS: nagłówek + proza (miara ~34em) + cytat trenera.
      Rytm jak w .lpull — każda sekcja oddzielona włoskowatą kreską u góry. — */

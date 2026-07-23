@@ -1080,33 +1080,12 @@ html.js .a11y-fab{display:inline-flex}
 
 /* ============================================================
    TRENING EMS — komponenty współdzielone (strona główna + strona usługi).
-   .vidfacade ładuje film z Facebooka dopiero po kliknięciu (js/main.js) —
-   zero żądań do stron trzecich przed zgodą użytkownika.
+   .emsembed — natywne osadzenie filmu z Facebooka (odtwarzacz FB, bez
+   własnych nakładek). Responsywny kadr 16:9 (film ma proporcje 1280×720).
    ============================================================ */
-
-/* — Facade filmu: kafel marki z przyciskiem odtwarzania; iframe FB
-     wstrzykiwany dopiero po kliknięciu (js/main.js). 16:9. — */
-.vidfacade{position:relative;aspect-ratio:16/9;width:100%;overflow:hidden;
-  background:var(--color-brand-dark);border:1px solid var(--color-line);cursor:pointer}
-.vidfacade__btn{position:absolute;inset:0;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:16px;width:100%;height:100%;
-  border:0;background:transparent;color:#fff;cursor:pointer;font-family:var(--font-body)}
-/* subtelny gradient, żeby napis był czytelny na dowolnym tle kafla */
-.vidfacade__btn::before{content:"";position:absolute;inset:0;
-  background:radial-gradient(120% 120% at 50% 42%,rgba(54,45,36,.25),rgba(28,21,15,.72))}
-.vidfacade__play{position:relative;width:72px;height:72px;border-radius:50%;
-  background:rgba(252,250,241,.94);display:flex;align-items:center;justify-content:center;
-  transition:transform .25s,background .25s}
-.vidfacade__play::after{content:"";margin-left:5px;border-style:solid;
-  border-width:12px 0 12px 20px;border-color:transparent transparent transparent var(--color-brand)}
-.vidfacade__label{position:relative;font-size:.86rem;font-weight:var(--fw-bold);
-  letter-spacing:.12em;text-transform:uppercase;text-shadow:0 1px 10px rgba(12,8,4,.6)}
-@media(hover:hover){.vidfacade__btn:hover .vidfacade__play{transform:scale(1.06);background:#fff}}
-.vidfacade__btn:focus-visible{outline:3px solid #fff;outline-offset:-5px}
-.vidfacade.is-live{cursor:default}
-.vidfacade.is-live .vidfacade__btn{display:none}
-.vidfacade iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
-@media(prefers-reduced-motion:reduce){.vidfacade__play{transition:none}}
+.emsembed{position:relative;aspect-ratio:16/9;width:100%;overflow:hidden;
+  background:var(--color-brand-dark);border:1px solid var(--color-line)}
+.emsembed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
 
 /* ── Zajawka EMS na stronie głównej: tekst + film obok ─────────────────── */
 .emshl__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
