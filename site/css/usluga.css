@@ -241,7 +241,7 @@
 .lintro--rytm::after{content:none}
 /* delikatnie węższa, wyśrodkowana kolumna (np. strona EMS) — treść bliżej środka,
    nie rozciągnięta na całą szerokość do samych boków */
-.lintro--center{max-width:980px;margin-inline:auto}
+.lintro--center{max-width:1030px;margin-inline:auto}
 
 .lintro__open{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
   grid-template-rows:auto 1fr;grid-template-areas:"lead kadr" "body kadr";
