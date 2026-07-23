@@ -239,6 +239,9 @@
    Miara wiersza pilnowana wszędzie (~34em): bez tego 1180px daje ~110 znaków w wierszu. */
 .lintro--rytm{max-width:none}
 .lintro--rytm::after{content:none}
+/* delikatnie węższa, wyśrodkowana kolumna (np. strona EMS) — treść bliżej środka,
+   nie rozciągnięta na całą szerokość do samych boków */
+.lintro--center{max-width:980px;margin-inline:auto}
 
 .lintro__open{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
   grid-template-rows:auto 1fr;grid-template-areas:"lead kadr" "body kadr";

@@ -253,14 +253,13 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
    Źródło ma jednolite ~62%; my dajemy gradient tej samej barwy: lżej u góry (jaśniej,
    zdjęcie oddycha), mocniej u dołu, gdzie leży biały tekst — dzięki temu WCAG AA jest
    spełnione niezależnie od jasności slajdu. */
-/* Nakładka lekka i RÓWNOMIERNA — budynek wyraźny na całej szerokości, bez ciemnej
-   płachty zepchniętej w lewo/dół. Delikatny cień tylko przy górnej krawędzi (pod
-   nagłówkiem, nad jasnym niebem) i śladowo przy dole. Czytelność białego tekstu
-   niosą text-shadow na .hero__title/.hero__sub. */
+/* Delikatny cień: miękka poświata przesunięta bardziej do ŚRODKA (nie zepchnięta w bok),
+   wygaszana na krawędziach — budynek wyraźny na całej szerokości. Lekki welon u góry i
+   śladowo u dołu. Czytelność białego tekstu niosą text-shadow na .hero__title/.hero__sub. */
 .hero__tint{position:absolute;inset:0;z-index:1;
   background:
-    linear-gradient(180deg,rgba(28,20,12,.5) 0%,rgba(28,20,12,.26) 16%,rgba(28,20,12,.06) 34%,rgba(28,20,12,0) 55%,rgba(24,17,10,.16) 100%),
-    linear-gradient(90deg,rgba(28,20,12,.34) 0%,rgba(28,20,12,.12) 20%,rgba(28,20,12,0) 42%)}
+    radial-gradient(135% 110% at 42% 44%,rgba(26,18,11,.4) 0%,rgba(26,18,11,.18) 40%,rgba(26,18,11,.04) 66%,rgba(26,18,11,0) 82%),
+    linear-gradient(180deg,rgba(26,18,11,.28) 0%,rgba(26,18,11,0) 26%,rgba(22,15,9,0) 74%,rgba(22,15,9,.12) 100%)}
 
 /* premium karta placówek — pływa przy prawej krawędzi siatki treści (gutter --gx) */
 .hero__card{position:absolute;top:clamp(150px,17vh,184px);right:var(--gx);width:404px;z-index:3;
