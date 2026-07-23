@@ -10,13 +10,13 @@
 <link rel="icon" href="/assets/favicon.png">
 <link rel="preload" href="/assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/css/style.css?v=119">
+<link rel="stylesheet" href="/css/style.css?v=120">
 <link rel="stylesheet" href="/css/usluga.css?v=102">
 <script>document.documentElement.className+=' js';</script>
 <!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
 <script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
 <style>
-.notfound{background:var(--color-bg-ivory);padding:clamp(96px,15vh,168px) 0 clamp(64px,9vh,112px);text-align:center}
+.notfound{background:var(--color-bg-ivory);padding:clamp(155px,18vh,205px) 0 clamp(64px,9vh,112px);text-align:center}
 .notfound__inner{max-width:640px;margin-inline:auto;padding-inline:clamp(20px,5vw,40px)}
 .notfound__eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--color-sand);margin-bottom:14px}
 .notfound__code{font-family:var(--font-display);font-weight:400;font-size:clamp(5rem,17vw,9rem);line-height:.86;color:var(--color-brand-dark);margin:0 0 6px;letter-spacing:-.01em}
@@ -35,7 +35,7 @@
 .notfound__search:focus-visible{outline:3px solid var(--color-sand);outline-offset:2px}
 </style>
 </head>
-<body>
+<body class="no-hero">
 
 <a class="skip-link" href="#main">Przejdź do treści</a>
 
@@ -321,7 +321,7 @@
   </div>
   <button class="a11y-reset" type="button" data-a11y-reset>Przywróć ustawienia domyślne</button>
 </div>
-<script src="/js/main.js?v=94"></script>
+<script src="/js/main.js?v=95"></script>
 <!-- przycisk „Szukaj usługi" w treści 404 otwiera wyszukiwarkę w nagłówku -->
 <script>(function(){var b=document.getElementById('nf-search');if(b){b.addEventListener('click',function(){var o=document.querySelector('[data-search-open]');if(o)o.click();});}})();</script>
 </body>

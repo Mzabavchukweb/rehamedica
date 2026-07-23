@@ -16,7 +16,10 @@ var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches || (f
   if (!header) return;
   var ticking = false;
   function frame() {
-    header.classList.toggle('is-scrolled', (window.pageYOffset || 0) > 36);
+    // Przy otwartej wyszukiwarce zamrażamy stan headera — inaczej zmiana wysokości podczas
+    // scrolla „szarpie" przezroczystym paskiem. Po zamknięciu wyszukiwarka wywołuje 'scroll'.
+    if (!header.classList.contains('search-open'))
+      header.classList.toggle('is-scrolled', (window.pageYOffset || 0) > 36);
     ticking = false;
   }
   window.addEventListener('scroll', function () {
@@ -409,6 +412,8 @@ var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches || (f
   }
   function close(returnFocus) {
     header.classList.remove('search-open');
+    // po zamknięciu przywracamy właściwy stan headera (mógł być zamrożony podczas scrolla)
+    window.dispatchEvent(new Event('scroll'));
     openBtn.setAttribute('aria-expanded', 'false');
     input.value = ''; input.blur();
     results = []; active = -1; render('');

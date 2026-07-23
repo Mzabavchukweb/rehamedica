@@ -908,6 +908,16 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
   /* na desktopie panel nie rozlewa się na całą szerokość nawigacji — trzyma szer. paska wyszukiwania */
   .nav-search__results{left:auto;right:0;width:min(500px,90vw)}
 }
+@media(min-width:75.0625em){
+  /* Desktop (poza trybem hamburgera): pasek wyszukiwarki nie startuje tuż przy logo.
+     Po otwarciu nawigacja rozciąga się na wolną przestrzeń, a pole wyszukiwania jest wyśrodkowane
+     między logo a przyciskami — dzięki temu nie „ucieka" do lewej. */
+  .site-header.search-open .nav{flex:1 1 auto;margin-right:0}
+  .nav-search{justify-content:center}
+  .nav-search input{flex:0 1 min(620px,100%)}
+  /* panel wyników wyśrodkowany pod polem (bez transformacji — nie koliduje z animacją wejścia) */
+  .nav-search__results{left:0;right:0;margin-inline:auto;width:min(560px,100%)}
+}
 @media(max-width:75em){
   /* mobile/tablet: panel bliżej paska, ograniczona szerokość (nie rozlewa się na całą belkę),
      zwięźlejsze wiersze, wyraźniejszy tytuł. Na telefonie min() zwija się do pełnej szerokości. */
