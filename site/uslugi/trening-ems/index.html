@@ -26,7 +26,7 @@
 <link rel="preload" href="../../assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../../css/style.css?v=109">
-<link rel="stylesheet" href="../../css/usluga.css?v=89">
+<link rel="stylesheet" href="../../css/usluga.css?v=90">
 <script>document.documentElement.className+=' js';</script>
 <!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
 <script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
@@ -304,6 +304,10 @@
 <section class="lsec lsec--ivory">
   <div class="wrap lintro lintro--rytm">
 
+    <!-- TAKT 1 — otwarcie: lead + film + narracja „czym jest EMS".
+         Te same komponenty (lintro--rytm) co pozostałe strony usług.
+         Cytaty trenerki skondensowane do dwóch najmocniejszych (decyzja klienta
+         2026-07-23) — cała narracja dziennikarska zachowana dosłownie. -->
     <div class="lintro__open">
       <div class="lintro__head">
         <p class="lkick">Na czym polega</p>
@@ -317,13 +321,12 @@
       </figure>
       <div class="lintro__body">
         <p class="lintro__p">W Reha Medica Centrum Rehabilitacyjno-Medycznym treningi prowadzone są indywidualnie i poprzedzone dokładną analizą potrzeb uczestnika.</p>
+        <p class="lintro__p">EMS, czyli elektrostymulacja mięśni, polega na wykorzystaniu impulsów elektrycznych do ich pobudzenia. Dzięki temu podczas jednego treningu aktywowane są jednocześnie wszystkie grupy mięśniowe, nawet wtedy, gdy ćwiczenie koncentruje się tylko na jednej partii ciała. Taka forma treningu zwiększa efektywność pracy mięśni i pozwala szybciej zauważyć efekty.</p>
+        <p class="lintro__p">Jak podkreśla instruktorka, kluczowa jest indywidualizacja treningu i bezpieczeństwo uczestników.</p>
       </div>
     </div>
 
-    <!-- Artykuł w jednej, wyśrodkowanej kolumnie edytorskiej (nie zepchnięty w lewo) -->
-    <div class="emsart">
-
-    <!-- Pasek liczb — trzy fakty ze źródła -->
+    <!-- Pasek liczb — trzy fakty ze źródła, bez ramek -->
     <div class="emsstats">
       <div class="emsstat">
         <p class="emsstat__n">30 minut</p>
@@ -339,54 +342,41 @@
       </div>
     </div>
 
-    <div class="emssec">
-      <h2 class="emssec__h">Na czym polega trening EMS</h2>
-      <p class="emssec__p">EMS, czyli elektrostymulacja mięśni, polega na wykorzystaniu impulsów elektrycznych do ich pobudzenia. Dzięki temu podczas jednego treningu aktywowane są jednocześnie wszystkie grupy mięśniowe, nawet wtedy, gdy ćwiczenie koncentruje się tylko na jednej partii ciała. Taka forma treningu zwiększa efektywność pracy mięśni i pozwala szybciej zauważyć efekty.</p>
-      <p class="emssec__p">Jak podkreśla instruktorka, kluczowa jest indywidualizacja treningu i bezpieczeństwo uczestników.</p>
-      <figure class="equote">
-        <p class="equote__q">Trening EMS to nowoczesna metoda treningowa pozwalająca nam uzyskać najlepsze efekty w najkrótszym czasie. EMS wykorzystuje impulsy elektryczne do pobudzenia mięśni, co zwiększa ich wydajność w trakcie treningu. Podczas jednego treningu EMS stymulowane są jednocześnie wszystkie grupy mięśniowe niezależnie od tego na jaką partię wykonujesz w danym momencie ćwiczenia. W naszym studio dostosowujemy trening pod Ciebie. Wszystko jest spersonalizowane i dokładnie dobrane. Nie ma przypadkowych ćwiczeń, co pozwala Ci uzyskać maksymalne efekty i wykorzystać Twój potencjał.</p>
-        <figcaption class="equote__by">Natalia Łozińska, Reha Medica</figcaption>
-      </figure>
+    <!-- TAKT 2 — cytat (czas) + narracja obok (komponent .lpull jak inne strony) -->
+    <div class="lpull">
+      <p class="lpull__q">Jeden trening EMS trwający trzydzieści minut odpowiada trzem godzinom na siłowni.</p>
+      <div>
+        <p class="lpull__p">Dużą zaletą treningu EMS jest jego krótki czas trwania. Jedna sesja zajmuje około trzydziestu minut, a według trenerów może odpowiadać nawet trzem godzinom klasycznego treningu na siłowni. To rozwiązanie szczególnie doceniają osoby zapracowane lub takie, które mimo regularnych ćwiczeń nie widzą satysfakcjonujących efektów.</p>
+        <p class="lpull__by">Natalia Łozińska, Reha Medica</p>
+      </div>
     </div>
 
-    <div class="emssec">
-      <h2 class="emssec__h">Najpierw wywiad medyczny i cele treningowe</h2>
-      <p class="emssec__p">Zanim uczestnik rozpocznie pierwsze zajęcia, przeprowadzany jest szczegółowy wywiad medyczny. Dzięki temu trenerzy mogą sprawdzić ewentualne przeciwwskazania oraz dobrać plan treningowy dopasowany do indywidualnych potrzeb i celów.</p>
-      <figure class="equote">
-        <p class="equote__q">Podczas pierwszego spotkania dokonujemy dokładnego wywiadu medycznego, w którym omawiamy Twoje przeciwwskazania i wskazania do treningu EMS. Kiedy już wiemy, że jest to idealny trening dla Ciebie, rozmawiamy o Twoich celach i tym, co chcemy osiągnąć wspólnie. My tylko Ci pomagamy osiągnąć Twoje cele, a to Ty wykonujesz główną pracę.</p>
-        <figcaption class="equote__by">Natalia Łozińska, Reha Medica</figcaption>
-      </figure>
+    <!-- TAKT 3 — panel z nagłówkiem: wywiad medyczny (komponent .lparts, proza) -->
+    <div class="lparts">
+      <h2 class="lparts__h">Najpierw wywiad medyczny i cele treningowe</h2>
+      <div class="lparts__prose">
+        <p class="lparts__p">Zanim uczestnik rozpocznie pierwsze zajęcia, przeprowadzany jest szczegółowy wywiad medyczny. Dzięki temu trenerzy mogą sprawdzić ewentualne przeciwwskazania oraz dobrać plan treningowy dopasowany do indywidualnych potrzeb i celów.</p>
+      </div>
     </div>
 
-
-    <div class="emssec">
-      <h2 class="emssec__h">30 minut zamiast kilku godzin na siłowni</h2>
-      <p class="emssec__p">Dużą zaletą treningu EMS jest jego krótki czas trwania. Jedna sesja zajmuje około trzydziestu minut, a według trenerów może odpowiadać nawet trzem godzinom klasycznego treningu na siłowni. To rozwiązanie szczególnie doceniają osoby zapracowane lub takie, które mimo regularnych ćwiczeń nie widzą satysfakcjonujących efektów.</p>
-      <figure class="equote">
-        <p class="equote__q">Jeśli jesteś osobą, która cierpi na brak czasu w ciągu tygodnia, bądź jesteś sfrustrowana, że Twoje efekty treningowe nadal się nie pojawiają, to trening EMS jest właśnie dla Ciebie. Jeden trening EMS trwający trzydzieści minut odpowiada trzem godzinom na siłowni.</p>
-        <figcaption class="equote__by">Natalia Łozińska, Reha Medica</figcaption>
-      </figure>
+    <!-- TAKT 4 — cytat (indywidualnie/w grupie) + narracja obok -->
+    <div class="lpull">
+      <p class="lpull__q">Jeśli chcesz przyprowadzić kogoś bliskiego ze sobą – przyjaciółkę lub przyjaciela – śmiało. To będzie świetna przygoda, a przede wszystkim dobra zabawa.</p>
+      <div>
+        <p class="lpull__p">Treningi mogą odbywać się zarówno indywidualnie – w formule jeden na jeden z trenerem – jak i w małych grupach. Do zajęć można przyjść także z kimś bliskim.</p>
+        <p class="lpull__by">Natalia Łozińska, Reha Medica</p>
+      </div>
     </div>
 
-    <div class="emssec">
-      <h2 class="emssec__h">Indywidualnie lub w małej grupie</h2>
-      <p class="emssec__p">Treningi mogą odbywać się zarówno indywidualnie – w formule jeden na jeden z trenerem – jak i w małych grupach. Do zajęć można przyjść także z kimś bliskim.</p>
-      <figure class="equote">
-        <p class="equote__q">Do wyboru masz zajęcia jednoosobowe, jeden na jeden z Twoim trenerem bądź grupowe. Jeśli chcesz przyprowadzić kogoś bliskiego ze sobą – przyjaciółkę lub przyjaciela – śmiało. To będzie świetna przygoda, a przede wszystkim dobra zabawa.</p>
-        <figcaption class="equote__by">Natalia Łozińska, Reha Medica</figcaption>
-      </figure>
-      <p class="emssec__p">Jak podkreślają trenerzy, trening EMS jest dostępny praktycznie dla każdego. Najważniejsze jest jednak właściwe przygotowanie oraz indywidualne dopasowanie programu.</p>
-      <figure class="equote">
-        <p class="equote__q">Każdy kiedyś zaczynał, tak samo my. Dlatego nie ma złego momentu, aby rozpocząć swoją przygodę z treningiem EMS. Dzięki temu, że byliśmy kiedyś w Twojej skórze, dostosowujemy trening właśnie do Ciebie. Słuchamy Twoich potrzeb i realizujemy plan razem.</p>
-        <figcaption class="equote__by">Natalia Łozińska, Reha Medica</figcaption>
-      </figure>
+    <!-- TAKT 5 — domknięcie w wąskiej mierze (komponent .lcoda jak inne strony) -->
+    <div class="lcoda">
+      <div class="lcoda__inner">
+        <p class="lcoda__lead">Jak podkreślają trenerzy, trening EMS jest dostępny praktycznie dla każdego.</p>
+        <p class="lcoda__p">Najważniejsze jest jednak właściwe przygotowanie oraz indywidualne dopasowanie programu.</p>
+      </div>
     </div>
 
-    <!-- Domknięcie CTA usunięte — dane kontaktowe i „Umów wizytę" są już w karcie
-         placówki u góry strony (i w pasku na dole). Zostaje tylko nota źródłowa. -->
     <p class="emssource">Materiał powstał przy współpracy z Centrum Rehabilitacyjno-Medycznym Reha Medica. Źródło: <a href="https://iszczecinek.pl/pl/630_lifestyle/53126_trening-jak-trzy-godziny-na-silowni-w-pol-godziny.html" rel="noopener nofollow" target="_blank">iszczecinek.pl <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-external"></use></svg></a></p>
-
-    </div><!-- /.emsart -->
 
   </div>
 </section>

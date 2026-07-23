@@ -275,6 +275,9 @@
 .lpull__p{font-family:var(--font-body);font-size:1.06rem;line-height:1.75;
   color:var(--color-text-2);margin:0;max-width:34em}
 .lpull__p + .lpull__p{margin-top:1.05em}
+/* atrybucja cytatu (np. na stronie EMS) — drobny podpis pod akapitem wspierającym */
+.lpull__by{margin:clamp(14px,1.6vw,18px) 0 0;font-family:var(--font-body);font-size:.8rem;
+  font-weight:var(--fw-bold);letter-spacing:.1em;text-transform:uppercase;color:var(--color-text-muted)}
 
 /* takt 3 — składowe wymienione w zdaniu źródłowym, rozpisane na kremowy panel */
 .lparts{margin-top:clamp(46px,5.4vw,84px);background:var(--color-cream);
@@ -1258,12 +1261,8 @@ html:not(.js) .sufold__panel{grid-template-rows:1fr}
 .lintro__fig:has(.emsembed){align-self:center}
 .lintro__fig:has(.emsembed)::before{display:none}
 
-/* — Artykuł w JEDNEJ, wyśrodkowanej kolumnie edytorskiej. Bez ramek, kart i pudełek
-     (marka odrzuca generyczne bordery). Treść nie jest zepchnięta w lewo — komfortowa
-     miara ~40rem, wyśrodkowana pod szerokim taktem otwarcia. — */
-.emsart{max-width:40rem;margin-inline:auto}
-
-/* pasek liczb — bez linii i pudełek: trzy duże serifowe liczby + podpis, sam oddech */
+/* pasek liczb — bez linii i pudełek: trzy duże serifowe liczby + podpis, sam oddech.
+   Ten sam gutter i miejsce co takty .lpull/.lparts — spójny z resztą stron usług. */
 .emsstats{margin-top:clamp(40px,5vw,72px);display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(22px,3vw,44px)}
 .emsstat__n{font-family:var(--font-display);font-weight:var(--fw-regular);
@@ -1271,29 +1270,6 @@ html:not(.js) .sufold__panel{grid-template-rows:1fr}
 .emsstat__t{font-family:var(--font-body);font-size:.95rem;line-height:1.5;
   color:var(--color-text-2);margin:0}
 @media(max-width:40em){.emsstats{grid-template-columns:1fr;gap:clamp(16px,4vw,24px)}}
-
-/* sekcje — rozdzielone oddechem, bez kresek; nagłówek serif niesie separację */
-.emssec{margin-top:clamp(46px,5.6vw,80px)}
-.emssec__h{font-family:var(--font-display);font-weight:var(--fw-regular);
-  font-size:clamp(1.6rem,2.6vw,2.2rem);line-height:1.14;color:var(--color-text);
-  margin:0 0 clamp(16px,1.8vw,22px);text-wrap:balance}
-.emssec__p{font-family:var(--font-body);font-size:1.08rem;line-height:1.75;
-  color:var(--color-text-2);margin:0}
-.emssec__p + .emssec__p{margin-top:1.05em}
-
-/* cytat trenerki — wyróżniony BEZ ramki i karty: wcięcie, duży piaskowy cudzysłów,
-   ciepły serif i ciemniejszy tekst niż narracja. Czytelnie oddzielony od nagłówków
-   (mniejszy, z cudzysłowem i wcięciem) i od prozy (serif, ciemniejszy). */
-.equote{margin:clamp(26px,3vw,38px) 0 0;padding:2px 0 0 clamp(26px,2.8vw,40px);position:relative}
-.equote::before{content:"\201C";position:absolute;left:-2px;top:.06em;
-  font-family:var(--font-display);font-size:2.8rem;line-height:.8;color:var(--color-sand)}
-.equote__q{font-family:var(--font-display);font-weight:var(--fw-regular);
-  font-size:clamp(1.2rem,1.7vw,1.5rem);line-height:1.44;color:var(--color-text);
-  margin:0;text-wrap:pretty}
-.equote__by{display:block;margin-top:clamp(12px,1.4vw,16px);font-family:var(--font-body);
-  font-size:.8rem;font-weight:var(--fw-bold);letter-spacing:.1em;text-transform:uppercase;
-  color:var(--color-text-muted)}
-.equote + .emssec__p{margin-top:clamp(26px,3vw,38px)}
 
 /* — Źródło materiału — drobna nota z linkiem do artykułu. — */
 .emssource{margin-top:clamp(30px,3.6vw,46px);font-family:var(--font-body);
