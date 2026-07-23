@@ -237,11 +237,12 @@
    3. panel składowych (siatka terminów)      4. domknięcie (wąska miara).
    Cały tekst pochodzi z akapitów źródłowych — takty tylko porządkują to, co już jest.
    Miara wiersza pilnowana wszędzie (~34em): bez tego 1180px daje ~110 znaków w wierszu. */
-.lintro--rytm{max-width:none}
+/* WSZYSTKIE strony usług — treść w wyśrodkowanej kolumnie (na wzór strony EMS),
+   nie rozciągnięta na całą szerokość do samych boków. Wcześniej max-width:none
+   rozpychał kolumnę na cały ekran; teraz spójne, spokojne wyśrodkowanie ~1130px. */
+.lintro--rytm{max-width:1130px;margin-inline:auto}
 .lintro--rytm::after{content:none}
-/* delikatnie węższa, wyśrodkowana kolumna (np. strona EMS) — treść bliżej środka,
-   nie rozciągnięta na całą szerokość do samych boków */
-.lintro--center{max-width:1130px;margin-inline:auto}
+.lintro--center{max-width:1130px;margin-inline:auto}   /* alias — zgodność wstecz */
 /* EMS na mobile — zwięźlejszy rytm i miara (długa strona czyta się lżej),
    oraz zabezpieczenie ramki filmu przed wyjściem poza ekran. */
 @media(max-width:48em){
