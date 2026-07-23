@@ -1293,41 +1293,23 @@ html:not(.js) .sufold__panel{grid-template-rows:1fr}
   color:var(--color-text-2);margin:0;max-width:34em}
 .emssec__p + .emssec__p{margin-top:1.05em}
 
-/* — Cytat trenera: serif, złota kreska, atrybucja. — */
-.equote{margin:clamp(24px,2.8vw,34px) 0 0;padding:0}
-.equote__q{font-family:var(--font-display);font-weight:var(--fw-regular);
-  font-size:clamp(1.24rem,1.9vw,1.62rem);line-height:1.36;color:var(--color-text);
-  margin:0;max-width:26em;text-wrap:pretty}
-.equote__q::before{content:"";display:block;width:46px;height:2px;
-  background:var(--color-sand);margin-bottom:clamp(14px,1.6vw,20px)}
-.equote__by{display:block;margin-top:clamp(14px,1.6vw,18px);font-family:var(--font-body);
-  font-size:.82rem;font-weight:var(--fw-bold);letter-spacing:.12em;text-transform:uppercase;
+/* — Cytat trenerki: WYRAŹNIE oddzielony od narracji — kremowa karta z akcentem
+     i dużym cudzysłowem. Wcześniej cytaty były w tym samym serifie co nagłówki, przez co
+     strona czytała się jak jedna ściana. Teraz: nagłówek = serif, narracja = tekst,
+     cytat = kremowa karta (wypowiedź). — */
+.equote{margin:clamp(22px,2.6vw,32px) 0 0;padding:clamp(22px,2.6vw,30px) clamp(24px,3vw,38px);
+  background:var(--color-cream);border:1px solid var(--color-line);
+  border-left:3px solid var(--color-sand);position:relative;max-width:44em}
+.equote::before{content:"\201D";position:absolute;top:clamp(6px,1vw,12px);right:clamp(16px,2vw,24px);
+  font-family:var(--font-display);font-size:4rem;line-height:1;color:var(--color-line)}
+.equote__q{font-family:var(--font-body);font-size:clamp(1.04rem,1.2vw,1.14rem);
+  line-height:1.68;color:var(--color-text);margin:0;position:relative;z-index:1}
+.equote__by{display:block;margin-top:14px;font-family:var(--font-body);
+  font-size:.8rem;font-weight:var(--fw-bold);letter-spacing:.1em;text-transform:uppercase;
   color:var(--color-text-muted)}
 .equote + .emssec__p{margin-top:clamp(24px,2.8vw,34px)}
-
-/* — Domknięcie: zaproszenie + dane kontaktowe studia EMS (ze źródła). — */
-.emscta{margin-top:clamp(44px,5.2vw,80px);background:var(--color-cream);
-  border:1px solid var(--color-line);padding:clamp(30px,4vw,52px)}
-.emscta__h{font-family:var(--font-display);font-weight:var(--fw-regular);
-  font-size:clamp(1.5rem,2.4vw,2.05rem);line-height:1.16;color:var(--color-text);
-  margin:0;max-width:20em;text-wrap:balance}
-.emscta__p{font-family:var(--font-body);font-size:1.08rem;line-height:1.6;
-  color:var(--color-text-2);margin:12px 0 clamp(22px,2.6vw,30px)}
-.emscta__place{font-family:var(--font-body);font-size:.8rem;font-weight:var(--fw-bold);
-  letter-spacing:.12em;text-transform:uppercase;color:var(--color-brand);margin:0 0 4px}
-.emscta__addr{font-family:var(--font-body);font-size:1rem;color:var(--color-text-2);margin:0 0 clamp(18px,2vw,24px)}
-.emscta__contact{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center}
-.emscta__contact a{display:inline-flex;align-items:center;gap:9px;min-height:44px;
-  font-family:var(--font-body);font-size:1.05rem;color:var(--color-text);text-decoration:none}
-.emscta__contact a .ico{width:20px;height:20px;color:var(--color-text-muted)}
-.emscta__contact a:hover{color:var(--color-brand)}
-.emscta__contact a:focus-visible{outline:3px solid var(--color-brand);outline-offset:3px}
 
 /* — Źródło materiału — drobna nota z linkiem do artykułu. — */
 .emssource{margin-top:clamp(30px,3.6vw,46px);font-family:var(--font-body);
   font-size:.86rem;line-height:1.6;color:var(--color-text-muted)}
 .emssource a{color:var(--color-brand);text-decoration:underline;text-underline-offset:2px}
-
-@media(max-width:40em){
-  .emscta__contact a{width:100%}
-}
