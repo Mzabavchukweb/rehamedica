@@ -297,6 +297,12 @@
 /* atrybucja cytatu (np. na stronie EMS) — drobny podpis pod akapitem wspierającym */
 .lpull__by{margin:clamp(14px,1.6vw,18px) 0 0;font-family:var(--font-body);font-size:.8rem;
   font-weight:var(--fw-bold);letter-spacing:.1em;text-transform:uppercase;color:var(--color-text-muted)}
+/* sekcja tematyczna z nagłówkiem (H2) nad taktem .lpull — nagłówek zastępuje kreskę taktu */
+.emstopic{margin-top:clamp(46px,5.6vw,84px)}
+.emstopic__h{font-family:var(--font-display);font-weight:var(--fw-regular);
+  font-size:clamp(1.6rem,2.6vw,2.2rem);line-height:1.14;color:var(--color-text);
+  margin:0 0 clamp(20px,2.4vw,30px);text-wrap:balance}
+.emstopic > .lpull{margin-top:0;padding-top:0;border-top:0}
 
 /* takt 3 — składowe wymienione w zdaniu źródłowym, rozpisane na kremowy panel */
 .lparts{margin-top:clamp(46px,5.4vw,84px);background:var(--color-cream);
