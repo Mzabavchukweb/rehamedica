@@ -1020,3 +1020,29 @@ var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches || (f
     });
   });
 })();
+
+/* ---------- facade filmu z Facebooka (click-to-load) ----------
+   Film ładuje się dopiero po kliknięciu — do tego czasu ZERO żądań do Facebooka
+   (prywatność / RODO, spójnie z resztą serwisu bez stron trzecich domyślnie).
+   Bez JS zostaje kafel z przyciskiem, a pod nim i tak działa link do źródła. */
+(function () {
+  var facades = document.querySelectorAll('.vidfacade[data-fb-video]');
+  if (!facades.length) return;
+  Array.prototype.forEach.call(facades, function (fac) {
+    var btn = fac.querySelector('.vidfacade__btn');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      if (fac.classList.contains('is-live')) return;
+      var iframe = document.createElement('iframe');
+      iframe.src = fac.getAttribute('data-fb-video');
+      iframe.title = fac.getAttribute('data-fb-title') || 'Film';
+      iframe.setAttribute('scrolling', 'no');
+      iframe.setAttribute('frameborder', '0');
+      iframe.setAttribute('allowfullscreen', 'true');
+      iframe.setAttribute('allow', 'autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share');
+      fac.appendChild(iframe);
+      fac.classList.add('is-live');
+      iframe.focus();
+    });
+  });
+})();

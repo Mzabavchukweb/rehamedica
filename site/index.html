@@ -27,7 +27,7 @@
 <link rel="icon" href="assets/favicon.png">
 <link rel="preload" href="assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=104">
+<link rel="stylesheet" href="css/style.css?v=105">
 <script>document.documentElement.className+=' js';</script>
 <!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
 <script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
@@ -349,6 +349,7 @@
             <li><a href="uslugi/rehabilitacja/rehabilitacja-domowa/">Rehabilitacja domowa</a></li>
             <li><a href="uslugi/rehabilitacja/rehabilitacja-lecznicza/">Rehabilitacja lecznicza, zabiegi fizjoterapeutyczne</a></li>
             <li><a href="uslugi/masaze/">Masaże</a></li>
+            <li><a href="uslugi/trening-ems/">Trening EMS</a></li>
           </ul>
         </li>
         <li class="nav__item nav__item--sub">
@@ -573,6 +574,33 @@
     </nav>
 
     <p class="svc__avail">Zakres usług i sposób finansowania zależą od wybranej placówki. <a href="#placowki">Sprawdź dostępność w placówce →</a></p>
+  </div>
+</section>
+
+<!-- TRENING EMS — zajawka nowej usługi z filmem (ładowanym po kliknięciu).
+     Tekst dosłownie z materiału iszczecinek.pl (współpraca z Reha Medica). -->
+<section class="section emshl" id="trening-ems" aria-labelledby="ems-h">
+  <div class="wrap">
+    <header class="section__head" data-animate="word-reveal">
+      <p class="kicker">Nowość w Reha Medica</p>
+      <h2 class="section__title" id="ems-h">Trening EMS</h2>
+    </header>
+    <div class="emshl__grid">
+      <div class="emshl__text" data-animate>
+        <p class="emshl__lead">Pół godziny treningu, a efekty jak po kilku godzinach na siłowni.</p>
+        <p class="emshl__p">Coraz więcej osób w Szczecinku sięga po trening EMS – nowoczesną metodę aktywności fizycznej, która pozwala osiągać widoczne rezultaty w krótkim czasie. W Reha Medica Centrum Rehabilitacyjno-Medycznym treningi prowadzone są indywidualnie i poprzedzone dokładną analizą potrzeb uczestnika.</p>
+        <a class="link-strong" href="uslugi/trening-ems/">Poznaj trening EMS →</a>
+      </div>
+      <div class="emshl__media" data-animate="scale-reveal">
+        <!-- Film z Facebooka ładowany dopiero po kliknięciu (zero żądań do FB przed zgodą) -->
+        <div class="vidfacade" data-fb-video="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F788602250471275%2F&show_text=0&width=560" data-fb-title="Trening EMS w Reha Medica — film na Facebooku">
+          <button type="button" class="vidfacade__btn" aria-label="Odtwórz film o treningu EMS (ładuje się z Facebooka)">
+            <span class="vidfacade__play" aria-hidden="true"></span>
+            <span class="vidfacade__label">Zobacz film</span>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -894,6 +922,6 @@
   </div>
   <button class="a11y-reset" type="button" data-a11y-reset>Przywróć ustawienia domyślne</button>
 </div>
-<script src="js/main.js?v=91"></script>
+<script src="js/main.js?v=92"></script>
 </body>
 </html>
