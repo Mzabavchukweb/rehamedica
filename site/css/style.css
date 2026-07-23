@@ -919,9 +919,13 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
   .nav-search__results{left:0;right:0;margin-inline:auto;width:min(560px,100%)}
 }
 @media(max-width:75em){
-  /* mobile/tablet: panel bliżej paska, ograniczona szerokość (nie rozlewa się na całą belkę),
-     zwięźlejsze wiersze, wyraźniejszy tytuł. Na telefonie min() zwija się do pełnej szerokości. */
-  .nav-search__results{top:calc(100% + 6px);left:0;right:auto;width:min(480px,100%);border-radius:16px}
+  /* mobile/tablet: panel WYRÓWNANY do pola input (nie do całej belki i nie od krawędzi ekranu).
+     Lewy offset = padding paska + lupa+odstęp; szerokość = tyle co pole (do przycisku ×), max 440px.
+     Dzięki temu na telefonie nie jest szerszy niż pole i nie dotyka krawędzi. */
+  .nav-search__results{top:calc(100% + 6px);
+    left:calc(clamp(14px,4vw,20px) + 32px);right:auto;
+    width:min(440px, calc(100% - 2 * clamp(14px,4vw,20px) - 82px));
+    border-radius:16px}
   .nav-search__results .nav-search__hit{padding:11px 40px 11px 14px}
   .nav-search__results .nav-search__hit-t{font-size:1.02rem}
 }
