@@ -27,7 +27,7 @@
 <link rel="icon" href="assets/favicon.png">
 <link rel="preload" href="assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=106">
+<link rel="stylesheet" href="css/style.css?v=107">
 <script>document.documentElement.className+=' js';</script>
 <!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
 <script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
@@ -592,7 +592,9 @@
         <p class="emshl__p">Coraz więcej osób w Szczecinku sięga po trening EMS – nowoczesną metodę aktywności fizycznej, która pozwala osiągać widoczne rezultaty w krótkim czasie. W Reha Medica Centrum Rehabilitacyjno-Medycznym treningi prowadzone są indywidualnie i poprzedzone dokładną analizą potrzeb uczestnika.</p>
         <a class="link-strong" href="uslugi/trening-ems/">Poznaj trening EMS →</a>
       </div>
-      <div class="emshl__media" data-animate="scale-reveal">
+      <!-- Bez data-animate: transform/will-change na rodzicu iframe'a powoduje
+           przeładowanie i „skakanie" filmu przy odtwarzaniu. Kadr wchodzi statycznie. -->
+      <div class="emshl__media">
         <!-- Film osadzony natywnie z Facebooka (odtwarzacz FB, bez własnych nakładek) -->
         <div class="emsembed">
           <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F788602250471275%2F&show_text=0&width=560" title="Trening EMS w Reha Medica — film na Facebooku" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe>
