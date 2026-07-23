@@ -30,6 +30,13 @@ jobs:
         run: |
           find site -type f \( -name '*.html' -o -name '*.xml' -o -name '*.txt' \) \
             -exec sed -i 's#https://rehamedica\.info\.pl#https://mzabavchukweb.github.io/rehamedica#g' {} +
+      - name: 404 na podglądzie — prefiks /rehamedica/ dla ścieżek root-absolutnych
+        # 404.html bywa serwowana pod dowolną ścieżką, więc używa ścieżek root-absolutnych (/css, /js…).
+        # Na produkcji (Cloudflare, domena w korzeniu) działają wprost; na github.io (podkatalog
+        # /rehamedica/) trzeba je poprzedzić prefiksem. Dotyczy WYŁĄCZNIE 404.html — inne strony
+        # używają ścieżek względnych i nie są tu ruszane. Kotwice (#…) i sprite (#i-…) pomijamy.
+        run: |
+          sed -i -E 's#(href|src)="/#\1="/rehamedica/#g' site/404.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

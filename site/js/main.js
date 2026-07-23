@@ -1,4 +1,8 @@
 'use strict';
+// === INDEKS WYSZUKIWARKI (auto-generowany ze stron site/**/index.html; pomija noindex) ===
+// Zasilany do window.RM_SEARCH; obsługiwany przez IIFE 'wyszukiwarka po całym serwisie' niżej.
+window.RM_SEARCH=[{"u":"aktualnosci/cialo-bez-kompleksow/","t":"Ciało bez kompleksów","c":"Aktualności","k":"Ciało bez kompleksów Głównym celem Programu jest wzmocnienie roli i umiejętności opiekunów dzieci onkologicznych, które przyczyniają się do poprawy ich jakości życia w…"},{"u":"aktualnosci/","t":"Aktualności","c":"Aktualności","k":"Aktualności Reha Medica | Szczecinek Bieżące informacje Reha Medica: współpraca z Medicover, program Innowacja Model DOM i inne wiadomości z placówek."},{"u":"aktualnosci/reha-medica-dolacza-do-programu-innowacja-model-dom/","t":"Reha Medica dołącza do programu Innowacja „Model DOM”","c":"Aktualności","k":"Reha Medica dołącza do programu Innowacja „Model DOM” | Reha Wydarzenie zorganizowane zostało przez Ośrodek Środowiskowej Opieki Psychologicznej i Psychoterapeutycznej w Szczecinku i jest częścią projektu: „…"},{"u":"aktualnosci/wspolpraca-reha-medica-z-medicover/","t":"Współpraca Reha Medica z MEDICOVER","c":"Aktualności","k":"Współpraca Reha Medica z MEDICOVER Reha Medica to doświadczeni, wysoko wykwalifikowani fizjoterapeuci i terapeuci manualni, właściwe diagnozowanie, skuteczne, indywidualnie…"},{"u":"ankieta-satysfakcji/","t":"Ankieta satysfakcji pacjenta","c":"Ankieta","k":"Ankieta satysfakcji pacjenta Anonimowa ankieta satysfakcji pacjenta Reha Medica. Trzynaście pytań o rejestrację, wizytę, personel i placówkę. Odpowiedzi pomagają podnosić jakość opieki."},{"u":"faq/","t":"Najczęstsze pytania","c":"FAQ","k":"FAQ Reha Medica | skierowania, pierwsza wizyta Odpowiedzi na najczęstsze pytania: jak przygotować się do wizyty, kto wystawia skierowanie i jak długo jest ważne."},{"u":"","t":"Centrum rehabilitacyjno-medyczne","c":"Strona główna","k":"Reha Medica Szczecinek — centrum rehabilitacyjno-medyczne Centrum rehabilitacyjno-medyczne Reha Medica. Rehabilitacja, fizjoterapia, konsultacje i zabiegi w pięciu placówkach na Pomorzu Zachodnim. Umów wizytę."},{"u":"kontakt/","t":"Kontakt","c":"Kontakt","k":"Kontakt Kontakt do wszystkich placówek Reha Medica: adresy, telefony i adresy e-mail w Szczecinku, Szczecinie, Wałczu, Białogardzie i Bobolicach."},{"u":"o-nas/","t":"O Reha Medica","c":"O nas","k":"O nas Reha Medica to centrum rehabilitacyjno-medyczne działające w pięciu placówkach na Pomorzu Zachodnim. Zespół lekarzy, fizjoterapeutów i logopedów."},{"u":"placowki/","t":"Placówki","c":"Placówki","k":"Placówki Reha Medica | Szczecinek, Szczecin, Wałcz Pięć placówek Reha Medica na Pomorzu Zachodnim: Szczecinek, Szczecin, Wałcz, Białogard i Bobolice. Adresy, telefony i godziny otwarcia."},{"u":"placowki/walcz/","t":"Reha Medica Wałcz","c":"Placówki","k":"Reha Medica Wałcz | rehabilitacja domowa NFZ Reha Medica Wałcz, ul. Gen. Andersa 9: rehabilitacja domowa w ramach NFZ. Telefon, e-mail i godziny otwarcia. Umów wizytę w recepcji placówki."},{"u":"polityka-prywatnosci/","t":"Polityka prywatności","c":"Informacje","k":"Polityka prywatności Zasady przetwarzania danych osobowych pacjentów Reha Medica, podstawy prawne, okresy przechowywania i prawa osób, których dane dotyczą."},{"u":"projekty-ue/","t":"Aktualności – projekty","c":"Projekty UE","k":"Projekty UE i dofinansowania Aktualności z projektów realizowanych przez Reha Medica z dofinansowaniem Unii Europejskiej, w tym projekt MINDSpots."},{"u":"projekty-ue/projekt-mindspots/","t":"Projekt pt. „MINDSpots – Rozwój Ośrodków Opieki Psychologicznej i Psychoterapeutycznej w województwie zachodniopomorskim”","c":"Projekty UE","k":"Projekt MINDSpots Projekt MINDSpots: rozwój ośrodków opieki psychologicznej i psychoterapeutycznej w województwie zachodniopomorskim, ze środków EFS+."},{"u":"projekty-ue/zakonczenie-postepowania-ofertowego-komputery-mindspots/","t":"Zakończenie postępowania ofertowego na zakup komputerów – Projekt „MINDSpots”","c":"Projekty UE","k":"Zakończenie postępowania ofertowego Zakończenie postępowania ofertowego na zakup laptopów w projekcie MINDSpots. Nie wyłoniono wykonawcy, oferty przekroczyły budżet."},{"u":"standardy-ochrony-dzieci/","t":"Standardy ochrony dzieci","c":"Informacje","k":"Standardy ochrony małoletnich Standardy ochrony małoletnich obowiązujące w placówkach Reha Medica: zasady, procedury zgłaszania i ochrona dzieci."},{"u":"uslugi/","t":"Usługi","c":"Usługi","k":"Usługi Reha Medica Szczecinek | rehabilitacja i fizjoterapia Usługi Reha Medica w Szczecinku: rehabilitacja i fizjoterapia, konsultacje specjalistyczne, zabiegi fizykoterapeutyczne, masaże i odnowa biologiczna."},{"u":"uslugi/konsultacje/fizjoterapeutyczna/","t":"Konsultacja fizjoterapeutyczna w Szczecinku","c":"Konsultacje","k":"Konsultacja fizjoterapeutyczna Szczecinek Konsultacja fizjoterapeutyczna w Szczecinku: badanie kręgosłupa przy nawracającym bólu, wykrywanie wad postawy u dzieci, przygotowanie do aktywności."},{"u":"uslugi/konsultacje/","t":"Konsultacje specjalistyczne","c":"Konsultacje","k":"Konsultacje specjalistyczne Szczecinek Konsultacje fizjoterapeutyczne, ortopedyczne, neurologiczne oraz logopedyczne i neurologopedyczne w Reha Medica w Szczecinku."},{"u":"uslugi/konsultacje/logopedyczna-neurologopedyczna/","t":"Konsultacja logopedyczna / neurologopedyczna w Szczecinku","c":"Konsultacje","k":"Konsultacja logopedyczna Szczecinek Logopeda i neurologopeda w Szczecinku — konsultacja dla dzieci i dorosłych, także przy trudnościach wynikających z dysfunkcji neurologicznych."},{"u":"uslugi/konsultacje/neurologiczna/","t":"Konsultacja neurologiczna w Szczecinku","c":"Konsultacje","k":"Konsultacja neurologiczna Szczecinek Neurolog w Szczecinku — konsultacja przy zawrotach i bólach głowy, zaburzeniach równowagi oraz dolegliwościach neurologicznych po przebytym COVID-19."},{"u":"uslugi/konsultacje/ortopedyczna/","t":"Konsultacja ortopedyczna w Szczecinku","c":"Konsultacje","k":"Konsultacja ortopedyczna Szczecinek Ortopeda w Szczecinku — konsultacja przy urazach i kontuzjach narządu ruchu, bólu kręgosłupa, drętwieniu kończyn i ograniczonej ruchomości stawów."},{"u":"uslugi/konsultacje/socjologiczna/","t":"Konsultacja socjologiczna w Szczecinku","c":"Konsultacje","k":"Konsultacja socjologiczna Szczecinek Konsultacja socjologiczna w Szczecinku: socjoterapia przy trudnościach w kontaktach społecznych, nieśmiałości, wycofaniu i niedostosowaniu społecznym."},{"u":"uslugi/masaze/","t":"Masaże lecznicze","c":"Masaże","k":"Masaże lecznicze Szczecinek Masaże lecznicze w Szczecinku: masaż leczniczy, sportowy, pneumatyczny oraz manualny drenaż limfatyczny w Reha Medica."},{"u":"uslugi/masaze/manualny-drenaz-limfatyczny/","t":"Manualny drenaż limfatyczny w Szczecinku","c":"Masaże","k":"Manualny drenaż limfatyczny Szczecinek Manualny drenaż limfatyczny w Szczecinku: usprawnia przepływ krwi i limfy, redukuje obrzęki, niweluje ból i pomaga w walce z cellulitem."},{"u":"uslugi/masaze/masaz-leczniczy/","t":"Masaż leczniczy w Szczecinku","c":"Masaże","k":"Masaż leczniczy Szczecinek Masaż leczniczy w Szczecinku: ręczna stymulacja tkanek wykonywana na obszarze ciała objętym chorobą lub dolegliwością bólową."},{"u":"uslugi/masaze/masaz-modelujacy-antycellulitowy/","t":"Masaż modelujący, antycellulitowy w Szczecinku","c":"Masaże","k":"Masaż antycellulitowy Szczecinek Masaż modelujący i antycellulitowy w Szczecinku: intensywne techniki wspierające redukcję cellulitu i spalanie tkanki tłuszczowej."},{"u":"uslugi/masaze/masaz-pneumatyczny/","t":"Masaż pneumatyczny w Szczecinku","c":"Masaże","k":"Masaż pneumatyczny Szczecinek Masaż pneumatyczny w Szczecinku: drenaż limfatyczny wykonywany sprężonym powietrzem w urządzeniu BOA, wspierający redukcję obrzęków."},{"u":"uslugi/masaze/masaz-sportowy/","t":"Masaż sportowy w Szczecinku","c":"Masaże","k":"Masaż sportowy Szczecinek Masaż sportowy w Szczecinku: intensywniejszy niż klasyczny, z elementami masażu izometrycznego wzmacniającego osłabione partie mięśni."},{"u":"uslugi/odnowa-biologiczna/","t":"Odnowa biologiczna","c":"Odnowa biologiczna","k":"Odnowa biologiczna Szczecinek Odnowa biologiczna w Szczecinku: sauna sucha i infrared, kriokomora oraz masaże relaksacyjne w Reha Medica. Regeneracja i relaks w jednym miejscu."},{"u":"uslugi/odnowa-biologiczna/kriokomora/","t":"Kriokomora w Szczecinku","c":"Odnowa biologiczna","k":"Kriokomora Szczecinek Kriokomora w Szczecinku, czyli krioterapia ogólnoustrojowa (całego ciała): zapalenia okołostawowe, przykurcze mięśniowe, mikrourazy i stłuczenia."},{"u":"uslugi/odnowa-biologiczna/masaze-relaksacyjne/","t":"Masaże relaksacyjne","c":"Odnowa biologiczna","k":"Masaże relaksacyjne Szczecinek — rodzaje Masaże relaksacyjne w Szczecinku: gorącymi kamieniami, olejkiem arganowym, masłem shea, peelingujący, antycellulitowy, twarzy i dla dwojga."},{"u":"uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-goracymi-kamieniami/","t":"Masaż gorącymi kamieniami w Szczecinku","c":"Odnowa biologiczna","k":"Masaż gorącymi kamieniami Szczecinek Masaż gorącymi kamieniami w Szczecinku: tradycyjne techniki masażu z rozgrzanymi kamieniami. Masaż holistyczny, nazywany także uzdrawiającym."},{"u":"uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-maslem-shea/","t":"Masaż masłem shea w Szczecinku","c":"Odnowa biologiczna","k":"Masaż masłem shea Szczecinek Masaż masłem shea w Szczecinku: silnie odprężający zabieg z aromaterapią i muzyką relaksacyjną, doceniany za właściwości pielęgnacyjne."},{"u":"uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-olejkiem-arganowym-na-cieplo/","t":"Masaż olejkiem arganowym na ciepło w Szczecinku","c":"Odnowa biologiczna","k":"Masaż olejkiem na ciepło Szczecinek Masaż ciepłym olejem arganowym w Szczecinku: głęboko relaksuje, odpręża i przywraca energię. Rytuał dla ciała, duszy i umysłu."},{"u":"uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-olejkiem-arganowym/","t":"Masaż olejkiem arganowym w Szczecinku","c":"Odnowa biologiczna","k":"Masaż olejkiem arganowym Szczecinek Masaż olejkiem arganowym w Szczecinku: pobudza krążenie, odżywia i odbudowuje skórę, korzystnie wpływa na stawy i kości."},{"u":"uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-peelingujacy/","t":"Masaż peelingujący w Szczecinku","c":"Odnowa biologiczna","k":"Masaż peelingujący Szczecinek Masaż peelingujący w Szczecinku: połączenie masażu relaksacyjnego z peelingiem usuwającym martwe komórki naskórka i zanieczyszczenia."},{"u":"uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-relaksacyjny-dla-dwojga/","t":"Masaż relaksacyjny dla dwojga w Szczecinku","c":"Odnowa biologiczna","k":"Masaż dla dwojga Szczecinek Masaż relaksacyjny dla dwojga w Szczecinku: kojący dotyk i delikatna muzyka w towarzystwie drugiej osoby. Odskocznia od stresu i codziennej gonitwy."},{"u":"uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-relaksacyjny/","t":"Masaż relaksacyjny w Szczecinku","c":"Odnowa biologiczna","k":"Masaż relaksacyjny Szczecinek Masaż relaksacyjny w Szczecinku: uspokaja układ nerwowy, ujędrnia ciało, wzmacnia mięśnie i usprawnia krążenie."},{"u":"uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-twarzy/","t":"Masaż twarzy w Szczecinku","c":"Odnowa biologiczna","k":"Masaż twarzy Szczecinek Masaż twarzy w Szczecinku: masaż klasyczny na specjalnym kremie, pobudza mikrokrążenie i dotlenia skórę. Polecany osobom zapracowanym."},{"u":"uslugi/odnowa-biologiczna/sauny/","t":"Sauny","c":"Odnowa biologiczna","k":"Sauny Szczecinek Sauny w Szczecinku: sauna sucha (fińska) do 90–100°C oraz sauna infrared na podczerwień w Reha Medica. Rozgrzej mięśnie i zregeneruj się."},{"u":"uslugi/odnowa-biologiczna/sauny/sauna-infrared/","t":"Sauna Infrared w Szczecinku","c":"Odnowa biologiczna","k":"Sauna Infrared Szczecinek Sauna infrared w Szczecinku: ciepło z promieniowania podczerwonego przy napięciu mięśni, bólach kręgosłupa, rwie kulszowej i zwyrodnieniach stawów."},{"u":"uslugi/odnowa-biologiczna/sauny/sauna-sucha/","t":"Sauna sucha (fińska) w Szczecinku","c":"Odnowa biologiczna","k":"Sauna sucha (fińska) Szczecinek Sauna sucha (fińska) w Szczecinku: temperatura do 90-100°C przy niskiej wilgotności. Napięcie mięśni, zwyrodnienia stawów, ból zatok."},{"u":"uslugi/poradnia-logopedyczna/","t":"Poradnia logopedyczna w Szczecinku","c":"Usługi","k":"Poradnia logopedyczna Szczecinek Logopeda w Szczecinku — poradnia logopedyczna. Diagnostyka i terapia zaburzeń mowy, wad wymowy, jąkania i dysleksji. Wskazania przed wizytą."},{"u":"uslugi/rehabilitacja/gabinet-terapii-manualnej/","t":"Gabinet terapii manualnej w Szczecinku","c":"Rehabilitacja","k":"Gabinet terapii manualnej Szczecinek Terapia manualna w Szczecinku przy schorzeniach kręgosłupa, zwyrodnieniach stawów, dysfunkcjach mięśniowych i powięziowych oraz ograniczeniu ruchu."},{"u":"uslugi/rehabilitacja/","t":"Rehabilitacja","c":"Rehabilitacja","k":"Rehabilitacja Szczecinek Rehabilitacja w Szczecinku: poradnia rehabilitacyjna, ośrodek dzienny, rehabilitacja lecznicza, domowa oraz dla dzieci i młodzieży."},{"u":"uslugi/rehabilitacja/osrodek-rehabilitacji-ogolnoustrojowej/","t":"Ośrodek rehabilitacji ogólnoustrojowej w Szczecinku","c":"Rehabilitacja","k":"Rehabilitacja ogólnoustrojowa NFZ Szczecinek Ośrodek rehabilitacji ogólnoustrojowej w Szczecinku, w ramach NFZ. Rehabilitacja na oddziale dziennym od 15 do 30 dni zabiegowych. Skierowanie i wskazania."},{"u":"uslugi/rehabilitacja/poradnia-rehabilitacyjna/","t":"Poradnia rehabilitacyjna w Szczecinku","c":"Rehabilitacja","k":"Poradnia rehabilitacyjna Szczecinek Poradnia rehabilitacyjna w Szczecinku. Diagnostyka i leczenie schorzeń ortopedycznych, reumatologicznych i neurologicznych. Wskazania i wymagania."},{"u":"uslugi/rehabilitacja/rehabilitacja-bolu/","t":"Rehabilitacja bólu w Szczecinku","c":"Rehabilitacja","k":"Rehabilitacja bólu Szczecinek Rehabilitacja bólu w Szczecinku: ból kręgosłupa, rwa kulszowa i ramienna, migreny oraz ból stawu skroniowo-żuchwowego. Zabiegi dobierane indywidualnie."},{"u":"uslugi/rehabilitacja/rehabilitacja-domowa/","t":"Rehabilitacja domowa w Szczecinku i Wałczu","c":"Rehabilitacja","k":"Rehabilitacja domowa Szczecinek i Wałcz Rehabilitacja w warunkach domowych w Szczecinku i Wałczu, w ramach umów z NFZ. Dla pacjentów, którzy nie mogą korzystać z rehabilitacji ambulatoryjnej."},{"u":"uslugi/rehabilitacja/rehabilitacja-dzieci-i-mlodziezy/","t":"Rehabilitacja dzieci i młodzieży w Szczecinku","c":"Rehabilitacja","k":"Rehabilitacja dzieci i młodzieży Szczecinek Rehabilitacja dzieci i młodzieży w Szczecinku. Wady postawy, kręgosłupa, stóp i kolan. Metody NDT-Bobath, Vojty i Peto. Wskazania i efekty."},{"u":"uslugi/rehabilitacja/rehabilitacja-lecznicza/","t":"Rehabilitacja lecznicza","c":"Rehabilitacja","k":"Rehabilitacja lecznicza Szczecinek Rehabilitacja ortopedyczna, neurologiczna, reumatologiczna i sportowa, rehabilitacja bólu oraz gabinet terapii manualnej w Szczecinku."},{"u":"uslugi/rehabilitacja/rehabilitacja-neurologiczna/","t":"Rehabilitacja neurologiczna w Szczecinku","c":"Rehabilitacja","k":"Rehabilitacja neurologiczna Szczecinek Rehabilitacja neurologiczna w Szczecinku po udarze mózgu, przy chorobie Parkinsona, alzheimerze i stwardnieniu rozsianym. Wskazania, efekty i metody."},{"u":"uslugi/rehabilitacja/rehabilitacja-ortopedyczna/","t":"Rehabilitacja ortopedyczna w Szczecinku","c":"Rehabilitacja","k":"Rehabilitacja ortopedyczna Szczecinek Rehabilitacja ortopedyczna w Szczecinku po urazach i kontuzjach narządu ruchu, przeciążeniach oraz przed zabiegiem operacyjnym i po nim."},{"u":"uslugi/rehabilitacja/rehabilitacja-reumatologiczna/","t":"Rehabilitacja reumatologiczna w Szczecinku","c":"Rehabilitacja","k":"Rehabilitacja reumatologiczna Szczecinek Rehabilitacja reumatologiczna w Szczecinku przy reumatoidalnym zapaleniu stawów, twardzinie układowej i innych schorzeniach reumatycznych."},{"u":"uslugi/rehabilitacja/rehabilitacja-sportowa/","t":"Rehabilitacja sportowa w Szczecinku","c":"Rehabilitacja","k":"Rehabilitacja sportowa Szczecinek Rehabilitacja sportowa w Szczecinku po kontuzjach: łokieć tenisisty i golfisty, urazy więzadeł kolana, naderwania mięśni, bóle bioder i barków."},{"u":"uslugi/trening-ems/","t":"Trening EMS w Szczecinku","c":"Usługi","k":"Trening EMS Szczecinek Trening EMS w Szczecinku — elektrostymulacja mięśni. 30 minut treningu, indywidualny plan i wywiad medyczny przed startem. Reha Medica, ul. Kościuszki 57."},{"u":"uslugi/zabiegi-fizykoterapeutyczne/elektroterapia/","t":"Elektroterapia w Szczecinku","c":"Zabiegi fizykoterapeutyczne","k":"Elektroterapia Szczecinek Elektroterapia w Szczecinku: leczenie prądami przy nerwobólach, bólach i przykurczach mięśni oraz stanach zapalnych tkanek miękkich."},{"u":"uslugi/zabiegi-fizykoterapeutyczne/fala-uderzeniowa/","t":"Fala uderzeniowa w Szczecinku","c":"Zabiegi fizykoterapeutyczne","k":"Fala uderzeniowa Szczecinek Fala uderzeniowa w Szczecinku przy przewlekłych chorobach ścięgien, ostrodze piętowej oraz łokciu tenisisty i golfisty. Wskazania i przeciwwskazania."},{"u":"uslugi/zabiegi-fizykoterapeutyczne/hydromasaze/","t":"Hydromasaże w Szczecinku","c":"Zabiegi fizykoterapeutyczne","k":"Hydromasaże Szczecinek Hydromasaż w Szczecinku: zabieg łagodzący bóle, rozluźniający mięśnie i stawy oraz wspierający regenerację i dobre samopoczucie."},{"u":"uslugi/zabiegi-fizykoterapeutyczne/hydroterapia/","t":"Hydroterapia w Szczecinku","c":"Zabiegi fizykoterapeutyczne","k":"Hydroterapia Szczecinek Hydroterapia w Szczecinku, czyli wodolecznictwo: terapeutyczne zastosowanie wody w kąpielach i zabiegach wspierających regenerację i leczenie."},{"u":"uslugi/zabiegi-fizykoterapeutyczne/","t":"Zabiegi fizykoterapeutyczne","c":"Zabiegi fizykoterapeutyczne","k":"Zabiegi fizykoterapeutyczne Szczecinek Zabiegi fizykoterapeutyczne w Szczecinku: elektroterapia, fala uderzeniowa, laseroterapia, magnetoterapia, ultradźwięki, hydroterapia i krioterapia."},{"u":"uslugi/zabiegi-fizykoterapeutyczne/krioterapia/","t":"Krioterapia w Szczecinku","c":"Zabiegi fizykoterapeutyczne","k":"Krioterapia Szczecinek Krioterapia w Szczecinku, czyli leczenie zimnem: obrzęki, ból stawów, stany zapalne i napięcie mięśniowe. Miejscowe schładzanie tkanek w fizykoterapii."},{"u":"uslugi/zabiegi-fizykoterapeutyczne/laseroterapia/","t":"Laseroterapia w Szczecinku","c":"Zabiegi fizykoterapeutyczne","k":"Laseroterapia Szczecinek Laseroterapia w Szczecinku przy stanach zapalnych tkanek miękkich i stawów oraz zespołach przeciążeniowych. Laser przyspiesza gojenie tkanek."},{"u":"uslugi/zabiegi-fizykoterapeutyczne/magnetoterapia/","t":"Magnetoterapia w Szczecinku","c":"Zabiegi fizykoterapeutyczne","k":"Magnetoterapia Szczecinek Magnetoterapia w Szczecinku: pole magnetyczne niskiej częstotliwości przy urazach, chorobach reumatycznych i patologiach narządu ruchu."},{"u":"uslugi/zabiegi-fizykoterapeutyczne/ultradzwieki/","t":"Ultradźwięki w Szczecinku","c":"Zabiegi fizykoterapeutyczne","k":"Ultradźwięki Szczecinek Ultradźwięki w Szczecinku przy zapaleniach stawów, mięśni i ścięgien, zmianach zwyrodnieniowych, nerwobólach oraz bliznach i bliznowcach."}];
+
 
 // Ruch ograniczamy, gdy prosi o to system LUB gdy użytkownik zapisał to w menu dostępności.
 // Dzięki temu przełącznik „Ogranicz ruch" realnie wyłącza autoodtwarzanie hero (po odświeżeniu).
@@ -310,7 +314,10 @@ var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches || (f
   els.forEach(function (el) { obs.observe(el); });
 })();
 
-/* ---------- wyszukiwarka usług w headerze (lupa → pasek → X) ---------- */
+/* ---------- wyszukiwarka po całym serwisie (lupa → pasek → wyniki z linkami) ----------
+   Indeks wszystkich stron: window.RM_SEARCH (zdefiniowany na górze pliku). Działa na KAŻDEJ
+   podstronie, bo main.js jest wszędzie. Adresy wyników liczone względnie (BASE z src main.js),
+   więc działają i na produkcji (rehamedica.info.pl), i na podglądzie github.io (/rehamedica/). */
 (function () {
   var header = document.getElementById('site-header');
   var openBtn = document.querySelector('[data-search-open]');
@@ -318,9 +325,81 @@ var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches || (f
   var input = document.getElementById('svc-search');
   if (!header || !openBtn || !input) return;
 
-  var items = Array.prototype.slice.call(
-    document.querySelectorAll('.svc__index .svc__item, .kons__list .kons__row')
-  );
+  var DATA = window.RM_SEARCH || [];
+  var self = document.querySelector('script[src*="js/main.js"]');
+  var BASE = self ? (self.getAttribute('src') || '').replace(/js\/main\.js.*$/, '') : '';
+
+  function norm(s) { return (s || '').toLowerCase()
+    .replace(/ą/g,'a').replace(/ć/g,'c').replace(/ę/g,'e').replace(/ł/g,'l').replace(/ń/g,'n').replace(/ó/g,'o').replace(/ś/g,'s').replace(/ż/g,'z').replace(/ź/g,'z'); }
+  function esc(s) { return (s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+  // wstępna normalizacja pól: _t = tytuł (do rankingu), _h = tytuł+opis+kategoria (do dopasowania)
+  DATA.forEach(function (d) { d._t = norm(d.t); d._h = norm((d.k || '') + ' ' + (d.c || '')); });
+
+  // panel wyników wstrzykiwany do paska
+  var box = document.createElement('div');
+  box.className = 'nav-search__results';
+  box.id = 'svc-search-results';
+  box.setAttribute('role', 'listbox');
+  box.hidden = true;
+  input.insertAdjacentElement('afterend', box);
+  input.setAttribute('role', 'combobox');
+  input.setAttribute('aria-autocomplete', 'list');
+  input.setAttribute('aria-controls', box.id);
+  input.setAttribute('aria-expanded', 'false');
+
+  var results = [], active = -1;
+
+  function search() {
+    var raw = input.value.trim();
+    var q = norm(raw);
+    if (!q) { results = []; active = -1; render(''); return; }
+    var toks = q.split(/\s+/).filter(Boolean);
+    results = DATA
+      .map(function (d) {
+        var ok = toks.every(function (t) { return d._t.indexOf(t) !== -1 || d._h.indexOf(t) !== -1; });
+        if (!ok) return null;
+        var s = 0;
+        if (d._t === q) s += 1000;
+        else if (d._t.indexOf(q) === 0) s += 300;
+        else if (d._t.indexOf(q) !== -1) s += 150;
+        toks.forEach(function (t) { if (d._t.indexOf(t) !== -1) s += 40; if (d._h.indexOf(t) !== -1) s += 10; });
+        return { d: d, s: s };
+      })
+      .filter(Boolean)
+      .sort(function (a, b) { return b.s - a.s || a.d.t.localeCompare(b.d.t, 'pl'); })
+      .slice(0, 8)
+      .map(function (x) { return x.d; });
+    active = -1;
+    render(raw);
+  }
+
+  function render(raw) {
+    if (!raw) { box.hidden = true; box.innerHTML = ''; input.setAttribute('aria-expanded', 'false'); input.removeAttribute('aria-activedescendant'); return; }
+    if (!results.length) {
+      box.innerHTML = '<p class="nav-search__empty">Brak wyników dla „' + esc(raw) + '". Spróbuj: masaż, kręgosłup, NFZ, Wałcz…</p>';
+    } else {
+      box.innerHTML = results.map(function (d, i) {
+        return '<a class="nav-search__hit" role="option" id="ssr-' + i + '" href="' + esc(BASE + d.u) + '">'
+          + '<span class="nav-search__hit-t">' + esc(d.t) + '</span>'
+          + (d.c ? '<span class="nav-search__hit-c">' + esc(d.c) + '</span>' : '')
+          + '</a>';
+      }).join('');
+    }
+    box.hidden = false;
+    input.setAttribute('aria-expanded', 'true');
+  }
+
+  function hits() { return box.querySelectorAll('.nav-search__hit'); }
+  function highlight(n) {
+    var h = hits(); if (!h.length) return;
+    n = (n + h.length) % h.length;
+    for (var i = 0; i < h.length; i++) { h[i].classList.toggle('is-active', i === n); h[i].setAttribute('aria-selected', i === n ? 'true' : 'false'); }
+    active = n;
+    input.setAttribute('aria-activedescendant', h[n].id);
+    h[n].scrollIntoView({ block: 'nearest' });
+  }
+  function go(a) { var h = hits(); var el = (a >= 0 && h[a]) ? h[a] : h[0]; if (el) window.location.href = el.getAttribute('href'); }
 
   function open() {
     header.classList.add('search-open');
@@ -331,32 +410,26 @@ var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches || (f
   function close(returnFocus) {
     header.classList.remove('search-open');
     openBtn.setAttribute('aria-expanded', 'false');
-    input.value = '';
-    input.blur();
-    filter();
+    input.value = ''; input.blur();
+    results = []; active = -1; render('');
     document.removeEventListener('keydown', onKey);
-    // fokus wracamy na lupę tylko przy zamknięciu klawiaturą (Escape) — inaczej myszkowe zamknięcie
-    // zostawia trwały ring focus-visible na lupie aż do odświeżenia
     if (returnFocus !== false) openBtn.focus();
   }
   function onKey(e) { if (e.key === 'Escape') { e.preventDefault(); close(); } }
 
-  function norm(s) { return (s || '').toLowerCase()
-    .replace(/ą/g,'a').replace(/ć/g,'c').replace(/ę/g,'e').replace(/ł/g,'l').replace(/ń/g,'n').replace(/ó/g,'o').replace(/ś/g,'s').replace(/ż/g,'z').replace(/ź/g,'z'); }
-
-  function filter() {
-    var q = norm(input.value.trim());
-    items.forEach(function (it) {
-      var match = !q || norm(it.textContent).indexOf(q) !== -1;
-      it.style.display = match ? '' : 'none';
-    });
-  }
-
   openBtn.addEventListener('click', open);
   if (closeBtn) closeBtn.addEventListener('click', function () { close(false); });
-  input.addEventListener('input', filter);
+  input.addEventListener('input', search);
   input.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') { e.preventDefault(); document.getElementById('uslugi').scrollIntoView({ behavior: REDUCE ? 'auto' : 'smooth' }); }
+    if (e.key === 'ArrowDown') { e.preventDefault(); highlight(active + 1); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); highlight(active - 1); }
+    else if (e.key === 'Enter') { if (results.length) { e.preventDefault(); go(active); } }
+  });
+  // klik poza paskiem chowa listę wyników (całą wyszukiwarkę zamyka X lub Esc)
+  document.addEventListener('click', function (e) {
+    if (!header.classList.contains('search-open')) return;
+    if (e.target.closest('.nav-search') || e.target.closest('[data-search-open]')) return;
+    box.hidden = true; input.setAttribute('aria-expanded', 'false');
   });
 })();
 
