@@ -430,11 +430,11 @@ var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches || (f
     else if (e.key === 'ArrowUp') { e.preventDefault(); highlight(active - 1); }
     else if (e.key === 'Enter') { if (results.length) { e.preventDefault(); go(active); } }
   });
-  // klik poza paskiem chowa listę wyników (całą wyszukiwarkę zamyka X lub Esc)
+  // klik/tap poza paskiem (np. w przyciemnioną zasłonę na mobile) zamyka całą wyszukiwarkę
   document.addEventListener('click', function (e) {
     if (!header.classList.contains('search-open')) return;
     if (e.target.closest('.nav-search') || e.target.closest('[data-search-open]')) return;
-    box.hidden = true; input.setAttribute('aria-expanded', 'false');
+    close(false);
   });
 })();
 
