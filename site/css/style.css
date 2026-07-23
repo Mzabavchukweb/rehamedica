@@ -740,10 +740,12 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
   .hero__slide:nth-child(2){background-position:50% 52%}   /* 2: terapia manualna */
   .hero__slide:nth-child(3){background-position:52% 46%}   /* 3: odnowa (hydro) */
   .hero__slide:nth-child(4){background-position:52% 48%}   /* 4: fizjoterapia (mobilizacja barku) */
-  .hero__tint{display:none}
-  /* Nakładka = brąz jak w źródle (spójnie z desktopem): lżej u góry, mocniej u dołu,
-     gdzie leży biały tekst — WCAG AA niezależnie od slajdu. */
-  .hero__cut{position:absolute;top:0;left:0;right:0;width:auto;max-width:none;bottom:auto;height:var(--hmh);border-radius:0;display:flex;flex-direction:column;justify-content:flex-end;margin:0;padding:0 24px 36px;z-index:2;pointer-events:none;background:linear-gradient(to bottom,rgba(72,61,50,.26) 0%,rgba(60,48,34,.44) 36%,rgba(38,29,19,.8) 68%,rgba(28,20,12,.92) 100%)}
+  /* Cieniowanie IDENTYCZNE jak na desktopie — ta sama miękka poświata (.hero__tint).
+     Nakładka rozciągnięta na wysokość zdjęcia (nie tylko na treść). */
+  .hero__tint{display:block;height:var(--hmh);bottom:auto}
+  /* .hero__cut niesie już tylko delikatny dodatkowy cień u samego dołu, pod tekstem
+     (tekst leży niżej niż na desktopie) — reszta to identyczna nakładka desktopowa. */
+  .hero__cut{position:absolute;top:0;left:0;right:0;width:auto;max-width:none;bottom:auto;height:var(--hmh);border-radius:0;display:flex;flex-direction:column;justify-content:flex-end;margin:0;padding:0 24px 36px;z-index:2;pointer-events:none;background:linear-gradient(to bottom,transparent 0%,transparent 46%,rgba(22,15,9,.22) 74%,rgba(20,13,8,.5) 100%)}
   .hero__cut > *{pointer-events:auto}
   .hero__title{order:1;color:#fff;font-size:clamp(2.35rem,8.8vw,3rem);line-height:1.04;letter-spacing:-.02em;hyphens:manual;overflow-wrap:normal;text-shadow:0 2px 22px rgba(12,7,3,.62)}
   .hero__title::after{content:none}
