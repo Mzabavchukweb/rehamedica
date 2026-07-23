@@ -253,14 +253,14 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
    Źródło ma jednolite ~62%; my dajemy gradient tej samej barwy: lżej u góry (jaśniej,
    zdjęcie oddycha), mocniej u dołu, gdzie leży biały tekst — dzięki temu WCAG AA jest
    spełnione niezależnie od jasności slajdu. */
-/* Nakładka lżejsza i przesunięta w LEWO — brąz kryje tekst po lewej, a budynek jest
-   wyraźny w środku i po prawej. Dół tylko delikatnie przyciemniony (było .9 → .42),
-   żeby lokalna społeczność rozpoznała miejsce. Czytelność białego tekstu trzyma
-   też text-shadow na .hero__title/.hero__sub. */
+/* Nakładka lekka i RÓWNOMIERNA — budynek wyraźny na całej szerokości, bez ciemnej
+   płachty zepchniętej w lewo/dół. Delikatny cień tylko przy górnej krawędzi (pod
+   nagłówkiem, nad jasnym niebem) i śladowo przy dole. Czytelność białego tekstu
+   niosą text-shadow na .hero__title/.hero__sub. */
 .hero__tint{position:absolute;inset:0;z-index:1;
   background:
-    linear-gradient(90deg,rgba(36,27,17,.76) 0%,rgba(42,32,21,.54) 24%,rgba(45,35,24,.22) 46%,rgba(45,35,24,0) 66%),
-    linear-gradient(180deg,rgba(36,27,17,.24) 0%,rgba(36,27,17,0) 26%,rgba(30,22,14,0) 60%,rgba(30,22,14,.42) 100%)}
+    linear-gradient(180deg,rgba(28,20,12,.5) 0%,rgba(28,20,12,.26) 16%,rgba(28,20,12,.06) 34%,rgba(28,20,12,0) 55%,rgba(24,17,10,.16) 100%),
+    linear-gradient(90deg,rgba(28,20,12,.34) 0%,rgba(28,20,12,.12) 20%,rgba(28,20,12,0) 42%)}
 
 /* premium karta placówek — pływa przy prawej krawędzi siatki treści (gutter --gx) */
 .hero__card{position:absolute;top:clamp(150px,17vh,184px);right:var(--gx);width:404px;z-index:3;
@@ -298,9 +298,9 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
 .hero__cut{position:absolute;left:0;right:auto;top:0;bottom:0;width:auto;max-width:min(660px,58%);z-index:2;
   background:none;border-radius:0;padding:clamp(124px,15vh,152px) 24px clamp(56px,8vh,88px) var(--gx);
   display:flex;flex-direction:column;justify-content:center}
-.hero__title{font-family:var(--font-display);font-weight:var(--fw-regular);font-size:clamp(2.5rem,4.2vw,4rem);line-height:1.03;letter-spacing:.25px;color:#fff;max-width:16ch;text-shadow:0 2px 26px rgba(18,11,5,.5),0 1px 3px rgba(18,11,5,.4);transition:opacity .5s ease,transform .5s ease}
+.hero__title{font-family:var(--font-display);font-weight:var(--fw-regular);font-size:clamp(2.5rem,4.2vw,4rem);line-height:1.03;letter-spacing:.25px;color:#fff;max-width:16ch;text-shadow:0 2px 30px rgba(14,8,3,.75),0 1px 4px rgba(14,8,3,.6);transition:opacity .5s ease,transform .5s ease}
 .hero__title.is-swapping{opacity:0;transform:translateY(10px)}
-.hero__sub{font-family:var(--font-body);font-size:1.08rem;font-weight:var(--fw-regular);line-height:1.55;color:rgba(255,255,255,.92);max-width:46ch;margin-top:16px;text-shadow:0 1px 16px rgba(18,11,5,.55);transition:opacity .5s ease .05s,transform .5s ease .05s}
+.hero__sub{font-family:var(--font-body);font-size:1.08rem;font-weight:var(--fw-regular);line-height:1.55;color:#fff;max-width:46ch;margin-top:16px;text-shadow:0 1px 4px rgba(14,8,3,.7),0 2px 22px rgba(14,8,3,.7);transition:opacity .5s ease .05s,transform .5s ease .05s}
 .hero__sub.is-swapping{opacity:0;transform:translateY(10px)}
 /* CTA + wskaźniki w jednym, zawsze widocznym rzędzie — przyciski na jasnym: kremowy + outline-light */
 .hero__ctarow{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:26px}
@@ -1090,7 +1090,7 @@ html.js .a11y-fab{display:inline-flex}
    własnych nakładek). Responsywny kadr 16:9 (film ma proporcje 1280×720).
    ============================================================ */
 .emsembed{position:relative;aspect-ratio:16/9;width:100%;overflow:hidden;
-  background:var(--color-brand-dark);border:1px solid var(--color-line)}
+  background:var(--color-brand-dark)}
 .emsembed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
 
 /* ── Zajawka EMS na stronie głównej: tekst + film obok ─────────────────── */
