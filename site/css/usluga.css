@@ -1282,22 +1282,23 @@ html:not(.js) .sufold__panel{grid-template-rows:1fr}
 .lintro__fig:has(.emsembed)::before{display:block;right:-18px;bottom:-18px;
   width:64%;height:66%;background:var(--color-bg-beige-2);z-index:0}
 
-/* pasek liczb — bez linii i pudełek: trzy duże serifowe liczby + podpis, sam oddech.
-   Ten sam gutter i miejsce co takty .lpull/.lparts — spójny z resztą stron usług. */
+/* pasek liczb — estetyczne kremowe kafelki (bez obramowań/kresek), pasujące do ciepłej
+   palety serwisu. Duża serifowa liczba z piaskowym akcentem + krótki opis. */
 .emsstats{margin-top:clamp(40px,5vw,72px);display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(22px,3vw,44px)}
+  grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,18px)}
+.emsstat{background:var(--color-cream);padding:clamp(22px,2.4vw,30px) clamp(20px,2.2vw,28px)}
 .emsstat__n{font-family:var(--font-display);font-weight:var(--fw-regular);
-  font-size:clamp(1.9rem,3vw,2.7rem);line-height:1.02;color:var(--color-text);margin:0 0 8px}
-.emsstat__t{font-family:var(--font-body);font-size:.95rem;line-height:1.5;
+  font-size:clamp(1.8rem,2.7vw,2.5rem);line-height:1.02;color:var(--color-text);
+  margin:0 0 clamp(10px,1.2vw,14px);padding-bottom:clamp(10px,1.2vw,14px);
+  position:relative}
+.emsstat__n::after{content:"";position:absolute;left:0;bottom:0;width:34px;height:2px;
+  background:var(--color-sand)}
+.emsstat__t{font-family:var(--font-body);font-size:.97rem;line-height:1.5;
   color:var(--color-text-2);margin:0}
 @media(max-width:40em){
-  /* mobile: czytelna lista — liczba nad opisem, pozycje rozdzielone włoskowatą kreską
-     (spójnie z listami .uhub/.loffer w serwisie). Zamiast luźno rozrzuconych bloków. */
-  .emsstats{grid-template-columns:1fr;gap:0}
-  .emsstat{padding:clamp(16px,4.4vw,22px) 0;border-top:1px solid var(--color-line)}
-  .emsstat:first-child{border-top:0;padding-top:2px}
-  .emsstat__n{margin:0 0 6px;font-size:clamp(1.55rem,7.5vw,2rem);line-height:1.05}
-  .emsstat__t{font-size:1rem}
+  .emsstats{grid-template-columns:1fr;gap:10px}
+  .emsstat{padding:clamp(18px,4.6vw,24px) clamp(18px,4.6vw,22px)}
+  .emsstat__n{font-size:clamp(1.6rem,7.5vw,2rem)}
 }
 
 /* — Źródło materiału — drobna nota z linkiem do artykułu. — */
