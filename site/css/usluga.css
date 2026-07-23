@@ -241,7 +241,7 @@
 .lintro--rytm::after{content:none}
 /* delikatnie węższa, wyśrodkowana kolumna (np. strona EMS) — treść bliżej środka,
    nie rozciągnięta na całą szerokość do samych boków */
-.lintro--center{max-width:1090px;margin-inline:auto}
+.lintro--center{max-width:1130px;margin-inline:auto}
 
 .lintro__open{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
   grid-template-rows:auto 1fr;grid-template-areas:"lead kadr" "body kadr";
@@ -1260,9 +1260,11 @@ html:not(.js) .sufold__panel{grid-template-rows:1fr}
    użytkownika, zgodnie z zasadą prywatności całego serwisu.
    ============================================================ */
 
-/* — Intro EMS: film zamiast zdjęcia w prawej kolumnie taktu otwarcia — */
+/* — Intro EMS: film w prawej kolumnie taktu otwarcia, w ramce edytorskiej —
+     przesunięty piaskowy kadr za spodem (jak przy zdjęciach na innych stronach usług). */
 .lintro__fig:has(.emsembed){align-self:center}
-.lintro__fig:has(.emsembed)::before{display:none}
+.lintro__fig:has(.emsembed)::before{display:block;right:-18px;bottom:-18px;
+  width:64%;height:66%;background:var(--color-bg-beige-2);z-index:0}
 
 /* pasek liczb — bez linii i pudełek: trzy duże serifowe liczby + podpis, sam oddech.
    Ten sam gutter i miejsce co takty .lpull/.lparts — spójny z resztą stron usług. */
