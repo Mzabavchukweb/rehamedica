@@ -330,6 +330,15 @@
 .lparts:has(.lparts__prose) .lparts__h{margin-bottom:0}
 .lparts__p{font-family:var(--font-body);font-size:1.06rem;line-height:1.75;
   color:var(--color-text-2);margin:0;max-width:38em}
+/* EMS w sporcie — panel pełnej szerokości (bez układu 2-kol), czytelna lista celów w 2 kolumnach */
+.lparts--sport{display:block}
+.lparts--sport .lparts__p{max-width:64ch;margin-bottom:clamp(8px,1.4vw,14px)}
+.lparts--sport .lparts__grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(30px,5vw,72px)}
+@media(max-width:40em){.lparts--sport .lparts__grid{grid-template-columns:1fr}}
+/* autentyczne zdjęcie wplecione w treść (o-nas i pokrewne) */
+.uopen .ufig{margin:clamp(28px,3.6vw,46px) 0 0;max-width:900px}
+.uopen .ufig img{display:block;width:100%;height:auto;border-radius:var(--radius-img)}
+.uopen .ufig figcaption{margin-top:10px;font-family:var(--font-body);font-size:.85rem;color:var(--color-text-muted)}
 .lparts__p + .lparts__p{margin-top:1.05em}
 
 /* takt 4 — domknięcie: spokojny akapit w wąskiej mierze, oddzielony kreską */

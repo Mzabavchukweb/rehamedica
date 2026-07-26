@@ -7,6 +7,10 @@ wp-config.php
 .env
 .env*
 
+# Backend newslettera/panelu (PHP) — wdrażany osobno na home.pl, NIE na to
+# publiczne repo GitHub Pages (kod backendu + potencjalne sekrety).
+panel/
+
 # Prywatne archiwum źródłowe starej strony WordPress (196 MB, treści klienta,
 # odwołanie do hasła WP) — NIE na publiczne repozytorium
 rehamedica-source-archive/

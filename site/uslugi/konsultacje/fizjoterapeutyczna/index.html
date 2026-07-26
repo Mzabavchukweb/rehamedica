@@ -25,8 +25,8 @@
 <link rel="icon" href="../../../assets/favicon.png">
 <link rel="preload" href="../../../assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../../assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../../css/style.css?v=122">
-<link rel="stylesheet" href="../../../css/usluga.css?v=102">
+<link rel="stylesheet" href="../../../css/style.css?v=123">
+<link rel="stylesheet" href="../../../css/usluga.css?v=103">
 <script>document.documentElement.className+=' js';</script>
 <!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
 <script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
@@ -161,6 +161,12 @@
     <!-- strzałka nawigacji — sygnał, że klik w adres prowadzi do map, nie kopiuje tekstu -->
     <symbol id="i-nav" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
       <path d="M3.4 11.2 21 3l-8.2 17.6-2-7.4-7.4-2Z"/>
+    </symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+    </symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="16.9" cy="7.1" r="1.1" fill="currentColor" stroke="none"/>
     </symbol>
   </defs>
 </svg>
@@ -366,6 +372,7 @@
       <img src="../../../assets/logo.svg" alt="Reha Medica" width="72" height="84">
       <p class="footer__desc">Opieka rehabilitacyjna i medyczna w pięciu placówkach na Pomorzu Zachodnim.</p>
       <a class="footer__call" href="tel:+48943721451"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-phone"></use></svg> 94 372 14 51</a>
+      <div class="footer__social"><a href="https://www.facebook.com/rehamedicaszczecinek/" target="_blank" rel="noopener" aria-label="Reha Medica na Facebooku"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-facebook"></use></svg></a><a href="https://www.instagram.com/reha.medica_szczecinek/" target="_blank" rel="noopener" aria-label="Reha Medica na Instagramie"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-instagram"></use></svg></a></div>
     </div>
     <nav class="footer__nav" aria-label="Placówki">
       <h2 class="footer__h">Placówki</h2>

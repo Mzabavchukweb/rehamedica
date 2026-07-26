@@ -182,7 +182,7 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
 .headerbar{position:relative;z-index:1;display:flex;align-items:center;gap:36px;height:96px;transition:height .45s cubic-bezier(.65,0,.35,1)}
 .site-header.is-scrolled .headerbar{height:74px}
 .logo{display:inline-flex;align-items:center;flex:0 0 auto}
-.logo img{height:82px;width:auto;max-width:none;flex:0 0 auto;transition:height .45s cubic-bezier(.65,0,.35,1)}
+.logo img{height:90px;width:auto;max-width:none;flex:0 0 auto;transition:height .45s cubic-bezier(.65,0,.35,1)}
 .site-header.is-scrolled .logo img{height:60px}
 .headerbar__rule{width:1px;height:44px;background:rgba(255,255,255,.2);flex:0 0 auto;transition:height .45s cubic-bezier(.65,0,.35,1)}
 .site-header.is-scrolled .headerbar__rule{height:34px}
@@ -622,6 +622,11 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
 .footer__call{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-size:1.15rem;font-weight:500;color:#fff;border:1px solid #584a3c;border-radius:var(--radius-pill);padding:10px 20px;transition:background .2s,border-color .2s}
 .footer__call .ico{color:#e8ddcb}
 .footer__call:hover{background:#4a3d31;border-color:#6b5a49;color:#fff}
+/* social media w stopce (Facebook, Instagram) */
+.footer__social{display:flex;gap:12px;margin-top:18px}
+.footer__social a{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid #584a3c;border-radius:50%;color:#efe4d5;transition:background .2s,color .2s,border-color .2s}
+.footer__social a:hover{background:#4a3d31;border-color:#6b5a49;color:#fff}
+.footer__social .ico{width:20px;height:20px}
 .footer__h{font-family:var(--font-body);font-size:.9rem;font-weight:var(--fw-bold);letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:20px}
 .footer__nav ul{display:flex;flex-direction:column;gap:12px}
 .footer__nav a{display:inline-block;padding-bottom:2px;transition:color .2s}
@@ -669,7 +674,7 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
   .headerbar__cta .header-phone{font-size:.95rem;min-height:44px;padding:9px 14px}
   .headerbar__cta .icon-btn{width:48px;height:48px;font-size:1.5rem}
   .logo{order:1}
-  .logo img{height:72px}
+  .logo img{height:80px}
   .site-header.is-scrolled .logo img{height:60px}
   .burger{order:3;margin-left:0}
   .nav__close{display:inline-flex;visibility:hidden;position:absolute;top:20px;right:20px;width:46px;height:46px;align-items:center;justify-content:center;
@@ -797,7 +802,7 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
   .topstrip__sep{height:9px}
   .headerbar{height:82px}
   .site-header.is-scrolled .headerbar{height:70px}
-  .logo img{height:66px}
+  .logo img{height:72px}
   .site-header.is-scrolled .logo img{height:56px}
   /* header: numer telefonu → Ankieta satysfakcji */
   .headerbar__cta .header-phone{display:none}
