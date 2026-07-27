@@ -7,3 +7,28 @@
 
 # Szczecinek = centrala = strona główna: osobna podstrona usunięta, 301 na główną.
 /placowki/szczecinek/  /  301
+
+# Czyste slugi (usunięto podwojenie folder+slug) — 301 ze starych adresów.
+/uslugi/masaze/masaz-leczniczy/  /uslugi/masaze/leczniczy/  301
+/uslugi/masaze/masaz-modelujacy-antycellulitowy/  /uslugi/masaze/modelujacy-antycellulitowy/  301
+/uslugi/masaze/masaz-pneumatyczny/  /uslugi/masaze/pneumatyczny/  301
+/uslugi/masaze/masaz-sportowy/  /uslugi/masaze/sportowy/  301
+/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-goracymi-kamieniami/  /uslugi/odnowa-biologiczna/masaze-relaksacyjne/goracymi-kamieniami/  301
+/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-maslem-shea/  /uslugi/odnowa-biologiczna/masaze-relaksacyjne/maslem-shea/  301
+/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-olejkiem-arganowym/  /uslugi/odnowa-biologiczna/masaze-relaksacyjne/olejkiem-arganowym/  301
+/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-olejkiem-arganowym-na-cieplo/  /uslugi/odnowa-biologiczna/masaze-relaksacyjne/olejkiem-arganowym-na-cieplo/  301
+/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-peelingujacy/  /uslugi/odnowa-biologiczna/masaze-relaksacyjne/peelingujacy/  301
+/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-relaksacyjny/  /uslugi/odnowa-biologiczna/masaze-relaksacyjne/relaksacyjny/  301
+/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-relaksacyjny-dla-dwojga/  /uslugi/odnowa-biologiczna/masaze-relaksacyjne/relaksacyjny-dla-dwojga/  301
+/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-twarzy/  /uslugi/odnowa-biologiczna/masaze-relaksacyjne/twarzy/  301
+/uslugi/odnowa-biologiczna/sauny/sauna-infrared/  /uslugi/odnowa-biologiczna/sauny/infrared/  301
+/uslugi/odnowa-biologiczna/sauny/sauna-sucha/  /uslugi/odnowa-biologiczna/sauny/sucha/  301
+/uslugi/rehabilitacja/rehabilitacja-bolu/  /uslugi/rehabilitacja/bolu/  301
+/uslugi/rehabilitacja/rehabilitacja-domowa/  /uslugi/rehabilitacja/domowa/  301
+/uslugi/rehabilitacja/rehabilitacja-dzieci-i-mlodziezy/  /uslugi/rehabilitacja/dzieci-i-mlodziezy/  301
+/uslugi/rehabilitacja/rehabilitacja-lecznicza/  /uslugi/rehabilitacja/lecznicza/  301
+/uslugi/rehabilitacja/rehabilitacja-neurologiczna/  /uslugi/rehabilitacja/neurologiczna/  301
+/uslugi/rehabilitacja/rehabilitacja-ortopedyczna/  /uslugi/rehabilitacja/ortopedyczna/  301
+/uslugi/rehabilitacja/rehabilitacja-reumatologiczna/  /uslugi/rehabilitacja/reumatologiczna/  301
+/uslugi/rehabilitacja/rehabilitacja-sportowa/  /uslugi/rehabilitacja/sportowa/  301
+/uslugi/rehabilitacja/rehabilitacja-domowa-walcz/  /uslugi/rehabilitacja/domowa-walcz/  301

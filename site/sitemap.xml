@@ -121,22 +121,22 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rehamedica.info.pl/uslugi/masaze/masaz-leczniczy/</loc>
+    <loc>https://rehamedica.info.pl/uslugi/masaze/leczniczy/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rehamedica.info.pl/uslugi/masaze/masaz-modelujacy-antycellulitowy/</loc>
+    <loc>https://rehamedica.info.pl/uslugi/masaze/modelujacy-antycellulitowy/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rehamedica.info.pl/uslugi/masaze/masaz-pneumatyczny/</loc>
+    <loc>https://rehamedica.info.pl/uslugi/masaze/pneumatyczny/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rehamedica.info.pl/uslugi/masaze/masaz-sportowy/</loc>
+    <loc>https://rehamedica.info.pl/uslugi/masaze/sportowy/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.8</priority>
   </url>
@@ -156,42 +156,42 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-goracymi-kamieniami/</loc>
+    <loc>https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/goracymi-kamieniami/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-maslem-shea/</loc>
+    <loc>https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/maslem-shea/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-olejkiem-arganowym/</loc>
+    <loc>https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/olejkiem-arganowym/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-olejkiem-arganowym-na-cieplo/</loc>
+    <loc>https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/olejkiem-arganowym-na-cieplo/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-peelingujacy/</loc>
+    <loc>https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/peelingujacy/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-relaksacyjny/</loc>
+    <loc>https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/relaksacyjny/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-relaksacyjny-dla-dwojga/</loc>
+    <loc>https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/relaksacyjny-dla-dwojga/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-twarzy/</loc>
+    <loc>https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/twarzy/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.8</priority>
   </url>
@@ -201,12 +201,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rehamedica.info.pl/uslugi/odnowa-biologiczna/sauny/sauna-infrared/</loc>
+    <loc>https://rehamedica.info.pl/uslugi/odnowa-biologiczna/sauny/infrared/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rehamedica.info.pl/uslugi/odnowa-biologiczna/sauny/sauna-sucha/</loc>
+    <loc>https://rehamedica.info.pl/uslugi/odnowa-biologiczna/sauny/sucha/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.8</priority>
   </url>
@@ -241,42 +241,47 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rehamedica.info.pl/uslugi/rehabilitacja/rehabilitacja-bolu/</loc>
+    <loc>https://rehamedica.info.pl/uslugi/rehabilitacja/bolu/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rehamedica.info.pl/uslugi/rehabilitacja/rehabilitacja-domowa/</loc>
+    <loc>https://rehamedica.info.pl/uslugi/rehabilitacja/domowa-walcz/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rehamedica.info.pl/uslugi/rehabilitacja/domowa/</loc>
     <lastmod>2026-07-26</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rehamedica.info.pl/uslugi/rehabilitacja/rehabilitacja-dzieci-i-mlodziezy/</loc>
+    <loc>https://rehamedica.info.pl/uslugi/rehabilitacja/dzieci-i-mlodziezy/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rehamedica.info.pl/uslugi/rehabilitacja/rehabilitacja-lecznicza/</loc>
+    <loc>https://rehamedica.info.pl/uslugi/rehabilitacja/lecznicza/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rehamedica.info.pl/uslugi/rehabilitacja/rehabilitacja-neurologiczna/</loc>
+    <loc>https://rehamedica.info.pl/uslugi/rehabilitacja/neurologiczna/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rehamedica.info.pl/uslugi/rehabilitacja/rehabilitacja-ortopedyczna/</loc>
+    <loc>https://rehamedica.info.pl/uslugi/rehabilitacja/ortopedyczna/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rehamedica.info.pl/uslugi/rehabilitacja/rehabilitacja-reumatologiczna/</loc>
+    <loc>https://rehamedica.info.pl/uslugi/rehabilitacja/reumatologiczna/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rehamedica.info.pl/uslugi/rehabilitacja/rehabilitacja-sportowa/</loc>
+    <loc>https://rehamedica.info.pl/uslugi/rehabilitacja/sportowa/</loc>
     <lastmod>2026-07-20</lastmod>
     <priority>0.8</priority>
   </url>
