@@ -380,7 +380,7 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
 .needs__to{font-family:var(--font-body);font-size:.78rem;font-weight:var(--fw-semibold);letter-spacing:.1em;text-transform:uppercase;color:var(--color-text-muted);transition:color .2s}
 .needs__arrow{color:var(--color-brand);opacity:.5;flex:0 0 auto;font-size:1.15rem;transition:opacity .2s,transform .2s}
 .needs__item:hover .needs__name,.needs__item:focus-visible .needs__name{color:var(--color-brand)}
-.needs__item:hover .needs__to,.needs__item:focus-visible .needs__to{color:var(--color-brand-taupe)}
+.needs__item:hover .needs__to,.needs__item:focus-visible .needs__to{color:var(--color-brand)}
 .needs__item:hover .needs__arrow,.needs__item:focus-visible .needs__arrow{opacity:1;transform:translateX(3px)}
 .needs__item:focus-visible{outline:2px solid var(--color-brand);outline-offset:-2px}
 .needs .kicker--light{color:var(--color-brand)}

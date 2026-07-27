@@ -1,34 +1,140 @@
-# Reha Medica — przekierowania (Cloudflare Pages)
-# Placówki tylko psychologiczne → nowy serwis psychologiczny (DOMENA: DO POTWIERDZENIA).
-# Do czasu podania domeny strony są notą przejściową (noindex). Odkomentować i uzupełnić:
-# /placowki/szczecin/    https://[SERWIS-PSYCHOLOGICZNY]/szczecin/    301
-# /placowki/bialogard/   https://[SERWIS-PSYCHOLOGICZNY]/bialogard/   301
-# /placowki/bobolice/    https://[SERWIS-PSYCHOLOGICZNY]/bobolice/    301
+# Reha Medica — przekierowania (Cloudflare Pages / produkcja: https://rehamedica.info.pl)
+# Wygenerowane z working-docs/stage-5-redirects.csv. Cele zweryfikowane względem plików w site/.
+# Kolejność: Cloudflare bierze PIERWSZĄ pasującą regułę.
 
-# Szczecinek = centrala = strona główna: osobna podstrona usunięta, 301 na główną.
-/placowki/szczecinek/  /  301
+# --- Szczecinek = centrala = strona główna (osobna podstrona placówki usunięta) ---
+/placowki/szczecinek/                                                                                   /  301
 
-# Czyste slugi (usunięto podwojenie folder+slug) — 301 ze starych adresów.
-/uslugi/masaze/masaz-leczniczy/  /uslugi/masaze/leczniczy/  301
-/uslugi/masaze/masaz-modelujacy-antycellulitowy/  /uslugi/masaze/modelujacy-antycellulitowy/  301
-/uslugi/masaze/masaz-pneumatyczny/  /uslugi/masaze/pneumatyczny/  301
-/uslugi/masaze/masaz-sportowy/  /uslugi/masaze/sportowy/  301
-/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-goracymi-kamieniami/  /uslugi/odnowa-biologiczna/masaze-relaksacyjne/goracymi-kamieniami/  301
-/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-maslem-shea/  /uslugi/odnowa-biologiczna/masaze-relaksacyjne/maslem-shea/  301
-/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-olejkiem-arganowym/  /uslugi/odnowa-biologiczna/masaze-relaksacyjne/olejkiem-arganowym/  301
-/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-olejkiem-arganowym-na-cieplo/  /uslugi/odnowa-biologiczna/masaze-relaksacyjne/olejkiem-arganowym-na-cieplo/  301
-/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-peelingujacy/  /uslugi/odnowa-biologiczna/masaze-relaksacyjne/peelingujacy/  301
-/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-relaksacyjny/  /uslugi/odnowa-biologiczna/masaze-relaksacyjne/relaksacyjny/  301
-/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-relaksacyjny-dla-dwojga/  /uslugi/odnowa-biologiczna/masaze-relaksacyjne/relaksacyjny-dla-dwojga/  301
-/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-twarzy/  /uslugi/odnowa-biologiczna/masaze-relaksacyjne/twarzy/  301
-/uslugi/odnowa-biologiczna/sauny/sauna-infrared/  /uslugi/odnowa-biologiczna/sauny/infrared/  301
-/uslugi/odnowa-biologiczna/sauny/sauna-sucha/  /uslugi/odnowa-biologiczna/sauny/sucha/  301
-/uslugi/rehabilitacja/rehabilitacja-bolu/  /uslugi/rehabilitacja/bolu/  301
-/uslugi/rehabilitacja/rehabilitacja-domowa/  /uslugi/rehabilitacja/domowa/  301
-/uslugi/rehabilitacja/rehabilitacja-dzieci-i-mlodziezy/  /uslugi/rehabilitacja/dzieci-i-mlodziezy/  301
-/uslugi/rehabilitacja/rehabilitacja-lecznicza/  /uslugi/rehabilitacja/lecznicza/  301
-/uslugi/rehabilitacja/rehabilitacja-neurologiczna/  /uslugi/rehabilitacja/neurologiczna/  301
-/uslugi/rehabilitacja/rehabilitacja-ortopedyczna/  /uslugi/rehabilitacja/ortopedyczna/  301
-/uslugi/rehabilitacja/rehabilitacja-reumatologiczna/  /uslugi/rehabilitacja/reumatologiczna/  301
-/uslugi/rehabilitacja/rehabilitacja-sportowa/  /uslugi/rehabilitacja/sportowa/  301
-/uslugi/rehabilitacja/rehabilitacja-domowa-walcz/  /uslugi/rehabilitacja/domowa-walcz/  301
+# --- Czyste slugi: usunięto podwojenie folder+slug (ochrona pośrednich adresów z budowy) ---
+/uslugi/masaze/masaz-leczniczy/                                                                         /uslugi/masaze/leczniczy/  301
+/uslugi/masaze/masaz-modelujacy-antycellulitowy/                                                        /uslugi/masaze/modelujacy-antycellulitowy/  301
+/uslugi/masaze/masaz-pneumatyczny/                                                                      /uslugi/masaze/pneumatyczny/  301
+/uslugi/masaze/masaz-sportowy/                                                                          /uslugi/masaze/sportowy/  301
+/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-goracymi-kamieniami/                               /uslugi/odnowa-biologiczna/masaze-relaksacyjne/goracymi-kamieniami/  301
+/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-maslem-shea/                                       /uslugi/odnowa-biologiczna/masaze-relaksacyjne/maslem-shea/  301
+/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-olejkiem-arganowym/                                /uslugi/odnowa-biologiczna/masaze-relaksacyjne/olejkiem-arganowym/  301
+/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-olejkiem-arganowym-na-cieplo/                      /uslugi/odnowa-biologiczna/masaze-relaksacyjne/olejkiem-arganowym-na-cieplo/  301
+/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-peelingujacy/                                      /uslugi/odnowa-biologiczna/masaze-relaksacyjne/peelingujacy/  301
+/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-relaksacyjny/                                      /uslugi/odnowa-biologiczna/masaze-relaksacyjne/relaksacyjny/  301
+/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-relaksacyjny-dla-dwojga/                           /uslugi/odnowa-biologiczna/masaze-relaksacyjne/relaksacyjny-dla-dwojga/  301
+/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-twarzy/                                            /uslugi/odnowa-biologiczna/masaze-relaksacyjne/twarzy/  301
+/uslugi/odnowa-biologiczna/sauny/sauna-infrared/                                                        /uslugi/odnowa-biologiczna/sauny/infrared/  301
+/uslugi/odnowa-biologiczna/sauny/sauna-sucha/                                                           /uslugi/odnowa-biologiczna/sauny/sucha/  301
+/uslugi/rehabilitacja/rehabilitacja-bolu/                                                               /uslugi/rehabilitacja/bolu/  301
+/uslugi/rehabilitacja/rehabilitacja-domowa/                                                             /uslugi/rehabilitacja/domowa/  301
+/uslugi/rehabilitacja/rehabilitacja-dzieci-i-mlodziezy/                                                 /uslugi/rehabilitacja/dzieci-i-mlodziezy/  301
+/uslugi/rehabilitacja/rehabilitacja-lecznicza/                                                          /uslugi/rehabilitacja/lecznicza/  301
+/uslugi/rehabilitacja/rehabilitacja-neurologiczna/                                                      /uslugi/rehabilitacja/neurologiczna/  301
+/uslugi/rehabilitacja/rehabilitacja-ortopedyczna/                                                       /uslugi/rehabilitacja/ortopedyczna/  301
+/uslugi/rehabilitacja/rehabilitacja-reumatologiczna/                                                    /uslugi/rehabilitacja/reumatologiczna/  301
+/uslugi/rehabilitacja/rehabilitacja-sportowa/                                                           /uslugi/rehabilitacja/sportowa/  301
+/uslugi/rehabilitacja/rehabilitacja-domowa-walcz/                                                       /uslugi/rehabilitacja/domowa-walcz/  301
+
+# --- Legacy WordPress → nowe czyste ścieżki (301) ---
+/aktalnosci-projektow-lista/                                                                            /projekty-ue/  301
+/aktalnosci-projektow-lista/projekt-pt-mindspots/                                                       /projekty-ue/projekt-mindspots/  301
+/aktalnosci-projektow-lista/zakonczenie-postepowania-ofertowego-na-zakup-komputerow-projekt-mindspots/  /projekty-ue/zakonczenie-postepowania-ofertowego-komputery-mindspots/  301
+/author/admin2024/                                                                                      /  301
+/author/ohhpr/                                                                                          /  301
+/bialogard/                                                                                             /placowki/bialogard/  301
+/bobolice/                                                                                              /placowki/bobolice/  301
+/category/aktualnosci/                                                                                  /aktualnosci/  301
+/cialo-bez-kompleksow-1-2/                                                                              /aktualnosci/cialo-bez-kompleksow/  301
+/elektroterapia/                                                                                        /uslugi/zabiegi-fizykoterapeutyczne/elektroterapia/  301
+/fala-uderzeniowa/                                                                                      /uslugi/zabiegi-fizykoterapeutyczne/fala-uderzeniowa/  301
+/gabinet-terapii-manualnej/                                                                             /uslugi/rehabilitacja/gabinet-terapii-manualnej/  301
+/hydromasaze/                                                                                           /uslugi/zabiegi-fizykoterapeutyczne/hydromasaze/  301
+/hydroterapia/                                                                                          /uslugi/zabiegi-fizykoterapeutyczne/hydroterapia/  301
+/konsultacja-fizjoterapeutyczna-2/                                                                      /uslugi/konsultacje/fizjoterapeutyczna/  301
+/konsultacja-fizjoterapeutyczna/                                                                        /uslugi/konsultacje/socjologiczna/  301
+/konsultacja-logopedyczna-neurologopedyczna/                                                            /uslugi/konsultacje/logopedyczna-neurologopedyczna/  301
+/konsultacja-neurologiczna/                                                                             /uslugi/konsultacje/neurologiczna/  301
+/konsultacja-ortopedyczna/                                                                              /uslugi/konsultacje/ortopedyczna/  301
+/kriokomora/                                                                                            /uslugi/odnowa-biologiczna/kriokomora/  301
+/krioterapia/                                                                                           /uslugi/zabiegi-fizykoterapeutyczne/krioterapia/  301
+/laseroterapia/                                                                                         /uslugi/zabiegi-fizykoterapeutyczne/laseroterapia/  301
+/magnetoterapia/                                                                                        /uslugi/zabiegi-fizykoterapeutyczne/magnetoterapia/  301
+/manualny-drenaz-limfatyczny/                                                                           /uslugi/masaze/manualny-drenaz-limfatyczny/  301
+/masaz-goracymi-kamieniami/                                                                             /uslugi/odnowa-biologiczna/masaze-relaksacyjne/goracymi-kamieniami/  301
+/masaz-leczniczy/                                                                                       /uslugi/masaze/leczniczy/  301
+/masaz-maslem-shea/                                                                                     /uslugi/odnowa-biologiczna/masaze-relaksacyjne/maslem-shea/  301
+/masaz-modelujacy-antycellulitowy/                                                                      /uslugi/masaze/modelujacy-antycellulitowy/  301
+/masaz-olejkiem-arganowym-na-cieplo/                                                                    /uslugi/odnowa-biologiczna/masaze-relaksacyjne/olejkiem-arganowym-na-cieplo/  301
+/masaz-olejkiem-arganowym/                                                                              /uslugi/odnowa-biologiczna/masaze-relaksacyjne/olejkiem-arganowym/  301
+/masaz-peelingujacy/                                                                                    /uslugi/odnowa-biologiczna/masaze-relaksacyjne/peelingujacy/  301
+/masaz-pneumatyczny/                                                                                    /uslugi/masaze/pneumatyczny/  301
+/masaz-relaksacyjny-dla-dwojga/                                                                         /uslugi/odnowa-biologiczna/masaze-relaksacyjne/relaksacyjny-dla-dwojga/  301
+/masaz-relaksacyjny/                                                                                    /uslugi/odnowa-biologiczna/masaze-relaksacyjne/relaksacyjny/  301
+/masaz-sportowy/                                                                                        /uslugi/masaze/sportowy/  301
+/masaz-twarzy/                                                                                          /uslugi/odnowa-biologiczna/masaze-relaksacyjne/twarzy/  301
+/masaze-2/                                                                                              /uslugi/masaze/  301
+/masaze-lecznicze/                                                                                      /uslugi/masaze/  301
+/masaze-relaksacyjne/                                                                                   /uslugi/odnowa-biologiczna/masaze-relaksacyjne/  301
+/o-reha-medica/                                                                                         /o-nas/  301
+/osrodek-rehabilitacji-ogolnoustrojowej/                                                                /uslugi/rehabilitacja/osrodek-rehabilitacji-ogolnoustrojowej/  301
+/placowka-szczecinek/                                                                                   /  301
+/polityka-prywatnosci-2/                                                                                /polityka-prywatnosci/  301
+/poradnia-logopedyczna/                                                                                 /uslugi/poradnia-logopedyczna/  301
+/poradnia-rehabilitacyjna/                                                                              /uslugi/rehabilitacja/poradnia-rehabilitacyjna/  301
+/projekt-mindspots/                                                                                     /projekty-ue/projekt-mindspots/  301
+/projekty-ue-aktualnosci/                                                                               /projekty-ue/  301
+/reha-medica-dolacza-do-programu-innowacja-model-dom/                                                   /aktualnosci/reha-medica-dolacza-do-programu-innowacja-model-dom/  301
+/rehabilitacja-bolu/                                                                                    /uslugi/rehabilitacja/bolu/  301
+/rehabilitacja-domowa-2/                                                                                /uslugi/rehabilitacja/domowa/  301
+/rehabilitacja-domowa-szczecinek/                                                                       /uslugi/rehabilitacja/domowa/  301
+/rehabilitacja-domowa-walcz/                                                                            /uslugi/rehabilitacja/domowa-walcz/  301
+/rehabilitacja-domowa/                                                                                  /uslugi/rehabilitacja/domowa/  301
+/rehabilitacja-dzieci-i-niemowlat/                                                                      /uslugi/rehabilitacja/dzieci-i-mlodziezy/  301
+/rehabilitacja-neurologiczna/                                                                           /uslugi/rehabilitacja/neurologiczna/  301
+/rehabilitacja-ortopedyczna-2/                                                                          /uslugi/rehabilitacja/ortopedyczna/  301
+/rehabilitacja-ortopedyczna/                                                                            /uslugi/rehabilitacja/lecznicza/  301
+/rehabilitacja-reumatologiczna/                                                                         /uslugi/rehabilitacja/reumatologiczna/  301
+/rehabilitacja-sportowa/                                                                                /uslugi/rehabilitacja/sportowa/  301
+/sauna-infrared/                                                                                        /uslugi/odnowa-biologiczna/sauny/infrared/  301
+/sauna-sucha/                                                                                           /uslugi/odnowa-biologiczna/sauny/sucha/  301
+/sauny/                                                                                                 /uslugi/odnowa-biologiczna/sauny/  301
+/szczecin/                                                                                              /placowki/szczecin/  301
+/szczecinek-l/                                                                                          /  301
+/szczecinek-odnowa-biologiczna/                                                                         /uslugi/odnowa-biologiczna/  301
+/szczecinek-osrodek-reh-ogolnoustrojowej/                                                               /uslugi/rehabilitacja/osrodek-rehabilitacji-ogolnoustrojowej/  301
+/szczecinek-poradnia/                                                                                   /  301
+/szczecinek-rehabilitacja-domowa/                                                                       /uslugi/rehabilitacja/domowa/  301
+/szczecinek-rehabilitacja-dzieci-i-mlodziezy/                                                           /uslugi/rehabilitacja/dzieci-i-mlodziezy/  301
+/ultradzwieki/                                                                                          /uslugi/zabiegi-fizykoterapeutyczne/ultradzwieki/  301
+/walcz-rehabilitacja-domowa/                                                                            /uslugi/rehabilitacja/domowa-walcz/  301
+/walcz/                                                                                                 /placowki/walcz/  301
+/wspolpraca-reha-medica-z-medicover/                                                                    /aktualnosci/wspolpraca-reha-medica-z-medicover/  301
+/zabiegi-fizykoterapeutyczne-2/                                                                         /uslugi/zabiegi-fizykoterapeutyczne/  301
+/zabiegi-fizykoterapeutyczne/                                                                           /uslugi/zabiegi-fizykoterapeutyczne/  301
+
+# --- PSYCHOLOGIA / PSYCHOTERAPIA / PSYCHIATRIA → przyszły osobny serwis ---
+# DOMENA DO POTWIERDZENIA. Reguły poniżej są NIEAKTYWNE (zakomentowane).
+# Po podaniu domeny: zamień [SERWIS-PSYCHOLOGICZNY] na docelowy host i odkomentuj.
+# Do tego czasu strony /placowki/{szczecin,bialogard,bobolice}/ zostają jako noindex-nota.
+# /bialogard-osrodek-psychologiczno-psychoterapeutyczny/   https://[SERWIS-PSYCHOLOGICZNY]/bialogard/osrodek-psychologiczno-psychoterapeutyczny/  301
+# /bobolice-osrodek-psychologiczno-psychoterapeutyczny/    https://[SERWIS-PSYCHOLOGICZNY]/bobolice/osrodek-psychologiczno-psychoterapeutyczny/  301
+# /konsultacje-psychologiczne-2/                           https://[SERWIS-PSYCHOLOGICZNY]/konsultacje-psychologiczne/  301
+# /konsultacje-psychologiczne/                             https://[SERWIS-PSYCHOLOGICZNY]/konsultacja-psychoterapeutyczna/  301
+# /lekarz-psychiatra/                                      https://[SERWIS-PSYCHOLOGICZNY]/lekarz-psychiatra/  301
+# /osrodek-psychologiczno-psychoterapeutyczny-2/           https://[SERWIS-PSYCHOLOGICZNY]/osrodek-psychologiczno-psychoterapeutyczny/  301
+# /osrodek-psychologiczno-psychoterapeutyczny-bialogard/   https://[SERWIS-PSYCHOLOGICZNY]/bialogard/osrodek-psychologiczno-psychoterapeutyczny/  301
+# /osrodek-psychologiczno-psychoterapeutyczny-bobolice/    https://[SERWIS-PSYCHOLOGICZNY]/bobolice/osrodek-psychologiczno-psychoterapeutyczny/  301
+# /osrodek-psychologiczno-psychoterapeutyczny-szczecin/    https://[SERWIS-PSYCHOLOGICZNY]/szczecin/osrodek-psychologiczno-psychoterapeutyczny/  301
+# /osrodek-psychologiczno-psychoterapeutyczny-szczecinek/  https://[SERWIS-PSYCHOLOGICZNY]/szczecinek/osrodek-psychologiczno-psychoterapeutyczny/  301
+# /osrodek-psychologiczno-psychoterapeutyczny-walcz/       https://[SERWIS-PSYCHOLOGICZNY]/walcz/osrodek-psychologiczno-psychoterapeutyczny/  301
+# /osrodek-psychologiczno-psychoterapeutyczny/             https://[SERWIS-PSYCHOLOGICZNY]/osrodek-psychologiczno-psychoterapeutyczny/  301
+# /poradnia-psychologiczna-2/                              https://[SERWIS-PSYCHOLOGICZNY]/poradnia-psychologiczna/  301
+# /poradnia-psychologiczna-bialogard/                      https://[SERWIS-PSYCHOLOGICZNY]/bialogard/poradnia-psychologiczna/  301
+# /poradnia-psychologiczna-bobolice/                       https://[SERWIS-PSYCHOLOGICZNY]/bobolice/poradnia-psychologiczna/  301
+# /poradnia-psychologiczna-szczecin/                       https://[SERWIS-PSYCHOLOGICZNY]/szczecin/poradnia-psychologiczna/  301
+# /poradnia-psychologiczna-szczecinek/                     https://[SERWIS-PSYCHOLOGICZNY]/szczecinek/poradnia-psychologiczna/  301
+# /poradnia-psychologiczna-walcz/                          https://[SERWIS-PSYCHOLOGICZNY]/walcz/poradnia-psychologiczna/  301
+# /poradnia-psychologiczna/                                https://[SERWIS-PSYCHOLOGICZNY]/poradnia-psychologiczna/  301
+# /szczecin-osrodek-psychologiczno-psychoterapeutyczny/    https://[SERWIS-PSYCHOLOGICZNY]/szczecin/osrodek-psychologiczno-psychoterapeutyczny/  301
+# /szczecin-poradnia-psychologiczna/                       https://[SERWIS-PSYCHOLOGICZNY]/szczecin/poradnia-psychologiczna/  301
+# /szczecinek-konsultacje-psychologiczne-2/                https://[SERWIS-PSYCHOLOGICZNY]/szczecinek/konsultacje-psychologiczne/  301
+# /szczecinek-konsultacje-psychologiczne/                  https://[SERWIS-PSYCHOLOGICZNY]/szczecinek/konsultacje-psychologiczne/  301
+# /szczecinek-osrodek-psycho-psycho/                       https://[SERWIS-PSYCHOLOGICZNY]/szczecinek/osrodek-psychologiczno-psychoterapeutyczny/  301
+# /szczecinek-poradnia-psychologiczna/                     https://[SERWIS-PSYCHOLOGICZNY]/szczecinek/poradnia-psychologiczna/  301
+# /walcz-osrodek-psychologiczno-psychoterapeutyczny/       https://[SERWIS-PSYCHOLOGICZNY]/walcz/osrodek-psychologiczno-psychoterapeutyczny/  301
+
