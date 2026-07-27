@@ -1102,3 +1102,186 @@ var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches || (f
   }, { rootMargin: '0px 0px -48px 0px' });
   io.observe(footer);
 })();
+
+/* ============================================================ ZGODA COOKIES (RODO / ePrivacy)
+   Kategorie: niezbędne (zawsze), analityczne, marketingowe — opcjonalne DOMYŚLNIE WYŁĄCZONE.
+   Nic niekoniecznego nie ładuje się przed zgodą; „Odrzuć" ma tę samą wagę co „Zaakceptuj";
+   wybór zapisany w localStorage (rm-consent) z datą (ts) i wersją (v); wycofanie ze stopki.
+   Treści osadzone (iframe[data-cc-src], np. film z Facebooka) ładują się dopiero po zgodzie
+   marketingowej albo po świadomym kliknięciu „Załaduj" w miejscu osadzenia (facade).
+   API: window.rmConsent = { get, open, reset }. Zdarzenie: document 'rm-consent-change'. */
+(function () {
+  var VER = 1, KEY = 'rm-consent';
+  var MAXAGE = 365 * 24 * 60 * 60 * 1000;   // ~12 mies. — po tym czasie pytamy o zgodę ponownie
+
+  function read() {
+    try {
+      var o = JSON.parse(localStorage.getItem(KEY) || 'null');
+      if (o && o.v === VER && o.ts && (Date.now() - new Date(o.ts).getTime()) < MAXAGE) return o;
+    } catch (e) {}
+    return null;
+  }
+  function save(cats) {
+    var rec = { v: VER, ts: new Date().toISOString(), necessary: true,
+      analytics: !!cats.analytics, marketing: !!cats.marketing };
+    try { localStorage.setItem(KEY, JSON.stringify(rec)); } catch (e) {}
+    applyEmbeds(rec.marketing);
+    if (rec.analytics && typeof window.rmLoadAnalytics === 'function') { try { window.rmLoadAnalytics(); } catch (e) {} }
+    try { document.dispatchEvent(new CustomEvent('rm-consent-change', { detail: rec })); } catch (e) {}
+    return rec;
+  }
+  function policyHref() {
+    var a = document.querySelector('.footer__legal a[href*="polityka-prywatnosci"]');
+    return a ? a.getAttribute('href') : 'polityka-prywatnosci/';
+  }
+
+  // --- treści osadzone (facade) ---
+  function loadEmbed(fr) {
+    if (fr && !fr.getAttribute('src') && fr.getAttribute('data-cc-src')) {
+      fr.setAttribute('src', fr.getAttribute('data-cc-src')); fr.hidden = false;
+    }
+  }
+  function facadeFor(fr, marketingOn) {
+    var wrap = fr.closest('[data-cc-embed]') || fr.parentNode;
+    var existing = wrap.querySelector('.cc-facade');
+    if (marketingOn) { loadEmbed(fr); if (existing) existing.remove(); return; }
+    if (fr.getAttribute('src')) return;      // już wczytany świadomym kliknięciem
+    if (existing) return;
+    fr.hidden = true;
+    var prov = fr.getAttribute('data-cc-provider') || 'serwisu zewnętrznego';
+    var f = document.createElement('div'); f.className = 'cc-facade';
+    f.innerHTML = '<p class="cc-facade__txt">Ten materiał pochodzi z serwisu ' +
+      '<span class="cc-facade__prov">' + prov + '</span>. Aby go wyświetlić, załaduj treść — ' +
+      'spowoduje to połączenie z ' + prov + ' i zapisanie jego plików cookies.</p>';
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'cc-btn cc-btn--accept';
+    b.textContent = 'Załaduj z ' + prov;
+    b.addEventListener('click', function () { loadEmbed(fr); f.remove(); });
+    var g = document.createElement('button'); g.type = 'button'; g.className = 'cc-btn cc-btn--ghost';
+    g.textContent = 'Ustawienia prywatności';
+    g.addEventListener('click', function () { openModal(); });
+    f.appendChild(b); f.appendChild(g); wrap.appendChild(f);
+  }
+  function applyEmbeds(marketingOn) {
+    var fr = document.querySelectorAll('iframe[data-cc-src]');
+    for (var i = 0; i < fr.length; i++) facadeFor(fr[i], marketingOn);
+  }
+
+  // --- baner ---
+  var banner;
+  function buildBanner() {
+    banner = document.createElement('section');
+    banner.className = 'cc-banner';
+    banner.setAttribute('role', 'region');
+    banner.setAttribute('aria-label', 'Zgoda na pliki cookies');
+    banner.innerHTML =
+      '<div class="cc-banner__card"><div>' +
+      '<p class="cc-banner__title">Szanujemy Twoją prywatność</p>' +
+      '<p class="cc-banner__text">Używamy plików cookies niezbędnych do działania serwisu oraz — za Twoją zgodą — ' +
+      'cookies analitycznych i marketingowych (m.in. treści osadzone z Facebooka). Możesz przyjąć wszystkie, ' +
+      'odrzucić opcjonalne albo wybrać ustawienia. Szczegóły w <a href="' + policyHref() + '">Polityce prywatności</a>.</p>' +
+      '</div><div class="cc-actions">' +
+      '<button type="button" class="cc-btn cc-btn--accept" data-cc="accept">Zaakceptuj wszystkie</button>' +
+      '<button type="button" class="cc-btn cc-btn--reject" data-cc="reject">Odrzuć wszystkie</button>' +
+      '<button type="button" class="cc-btn cc-btn--ghost" data-cc="settings">Ustawienia</button>' +
+      '</div></div>';
+    document.body.appendChild(banner);
+    banner.addEventListener('click', function (e) {
+      var t = e.target.closest('[data-cc]'); if (!t) return;
+      var a = t.getAttribute('data-cc');
+      if (a === 'accept') { save({ analytics: true, marketing: true }); hideBanner(); }
+      else if (a === 'reject') { save({ analytics: false, marketing: false }); hideBanner(); }
+      else if (a === 'settings') { openModal(); }
+    });
+  }
+  function showBanner() { if (!banner) buildBanner(); banner.hidden = false; }
+  function hideBanner() { if (banner) banner.hidden = true; }
+
+  // --- panel ustawień ---
+  var modal, lastFocus;
+  function cat(id, name, desc, checked, disabled) {
+    return '<div class="cc-cat"><p class="cc-cat__name">' + name + '</p>' +
+      '<p class="cc-cat__desc">' + desc + '</p><div class="cc-cat__ctrl">' +
+      (disabled ? '<span class="cc-cat__state">Zawsze aktywne</span>' : '') +
+      '<label class="cc-switch"><input type="checkbox" data-cat="' + id + '"' +
+      (checked ? ' checked' : '') + (disabled ? ' disabled' : '') + ' aria-label="Cookies: ' + name + '">' +
+      '<span class="cc-switch__track"></span></label></div></div>';
+  }
+  function buildModal() {
+    modal = document.createElement('div'); modal.className = 'cc-modal';
+    modal.innerHTML =
+      '<div class="cc-modal__veil" data-cc="close"></div>' +
+      '<div class="cc-modal__panel" role="dialog" aria-modal="true" aria-labelledby="cc-modal-title">' +
+      '<button type="button" class="cc-modal__close" data-cc="close" aria-label="Zamknij ustawienia cookies">×</button>' +
+      '<h2 class="cc-modal__title" id="cc-modal-title">Ustawienia plików cookies</h2>' +
+      '<p class="cc-modal__intro">Zdecyduj, na które pliki cookies się zgadzasz. Niezbędne są zawsze aktywne. ' +
+      'Więcej w <a href="' + policyHref() + '">Polityce prywatności</a>.</p>' +
+      cat('necessary', 'Niezbędne', 'Konieczne do działania serwisu: nawigacja, formularze, zapamiętanie Twojego wyboru cookies i ustawień dostępności. Nie można ich wyłączyć.', true, true) +
+      cat('analytics', 'Analityczne', 'Pomagają zrozumieć, jak korzystasz z serwisu (anonimowe statystyki), byśmy mogli go ulepszać.', false, false) +
+      cat('marketing', 'Marketingowe', 'Umożliwiają wyświetlanie treści osadzonych z serwisów zewnętrznych (np. film z Facebooka) i zapis ich plików cookies.', false, false) +
+      '<div class="cc-modal__actions">' +
+      '<button type="button" class="cc-btn cc-btn--accept" data-cc="save">Zapisz wybór</button>' +
+      '<button type="button" class="cc-btn cc-btn--reject" data-cc="accept-all">Zaakceptuj wszystkie</button>' +
+      '<button type="button" class="cc-btn cc-btn--reject" data-cc="reject-all">Odrzuć wszystkie</button>' +
+      '</div></div>';
+    document.body.appendChild(modal);
+    modal.addEventListener('click', function (e) {
+      var t = e.target.closest('[data-cc]'); if (!t) return;
+      var a = t.getAttribute('data-cc');
+      if (a === 'close') { closeModal(); return; }
+      var an = modal.querySelector('[data-cat="analytics"]').checked;
+      var mk = modal.querySelector('[data-cat="marketing"]').checked;
+      if (a === 'save') save({ analytics: an, marketing: mk });
+      else if (a === 'accept-all') save({ analytics: true, marketing: true });
+      else if (a === 'reject-all') save({ analytics: false, marketing: false });
+      closeModal(); hideBanner();
+    });
+  }
+  function onKey(e) {
+    if (e.key === 'Escape') { closeModal(); return; }
+    if (e.key !== 'Tab' || !modal) return;
+    var f = Array.prototype.filter.call(
+      modal.querySelectorAll('button, a[href], input:not([disabled])'),
+      function (el) { return el.offsetParent !== null; });
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+  function openModal() {
+    if (!modal) buildModal();
+    var c = read() || { analytics: false, marketing: false };
+    modal.querySelector('[data-cat="analytics"]').checked = !!c.analytics;
+    modal.querySelector('[data-cat="marketing"]').checked = !!c.marketing;
+    lastFocus = document.activeElement;
+    modal.classList.add('is-open');
+    document.addEventListener('keydown', onKey);
+    var x = modal.querySelector('.cc-modal__close'); if (x) x.focus();
+  }
+  function closeModal() {
+    if (!modal) return;
+    modal.classList.remove('is-open');
+    document.removeEventListener('keydown', onKey);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  function injectFooterLink() {
+    var legal = document.querySelector('.footer__legal');
+    if (!legal || legal.querySelector('.cc-settings-link')) return;
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'cc-settings-link'; b.textContent = 'Ustawienia cookies';
+    b.addEventListener('click', function () { openModal(); });
+    legal.appendChild(b);
+  }
+
+  function init() {
+    var c = read();
+    applyEmbeds(c ? c.marketing : false);   // bez zgody → facade, nic z FB nie ładujemy
+    if (c && c.analytics && typeof window.rmLoadAnalytics === 'function') { try { window.rmLoadAnalytics(); } catch (e) {} }
+    if (!c) showBanner();                    // brak decyzji → pokaż baner
+    injectFooterLink();
+  }
+  window.rmConsent = { get: read, open: openModal,
+    reset: function () { try { localStorage.removeItem(KEY); } catch (e) {} location.reload(); } };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
