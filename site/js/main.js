@@ -1174,14 +1174,13 @@ var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches || (f
     banner.setAttribute('role', 'region');
     banner.setAttribute('aria-label', 'Zgoda na pliki cookies');
     banner.innerHTML =
-      '<div class="cc-banner__card"><div>' +
-      '<p class="cc-banner__title">Szanujemy Twoją prywatność</p>' +
-      '<p class="cc-banner__text">Używamy plików cookies niezbędnych do działania serwisu oraz — za Twoją zgodą — ' +
-      'cookies analitycznych i marketingowych (m.in. treści osadzone z Facebooka). Możesz przyjąć wszystkie, ' +
-      'odrzucić opcjonalne albo wybrać ustawienia. Szczegóły w <a href="' + policyHref() + '">Polityce prywatności</a>.</p>' +
-      '</div><div class="cc-actions">' +
-      '<button type="button" class="cc-btn cc-btn--accept" data-cc="accept">Zaakceptuj wszystkie</button>' +
-      '<button type="button" class="cc-btn cc-btn--reject" data-cc="reject">Odrzuć wszystkie</button>' +
+      '<div class="cc-banner__card">' +
+      '<p class="cc-banner__title">Pliki cookies</p>' +
+      '<p class="cc-banner__text">Używamy cookies niezbędnych do działania serwisu oraz — za Twoją zgodą — ' +
+      'analitycznych i marketingowych. <a href="' + policyHref() + '">Szczegóły</a>.</p>' +
+      '<div class="cc-actions">' +
+      '<button type="button" class="cc-btn cc-btn--accept" data-cc="accept">Akceptuję</button>' +
+      '<button type="button" class="cc-btn cc-btn--reject" data-cc="reject">Odrzucam</button>' +
       '<button type="button" class="cc-btn cc-btn--ghost" data-cc="settings">Ustawienia</button>' +
       '</div></div>';
     document.body.appendChild(banner);
