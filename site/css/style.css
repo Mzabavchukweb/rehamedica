@@ -345,11 +345,11 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
 .callfab{align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;
   background:var(--color-brand);color:#fff;text-decoration:none;
   box-shadow:0 6px 18px -4px rgba(32,20,10,.45);
-  transition:background .2s ease,transform .2s ease}
+  transition:background .2s ease,transform .2s ease,opacity .2s ease;opacity:.94}
 .callfab .ico{width:28px;height:28px;stroke-width:1.6}
-.callfab:hover{background:var(--color-brand-hover);transform:translateY(-2px)}
+.callfab:hover{background:var(--color-brand-hover);transform:translateY(-2px);opacity:1}
 .callfab:active{transform:translateY(0)}
-.callfab:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.callfab:focus-visible{outline:3px solid #fff;outline-offset:3px;opacity:1}
 /* link ankiety w headerze (mobile) — zamiast numeru telefonu */
 .header-survey{align-items:center;gap:8px;color:#fff;font-weight:600;font-size:.95rem;white-space:nowrap;min-height:48px;padding:0 2px}
 .header-survey .ico{color:#e8ddcb;font-size:1.35em}
@@ -814,7 +814,10 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
   .header-survey{display:inline-flex}
   /* wstążka ankiety → pływający przycisk Zadzwoń (jak w referencji) */
   .dogear{display:none}
-  .callfab{display:inline-flex;position:fixed;right:16px;bottom:16px;z-index:91}
+  .callfab{display:inline-flex;position:fixed;right:14px;bottom:14px;z-index:91;width:52px;height:52px}
+  .callfab .ico{width:25px;height:25px}
+  .a11y-fab{width:52px;height:52px;left:14px;bottom:14px}
+  .a11y-fab .ico{width:30px;height:30px}
   .hero{padding:0 0 30px}   /* obraz pod header — blend jak na desktopie */
   .news__feature{border-top:2px solid var(--color-brand)}
   .beautytab{display:none}
@@ -843,7 +846,7 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
   .footer__nav ul{gap:6px;align-items:center}
   .footer__nav a{display:inline-block;padding:7px 6px;min-height:40px}
   .footer__legal a{padding:6px 4px}
-  .footer__bottom{flex-direction:column;align-items:center;text-align:center;gap:16px;margin-top:0;padding:26px 0 36px}
+  .footer__bottom{flex-direction:column;align-items:center;text-align:center;gap:16px;margin-top:0;padding:26px 0 82px}
   .footer__legal{justify-content:center;gap:14px 22px}
 }
 @media(max-width:25em){
@@ -1006,9 +1009,11 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
 .a11y-fab{display:none;position:fixed;left:20px;bottom:20px;z-index:95;width:60px;height:60px;
   align-items:center;justify-content:center;border-radius:50%;
   background:var(--color-brand);color:#fff;border:3px solid #fff;cursor:pointer;
-  box-shadow:0 10px 26px -8px rgba(0,0,0,.6)}
+  box-shadow:0 10px 26px -8px rgba(0,0,0,.6);opacity:.94;transition:opacity .22s ease,transform .22s ease}
 html.js .a11y-fab{display:inline-flex}
 .a11y-fab .ico{width:36px;height:36px}
+@media(hover:hover){.a11y-fab:hover{opacity:1;transform:translateY(-2px)}}
+.a11y-fab:focus-visible,.a11y-fab[aria-expanded="true"]{opacity:1}
 .a11y-fab:focus-visible{outline:3px solid var(--color-brand);outline-offset:3px}
 
 /* --- panel przewijalny (dużo opcji) --- */
@@ -1184,3 +1189,17 @@ html.js .a11y-fab{display:inline-flex}
   .emshl__media{order:-1}
 }
 .emshl__media{margin:0;min-width:0}
+
+/* Pływające FAB-y na mobile — mniejsze + odstęp stopki, by nie nachodziły na treść.
+   Blok na końcu pliku: wygrywa kolejnością nad regułami bazowymi (.a11y-fab, .footer__bottom). */
+@media(max-width:48em){
+  .a11y-fab{width:52px;height:52px;left:14px;bottom:14px}
+  .a11y-fab .ico{width:30px;height:30px}
+  .callfab{width:52px;height:52px;right:14px;bottom:14px}
+  .callfab .ico{width:25px;height:25px}
+  .footer__bottom{padding-bottom:92px}
+}
+/* Gdy stopka jest w polu widzenia, chowamy FAB-y, by nie zakrywały linków stopki.
+   Wracają natychmiast po odscrollowaniu w górę. */
+body.at-footer .a11y-fab,
+body.at-footer .callfab{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(12px)}

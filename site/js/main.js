@@ -1098,3 +1098,14 @@ var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches || (f
     });
   });
 })();
+
+/* Chowanie pływających FAB-ów (dostępność + telefon), gdy stopka wchodzi w kadr —
+   żeby nie zakrywały linków stopki. Wracają po odscrollowaniu w górę. */
+(function () {
+  var footer = document.querySelector('.site-footer');
+  if (!footer || !('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function (entries) {
+    document.body.classList.toggle('at-footer', entries[0].isIntersecting);
+  }, { rootMargin: '0px 0px -48px 0px' });
+  io.observe(footer);
+})();
