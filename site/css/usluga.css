@@ -1130,12 +1130,14 @@ main{--t-tekst:1.06rem;--t-meta:.92rem;--t-lead:1.16rem}
 .splate__label{font-family:var(--font-body);font-size:.8rem;font-weight:var(--fw-bold);letter-spacing:.14em;text-transform:uppercase;color:var(--color-text-muted)}
 .splate__nfz{display:inline-flex;align-items:center;gap:10px;font-size:.92rem;color:var(--color-text-muted)}
 .splate__nfz img{display:block}
+.splate__also{margin-top:clamp(16px,1.8vw,22px);font-size:.96rem;color:var(--color-text-2)}
+.splate__also a{color:var(--color-brand);font-weight:var(--fw-semibold);text-underline-offset:2px}
 /* karty + wymagania jako RODZEŃSTWO w jednym flexie (display:contents na wrapperze),
    żeby kilka kart stało obok siebie, a wymagania obok kart — nie pod spodem.
    row-gap 16px (przy zawijaniu), column-gap większy (między kartą a kolumną obok). */
 .splate__grid{display:flex;flex-wrap:wrap;gap:16px clamp(24px,3.5vw,48px);align-items:flex-start}
 .splate__cards{display:contents}
-.splate__req{flex:1 1 320px;min-width:280px;max-width:54ch;padding-top:2px}
+.splate__req{flex:1 1 100%;max-width:74ch;padding-top:clamp(16px,2vw,22px);margin-top:clamp(14px,1.8vw,20px);border-top:1px solid var(--color-line)}
 .splate__reqLabel{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);
   font-size:.8rem;font-weight:var(--fw-bold);letter-spacing:.14em;text-transform:uppercase;
   color:var(--color-brand);margin-bottom:14px}
@@ -1161,14 +1163,14 @@ main{--t-tekst:1.06rem;--t-meta:.92rem;--t-lead:1.16rem}
    dwie trzecie pasa pustych. Wtedy karta rozkłada się poziomo na całą szerokość —
    miasto, dane kontaktowe, przycisk w jednej linii. Te same dane, inny układ. */
 @media(min-width:52em){
-  .splate__grid:not(:has(.splate__req)) .pcard:only-child{
+  .splate__grid .pcard:only-child{
     flex:1 1 100%;max-width:none;flex-direction:row;flex-wrap:wrap;align-items:center;
     gap:10px clamp(20px,2.6vw,38px);padding-block:clamp(16px,1.8vw,20px)}
-  .splate__grid:not(:has(.splate__req)) .pcard:only-child .pcard__city{flex:0 0 auto}
-  .splate__grid:not(:has(.splate__req)) .pcard:only-child .pcard__row{flex:0 1 auto;align-items:center}
-  .splate__grid:not(:has(.splate__req)) .pcard:only-child .pcard__row .ico{margin-top:0}
-  .splate__grid:not(:has(.splate__req)) .pcard:only-child .pcard__cta{margin:0 0 0 auto}
-  .splate__grid:not(:has(.splate__req)) .pcard:only-child .pcard__cta .btn{width:auto}
+  .splate__grid .pcard:only-child .pcard__city{flex:0 0 auto}
+  .splate__grid .pcard:only-child .pcard__row{flex:0 1 auto;align-items:center}
+  .splate__grid .pcard:only-child .pcard__row .ico{margin-top:0}
+  .splate__grid .pcard:only-child .pcard__cta{margin:0 0 0 auto}
+  .splate__grid .pcard:only-child .pcard__cta .btn{width:auto}
 }
 
 /* --- TREŚĆ: zwarta, ale ta sama typografia --- */

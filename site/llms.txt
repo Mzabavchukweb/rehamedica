@@ -1,0 +1,83 @@
+# Reha Medica
+
+> Centrum Rehabilitacyjno-Medyczne Reha Medica — rehabilitacja, fizjoterapia i opieka medyczna w pięciu placówkach na Pomorzu Zachodnim (Szczecinek, Szczecin, Wałcz, Białogard, Bobolice). Usługi komercyjne oraz w ramach umów z NFZ.
+
+Reha Medica świadczy m.in.: rehabilitację leczniczą i domową, rehabilitację dzieci i młodzieży, konsultacje specjalistyczne (fizjoterapeutyczne, ortopedyczne, neurologiczne, logopedyczne i neurologopedyczne), zabiegi fizykoterapeutyczne, masaże lecznicze i relaksacyjne, odnowę biologiczną (sauny, kriokomora), trening EMS oraz Reha Beauty. Zakres i sposób finansowania (NFZ / komercyjnie) zależą od wybranej placówki.
+
+## Placówki
+- Reha Medica Szczecinek — ul. Kościuszki 57, 78-400 Szczecinek, tel. 94 372 14 51, szczecinek@rehamedica.info.pl (główna placówka, pełna oferta rehabilitacyjno-medyczna)
+- Reha Medica Wałcz — ul. Gen. Andersa 9, 78-600 Wałcz, tel. 530 661 982, walcz@rehamedica.info.pl (m.in. rehabilitacja domowa)
+- Reha Medica Szczecin — ul. Wyszyńskiego 32-34, 78-411 Szczecin, tel. 530 661 982, szczecin@rehamedica.info.pl
+- Reha Medica Białogard — ul. Najświętszej Marii Panny 19, 78-200 Białogard, tel. 535 960 018, bialogard@rehamedica.info.pl
+- Reha Medica Bobolice — ul. Reymonta 2, 76-020 Bobolice, tel. 530 645 059, koszalin@rehamedica.info.pl
+
+## Rehabilitacja
+- [Rehabilitacja Szczecinek](https://rehamedica.info.pl/uslugi/rehabilitacja/)
+- [Gabinet terapii manualnej Szczecinek](https://rehamedica.info.pl/uslugi/rehabilitacja/gabinet-terapii-manualnej/)
+- [Rehabilitacja ogólnoustrojowa NFZ Szczecinek](https://rehamedica.info.pl/uslugi/rehabilitacja/osrodek-rehabilitacji-ogolnoustrojowej/)
+- [Poradnia rehabilitacyjna Szczecinek](https://rehamedica.info.pl/uslugi/rehabilitacja/poradnia-rehabilitacyjna/)
+- [Rehabilitacja bólu Szczecinek](https://rehamedica.info.pl/uslugi/rehabilitacja/rehabilitacja-bolu/)
+- [Rehabilitacja domowa Szczecinek i Wałcz](https://rehamedica.info.pl/uslugi/rehabilitacja/rehabilitacja-domowa/)
+- [Rehabilitacja dzieci i młodzieży Szczecinek](https://rehamedica.info.pl/uslugi/rehabilitacja/rehabilitacja-dzieci-i-mlodziezy/)
+- [Rehabilitacja lecznicza Szczecinek](https://rehamedica.info.pl/uslugi/rehabilitacja/rehabilitacja-lecznicza/)
+- [Rehabilitacja neurologiczna Szczecinek](https://rehamedica.info.pl/uslugi/rehabilitacja/rehabilitacja-neurologiczna/)
+- [Rehabilitacja ortopedyczna Szczecinek](https://rehamedica.info.pl/uslugi/rehabilitacja/rehabilitacja-ortopedyczna/)
+- [Rehabilitacja reumatologiczna Szczecinek](https://rehamedica.info.pl/uslugi/rehabilitacja/rehabilitacja-reumatologiczna/)
+- [Rehabilitacja sportowa Szczecinek](https://rehamedica.info.pl/uslugi/rehabilitacja/rehabilitacja-sportowa/)
+
+## Zabiegi fizykoterapeutyczne
+- [Elektroterapia Szczecinek](https://rehamedica.info.pl/uslugi/zabiegi-fizykoterapeutyczne/elektroterapia/)
+- [Fala uderzeniowa Szczecinek](https://rehamedica.info.pl/uslugi/zabiegi-fizykoterapeutyczne/fala-uderzeniowa/)
+- [Hydromasaże Szczecinek](https://rehamedica.info.pl/uslugi/zabiegi-fizykoterapeutyczne/hydromasaze/)
+- [Hydroterapia Szczecinek](https://rehamedica.info.pl/uslugi/zabiegi-fizykoterapeutyczne/hydroterapia/)
+- [Krioterapia Szczecinek](https://rehamedica.info.pl/uslugi/zabiegi-fizykoterapeutyczne/krioterapia/)
+- [Laseroterapia Szczecinek](https://rehamedica.info.pl/uslugi/zabiegi-fizykoterapeutyczne/laseroterapia/)
+- [Magnetoterapia Szczecinek](https://rehamedica.info.pl/uslugi/zabiegi-fizykoterapeutyczne/magnetoterapia/)
+- [Ultradźwięki Szczecinek](https://rehamedica.info.pl/uslugi/zabiegi-fizykoterapeutyczne/ultradzwieki/)
+
+## Konsultacje
+- [Konsultacja fizjoterapeutyczna Szczecinek](https://rehamedica.info.pl/uslugi/konsultacje/fizjoterapeutyczna/)
+- [Konsultacja logopedyczna Szczecinek](https://rehamedica.info.pl/uslugi/konsultacje/logopedyczna-neurologopedyczna/)
+- [Konsultacja neurologiczna Szczecinek](https://rehamedica.info.pl/uslugi/konsultacje/neurologiczna/)
+- [Konsultacja ortopedyczna Szczecinek](https://rehamedica.info.pl/uslugi/konsultacje/ortopedyczna/)
+- [Konsultacja socjologiczna Szczecinek](https://rehamedica.info.pl/uslugi/konsultacje/socjologiczna/)
+
+## Odnowa biologiczna i masaże
+- [Masaże lecznicze Szczecinek](https://rehamedica.info.pl/uslugi/masaze/)
+- [Manualny drenaż limfatyczny Szczecinek](https://rehamedica.info.pl/uslugi/masaze/manualny-drenaz-limfatyczny/)
+- [Masaż leczniczy Szczecinek](https://rehamedica.info.pl/uslugi/masaze/masaz-leczniczy/)
+- [Masaż antycellulitowy Szczecinek](https://rehamedica.info.pl/uslugi/masaze/masaz-modelujacy-antycellulitowy/)
+- [Masaż pneumatyczny Szczecinek](https://rehamedica.info.pl/uslugi/masaze/masaz-pneumatyczny/)
+- [Masaż sportowy Szczecinek](https://rehamedica.info.pl/uslugi/masaze/masaz-sportowy/)
+- [Odnowa biologiczna Szczecinek](https://rehamedica.info.pl/uslugi/odnowa-biologiczna/)
+- [Kriokomora Szczecinek](https://rehamedica.info.pl/uslugi/odnowa-biologiczna/kriokomora/)
+- [Masaże relaksacyjne Szczecinek — rodzaje](https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/)
+- [Masaż gorącymi kamieniami Szczecinek](https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-goracymi-kamieniami/)
+- [Masaż masłem shea Szczecinek](https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-maslem-shea/)
+- [Masaż olejkiem arganowym Szczecinek](https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-olejkiem-arganowym/)
+- [Masaż olejkiem na ciepło Szczecinek](https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-olejkiem-arganowym-na-cieplo/)
+- [Masaż peelingujący Szczecinek](https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-peelingujacy/)
+- [Masaż relaksacyjny Szczecinek](https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-relaksacyjny/)
+- [Masaż dla dwojga Szczecinek](https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-relaksacyjny-dla-dwojga/)
+- [Masaż twarzy Szczecinek](https://rehamedica.info.pl/uslugi/odnowa-biologiczna/masaze-relaksacyjne/masaz-twarzy/)
+- [Sauny Szczecinek](https://rehamedica.info.pl/uslugi/odnowa-biologiczna/sauny/)
+- [Sauna Infrared Szczecinek](https://rehamedica.info.pl/uslugi/odnowa-biologiczna/sauny/sauna-infrared/)
+- [Sauna sucha (fińska) Szczecinek](https://rehamedica.info.pl/uslugi/odnowa-biologiczna/sauny/sauna-sucha/)
+
+## Inne usługi
+- [Poradnia logopedyczna Szczecinek](https://rehamedica.info.pl/uslugi/poradnia-logopedyczna/)
+- [Trening EMS Szczecinek](https://rehamedica.info.pl/uslugi/trening-ems/)
+
+## Informacje
+- [FAQ Reha Medica | skierowania, pierwsza wizyta](https://rehamedica.info.pl/faq/)
+- [Kontakt | Reha Medica Szczecinek, Szczecin, Wałcz](https://rehamedica.info.pl/kontakt/)
+- [O nas | Reha Medica Centrum Rehabilitacyjno-Medyczne](https://rehamedica.info.pl/o-nas/)
+- [Projekty UE i dofinansowania](https://rehamedica.info.pl/projekty-ue/)
+- [Ankieta satysfakcji pacjenta](https://rehamedica.info.pl/ankieta-satysfakcji/)
+
+## Główne strony
+- [Strona główna](https://rehamedica.info.pl/)
+- [Wszystkie usługi](https://rehamedica.info.pl/uslugi/)
+- [Placówki](https://rehamedica.info.pl/placowki/)
+- [Kontakt](https://rehamedica.info.pl/kontakt/)
+
