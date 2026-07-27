@@ -22,13 +22,13 @@
   background:linear-gradient(180deg,rgba(28,21,15,.78) 0%,rgba(30,23,16,.70) 34%,rgba(32,25,18,.70) 62%,rgba(38,30,23,.78) 100%)}
 .uhero__inner{position:relative;z-index:1;text-align:center}
 
-.ubread{margin-bottom:clamp(16px,2vw,26px);font-family:var(--font-body);font-size:.76rem;
-  font-weight:var(--fw-semibold);letter-spacing:.11em;text-transform:uppercase;color:#bcae98}
+.ubread{margin-bottom:clamp(16px,2vw,26px);font-family:var(--font-body);font-size:.72rem;
+  font-weight:var(--fw-medium);letter-spacing:.07em;text-transform:uppercase;color:#bcae98}
 .ubread__list{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;list-style:none;margin:0;padding:0}
 .ubread__list li{display:flex;align-items:center;gap:9px}
 .ubread__list li+li::before{content:"/";color:#d2c5b1;font-weight:var(--fw-regular)}
 .ubread a{display:inline-flex;align-items:center;min-height:24px;color:#e8ddcb;
-  border-bottom:1px solid rgba(232,221,203,.28);padding-bottom:1px;transition:border-color .2s,color .2s}
+  border-bottom:1px solid rgba(232,221,203,.18);padding-bottom:1px;transition:border-color .2s,color .2s}
 .ubread a:hover,.ubread a:focus-visible{color:#fff;border-color:#fff}
 
 .uhero__title{font-family:var(--font-display);font-weight:var(--fw-regular);
@@ -1114,6 +1114,13 @@ main{--t-tekst:1.06rem;--t-meta:.92rem;--t-lead:1.16rem}
 .shero .ubread__list{justify-content:center}
 .shero .ubread a,.shero .ubread span{color:#fff;text-shadow:0 1px 10px rgba(12,8,4,.7)}
 .shero .ubread a:focus-visible{outline:3px solid #fff;outline-offset:2px}
+@media(max-width:48em){
+  .ubread{font-size:.6rem;letter-spacing:.045em}
+  .ubread__list{gap:6px}
+  .ubread__list li{gap:6px}
+  .ubread a{border-bottom:0;padding-bottom:0}
+  .shero .ubread{margin-bottom:clamp(10px,3vw,16px)}
+}
 .shero__kicker{font-family:var(--font-body);font-size:.8rem;font-weight:var(--fw-bold);
   letter-spacing:.18em;text-transform:uppercase;color:var(--color-sand);margin-bottom:12px;
   text-shadow:0 1px 10px rgba(12,8,4,.7)}
