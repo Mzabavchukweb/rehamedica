@@ -254,10 +254,6 @@ var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches || (f
     if (book) {
       book.setAttribute('href', 'tel:' + d.tel);
       book.setAttribute('aria-label', 'Umów wizytę — zadzwoń do placówki ' + d.city);
-      // odsłaniamy CTA dopiero z wybraną placówką (patrz init). Uwaga: sam atrybut `hidden`
-      // nie wystarcza — reguła `.btn{display:...}` nadpisuje `[hidden]{display:none}` z UA,
-      // więc widoczność sterujemy inline stylem (wygrywa ze specyficznością klasy).
-      book.hidden = false; book.style.display = '';
     }
     var see = scope.querySelector('[data-see]');
     if (see) {
@@ -268,7 +264,7 @@ var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches || (f
       var linkPrefix = card.getAttribute('data-link-prefix') || '';
       // Każda placówka ma widoczny link „Przejdź do placówki".
       // Szczecinek = centrala: /placowki/szczecinek/ jest przekierowaniem 301 na stronę główną.
-      see.hidden = false; see.style.display = '';
+      see.style.display = '';
       see.setAttribute('href', linkPrefix + 'placowki/' + slugMiasta + '/');
       see.setAttribute('aria-label', 'Przejdź do placówki ' + d.city);
     }
@@ -292,28 +288,17 @@ var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches || (f
     });
   });
 
-  // Preselekcja TYLKO na stronie placówki (data-fac-default = jej własne miasto = kontekst
-  // strony, na którą pacjent świadomie wszedł). Na stronie głównej ŻADNA placówka nie jest
-  // preselektowana (twarda reguła CLAUDE.md): karta startuje w stanie pustym, a CTA
-  // „Umów wizytę"/„Przejdź do placówki" pojawiają się dopiero PO wskazaniu miasta — inaczej
-  // dzwoniłyby na oślep do centrali (Szczecinka) niezależnie od intencji pacjenta.
-  var scopeCta = card.closest('.hero') || document;
-  var bookCta = scopeCta.querySelector('[data-book]');
-  var seeCta = scopeCta.querySelector('[data-see]');
-  var domyslna = card.getAttribute('data-fac-default');
-  var initial = domyslna
-    ? (tabs.filter(function (t) { return t.dataset.fac === domyslna; })[0] || null)
-    : null;
+  // Domyślna placówka: na stronie placówki jej własna (data-fac-default), na stronie głównej
+  // Szczecinek (centrala) — karta od razu pokazuje realny adres, telefon i e-mail recepcji.
+  // DECYZJA WŁAŚCICIELA 2026-07-27: świadome preselektowanie Szczecinka na stronie głównej,
+  // nadpisujące regułę CLAUDE.md „No facility may be preselected". Ryzyko pomyłki jest
+  // ograniczone: 5 zakładek placówek widocznych obok, a nagłówek „Reha Medica Szczecinek"
+  // jednoznacznie wskazuje, której recepcji dotyczy „Umów wizytę".
+  var domyslna = card.getAttribute('data-fac-default') || 'szczecinek';
+  var initial = tabs.filter(function (t) { return t.dataset.fac === domyslna; })[0] || tabs[0];
   if (initial) {
     select(initial);
     tabs.forEach(function (t) { t.tabIndex = t === initial ? 0 : -1; });
-  } else {
-    // stan pusty — brak preselekcji: ukryj CTA celujące w konkretną placówkę.
-    // display:none inline, bo `.btn`/`.hcard__link` nadpisują `[hidden]` z UA.
-    if (bookCta) { bookCta.hidden = true; bookCta.style.display = 'none'; }
-    if (seeCta) { seeCta.hidden = true; seeCta.style.display = 'none'; }
-    if (empty) empty.hidden = false;
-    if (detail) detail.hidden = true;
   }
 })();
 
