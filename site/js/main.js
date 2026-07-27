@@ -481,25 +481,14 @@ var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches || (f
       }, REDUCE ? 0 : 280);
       cur = idx;
     }
-    /* Pozycje indeksu są prawdziwymi linkami do stron usług (crawlowalne, działa
-       „otwórz w nowej karcie"), ale nie tracimy przez to panelu:
-         • klik w pozycję NIEwybraną  → przełącza panel (blokujemy nawigację),
-         • klik w pozycję już wybraną → przechodzi na jej stronę.
-       Dzięki temu pacjent najpierw przegląda opisy, a wchodzi dopiero świadomie. */
-    var stageEl = section && (section.querySelector(o.pause) || section);
-    items.forEach(function (it, i) {
-      it.addEventListener('click', function (e) {
-        var adres = it.getAttribute('href') || '#';
-        var juzWybrana = it.classList.contains('is-current');
-        if (adres !== '#' && juzWybrana) return;   // druga próba = wejście na stronę
-        e.preventDefault();
-        show(i);
-        // na mobile panel jest nad indeksem — przewiń, żeby zmiana była widoczna
-        if (stageEl && window.matchMedia('(max-width: 768px)').matches) {
-          stageEl.scrollIntoView({ behavior: REDUCE ? 'auto' : 'smooth', block: 'center' });
-        }
+    /* Pozycje indeksu są prawdziwymi linkami — klik ZAWSZE wchodzi na stronę usługi.
+       Na desktopie (hover) najechanie podmienia panel: podgląd tytułu/opisu/zdjęcia
+       bez opuszczania strony. Na mobile tap po prostu nawiguje. */
+    if (window.matchMedia('(hover: hover)').matches) {
+      items.forEach(function (it, i) {
+        it.addEventListener('mouseenter', function () { show(i); });
       });
-    });
+    }
 
     mark(0);
     loadImg(0);
