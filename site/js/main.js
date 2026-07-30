@@ -546,15 +546,57 @@ var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches || (f
   if (tel) tel.addEventListener('input', przelaczZgodeSms);
   przelaczZgodeSms();
 
+  function msg(txt, err) {
+    if (!note) return;
+    note.hidden = false;
+    note.style.color = err ? '#8a2b2b' : '';
+    note.textContent = txt;
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
-    if (note) {
-      note.hidden = false;
-      note.textContent = tel && tel.value.trim()
-        ? 'Formularz zostanie uruchomiony po podłączeniu systemu wysyłki e-mail i SMS.'
-        : 'Formularz newslettera zostanie uruchomiony po podłączeniu systemu wysyłki.';
-    }
+    var endpoint = (form.getAttribute('data-endpoint') || '').trim();
+    if (!endpoint) { msg('Zapisy do newslettera zostaną uruchomione wkrótce.', false); return; }
+
+    var emailEl = form.querySelector('[name="email"]');
+    var consentEl = form.querySelector('[name="consent"]');
+    var payload = {
+      email: emailEl ? emailEl.value.trim() : '',
+      consent_email: (consentEl && consentEl.checked) ? 1 : 0
+    };
+    var phone = tel && tel.value.trim();
+    if (phone) { payload.phone = phone; payload.consent_sms = (smsInput && smsInput.checked) ? 1 : 0; }
+    var hp = form.querySelector('[name="company"]');   // honeypot (antyspam)
+    if (hp && hp.value) payload.company = hp.value;
+
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn) btn.disabled = true;
+    msg('Zapisywanie…', false);
+
+    fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
+      .then(function (res) {
+        if (res.ok && res.j && res.j.ok) {
+          form.innerHTML = '<p class="newsletter__note" role="status" style="color:var(--color-brand)">'
+            + 'Dziękujemy! Twój adres został zapisany do newslettera Reha Medica.</p>';
+        } else {
+          var code = res.j && res.j.error;
+          msg(code === 'email' ? 'Podaj poprawny adres e-mail.'
+            : code === 'consent_email' ? 'Zaznacz zgodę na newsletter.'
+            : code === 'rate' ? 'Za dużo prób — spróbuj ponownie za chwilę.'
+            : 'Nie udało się zapisać. Spróbuj ponownie za chwilę.', true);
+          if (btn) btn.disabled = false;
+        }
+      })
+      .catch(function () {
+        msg('Nie udało się zapisać. Spróbuj ponownie za chwilę.', true);
+        if (btn) btn.disabled = false;
+      });
   });
 })();
 
