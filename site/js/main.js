@@ -567,8 +567,6 @@ var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches || (f
     };
     var phone = tel && tel.value.trim();
     if (phone) { payload.phone = phone; payload.consent_sms = (smsInput && smsInput.checked) ? 1 : 0; }
-    var hp = form.querySelector('[name="company"]');   // honeypot (antyspam)
-    if (hp && hp.value) payload.company = hp.value;
 
     var btn = form.querySelector('button[type="submit"]');
     if (btn) btn.disabled = true;
