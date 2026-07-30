@@ -582,8 +582,22 @@ var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches || (f
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
       .then(function (res) {
         if (res.ok && res.j && res.j.ok) {
-          form.innerHTML = '<p class="newsletter__note" role="status" style="color:var(--color-brand)">'
-            + 'Dziękujemy! Twój adres został zapisany do newslettera Reha Medica.</p>';
+          var SUCCESS = '<div class="newsletter__success" role="status" aria-live="polite">'
+            + '<svg class="newsletter__success-ico" width="46" height="46" viewBox="0 0 44 44" fill="none" aria-hidden="true">'
+            + '<circle cx="22" cy="22" r="20" stroke="currentColor" stroke-width="1.6"/>'
+            + '<path d="M13.5 22.5l5.5 5.5L31 15.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+            + '<p class="newsletter__success-h">Dziękujemy!</p>'
+            + '<p class="newsletter__success-t">Twój adres został zapisany do newslettera Reha Medica.</p></div>';
+          form.style.transition = 'opacity .25s ease';
+          form.style.opacity = '0';
+          window.setTimeout(function () {
+            form.innerHTML = SUCCESS;
+            form.style.opacity = '1';
+            var box = form.querySelector('.newsletter__success');
+            if (box) window.requestAnimationFrame(function () {
+              window.requestAnimationFrame(function () { box.classList.add('is-in'); });
+            });
+          }, 250);
         } else {
           var code = res.j && res.j.error;
           msg(code === 'email' ? 'Podaj poprawny adres e-mail.'
