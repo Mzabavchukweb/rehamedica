@@ -1404,3 +1404,16 @@ body.ma-hero .shero .ubread li{color:rgba(255,255,255,.92);
   body.ma-hero .shero{min-height:clamp(340px,44vh,440px);
     padding-top:calc(126px + clamp(28px,5vw,48px))}
 }
+
+/* ── RYTM PIONOWY STRON USŁUG ─────────────────────────────────────────
+   Rozbicie jednej sekcji na trzy (czym to jest → co dostaniesz → szczegół)
+   potroiło padding: 6 × 80 px zamiast 2 × 80 px, czyli 484 px samego
+   światła na 3290 px treści. Układ jest lepszy, ale odstępy trzeba było
+   przeliczyć na nowo, a nie zostawić po staremu. */
+.usluga .lsec{padding-block:clamp(44px,5vw,64px)}
+/* Sąsiadujące sekcje o TYM SAMYM tle nie potrzebują podwójnego światła —
+   nie ma tam granicy koloru, którą trzeba by odsunąć. */
+.usluga .lsec--ivory + .lsec--ivory,
+.usluga .lsec--beige + .lsec--beige{padding-top:0}
+/* Ostatnia sekcja przed kartami placówek — te mają własny oddech */
+.usluga .lsec:last-of-type{padding-bottom:clamp(36px,4vw,52px)}

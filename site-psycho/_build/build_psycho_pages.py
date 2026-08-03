@@ -517,25 +517,12 @@ def build_service(sk):
             f'<span class="needs__to">{FAC[c]["addr"]}, {FAC[c]["zip"]} {FAC[c]["name"]}</span></span>'
             f'<span class="needs__arrow" aria-hidden="true">→</span></a></li>'
             for c in s["cities"])
-        miasta_sekcja = f"""
-  <section class="lsec lsec--beige">
-    <div class="wrap">
-      <header class="section__head">
-        <p class="kicker">Placówki</p>
-        <h2 class="section__title">{s['title']} w Twoim mieście</h2>
-      </header>
-      <ul class="needs__list cornerframe">
-{city_links}
-      </ul>
-    </div>
-  </section>
-"""
-        splate = f"""<section class="splate">
+        splate = f"""<section class="splate" id="placowki-uslugi" aria-labelledby="spl-h">
   <div class="wrap splate__inner">
-    <div class="splate__head">
-      {picon(ICON_FOR_SERVICE[sk], "picon splate__ico")}<span class="splate__label">{label}</span>
-      {FIN_LABEL[s['fin']]}
-    </div>
+    <header class="splate__head">
+      <h2 class="splate__h" id="spl-h">Gdzie skorzystasz</h2>
+      <p class="splate__meta"><span class="splate__label">{label}</span>{FIN_LABEL[s['fin']]}</p>
+    </header>
     <div class="splate__grid">
       <div class="splate__cards">
 {cards}
@@ -545,13 +532,12 @@ def build_service(sk):
 </section>"""
         bk_places = " ".join(s["cities"])
     else:
-        miasta_sekcja = ""
-        splate = f"""<section class="splate">
+        splate = f"""<section class="splate" id="placowki-uslugi" aria-labelledby="spl-h">
   <div class="wrap splate__inner">
-    <div class="splate__head">
-      {picon(ICON_FOR_SERVICE[sk], "picon splate__ico")}<span class="splate__label">Dostępność</span>
-      {FIN_LABEL[s['fin']]}
-    </div>
+    <header class="splate__head">
+      <h2 class="splate__h" id="spl-h">Gdzie skorzystasz</h2>
+      <p class="splate__meta"><span class="splate__label">Dostępność</span>{FIN_LABEL[s['fin']]}</p>
+    </header>
     <div class="splate__grid">
       <div class="splate__cards">
         <article class="pcard">
@@ -595,18 +581,29 @@ def build_service(sk):
   </div>
 </section>
 
-{splate}
-
 <article class="usluga">
-{formy_sekcja}
+
+  <!-- 1. CZYM TO JEST i DLA KOGO — pierwsze, bo bez tego reszta nic nie znaczy -->
   <section class="lsec lsec--ivory">
     <div class="wrap lintro lintro--rytm">
 
-{prose_block(cnt, f"{r}assets/img/{s['band'] or s['img']}", s['title'] + " — Reha Medica", depth)}
+{prose_block(cnt, f"{r}assets/img/{s['band'] or s['img']}", s['title'] + " — Reha Medica", depth, tylko="wstep")}
 
     </div>
   </section>
-{miasta_sekcja}
+
+  <!-- 2. CO KONKRETNIE DOSTANIESZ — siatka form pomocy -->
+{formy_sekcja}
+
+  <!-- 3. SZCZEGÓŁ NA ŻĄDANIE — cytat, ilustracja, akordeon -->
+  <section class="lsec lsec--ivory">
+    <div class="wrap lintro lintro--rytm">
+
+{prose_block(cnt, None, "", depth, tylko="reszta")}
+
+    </div>
+  </section>
+{splate}
   <section class="uend">
     <div class="wrap uend__inner">
       <a class="btn btn--brand uend__btn" href="{r}index.html#placowki" data-booking>Umów wizytę <span class="btn__arrow" aria-hidden="true">→</span></a>

@@ -355,8 +355,13 @@ def pcard(c, depth, service_label):
           <div class="pcard__cta"><a class="btn btn--brand" href="tel:{f['phones'][0][1]}">Umów wizytę <span class="btn__arrow" aria-hidden="true">→</span></a></div>
         </article>"""
 
-def prose_block(cnt, img_src, img_alt, depth):
-    """lintro / lpull / lparts / lcoda — układ z serwisu głównego."""
+def prose_block(cnt, img_src, img_alt, depth, tylko=None):
+    """lintro / lpull / lparts / lcoda — układ z serwisu głównego.
+
+    tylko="wstep"  → sam blok otwierający (lead, odbiorcy, zdjęcie, proza)
+    tylko="reszta" → cytat, ilustracja i akordeon
+    Podział pozwala wstawić siatkę „Formy pomocy" MIĘDZY nie, zamiast
+    trzymać wszystko w jednej sekcji na 1918 px."""
     o = []
     o.append('      <div class="lintro__open">')
     o.append('        <div class="lintro__head">')
@@ -380,6 +385,10 @@ def prose_block(cnt, img_src, img_alt, depth):
         o.append(f'          <p class="lintro__p">{p}</p>')
     o.append('        </div>')
     o.append('      </div>')
+    if tylko == "wstep":
+        return "\n".join(o)
+    if tylko == "reszta":
+        o = []
     if cnt.get("pull_q"):
         o.append('\n      <div class="lpull">')
         o.append(f'        <p class="lpull__q">{cnt["pull_q"]}</p>')
