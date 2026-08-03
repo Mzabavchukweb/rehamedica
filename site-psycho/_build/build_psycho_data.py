@@ -642,3 +642,29 @@ SKALA = [
          cyt="Wzrósł odsetek osób, które oceniają swój stan psychiczny jako taki sobie "
              "(z 14% w 2012 roku do 20% w 2021 roku)."),
 ]
+
+# ─────────────────────────────────────────────────────────────────────────
+# FORMY POMOCY — siatka ikon zamiast akapitu wyliczającego.
+# Wzorzec: centrumsobota.pl/zakres-wsparcia/strefa-adhd.
+#
+# Każda pozycja MUSI mieć dosłowne pokrycie w treści źródłowej — cytat jest
+# w kolumnie „src”. Nie dopisujemy usług, których klient nie potwierdził.
+# Ikony dostarczone przez grafika klienta 2026-08-03 (10 sztuk).
+FORMY = {
+ "osrodek-psychologiczno-psychoterapeutyczny": [
+   ("p-fm-porada",          "Porady psychologiczne",      "„realizowane są porady i diagnoza psychologiczna”"),
+   ("p-fm-diagnoza",        "Diagnoza psychologiczna",    "„…porady i diagnoza psychologiczna”"),
+   ("p-fm-terapia-ind",     "Psychoterapia indywidualna", "„psychoterapia indywidualna i grupowa”"),
+   ("p-fm-terapia-gr",      "Psychoterapia grupowa",      "„psychoterapia indywidualna i grupowa”"),
+   ("p-fm-terapia-rodz",    "Psychoterapia rodzinna",     "„psychoterapia rodzinna”"),
+   ("p-fm-psychospoleczne", "Wsparcie psychospołeczne",   "„oraz wsparcie psychospołeczne”"),
+ ],
+ "poradnia-psychologiczna": [
+   ("p-fm-diagnoza",           "Diagnoza psychologiczna",      "„wykonują zadania diagnostyczne i terapeutyczne”"),
+   ("p-fm-terapia-ind",        "Terapia psychologiczna",       "„…diagnostyczne i terapeutyczne”"),
+   ("p-fm-po-hospitalizacji",  "Opieka po hospitalizacji",     "„kontynuują opiekę psychologiczną pacjentów po zakończonej hospitalizacji”"),
+   ("p-fm-wychowawcze",        "Wsparcie wychowawcze",         "„oferują wsparcie wychowawcze… dla rodziców”"),
+   ("p-fm-diag-neuro",         "Diagnoza neuropsychologiczna", "„pełna ocena sprawności poznawczej”"),
+   ("p-fm-terapia-neuro",      "Terapia neuropsychologiczna",  "„dedykowana pacjentom z deficytami poznawczo-emocjonalnymi”"),
+ ],
+}

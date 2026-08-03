@@ -485,6 +485,27 @@ def build_service(sk):
     r = rel(depth)
     url = f"{BASE}/{sk}/"
 
+    # Siatka form pomocy zamiast akapitu wyliczającego (wzorzec Centrum Sobota).
+    # Renderuje się WYŁĄCZNIE dla usług obecnych w FORMY, czyli tam, gdzie
+    # materiały klienta faktycznie wymieniają poszczególne formy.
+    formy_sekcja = ""
+    if sk in FORMY:
+        kafle = "\n".join(
+            f'        <li class="formy__i">'
+            f'<span class="formy__ico" style="--ik:url({r}assets/ikony/{ik}.png)" aria-hidden="true"></span>'
+            f'<span class="formy__t">{txt}</span></li>'
+            for ik, txt, _ in FORMY[sk])
+        formy_sekcja = f"""
+  <section class="lsec lsec--beige formy" aria-labelledby="formy-h">
+    <div class="wrap">
+      <h2 class="formy__h" id="formy-h">Formy pomocy</h2>
+      <ul class="formy__list">
+{kafle}
+      </ul>
+    </div>
+  </section>
+"""
+
     if s["cities"]:
         cards = "\n".join(pcard(c, depth, s["title"]) for c in s["cities"])
         label = "Dostępne w placówkach" if len(s["cities"]) > 1 else "Dostępne w placówce"
@@ -575,7 +596,7 @@ def build_service(sk):
 {splate}
 
 <article class="usluga">
-
+{formy_sekcja}
   <section class="lsec lsec--ivory">
     <div class="wrap lintro lintro--rytm">
 
