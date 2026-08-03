@@ -781,3 +781,84 @@ ZAKLADKA_FORMY = {
  "p-fm-diag-neuro":    "neuropsychologia",
  "p-fm-terapia-neuro": "neuropsychologia",
 }
+
+# ═══════════════════════════════════════════════════════════════════════
+# ZAKŁADKI FORM POMOCY — runda druga (2026-08-03)
+# Ta sama zasada: warstwa własna WYŁĄCZNIE ze źródeł klienta, warstwa
+# ogólna z zewnętrznych publikacji, oznaczona i podpisana.
+# ═══════════════════════════════════════════════════════════════════════
+
+SERVICES["wsparcie-wychowawcze"] = dict(
+    title="Wsparcie wychowawcze dla rodziców",
+    short="Wsparcie wychowawcze",
+    lead="Porady psychologiczne dla rodziców dzieci sprawiających trudności "
+         "wychowawcze.",
+    img="osrodek-hero.webp", band=None,
+    cities=["szczecinek", "szczecin", "walcz", "bialogard", "bobolice"],
+    fin="DO POTWIERDZENIA",
+)
+SERVICE_CONTENT["wsparcie-wychowawcze"] = dict(
+    kicker="Dla kogo",
+    lead="Wsparcie wychowawcze jest częścią poradni psychologicznej Reha Medica.",
+    body=[
+        "Nasi terapeuci oferują wsparcie wychowawcze, a także porady "
+        "psychologiczne dla rodziców dzieci sprawiających trudności "
+        "wychowawcze.",
+        "Dzieci i młodzież są w poradni przyjmowane razem z rodzicami.",
+    ],
+    pull_q=None, pull_p=[], parts_h=None, parts=[],
+    coda_lead=None, coda_p=None,
+)
+
+SERVICES["opieka-po-hospitalizacji"] = dict(
+    title="Opieka psychologiczna po hospitalizacji",
+    short="Opieka po hospitalizacji",
+    lead="Kontynuacja opieki psychologicznej po zakończonym pobycie w szpitalu.",
+    img="poradnia-hero.webp", band=None,
+    cities=["szczecinek", "szczecin", "walcz", "bialogard", "bobolice"],
+    fin="DO POTWIERDZENIA",
+)
+SERVICE_CONTENT["opieka-po-hospitalizacji"] = dict(
+    kicker="Dla kogo",
+    lead="Wyjście ze szpitala nie musi oznaczać końca opieki psychologicznej.",
+    body=[
+        "Psycholodzy i psychoterapeuci poradni kontynuują opiekę psychologiczną "
+        "pacjentów po zakończonej hospitalizacji.",
+        "Opieką obejmowane są również dzieci i młodzież oraz ich rodzice.",
+    ],
+    pull_q=None, pull_p=[], parts_h=None, parts=[],
+    coda_lead=None, coda_p=None,
+)
+
+KONTEKST["wsparcie-wychowawcze"] = dict(
+    naglowek="Gdzie jeszcze rodzic może szukać pomocy",
+    tekst="Poza poradniami prywatnymi działa sieć publicznych <b>poradni "
+          "psychologiczno-pedagogicznych</b>. Ministerstwo Edukacji Narodowej "
+          "opisuje ich rolę jako pomoc rodzicom „w rozpoznawaniu potrzeb "
+          "rozwojowych i edukacyjnych” dziecka oraz „w rozwiązywaniu problemów "
+          "edukacyjnych i wychowawczych”. Pomoc publicznej poradni jest "
+          "<b>dobrowolna i nieodpłatna</b>, udzielana na wniosek rodzica.",
+    zrodlo="Ministerstwo Edukacji Narodowej, „Poradnictwo "
+           "psychologiczno-pedagogiczne”, gov.pl.",
+    url="https://www.gov.pl/web/edukacja/poradnictwo-psychologiczno-pedagogiczne",
+)
+KONTEKST["opieka-po-hospitalizacji"] = dict(
+    naglowek="Dlaczego liczy się to, co dzieje się po wypisie",
+    tekst="Polski model ochrony zdrowia psychicznego odchodzi od opieki "
+          "skupionej w dużych szpitalach na rzecz <b>opieki środowiskowej — "
+          "blisko miejsca zamieszkania</b>. W modelu dla dzieci i młodzieży "
+          "Ministerstwo Zdrowia umieszcza na pierwszym poziomie Ośrodki "
+          "Środowiskowej Opieki Psychologicznej i Psychoterapeutycznej, w "
+          "których pracują psychologowie, psychoterapeuci i terapeuci "
+          "środowiskowi. Chodzi o to, żeby diagnoza i dalsza opieka nie "
+          "wymagały za każdym razem kontaktu ze szpitalem.",
+    zrodlo="Ministerstwo Zdrowia, „Nowy model ochrony zdrowia psychicznego "
+           "dzieci i młodzieży”, gov.pl, 10.01.2020.",
+    url="https://www.gov.pl/web/zdrowie/nowy-model-ochrony-zdrowia-psychicznego-dzieci-i-mlodziezy",
+)
+
+DODATKOWE_ZAKLADKI += ["wsparcie-wychowawcze", "opieka-po-hospitalizacji"]
+ZAKLADKA_FORMY.update({
+ "p-fm-wychowawcze":       "wsparcie-wychowawcze",
+ "p-fm-po-hospitalizacji": "opieka-po-hospitalizacji",
+})
