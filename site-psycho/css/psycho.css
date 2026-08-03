@@ -1417,3 +1417,57 @@ body.ma-hero .shero .ubread li{color:rgba(255,255,255,.92);
 .usluga .lsec--beige + .lsec--beige{padding-top:0}
 /* Ostatnia sekcja przed kartami placówek — te mają własny oddech */
 .usluga .lsec:last-of-type{padding-bottom:clamp(36px,4vw,52px)}
+
+/* ── 1. SKLEJONA ETYKIETA DOSTĘPNOŚCI ─────────────────────────────────
+   „DostępnośćWizyty komercyjne (odpłatne)" — dwa spany bez odstępu.
+   To są dwie różne informacje: GDZIE i ZA ILE, więc rozdziela je kreska. */
+.splate__meta{
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;
+  margin:10px 0 0;
+}
+.splate__meta .splate__label{
+  font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--color-text-muted);
+}
+.splate__meta .splate__nfz{
+  position:relative;padding-left:17px;
+  font-size:.875rem;color:var(--color-text-2);
+}
+.splate__meta .splate__nfz::before{
+  content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);
+  width:1px;height:14px;background:var(--color-brand-taupe);
+}
+.splate__h{
+  margin:0;font-family:var(--font-display);font-weight:400;
+  font-size:clamp(1.5rem,1.2rem + 1.2vw,2.1rem);line-height:1.15;color:var(--color-brand);
+}
+
+/* ── 2. KARTY PLACÓWEK RÓWNEJ WYSOKOŚCI ───────────────────────────────
+   Były na flexie z align-items:flex-start, więc Szczecinek — jedyny
+   z dwoma numerami — był o 33 px wyższy i przyciski stały na trzech
+   różnych poziomach. Siatka wyrównuje wiersze, a przycisk schodzi na dół
+   każdej karty. */
+.splate__grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(18px,2.4vw,28px);align-items:stretch;
+}
+.splate__cards{display:contents}
+.pcard{
+  flex:none;max-width:none;height:100%;
+  display:flex;flex-direction:column;gap:9px;
+}
+.pcard__cta{margin-top:auto;padding-top:16px}
+@media (max-width:64em){.splate__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:40em){.splate__grid{grid-template-columns:minmax(0,1fr)}}
+
+/* ── 3. FORMY POMOCY — czytelniej ─────────────────────────────────────
+   Podpisy były szare i drobne, więc siatka czytała się jak zbiór obrazków
+   bez znaczenia. Nazwa usługi to najważniejsza treść tej sekcji, nie ikona:
+   ciemniejsza, większa, a każdą pozycję domyka włoskowata kreska. */
+.formy__i{
+  gap:16px;padding-bottom:18px;border-bottom:1px solid var(--color-line);
+}
+.formy__t{
+  font-size:1rem;line-height:1.35;font-weight:var(--fw-semibold);
+  color:var(--color-brand);
+}
