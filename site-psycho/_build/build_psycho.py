@@ -20,6 +20,8 @@ ICON_FOR_SERVICE = {
     "konsultacje-psychologiczne":                 "p-konsultacje",
     "konsultacja-psychoterapeutyczna":            "p-psychoterapeutyczna",
     "lekarz-psychiatra":                          "p-psychiatra",
+    # zakladka neuropsychologii uzywa ikony poradni, bo jest jej czescia
+    "neuropsychologia":                           "p-poradnia",
 }
 
 # sekcja „W jakich momentach psychoterapia może pomóc" — etykiety z projektu klienta,

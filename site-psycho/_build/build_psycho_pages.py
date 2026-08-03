@@ -503,13 +503,36 @@ def build_service(sk):
     # Siatka form pomocy zamiast akapitu wyliczającego (wzorzec Centrum Sobota).
     # Renderuje się WYŁĄCZNIE dla usług obecnych w FORMY, czyli tam, gdzie
     # materiały klienta faktycznie wymieniają poszczególne formy.
+    # Warstwa OGOLNOMEDYCZNA — wyraznie oddzielona od oferty. Wlasne tlo,
+    # naglowek i podpis zrodla, zeby nikt nie wzial jej za opis tego, co
+    # robi Reha Medica.
+    kontekst_sekcja = ""
+    if sk in KONTEKST:
+        kt = KONTEKST[sk]
+        kontekst_sekcja = (
+            '\n  <section class="lsec kontekst" aria-labelledby="kt-h">\n'
+            '    <div class="wrap kontekst__in">\n'
+            '      <p class="kontekst__kick">Kontekst medyczny — informacja ogólna</p>\n'
+            f'      <h2 class="kontekst__h" id="kt-h">{kt["naglowek"]}</h2>\n'
+            f'      <p class="kontekst__t">{kt["tekst"]}</p>\n'
+            f'      <p class="kontekst__z">Źródło: <a href="{kt["url"]}" rel="noopener nofollow" target="_blank">{kt["zrodlo"]}</a> '
+            'Dane ogólnomedyczne — nie są to wyniki Reha Medica.</p>\n'
+            '    </div>\n  </section>\n')
+
     formy_sekcja = ""
     if sk in FORMY:
-        kafle = "\n".join(
-            f'        <li class="formy__i">'
-            f'<span class="formy__ico" style="--ik:url({r}assets/ikony/{ik}.png)" aria-hidden="true"></span>'
-            f'<span class="formy__t">{txt}</span></li>'
-            for ik, txt, _ in FORMY[sk])
+        # pozycje, ktore maja wlasna zakladke, sa klikalne — reszta zostaje
+        # opisem, bo nie ma dokad prowadzic
+        def _kafel(ik, txt):
+            cel = ZAKLADKA_FORMY.get(ik)
+            tresc = (f'<span class="formy__ico" style="--ik:url({r}assets/ikony/{ik}.png)" aria-hidden="true"></span>'
+                     f'<span class="formy__t">{txt}</span>')
+            if cel:
+                return (f'        <li class="formy__i formy__i--link">'
+                        f'<a class="formy__a" href="{r}{cel}/">{tresc}'
+                        f'<span class="formy__arw" aria-hidden="true">&rarr;</span></a></li>')
+            return f'        <li class="formy__i">{tresc}</li>'
+        kafle = "\n".join(_kafel(ik, txt) for ik, txt, _ in FORMY[sk])
         formy_sekcja = f"""
   <section class="lsec lsec--beige formy" aria-labelledby="formy-h">
     <div class="wrap">
@@ -616,6 +639,7 @@ def build_service(sk):
 
     </div>
   </section>
+{kontekst_sekcja}
 {splate}
   <!-- Bez drugiego „Umów wizytę". Kazda karta w „Gdzie skorzystasz" ma juz
        wlasny przycisk, i to lepszy: prowadzi do KONKRETNEJ placowki, a nie
@@ -1049,6 +1073,10 @@ def build_404():
 build_home()
 for sk in SERVICE_ORDER:
     build_service(sk)
+# zakladki form pomocy — poza SERVICE_ORDER, zeby nie zmieniac menu
+# ani sekcji Piec form opieki na stronie glownej
+for sk in DODATKOWE_ZAKLADKI:
+    build_service(sk)
 for c in CITIES:
     build_city(c)
     for sk in SERVICE_ORDER:
@@ -1059,7 +1087,9 @@ build_kontakt()
 build_404()
 
 # sitemap + robots
-urls = [""] + [f"{s}/" for s in SERVICE_ORDER] + ["placowki/", "kontakt/"]
+urls = ([""] + [f"{s}/" for s in SERVICE_ORDER]
+        + [f"{s}/" for s in DODATKOWE_ZAKLADKI]   # zakladki form pomocy
+        + ["placowki/", "kontakt/"])
 for c in CITIES:
     urls.append(f"{c}/")
     for sk in SERVICE_ORDER:

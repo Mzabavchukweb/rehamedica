@@ -1508,3 +1508,49 @@ body.ma-hero .shero .ubread li{color:rgba(255,255,255,.92);
    został sam odsyłacz powrotny, więc idzie na środek zamiast wisieć
    przy prawej krawędzi po nieistniejącym już przycisku. */
 .uend__inner:not(:has(.btn)){justify-content:center}
+
+/* ── KONTEKST MEDYCZNY — warstwa OGÓLNA, nie oferta ───────────────────
+   Uzgodnienie z właścicielem: usługi wyłącznie ze źródeł klienta, a wiedza
+   ogólna o metodzie z zewnętrznych, sprawdzalnych publikacji — napisana
+   po swojemu i PODPISANA. Ta sekcja musi się wizualnie odcinać, żeby nikt
+   nie wziął jej za opis tego, co robi Reha Medica. Stąd własne tło, wąska
+   miara i nadtytuł mówiący wprost, czym to jest. */
+.kontekst{background:var(--color-bg-beige)}
+.kontekst__in{max-width:64ch}
+.kontekst__kick{
+  margin:0;font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--color-text-muted);
+}
+.kontekst__h{
+  margin:12px 0 0;font-family:var(--font-display);font-weight:400;
+  font-size:clamp(1.35rem,1.15rem + .8vw,1.75rem);line-height:1.2;color:var(--color-brand);
+  text-wrap:balance;
+}
+.kontekst__t{
+  margin:16px 0 0;font-size:1rem;line-height:1.7;color:var(--color-text-2);
+  text-wrap:pretty;
+}
+.kontekst__t b{color:var(--color-brand);font-weight:var(--fw-semibold)}
+.kontekst__z{
+  margin:20px 0 0;padding-top:14px;border-top:1px solid var(--color-line);
+  font-size:.8125rem;line-height:1.55;color:var(--color-text-muted);
+}
+.kontekst__z a{color:var(--color-text-2);border-bottom:1px solid var(--color-brand-taupe)}
+.kontekst__z a:hover{color:var(--color-brand);border-bottom-color:var(--color-brand)}
+
+/* Kafel form pomocy, który prowadzi do własnej zakładki */
+.formy__i--link{padding-bottom:0;border-bottom:0}
+.formy__a{
+  display:flex;flex-direction:column;align-items:flex-start;gap:16px;
+  padding-bottom:18px;border-bottom:1px solid var(--color-line);
+  position:relative;
+}
+.formy__arw{
+  position:absolute;right:0;bottom:16px;
+  color:var(--color-brand-taupe);font-size:1.05rem;
+  transition:transform .2s ease,color .2s ease;
+}
+.formy__a:hover .formy__t{text-decoration:underline;text-underline-offset:.16em}
+.formy__a:hover .formy__arw{color:var(--color-brand);transform:translateX(3px)}
+.formy__a:hover .formy__ico{--ico-blob:var(--color-line)}
+@media (prefers-reduced-motion:reduce){.formy__arw{transition:none}}

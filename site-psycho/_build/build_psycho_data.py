@@ -703,3 +703,81 @@ ILUSTRACJE = {
  "konsultacja-psychoterapeutyczna": ("p-il-dopasowanie",        "Dwie osoby składające puzzle — sprawdzenie, czy mogą pracować razem"),
  "lekarz-psychiatra":               ("p-il-motywacja",          "Osoba w ruchu, przed nią wytyczona droga"),
 }
+
+# ─────────────────────────────────────────────────────────────────────────
+# NEUROPSYCHOLOGIA — pierwsza z zakładek dla form pomocy (2026-08-03).
+#
+# Zbudowana wg zasady uzgodnionej z właścicielem:
+#   • co robi Reha Medica — WYŁĄCZNIE z materiałów klienta,
+#   • czym jest metoda — z zewnętrznych, sprawdzalnych źródeł, napisane
+#     własnymi słowami i podpisane, w osobnej sekcji.
+# Źródło zewnętrzne przy tej stronie: Mroczkowska D., Tyras S.,
+# „Zastosowanie EEG-Neurofeedback w rehabilitacji zaburzeń mowy u pacjentów
+# poudarowych", Psychiatria 2018, tom 15, nr 4, s. 199–205, Via Medica.
+# Cytowana stamtąd jedna liczba, z zaznaczeniem, że to dane ogólne.
+SERVICES["neuropsychologia"] = dict(
+    title="Diagnoza i terapia neuropsychologiczna",
+    short="Neuropsychologia",
+    lead="Ocena i usprawnianie funkcji poznawczych po udarze mózgu, urazie "
+         "mózgowym lub zabiegu neurochirurgicznym.",
+    img="poradnia-hero.webp", band=None,
+    cities=["szczecinek", "szczecin", "walcz", "bialogard", "bobolice"],
+    fin="DO POTWIERDZENIA",
+)
+
+SERVICE_CONTENT["neuropsychologia"] = dict(
+    kicker="Dla kogo",
+    lead="Diagnoza i terapia neuropsychologiczna są częścią poradni "
+         "psychologicznej Reha Medica.",
+    body=[
+        "W przypadkach zaburzeń zdiagnozowanych przez lekarza neurologa lub "
+        "lekarza psychiatrę pacjent kierowany jest do psychologa celem "
+        "przeprowadzenia całościowej diagnozy neuropsychologicznej.",
+        "Poradnia kontynuuje również opiekę psychologiczną pacjentów po "
+        "zakończonej hospitalizacji.",
+    ],
+    pull_q=None, pull_p=[],
+    parts_h="Co obejmuje",
+    parts=[
+        "<b>Diagnoza neuropsychologiczna</b> to pełna ocena sprawności "
+        "poznawczej — m.in. uwagi, funkcji mnestycznych, językowych, "
+        "wykonawczych i wzrokowo-przestrzennych — u pacjentów po przebytych "
+        "udarach mózgu, urazach mózgowych i zabiegach neurochirurgicznych. "
+        "Obejmuje również diagnozę różnicową otępienia.",
+        "<b>Terapia neuropsychologiczna</b> dedykowana jest pacjentom "
+        "z różnego rodzaju deficytami poznawczo-emocjonalnymi powstałymi "
+        "w następstwie przebytych udarów mózgu, urazów mózgowych, po zabiegach "
+        "neurochirurgicznych oraz w przebiegu chorób neurodegeneracyjnych.",
+    ],
+    coda_lead=None, coda_p=None,
+)
+
+# Warstwa ogólna — NIE jest to opis oferty Reha Medica, tylko kontekst
+# medyczny z podanego źródła. Renderowana w osobnej, podpisanej sekcji.
+KONTEKST = {
+ "neuropsychologia": dict(
+   naglowek="Dlaczego funkcje poznawcze bada się po udarze",
+   tekst="Zaburzenia pamięci, uwagi, mowy czy planowania należą do "
+         "najczęstszych następstw udaru mózgu. W polskim piśmiennictwie "
+         "medycznym szacuje się, że <b>nawet połowa osób po przebytym udarze</b> "
+         "może z tego powodu doświadczać niepełnosprawności. Badanie "
+         "neuropsychologiczne pokazuje, które z tych funkcji ucierpiały "
+         "i w jakim stopniu — a to jest punkt wyjścia do zaplanowania terapii.",
+   zrodlo="Mroczkowska D., Tyras S., „Zastosowanie EEG-Neurofeedback "
+          "w rehabilitacji zaburzeń mowy u pacjentów poudarowych”, "
+          "Psychiatria 2018, t. 15, nr 4, s. 199–205, Via Medica.",
+   url="https://journals.viamedica.pl/psychiatria/article/download/58936/46905",
+ ),
+}
+
+# Zakładki budowane POZA SERVICE_ORDER — nie trafiają do menu ani do sekcji
+# „Pięć form opieki", bo nie są jedną z pięciu podstawowych usług, tylko
+# rozwinięciem tego, co poradnia w sobie zawiera.
+DODATKOWE_ZAKLADKI = ["neuropsychologia"]
+
+# Które pozycje siatki „Formy pomocy" mają już własną zakładkę.
+# Reszta zostaje opisem — nie robimy odsyłaczy donikąd.
+ZAKLADKA_FORMY = {
+ "p-fm-diag-neuro":    "neuropsychologia",
+ "p-fm-terapia-neuro": "neuropsychologia",
+}
