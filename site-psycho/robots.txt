@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://psychoterapia.rehamedica.info.pl/sitemap.xml

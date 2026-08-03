@@ -1,0 +1,1227 @@
+/* ============================================================
+   Reha Medica Psychoterapia — warstwa własna serwisu.
+   Ładowana PO style.css i usluga.css, których nie modyfikuje.
+
+   Ikony pochodzą z projektu Claude Design „Ikony Psychoterapia v4"
+   (claude.ai/design/p/fe0f3c94-9ed4-404d-8fb8-23ffcad46caf).
+   W SVG kolory zamieniono na currentColor + --ico-blob, więc ikona
+   dziedziczy paletę serwisu zamiast wozić własną.
+   ============================================================ */
+
+.picon{
+  display:block;
+  width:100%;
+  height:auto;
+  color:var(--color-brand);          /* kreska ikony */
+  --ico-blob:var(--color-bg-beige-2); /* plama pod ikoną */
+}
+.picon--lg{max-width:168px}
+.picon--md{max-width:96px}
+.picon--sm{max-width:56px}
+.picon--xs{max-width:40px}
+
+/* --- sekcja „W jakich momentach psychoterapia może pomóc" --- */
+/* ════════════════════════════════════════════════════════════════════
+   SEKCJE „W jakich momentach psychoterapia może pomóc"
+
+   Świadomie INNY język układu niż serwis główny (decyzja właściciela
+   2026-07-31: „nie chcę duplikować wyglądu innej naszej strony").
+   Serwis główny: gęsty, fotograficzny, ramki narożnikowe, ciepły brąz.
+   Tutaj: rytm pion, dużo powietrza, ilustracja zamiast zdjęcia,
+   chłodniejszy papier i oliwkowy atrament.
+
+   Tokeny pochodzą z projektu klienta „Ikony Psychoterapia v4" — to jego
+   własna paleta dla TEGO serwisu, nie wymyślone kolory.
+   ════════════════════════════════════════════════════════════════════ */
+.cases{
+  /* KOLORYSTYKA = serwis główny (decyzja właściciela 2026-07-31: „kolorystyka ta sama").
+     Odrębność tego serwisu niosą kroje pisma i język układu, nie paleta. */
+  --psy-ink:var(--color-brand);
+  --psy-paper:var(--color-bg-ivory);
+  --psy-paper-2:var(--color-cream);
+  --psy-muted:var(--color-text-muted);
+  --psy-body:var(--color-text-2);
+  --psy-line:var(--color-line);
+  --ico-blob:var(--color-bg-beige-2);
+  /* beż, nie ivory: sekcja danych nad tym blokiem jest ivory i bez różnicy
+     tła obie zlewały się w jedną płachtę na 2500 px */
+  background:var(--color-bg-beige);
+}
+
+.cases__head{
+  max-width:var(--wrap);
+  margin:0 auto;
+  padding:88px 24px 0;
+  text-align:center;
+}
+.cases__head .kicker{color:var(--psy-muted)}
+.cases__h{
+  max-width:26ch;
+  margin:14px auto 0;
+  font-family:var(--font-display);
+  font-weight:400;
+  font-size:clamp(1.9rem,1.2rem + 2.4vw,2.75rem);
+  line-height:1.14;
+  color:var(--psy-ink);
+  text-wrap:balance;
+}
+.cases__intro{
+  max-width:60ch;
+  margin:18px auto 0;
+  text-align:center;
+  text-wrap:pretty;
+  color:var(--psy-body);
+}
+
+/* — pojedyncza sytuacja —
+   Zbita wersja: stały lewy szpalt (numer + ikona) i jedna kolumna tekstu.
+   Naprzemienne odwracanie zdjęto — przy niskich sekcjach robiło zygzak zamiast rytmu,
+   a stały szpalt czyta się szybciej przy przewijaniu. */
+/* DWIE KOLUMNY. Poprzedni układ (szpalt 132 px + tekst) rozciągał sekcję na
+   2969 px — 34% całej strony — a treść i tak siedziała na 40% szerokości.
+   Wzorzec z rynku: Talkiatry pokazuje 11 stanów w zwartej siatce, MindHealth
+   8 kategorii oferty w kaflach. Nikt nie daje jednej sytuacji na ekran. */
+.cases__list{
+  max-width:var(--wrap);
+  margin:clamp(38px,5vw,56px) auto 0;
+  padding:0 24px;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  column-gap:clamp(40px,5vw,76px);
+}
+.case{
+  display:flex;flex-direction:column;
+  padding:30px 0 34px;
+  border-top:1px solid var(--psy-line);
+}
+.case__top{display:flex;align-items:center;gap:16px;margin:0 0 14px}
+.case__num{
+  font-family:var(--font-display);
+  font-size:1.0625rem;
+  letter-spacing:.08em;
+  color:var(--psy-muted);
+}
+.case__ico{width:56px;height:auto;flex:0 0 auto;color:var(--psy-ink)}
+
+/* stopka sekcji — zdanie, które wcześniej stało sześć razy, po jednym
+   w każdym bloku, i odsyłało do nieistniejącego już „paska powyżej" */
+.cases__stopka{
+  max-width:var(--wrap);
+  margin:clamp(30px,4vw,44px) auto 0;
+  padding:0 24px;
+  font-size:.9375rem;line-height:1.6;color:var(--psy-muted);
+  text-wrap:pretty;
+}
+.cases__stopka a{color:var(--psy-ink);font-weight:var(--fw-semibold);
+  border-bottom:1px solid var(--color-brand-taupe)}
+.cases__stopka a:hover{border-bottom-color:var(--psy-ink)}
+@media (max-width:62em){
+  .cases__list{grid-template-columns:minmax(0,1fr)}
+}
+.case__h{
+  margin:0;
+  font-family:var(--font-display);
+  font-weight:400;
+  font-size:clamp(1.35rem,1.1rem + .85vw,1.7rem);
+  line-height:1.18;
+  color:var(--psy-ink);
+  text-wrap:balance;
+}
+.case__lead{
+  margin:12px 0 0;
+  font-size:1.0625rem;
+  line-height:1.55;
+  color:var(--psy-ink);
+  text-wrap:pretty;
+}
+.case__p{
+  margin:10px 0 0;
+  font-size:.9375rem;
+  line-height:1.65;
+  color:var(--psy-body);
+  text-wrap:pretty;
+}
+
+/* Fakty ze źródła w jednym wierszu, rozdzielone kropką — zamiast dwukolumnowej
+   tabelki z hairline'ami, która sama zajmowała 3 wiersze na sekcję. */
+.case__list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px 0;
+  margin:16px 0 0;
+  padding:0;
+  list-style:none;
+  font-size:.875rem;
+  color:var(--psy-muted);
+}
+.case__list li:not(:last-child)::after{
+  content:"·";
+  margin:0 10px;
+  color:var(--psy-line);
+}
+.case__cta{
+  display:inline-flex;
+  align-self:flex-start;
+  align-items:center;
+  gap:9px;
+  /* auto spycha odsyłacz na dół komórki — komórki siatki są równej wysokości,
+     więc odsyłacze stoją w jednym rzędzie zamiast skakać za długością tekstu.
+     Odstęp daje padding, bo margin jest tu zajęty przez wyrównanie. */
+  margin-top:auto;
+  padding-top:20px;
+  padding-bottom:2px;
+  border-bottom:1px solid var(--psy-ink);
+  font-weight:var(--fw-semibold);
+  font-size:.9375rem;
+  color:var(--psy-ink);
+  text-decoration:none;
+}
+.case__cta:focus-visible{outline-offset:5px}
+
+.cases__note{
+  max-width:66ch;
+  margin:0 auto;
+  padding:48px 24px 88px;
+  text-align:center;
+  text-wrap:pretty;
+  font-size:.9375rem;
+  color:var(--psy-body);
+}
+
+@media (max-width:48em){
+  .cases__head{padding-top:64px}
+  .cases__list{margin-top:40px}
+  .case{padding:32px 0}
+  .case__ico{width:48px}
+  .cases__note{padding-bottom:64px}
+}
+
+/* --- ikona usługi w indeksie „Formy opieki" --- */
+.svc__item{position:relative}
+.svc__iico{
+  flex:0 0 auto;
+  width:44px;
+  margin-right:14px;
+  --ico-blob:transparent;   /* w gęstym indeksie plama tylko zaśmieca */
+}
+.svc__item:hover .svc__iico,
+.svc__item:focus-visible .svc__iico{--ico-blob:var(--color-bg-beige-2)}
+
+/* --- ikona przy nagłówku dostępności na stronie usługi --- */
+.splate__ico{
+  flex:0 0 auto;
+  width:52px;
+  margin-right:12px;
+  --ico-blob:var(--color-bg-beige-2);
+}
+.splate__head{align-items:center}
+
+/* --- ikony w listach usług (huby miast, strona usługi) --- */
+.needs__item--ico{display:flex;align-items:center;gap:16px}
+.needs__item--ico .needs__txt{flex:1 1 auto;min-width:0}
+.needs__ico{
+  flex:0 0 auto;
+  width:48px;
+  --ico-blob:transparent;
+}
+.needs__item--ico:hover .needs__ico,
+.needs__item--ico:focus-visible .needs__ico{--ico-blob:var(--color-bg-beige-2)}
+
+@media (max-width:37.5em){
+  .needs__ico{width:38px}
+}
+
+/* Ikona jest dekoracją obok tekstu — przy „ukryj obrazy" znika razem ze zdjęciami. */
+:root[data-a11y-hideimg] .picon{display:none}
+
+/* ════════════════════════════════════════════════════════════════════
+   HERO STRONY GŁÓWNEJ — teza + router sytuacji + zdjęcie reagujące
+
+   Ustalenia: 3 (zdanie, potem wybór), 5 (zdania jako interfejs),
+   7 (jeden moment ruchu), oraz korekta 2026-08-02: każde hero ze zdjęciem,
+   zdjęcie ma reagować na listę — przestaje być dekoracją.
+   Header i stopka: identyczne z serwisem rehabilitacji (korekta 2026-08-02).
+   ════════════════════════════════════════════════════════════════════ */
+
+/* pasek miasta — treść strony, nie chrom; header zostaje nietknięty */
+.citybar{border-bottom:1px solid var(--color-line);background:var(--color-bg-ivory)}
+.citybar__in{
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;
+  max-width:var(--wrap);margin:0 auto;padding:14px 24px;
+}
+.citybar__q{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--color-text-muted)}
+.citybar__opts{display:flex;flex-wrap:wrap;gap:4px 18px}
+.citybar__opt{
+  border:0;background:none;padding:3px 0;cursor:pointer;
+  font-family:var(--font-body);font-size:.9375rem;color:var(--color-text-2);
+  border-bottom:1px solid transparent;
+}
+.citybar__opt:hover{border-bottom-color:var(--color-brand-taupe)}
+.citybar__opt[aria-pressed="true"]{color:var(--color-brand);font-weight:600;border-bottom-color:var(--color-brand)}
+.citybar__tel{margin-left:auto;display:flex;align-items:baseline;gap:10px;white-space:nowrap}
+.citybar__tel small{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--color-text-muted)}
+.citybar__tel a{font-weight:600;font-size:1.0625rem;color:var(--color-brand);
+  border-bottom:1px solid var(--color-brand-taupe);padding-bottom:2px}
+.citybar__tel a:hover{border-bottom-color:var(--color-brand)}
+@media (max-width:52em){.citybar__tel{margin-left:0;width:100%}}
+
+.hero2{padding:clamp(48px,7vw,84px) 0 clamp(56px,8vw,96px)}
+.hero2__grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) clamp(280px,30vw,420px);
+  grid-template-areas:"teza fig" "cta fig" "list fig";
+  gap:clamp(28px,4vw,44px) clamp(32px,5vw,72px);
+  align-items:start;
+  max-width:var(--wrap);margin:0 auto;padding:0 24px;
+}
+.hero2__teza{grid-area:teza}
+.hero2__cta{grid-area:cta}
+.hero2__fig{grid-area:fig}
+.hero2__list{grid-area:list;align-self:start}
+.hero2__teza{margin:0;font-family:var(--font-display);font-weight:400;color:var(--color-brand)}
+.hero2__a{display:block;max-width:19ch;font-size:clamp(2rem,1.1rem + 3.2vw,3.25rem);line-height:1.1;text-wrap:balance}
+.hero2__b{
+  display:block;margin-top:1.1rem;max-width:34ch;
+  font-family:var(--font-body);font-size:clamp(1rem,.9rem + .4vw,1.125rem);
+  line-height:1.55;color:var(--color-text-2);
+}
+/* jedyny ruch na stronie: wejście tezy */
+body:not(.rm-in) .hero2__a,body:not(.rm-in) .hero2__b{opacity:0;transform:translateY(10px)}
+.rm-in .hero2__a,.rm-in .hero2__b{opacity:1;transform:none;
+  transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.3,1)}
+.rm-in .hero2__b{transition-delay:.18s}
+@media (prefers-reduced-motion:reduce){.hero2__a,.hero2__b{transition:none!important}}
+
+.hero2__list{margin:clamp(32px,4.5vw,52px) 0 0;border-top:1px solid var(--color-line)}
+.hero2__row{
+  display:grid;grid-template-columns:52px minmax(0,1fr) 22px;
+  align-items:center;gap:22px;
+  padding:20px 0;border-bottom:1px solid var(--color-line);
+  color:inherit;text-decoration:none;
+}
+.hero2__ico{width:52px;height:auto;color:var(--color-brand);--ico-blob:transparent}
+.hero2__zd{
+  font-family:var(--font-display);font-weight:400;
+  font-size:clamp(1.1rem,.95rem + .7vw,1.4rem);line-height:1.3;
+  color:var(--color-brand);text-wrap:pretty;
+}
+.hero2__do{
+  display:block;margin-top:5px;
+  font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;color:var(--color-text-muted);
+}
+.hero2__arw{color:var(--color-brand-taupe);justify-self:end}
+.hero2__row:hover .hero2__ico,.hero2__row:focus-visible .hero2__ico{--ico-blob:var(--color-bg-beige-2)}
+.hero2__row:hover .hero2__arw,.hero2__row:focus-visible .hero2__arw{color:var(--color-brand)}
+
+/* zdjęcie reagujące — nie dekoracja, tylko odpowiedź na wskazane zdanie */
+.hero2__fig{margin:0;position:relative}
+.hero2__fig::before{content:'';display:block;padding-top:125%}  /* 4:5 */
+.hero2__img{border-radius:var(--radius-img)}
+.hero2__img{
+  position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transition:opacity .45s ease;background:var(--color-bg-beige-2);
+}
+.hero2__img.is-on{opacity:1}
+@media (prefers-reduced-motion:reduce){.hero2__img{transition:none}}
+.hero2__cap{
+  position:absolute;top:100%;left:0;right:0;margin:12px 0 0;font-size:.8125rem;line-height:1.45;color:var(--color-text-muted);
+  min-height:2.6em;
+}
+@media (max-width:60em){
+  /* jedna kolumna, kolejność z DOM: teza → zdjęcie → lista */
+  .hero2__grid{grid-template-columns:1fr;grid-template-areas:"teza" "cta" "fig" "list"}
+}
+
+/* dostępność usługi w wybranym mieście */
+.hero2__row[data-avail="no"]{opacity:.42}
+.hero2__row[data-avail="no"] .hero2__do::after{content:" · nie w tym mieście"}
+.hero2__row[data-avail="ask"] .hero2__do::after{content:" · zapytaj recepcję"}
+
+/* Nagłówek serwisu jest `fixed` — treść musi go ominąć, a pasek miasta
+   przykleić się dokładnie pod nim. Wysokości mierzy home.js (nagłówek
+   kurczy się przy przewijaniu), z bezpiecznymi wartościami zapasowymi. */
+body.is-home main{padding-top:var(--rm-h0,138px)}
+.citybar{position:sticky;top:var(--rm-h,138px);z-index:90}
+@media (max-width:56em){body.is-home main{padding-top:var(--rm-h0,120px)}}
+/* kotwica #placowki celuje w pasek miasta — musi zatrzymać się pod nagłówkiem */
+.citybar{scroll-margin-top:var(--rm-h,138px)}
+
+/* ════════════════════════════════════════════════════════════════════
+   NAGŁÓWEK MA TŁO OD RAZU
+
+   W serwisie rehabilitacji nagłówek startuje przezroczysty, bo leży na
+   ciemnym zdjęciu hero. Tutaj hero jest jasne, więc biały tekst na kości
+   słoniowej dawał kontrast 1,05:1 — nagłówek był niewidoczny do pierwszego
+   przewinięcia. Wymuszamy stan docelowy od pierwszej klatki.
+   ════════════════════════════════════════════════════════════════════ */
+.site-header,
+.site-header:not(.is-scrolled){
+  background:var(--color-brand-dark);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+/* scrim po zdjęciu hero nie ma już czego przyciemniać */
+.site-header:not(.is-scrolled)::before,
+.site-header:not(.is-scrolled)::after{background:none}
+.site-header:not(.is-scrolled) .topstrip{background:var(--color-brand)}
+.site-header:not(.is-scrolled) .topstrip::after{opacity:0}
+
+/* ── domknięcie pętli: od zdania do telefonu ──────────────────────────
+   Wiersz nie jest już jednym <a>, bo niesie DWIE akcje: zdanie prowadzi do
+   opisu, telefon dzwoni. Zagnieżdżone odnośniki są niedozwolone, więc
+   zdanie rozciąga swój obszar klikalny na cały wiersz pseudoelementem,
+   a telefon leży nad nim w osi Z. */
+.hero2__list{list-style:none;padding:0}
+.hero2__row{position:relative}
+.hero2__body{min-width:0}
+.hero2__zd{display:block;color:var(--color-brand);text-decoration:none}
+.hero2__zd::after{content:"";position:absolute;inset:0}      /* cały wiersz klikalny */
+.hero2__row:hover .hero2__zd,
+.hero2__row:focus-within .hero2__zd{text-decoration:underline;text-underline-offset:.16em}
+
+/* linia akcji — pojawia się dopiero, gdy wiersz jest wskazany */
+.hero2__act{
+  display:block;max-height:0;overflow:hidden;opacity:0;
+  font-size:.875rem;color:var(--color-text-2);
+  transition:max-height .28s ease,opacity .28s ease,margin-top .28s ease;
+}
+.hero2__row:hover .hero2__act,
+.hero2__row:focus-within .hero2__act{max-height:3.4em;opacity:1;margin-top:8px}
+@media (prefers-reduced-motion:reduce){.hero2__act{transition:none}}
+.hero2__act a{
+  position:relative;z-index:1;                                /* nad obszarem zdania */
+  font-weight:600;color:var(--color-brand);
+  border-bottom:1px solid var(--color-brand-taupe);padding-bottom:1px;
+}
+.hero2__act a:hover{border-bottom-color:var(--color-brand)}
+.hero2__act b{font-weight:400;color:var(--color-text-muted)}
+
+/* siódma pozycja — bez ikony, wizualnie cichsza od sześciu sytuacji */
+.hero2__row--else{border-top:1px solid var(--color-line)}
+.hero2__row--else .hero2__zd{font-size:clamp(1rem,.9rem + .45vw,1.15rem);color:var(--color-text-2)}
+.hero2__row--else:hover .hero2__zd,
+.hero2__row--else:focus-within .hero2__zd{color:var(--color-brand)}
+
+/* wiersz niedostępny w mieście nie jest wygaszany do nieczytelności —
+   ma powiedzieć, GDZIE ta pomoc jest */
+.hero2__row[data-avail="no"]{opacity:1}
+.hero2__row[data-avail="no"] .hero2__zd,
+.hero2__row[data-avail="no"] .hero2__ico{opacity:.5}
+.hero2__row[data-avail="no"] .hero2__do::after,
+.hero2__row[data-avail="ask"] .hero2__do::after{content:""}   /* komunikat przejmuje linia akcji */
+
+/* ── nagłówek: ZERO nadpisań wymiarów ──────────────────────────────────
+   Stały tu moje korekty (pasek 112 px, logo 82 px, mobile 106 px). Skutek:
+   przejście po przewinięciu biegło 112→74 px zamiast 96→74, a logo 82→60
+   zamiast 102→60 — czyli inny ruch niż w rehabilitacji.
+
+   style.css jest kopią arkusza rehabilitacji i sam ustawia 96→74 oraz
+   102→60. Zostawiamy to jemu; tutaj nie ma już nic o wysokościach. */
+
+/* ════════════════════════════════════════════════════════════════════
+   MOBILE — przemyślane osobno, nie zwężone (wymóg CLAUDE.md)
+
+   Audyt 390 px wykrył trzy wady, wszystkie moje:
+   1. linia akcji miała max-height:0 poza :hover — na dotyku NIE ISTNIAŁA,
+      czyli numer telefonu był nieosiągalny na telefonie;
+   2. topstrip rozpychał stronę do 422 px (mój tekst dłuższy niż w rehabilitacji);
+   3. chrom zjadał 309 z 844 px ekranu, bo miasta zawijały się na dwa wiersze.
+   ════════════════════════════════════════════════════════════════════ */
+@media (max-width:56em){
+
+  /* 1. na dotyku nie ma hovera — akcja jest widoczna od razu, zawsze */
+  .hero2__act{max-height:none;opacity:1;margin-top:8px;transition:none}
+
+  /* 2. własny, krótszy tekst paska górnego; oryginał chowamy */
+  .topstrip__item:first-of-type,
+  .topstrip__sep{display:none}
+  .topstrip__item{font-size:.75rem}
+
+  /* 3. pasek miasta zwarty: etykieta w jednym rzędzie z miastami,
+     miasta w jednym przewijanym pasie zamiast dwóch zawiniętych wierszy */
+  .citybar{position:static}          /* na małym ekranie przyklejanie zjada zbyt dużo */
+  .citybar__in{gap:8px 12px;padding:10px 16px}
+  .citybar__q{font-size:.6875rem;letter-spacing:.1em}
+  .citybar__opts{
+    flex-wrap:nowrap;overflow-x:auto;gap:16px;
+    scrollbar-width:none;-webkit-overflow-scrolling:touch;
+    padding-bottom:2px;
+  }
+  .citybar__opts::-webkit-scrollbar{display:none}
+  .citybar__opt{font-size:.875rem;white-space:nowrap;min-height:32px}
+  .citybar__tel{margin-left:0;width:100%;gap:8px}
+  .citybar__tel small{font-size:.6875rem}
+
+  /* zdjęcie hero: statyczne. Reagowanie na wskazanie to funkcja myszy —
+     na dotyku pokazujemy jeden kadr i nie ładujemy pozostałych pięciu. */
+  .hero2__fig{margin-bottom:38px}
+  .hero2__fig::before{padding-top:60%}          /* 5:3 — niższy kadr oszczędza ekran */
+  .hero2__img:not(.is-on){display:none}
+  .hero2__cap{min-height:0;margin-top:8px}
+
+  /* ikona w indeksie usług rozpychała odziedziczoną siatkę .svc__item
+     o 58 px (44 ikona + 14 margines) i wypychała stronę poza ekran.
+     Na małym ekranie indeks jest i tak gęsty — ikona niewiele wnosi. */
+  .svc__iico{display:none}
+
+  .hero2{padding:28px 0 56px}
+  .hero2__grid{gap:0}
+  .hero2__list{margin-top:28px}
+  .hero2__row{grid-template-columns:38px minmax(0,1fr) 16px;gap:14px;padding:18px 0}
+  .hero2__ico{width:38px}
+}
+
+/* ── niedostępne = niedostępne (decyzja właściciela 2026-08-02) ────────
+   Wiersz traci href w JS; tu odbieramy mu też sygnały wizualne odnośnika. */
+.hero2__row[data-avail="no"] .hero2__zd{
+  cursor:default;text-decoration:none!important;
+}
+.hero2__row[data-avail="no"] .hero2__zd::after{content:none}   /* koniec klikalnego obszaru */
+.hero2__row[data-avail="no"] .hero2__arw{opacity:0}
+.hero2__row[data-avail="no"] .hero2__act b{color:var(--color-text-muted)}
+.hero2__row[data-avail="no"]:hover .hero2__zd{text-decoration:none}
+
+/* Odziedziczone z serwisu głównego: przy 360 px odnośnik powrotu
+   („← Wróć do placówki Białogard") nie zawijał się i wypychał stronę o 16 px. */
+@media (max-width:26em){
+  .uend__inner{flex-wrap:wrap}
+  .uend__back{white-space:normal;text-wrap:pretty}
+}
+
+/* ── 320 px: WCAG 2.2 SC 1.4.10 (reflow) ─────────────────────────────
+   Przy najwęższym wymaganym ekranie trzy rzeczy wychodziły poza kadr.
+   Dwie z nich to moje ikony w odziedziczonych siatkach, trzecia to karta
+   placówki, której minimalna szerokość była większa niż ekran. */
+@media (max-width:22.5em){
+  /* przewijany pas miast musi mieć własne kadrowanie, inaczej ostatni
+     przycisk mierzy się poza kontenerem */
+  .citybar__opts{max-width:100%}
+  .citybar__in{padding-left:14px;padding-right:14px}
+
+  /* indeks usług: ikona już ukryta, ale strzałka nadal się nie mieści */
+  .svc__iarrow{display:none}
+  .svc__item{padding-right:8px}
+
+  /* karta placówki miała min-width szerszy niż ekran */
+  .pcard{min-width:0}
+  .splate__cards{grid-template-columns:1fr}
+}
+
+/* Górny pasek w kolorze nagłówka — w rehabilitacji jest jaśniejszy od paska
+   głównego, przez co nagłówek czyta się jako dwa oddzielne bloki.
+   Tutaj ma być jedną bryłą. */
+.site-header .topstrip,
+.site-header:not(.is-scrolled) .topstrip{background:var(--color-brand-dark)}
+/* Skoro oba pasy mają ten sam kolor, potrzebują linii, która je rozdziela.
+   Serwis ma już do tego ::after — przywracamy ją i rozjaśniamy do bieli. */
+.site-header .topstrip::after,
+.site-header:not(.is-scrolled) .topstrip::after{
+  opacity:1;background:rgba(255,255,255,.32);
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   STRONY PROSTE — FAQ, aktualności, wpis. Bez zdjęciowego pasa u góry:
+   to strony do czytania, nie do robienia wrażenia.
+   ════════════════════════════════════════════════════════════════════ */
+.plain{padding:clamp(36px,5vw,64px) 0 clamp(64px,8vw,96px)}
+.plain__head{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.plain__h{
+  margin:14px 0 0;max-width:24ch;
+  font-family:var(--font-display);font-weight:400;
+  font-size:clamp(1.9rem,1.2rem + 2.4vw,2.9rem);line-height:1.12;
+  color:var(--color-brand);text-wrap:balance;
+}
+.plain__lead{margin:16px 0 0;max-width:62ch;font-size:1.0625rem;line-height:1.6;color:var(--color-text-2);text-wrap:pretty}
+.plain__body{max-width:var(--wrap);margin:clamp(32px,4vw,48px) auto 0;padding:0 24px}
+.plain__body p{max-width:64ch;line-height:1.7;color:var(--color-text-2)}
+.plain__note{max-width:var(--wrap);margin:clamp(40px,5vw,64px) auto 0;padding:0 24px;
+  font-size:.9375rem;color:var(--color-text-muted)}
+.plain__note a{color:var(--color-brand);border-bottom:1px solid var(--color-brand-taupe)}
+
+/* FAQ — rozwijane, pierwsze otwarte. <details> działa bez JS. */
+.qa__list{max-width:var(--wrap);margin:clamp(32px,4vw,52px) auto 0;padding:0 24px}
+.qa{border-top:1px solid var(--color-line)}
+.qa:last-of-type{border-bottom:1px solid var(--color-line)}
+.qa__q{
+  list-style:none;cursor:pointer;padding:22px 40px 22px 0;position:relative;
+  font-family:var(--font-display);font-weight:400;
+  font-size:clamp(1.1rem,.95rem + .6vw,1.35rem);line-height:1.3;color:var(--color-brand);
+}
+.qa__q::-webkit-details-marker{display:none}
+.qa__q::after{
+  content:"";position:absolute;right:6px;top:50%;width:11px;height:11px;
+  border-right:1.5px solid var(--color-brand-taupe);border-bottom:1.5px solid var(--color-brand-taupe);
+  transform:translateY(-70%) rotate(45deg);transition:transform .25s ease;
+}
+.qa[open] .qa__q::after{transform:translateY(-30%) rotate(-135deg)}
+.qa__q:hover{color:var(--color-brand-hover)}
+.qa__a{padding:0 0 26px}
+.qa__a p{margin:0 0 12px;max-width:64ch;line-height:1.7;color:var(--color-text-2)}
+.qa__more{
+  display:inline-flex;gap:8px;margin-top:6px;padding-bottom:2px;
+  font-weight:600;font-size:.9375rem;color:var(--color-brand);
+  border-bottom:1px solid var(--color-brand-taupe);
+}
+.qa__more:hover{border-bottom-color:var(--color-brand)}
+
+/* Aktualności */
+.post__list{max-width:var(--wrap);margin:clamp(32px,4vw,52px) auto 0;padding:0 24px}
+.post{padding:26px 0;border-top:1px solid var(--color-line)}
+.post:last-child{border-bottom:1px solid var(--color-line)}
+.post__meta{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px;margin:0 0 10px;
+  font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--color-text-muted)}
+.post__cat{color:var(--color-brand)}
+.post__t{margin:0;font-family:var(--font-display);font-weight:400;
+  font-size:clamp(1.15rem,1rem + .7vw,1.5rem);line-height:1.25;text-wrap:pretty}
+.post__t a{color:var(--color-brand)}
+.post__t a:hover{text-decoration:underline;text-underline-offset:.16em}
+.post__lead{margin:10px 0 0;max-width:64ch;line-height:1.6;color:var(--color-text-2);text-wrap:pretty}
+
+/* ── odnośnik „Przejdź do treści" nie może wystawać ───────────────────
+   Serwis chowa go przez `top:-48px`, ale element ma 49–50 px wysokości
+   (zależnie od kroju), więc 1–2 px zostawało widoczne u góry strony jako
+   jasna kreska szerokości 188 px — jego tło jest jaśniejsze od górnego paska.
+   Ta sama wada jest w serwisie rehabilitacji (1 px), tam mniej widoczna,
+   bo nagłówek startuje przezroczysty na zdjęciu.
+
+   Zamiast innej magicznej liczby: przesuwamy o WŁASNĄ wysokość elementu,
+   więc poprawka jest odporna na zmianę kroju, stopnia i paddingu. */
+.skip-link{
+  top:0;
+  transform:translateY(-110%);
+  transition:transform .2s;
+}
+.skip-link:focus{
+  top:0;
+  transform:translateY(12px);
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   SEKCJE STRONY GŁÓWNEJ — wspólna gramatyka
+
+   Kolejność ułożona pod drogę pacjenta, nie pod odziedziczony układ:
+     sytuacje → pierwsza wizyta → zakres → koszt → pytania → gdzie → co słychać
+   Rytm tła: ivory / beż na przemian, żeby sekcje się od siebie odklejały
+   bez ramek i kart (CLAUDE.md odrzuca powtarzalne siatki zaokrąglonych kart).
+   ════════════════════════════════════════════════════════════════════ */
+.sec{padding:clamp(56px,7vw,92px) 0}
+.sec--beige{background:var(--color-bg-beige)}
+.sec__head{max-width:60ch;margin:0 0 clamp(32px,4vw,48px)}
+.sec__h{
+  margin:12px 0 0;
+  font-family:var(--font-display);font-weight:400;
+  font-size:clamp(1.65rem,1.15rem + 1.9vw,2.4rem);line-height:1.14;
+  color:var(--color-brand);text-wrap:balance;
+}
+.sec__lead{margin:14px 0 0;font-size:1.0625rem;line-height:1.6;color:var(--color-text-2);text-wrap:pretty}
+.sec__more{
+  display:inline-flex;align-items:center;gap:9px;margin-top:clamp(28px,3vw,38px);
+  padding-bottom:2px;border-bottom:1px solid var(--color-brand);
+  font-weight:600;font-size:.9375rem;color:var(--color-brand);
+}
+
+/* ── Pasek „bezpłatnie" tuż pod hero ──
+   Wzorzec z Almy: najmocniejszy potwierdzony fakt cenowy nie czeka
+   do połowy strony. Wąski pas, nie karta — ma informować, nie krzyczeć. */
+.darmo{background:var(--color-brand);color:var(--color-bg-ivory)}
+.darmo__in{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;padding:14px 24px}
+.darmo__tag{
+  padding:4px 11px;border-radius:100px;
+  background:var(--color-bg-ivory);color:var(--color-brand);
+  font-size:.6875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+}
+.darmo__t{margin:0;font-size:.9375rem;line-height:1.5;color:rgba(252,250,241,.92)}
+.darmo__t a{border-bottom:1px solid rgba(252,250,241,.45)}
+.darmo__t a:hover{border-bottom-color:var(--color-bg-ivory)}
+
+/* ── Jak wygląda pierwsza wizyta ──
+   Sekwencja z ciągłą linią, nie trzy osobne karty: to jest droga, nie zestaw.
+   Kadra na wierzchu — badania rynku PL mówią, że zaufanie buduje informacja
+   o tym, KTO przyjmie, a nie sam opis usługi. */
+.wiz__grid{display:grid;grid-template-columns:minmax(0,27rem) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:start}
+.wiz__intro .sec__h{margin-top:12px}
+.wiz__kto{
+  margin-top:clamp(28px,3vw,36px);padding:20px 22px;
+  background:var(--color-bg-ivory);
+}
+.wiz__kto-l{margin:0;font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:var(--color-text-muted)}
+.wiz__kto-t{margin:8px 0 0;font-size:.9375rem;line-height:1.6;color:var(--color-text-2)}
+.wiz__kto-t b{color:var(--color-brand);font-weight:600}
+/* Jedyne zdjęcie poniżej hero. Wchodzi w miejsce, które i tak było puste,
+   więc nie wydłuża sekcji — a daje stronie oddech po czterech blokach
+   samego tekstu. Kadr autentyczny, nie stockowy. */
+.wiz__foto{margin:clamp(26px,3vw,36px) 0 0}
+.wiz__foto img{display:block;width:100%;height:auto}
+.wiz__foto figcaption{
+  margin-top:10px;font-size:.8125rem;color:var(--color-text-muted);
+}
+@media (max-width:60em){.wiz__foto{display:none}}
+
+.wiz__kroki{
+  margin:0;padding:0 0 0 34px;list-style:none;counter-reset:w;
+  position:relative;
+}
+.wiz__kroki::before{                       /* ciągła linia przez wszystkie kroki */
+  content:"";position:absolute;left:13px;top:10px;bottom:10px;width:1px;
+  background:var(--color-brand-taupe);
+}
+.wiz__k{position:relative;padding:0 0 clamp(26px,3vw,34px)}
+.wiz__k:last-child{padding-bottom:0}
+.wiz__k::before{
+  counter-increment:w;content:counter(w);
+  position:absolute;left:-34px;top:0;
+  display:grid;place-items:center;width:27px;height:27px;border-radius:100px;
+  background:var(--color-brand);color:var(--color-bg-ivory);
+  font-family:var(--font-display);font-size:.875rem;
+}
+.wiz__kh{margin:2px 0 0;font-family:var(--font-display);font-weight:400;
+  font-size:clamp(1.1rem,1rem + .5vw,1.3rem);line-height:1.25;color:var(--color-brand)}
+.wiz__kp{margin:8px 0 0;line-height:1.65;color:var(--color-text-2);text-wrap:pretty;max-width:52ch}
+
+.wiz__ulga{
+  grid-column:1/-1;margin:clamp(28px,3vw,40px) 0 0;padding:20px 24px;
+  background:var(--color-bg-ivory);
+  font-size:1.0625rem;line-height:1.6;color:var(--color-text-2);text-wrap:pretty;
+}
+.wiz__ulga b{color:var(--color-brand)}
+.wiz__uwaga{grid-column:1/-1;margin:16px 0 0;font-size:.875rem;color:var(--color-text-muted);max-width:70ch}
+@media (max-width:60em){
+  .wiz__grid{grid-template-columns:1fr;gap:32px}
+  .wiz__ulga,.wiz__uwaga{grid-column:auto}
+}
+
+/* ── 2. Zakres pomocy — pięć usług ── */
+.zakres__list{margin:0;padding:0;list-style:none;border-top:1px solid var(--color-line)}
+/* Ikony z projektu klienta w pełnej skali. Przy 56 px były znaczkiem obok
+   tekstu; przy 92 px niosą rytm sekcji — a to jedyny element graficzny, jaki
+   ta strona ma poza zdjęciami. Wiersze dostają przy tym więcej powietrza,
+   bo „Pięć form opieki" to sekcja, która sprzedaje, a wyglądała najlżej. */
+.zakres__a{
+  display:grid;grid-template-columns:92px minmax(0,1fr) 22px;align-items:center;gap:30px;
+  padding:28px 0;border-bottom:1px solid var(--color-line);
+}
+.zakres__ico{width:92px;color:var(--color-brand);--ico-blob:var(--color-bg-beige-2)}
+.zakres__t{display:block;font-family:var(--font-display);font-weight:400;
+  font-size:clamp(1.1rem,.98rem + .5vw,1.3rem);line-height:1.25;color:var(--color-brand)}
+.zakres__d{display:block;margin-top:5px;font-size:.9375rem;line-height:1.5;color:var(--color-text-2)}
+.zakres__arw{color:var(--color-brand-taupe);justify-self:end}
+.zakres__a:hover .zakres__t{text-decoration:underline;text-underline-offset:.16em}
+.zakres__a:hover .zakres__ico{--ico-blob:var(--color-line)}
+.zakres__a:hover .zakres__arw{color:var(--color-brand)}
+.zakres__i[data-avail="no"]{opacity:.42}
+.zakres__i[data-avail="no"] .zakres__d::after{content:" · niedostępne w tym mieście"}
+
+/* ── 3. Ile to kosztuje ── */
+.koszt__grid{display:grid;grid-template-columns:minmax(0,26rem) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:start}
+.koszt__grid .sec__head{margin-bottom:0}
+.koszt__list{margin:0}
+.koszt__i{padding:18px 0;border-top:1px solid var(--color-line)}
+.koszt__i:last-child{border-bottom:1px solid var(--color-line)}
+.koszt__i dt{font-family:var(--font-display);font-size:1.125rem;color:var(--color-brand)}
+.koszt__i dd{margin:6px 0 0;line-height:1.6;color:var(--color-text-2)}
+.koszt__i dd b{color:var(--color-brand);font-weight:600}
+.koszt__i--free dt::after{content:"bezpłatnie";margin-left:10px;padding:2px 9px;
+  border-radius:100px;background:var(--color-brand);color:var(--color-bg-ivory);
+  font-family:var(--font-body);font-size:.6875rem;letter-spacing:.08em;text-transform:uppercase;vertical-align:middle}
+@media (max-width:60em){.koszt__grid{grid-template-columns:1fr}}
+
+/* ── 4. Najczęstsze pytania (zajawka) ── */
+/* Ten sam dwukolumnowy rytm co „Ile to kosztuje" i „Jak wygląda pierwsza
+   wizyta": tytuł po lewej, treść po prawej. Wcześniej akordeon stał sam na
+   ~700 px z 1132 i prawe 40% szerokości zostawało puste. */
+.pyt__grid{display:grid;grid-template-columns:minmax(0,26rem) minmax(0,1fr);
+  gap:clamp(32px,5vw,72px);align-items:start}
+.pyt__grid .sec__head{margin-bottom:0}
+.pyt__lead{margin:16px 0 0;font-size:.9375rem;line-height:1.6;color:var(--color-text-2);text-wrap:pretty}
+.pyt__intro .sec__more{margin-top:22px}
+@media (max-width:60em){.pyt__grid{grid-template-columns:minmax(0,1fr)}}
+.pyt__list{max-width:none}
+.pyt__list .qa__a p{margin:0}
+
+/* ── 6. Aktualności (zajawka) ── */
+.akt__list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:0 clamp(24px,3vw,40px);margin:0;padding:0;list-style:none}
+.akt__a{display:block;padding:20px 0;border-top:1px solid var(--color-line)}
+.akt__meta{display:block;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--color-text-muted)}
+.akt__t{display:block;margin-top:9px;font-family:var(--font-display);
+  font-size:clamp(1.05rem,.95rem + .4vw,1.2rem);line-height:1.3;color:var(--color-brand);text-wrap:pretty}
+.akt__a:hover .akt__t{text-decoration:underline;text-underline-offset:.16em}
+
+@media (max-width:56em){
+  .sec{padding:44px 0}
+  .zakres__a{grid-template-columns:60px minmax(0,1fr) 16px;gap:18px;padding:22px 0}
+  .zakres__ico{width:60px}
+}
+
+/* Blok ankiety satysfakcji stąd usunięty — sekcja odpowiada na pytanie
+   „co się wydarzy na pierwszej wizycie", a ankieta jest sprawą po wizycie
+   i odciągała uwagę od jedynej rzeczy do zrobienia. Odsyłacz zostaje
+   w stopce. */
+/* rozciągnięcie sekcji — więcej powietrza między krokami i wokół całości */
+.wiz{padding-top:clamp(64px,8vw,110px);padding-bottom:clamp(64px,8vw,110px)}
+.wiz__kroki{padding-left:38px}
+.wiz__kroki::before{left:15px}
+.wiz__k{padding-bottom:clamp(34px,4vw,46px)}
+.wiz__k::before{left:-38px;width:31px;height:31px;font-size:.9375rem}
+.wiz__kh{font-size:clamp(1.15rem,1rem + .6vw,1.4rem)}
+.wiz__kp{margin-top:10px;font-size:1.0625rem;line-height:1.7}
+.wiz__ulga{padding:24px 26px;font-size:1.125rem}
+
+/* ════════════════════════════════════════════════════════════════════
+   HERO LŻEJSZE — wzorzec z centrumsobota.pl / UWAŻNIE
+
+   Tam działa cisza, nie gęstość: jedno duże zdanie, krótki lead, dwa CTA,
+   dużo powietrza, zero animacji. Moje hero miało w każdym z siedmiu wierszy
+   ikonę, wersalikową etykietę usługi, strzałkę i linię akcji — cztery
+   sygnały naraz, w tym etykietę powtórzoną trzy razy („Poradnia
+   psychologiczna" przy trzech różnych sytuacjach).
+
+   Zostawiam w wierszu SAMO ZDANIE. Nazwa usługi wraca w linii akcji,
+   czyli dopiero wtedy, gdy pacjent tym wierszem faktycznie się zainteresuje.
+   ════════════════════════════════════════════════════════════════════ */
+.hero2{padding-top:clamp(56px,7vw,88px)}
+.hero2__a{font-size:clamp(2.1rem,1.15rem + 3.5vw,3.6rem);line-height:1.06;max-width:17ch}
+.hero2__b{margin-top:1.3rem;font-size:clamp(1.0625rem,.95rem + .5vw,1.25rem);max-width:36ch}
+
+/* dwa CTA — pierwszy pełny, drugi cichy. Jak w UWAŻNIE. */
+.hero2__cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:clamp(26px,3vw,36px)}
+.hero2__cta1{
+  padding:13px 26px;background:var(--color-brand);color:var(--color-bg-ivory);
+  font-weight:600;font-size:.9375rem;
+}
+.hero2__cta1:hover{background:var(--color-brand-hover)}
+.hero2__cta2{
+  display:inline-flex;align-items:center;gap:8px;padding-bottom:2px;
+  border-bottom:1px solid var(--color-brand-taupe);
+  font-size:.9375rem;color:var(--color-text-2);
+}
+.hero2__cta2:hover{color:var(--color-brand);border-bottom-color:var(--color-brand)}
+
+/* wiersze: więcej powietrza, większe zdanie, mniej sygnałów */
+.hero2__list{margin-top:clamp(40px,5vw,64px)}
+.hero2__row{padding:26px 0;grid-template-columns:52px minmax(0,1fr) 20px}
+.hero2__zd{font-size:clamp(1.15rem,1rem + .75vw,1.5rem);line-height:1.32}
+/* strzałka pojawia się dopiero przy wskazaniu — w spoczynku lista jest cicha */
+.hero2__arw{opacity:0;transition:opacity .25s ease}
+.hero2__row:hover .hero2__arw,.hero2__row:focus-within .hero2__arw{opacity:1;color:var(--color-brand)}
+.hero2__act{font-size:.8125rem;letter-spacing:.02em}
+.hero2__act b{color:var(--color-text-muted);font-weight:400}
+@media (prefers-reduced-motion:reduce){.hero2__arw{transition:none}}
+@media (max-width:56em){
+  .hero2__arw{opacity:.5}          /* na dotyku nie ma wskazania — strzałka musi być widoczna */
+  .hero2__row{padding:20px 0}
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   HERO — KOMPOZYCJA ZAMIAST ROZCIĄGANIA
+
+   Pomiar pokazał, dlaczego nie zachęcało: na laptopie 1440×760 widoczne
+   było ZERO z siedmiu wierszy. Chrom 240 px, potem 88 px pustki, teza,
+   80 px pustki, CTA, 109 px pustki — i dopiero lista. Pacjent widział
+   nagłówek, dwa przyciski i zdjęcie. Nic, co można zrobić.
+
+   Luki były wszędzie jednakowo duże, więc nic się nie grupowało.
+   Teraz: teza + lead + CTA to JEDNA zwarta grupa, dopiero po niej duża
+   przerwa i lista. Tak działa powietrze w centrumsobota.pl — ciasne
+   grupy, szerokie przerwy między nimi.
+   ════════════════════════════════════════════════════════════════════ */
+.hero2{padding-top:clamp(28px,3vw,44px);padding-bottom:clamp(48px,6vw,76px)}
+.hero2__grid{gap:0 clamp(32px,5vw,72px)}
+
+/* grupa 1: teza → lead → CTA, ciasno */
+.hero2__a{font-size:clamp(2rem,1.1rem + 3vw,3.1rem);line-height:1.08;max-width:16ch}
+.hero2__b{margin-top:.95rem;font-size:clamp(1rem,.92rem + .4vw,1.15rem);max-width:34ch;line-height:1.5}
+.hero2__cta{margin-top:26px;align-self:start}
+
+/* przerwa dopiero tutaj — oddziela grupę od listy */
+.hero2__list{margin-top:clamp(34px,4vw,52px);align-self:start}
+.hero2__row{padding:20px 0}
+.hero2__zd{font-size:clamp(1.1rem,.98rem + .62vw,1.38rem);line-height:1.3}
+
+/* zdjęcie wypełnia całą wysokość kolumny zamiast wisieć jako kadr 4:5 —
+   dzięki temu obie kolumny kończą się razem i hero czyta się jak kompozycja */
+.hero2__fig{align-self:stretch;height:100%;min-height:420px}
+.hero2__fig::before{display:none}
+.hero2__cap{position:static;margin-top:10px}
+@media (max-width:60em){
+  .hero2__fig{height:auto;min-height:0}
+  .hero2__fig::before{display:block;padding-top:60%}
+}
+
+/* Ostatnie zaciśnięcie pierwszego ekranu — cel: pacjent widzi minimum
+   trzy zdania, w które może kliknąć, zanim cokolwiek przewinie. */
+.hero2{padding-top:clamp(22px,2.4vw,34px)}
+.hero2__cta{margin-top:22px}
+.hero2__list{margin-top:clamp(26px,3vw,38px)}
+.hero2__row{padding:17px 0}
+
+/* ── KOREKTA: zdjęcie nie może być rozciągane na wysokość kolumny ──
+   Rozciągnięcie do proporcji 0,44 przy źródle 0,8 kazało `object-fit:cover`
+   wyciąć 40% szerokości z obu stron. We wszystkich sześciu kadrach ludzie
+   stoją przy krawędziach, a w środku jest okno — więc kadrowanie usuwało
+   OBIE osoby i zostawiało same żaluzje. Pierwszy ekran nie miał emocji,
+   bo nie miał na zdjęciu człowieka.
+
+   Kolumna dostaje proporcję źródła 4:5, czyli zero przycięcia w poziomie. */
+.hero2__fig{align-self:start;height:auto;min-height:0}
+.hero2__fig::before{display:block;padding-top:125%}   /* 4:5 — dokładnie jak plik */
+
+/* ════════════════════════════════════════════════════════════════════
+   HERO — LISTA JEST AKCJĄ
+
+   Zmiana założenia, nie odstępów. „Zadzwoń do recepcji" jako główne CTA
+   było błędem: dla kogoś z lękiem społecznym albo w kryzysie telefon to
+   najdroższa możliwa czynność. Najtańszy pierwszy krok, jaki mamy, to
+   wskazanie własnej sytuacji — czyli lista. Leżała pod zgięciem, przykryta
+   przyciskiem, który odstraszał.
+
+   Teza dostaje pełną szerokość i schodzi do dwóch wierszy. Lista wchodzi
+   od razu pod nią. Zdjęcie zwęża się i równa z PIERWSZYM WIERSZEM listy,
+   nie z tezą — przestaje konkurować, zaczyna towarzyszyć.
+   „Umów wizytę" zostaje w nagłówku, więc hero nie potrzebuje przycisku.
+   ════════════════════════════════════════════════════════════════════ */
+.hero2__grid{
+  grid-template-columns:minmax(0,1fr) clamp(260px,24vw,340px);
+  grid-template-areas:"teza teza" "list fig";
+  gap:0 clamp(32px,4vw,60px);
+}
+.hero2__a{max-width:20ch;font-size:clamp(1.9rem,1.2rem + 2.4vw,2.7rem);line-height:1.1}
+.hero2__b{max-width:52ch;margin-top:.85rem}
+.hero2__b b{color:var(--color-brand);font-weight:600}
+.hero2__list{margin-top:clamp(26px,3vw,36px)}
+.hero2__fig{margin-top:clamp(26px,3vw,36px)}   /* równo z pierwszym wierszem listy */
+.hero2__pod{
+  grid-area:auto;grid-column:1/2;
+  margin:22px 0 0;font-size:.9375rem;color:var(--color-text-muted);
+}
+.hero2__pod a{color:var(--color-text-2);border-bottom:1px solid var(--color-brand-taupe)}
+.hero2__pod a:hover{color:var(--color-brand);border-bottom-color:var(--color-brand)}
+@media (max-width:60em){
+  .hero2__grid{grid-template-columns:1fr;grid-template-areas:"teza" "fig" "list"}
+  .hero2__fig{margin-top:22px}
+  .hero2__pod{grid-column:auto}
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   HERO PEŁNOEKRANOWE — wzorzec Grow Therapy
+
+   Zdjęcie na całą szerokość i wysokość, nagłówek na nim, w środku widget
+   z dwoma polami wyboru. U nich „stan" + „ubezpieczenie", tutaj MIASTO
+   i SYTUACJA — to one decydują, dokąd pacjent ma zadzwonić.
+
+   Poprzednie hero przegrywało, bo jedyna rzecz do zrobienia (lista siedmiu
+   zdań) leżała pod zgięciem. Widget mieści się w dwóch wierszach, więc
+   akcja jest widoczna od pierwszej chwili na każdym ekranie.
+   ════════════════════════════════════════════════════════════════════ */
+.hero3{
+  position:relative;isolation:isolate;
+  min-height:clamp(620px,86vh,900px);
+  display:flex;align-items:center;
+  padding:clamp(40px,6vw,72px) 0;
+  background:var(--color-brand-dark);
+}
+.hero3__media{position:absolute;inset:0;z-index:-1;overflow:hidden}
+.hero3__img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transition:opacity .6s ease;
+}
+.hero3__img.is-on{opacity:1}
+@media (prefers-reduced-motion:reduce){.hero3__img{transition:none}}
+/* czytelność tekstu na zdjęciu — gradient od lewej, nie płaskie przyciemnienie:
+   twarze po prawej zostają widoczne */
+.hero3__scrim{
+  position:absolute;inset:0;
+  background:linear-gradient(100deg,
+    rgba(38,31,24,.92) 0%, rgba(38,31,24,.82) 34%,
+    rgba(38,31,24,.55) 58%, rgba(38,31,24,.28) 100%);
+}
+.hero3__in{
+  position:relative;width:100%;max-width:var(--wrap);margin:0 auto;padding:0 24px;
+}
+/* Powód, dla którego hero się nie składało: H1 łamał się na 19ch (~500 px),
+   a panel miał 660 px. Dwie różne prawe krawędzie w odległości 160 px od
+   siebie — oko czyta to jako dwa niezwiązane obiekty rzucone na zdjęcie.
+   Teraz wszystko siedzi w jednej kolumnie: jedna lewa i jedna prawa
+   krawędź, wspólna dla tytułu, leadu i panelu. */
+/* Układ jak w rehabilitacji: tekst po lewej, karta po prawej.
+   Tam po lewej stoją DWA przyciski („Umów wizytę", „Znajdź usługę"), a karta
+   po prawej ma trzeci — konkurują o to samo kliknięcie. Tutaj po lewej nie ma
+   przycisku w ogóle: jest telefon, czyli inna droga dla kogoś, kto nie chce
+   wypełniać pól. Jedna akcja samoobsługowa, jedna rozmowa, zero rywalizacji. */
+/* Układ jak w rehabilitacji: tekst po lewej, karta po prawej.
+   Tam po lewej stoją DWA przyciski i konkurują z kartą; tutaj po lewej nie ma
+   przycisku w ogóle — jest telefon, czyli inna droga dla kogoś, kto nie chce
+   wypełniać pól. Jedna akcja samoobsługowa, jedna rozmowa. */
+.hero3__grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,27rem);
+  gap:clamp(32px,4vw,64px);
+  align-items:center;
+}
+.hero3__col{max-width:none}
+
+.hero3__tel{
+  margin:clamp(26px,3.5vw,40px) 0 0;
+  display:flex;flex-direction:column;align-items:flex-start;gap:2px;
+}
+.hero3__tel-l{font-size:.9375rem;color:rgba(255,255,255,.86)}
+.hero3__tel-n{
+  font-family:var(--font-display);font-weight:400;
+  font-size:clamp(1.9rem,1.3rem + 1.9vw,2.6rem);line-height:1.1;
+  color:#fff;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:2px;
+}
+.hero3__tel-n:hover{border-bottom-color:#fff}
+.hero3__tel-g{margin-top:6px;font-size:.8125rem;color:rgba(255,255,255,.93)}
+
+@media (max-width:64em){
+  .hero3__grid{grid-template-columns:minmax(0,1fr);gap:clamp(26px,4vw,36px)}
+  .hero3__tel{order:3;margin-top:22px}
+  .szuk{order:2}
+  .hero3__tel-n{font-size:clamp(1.6rem,1.2rem + 1.6vw,2rem)}
+}
+.hero3__h{margin:0;color:#fff}
+.hero3__a{
+  display:block;font-family:var(--font-display);font-weight:400;
+  font-size:clamp(2rem,1.2rem + 2.8vw,3.2rem);line-height:1.08;text-wrap:balance;
+}
+/* Pełna biel, nie .82 — przy 1,2 rem to jeszcze „mały tekst" w rozumieniu
+   WCAG, więc próg wynosi 4,5:1, a nie 3:1. Krycie .82 dawało 3,84:1.
+   Hierarchię względem H1 niosą krój i stopień, nie wyblakły kolor. */
+.hero3__b{
+  display:block;margin-top:1rem;max-width:none;
+  font-size:clamp(1rem,.92rem + .45vw,1.2rem);line-height:1.5;color:#fff;
+}
+
+/* widget — biały panel na zdjęciu */
+.szuk{
+  margin-top:clamp(26px,3.5vw,40px);padding:30px 28px 32px;
+  max-width:none;background:#fff;
+  box-shadow:0 24px 60px -30px rgba(20,14,8,.7);
+}
+/* Szeryfowa linijka nad polami wiąże kartę z tytułem hero: karta jest
+   dalszym ciągiem zdania z H1, a nie formularzem doklejonym do zdjęcia. */
+.szuk__h{
+  margin:0 0 22px;padding-bottom:18px;border-bottom:1px solid var(--color-line);
+  font-family:var(--font-display);font-weight:400;
+  font-size:clamp(1.25rem,1.1rem + .5vw,1.55rem);line-height:1.2;color:var(--color-brand);
+}
+.szuk__row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.szuk__f{margin:0;display:flex;flex-direction:column;gap:9px;min-width:0}
+.szuk__l{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--color-text-muted)}
+.szuk__s{
+  width:100%;padding:14px 34px 14px 13px;
+  border:1px solid var(--color-line);border-radius:0;background:#fff;
+  font-family:var(--font-body);font-size:.9375rem;color:var(--color-text);
+  appearance:none;cursor:pointer;
+  background-image:linear-gradient(45deg,transparent 50%,var(--color-brand) 50%),
+                   linear-gradient(135deg,var(--color-brand) 50%,transparent 50%);
+  background-position:calc(100% - 17px) 55%,calc(100% - 12px) 55%;
+  background-size:5px 5px,5px 5px;background-repeat:no-repeat;
+  text-overflow:ellipsis;
+}
+.szuk__s:hover{border-color:var(--color-brand-taupe)}
+.szuk__out{
+  margin-top:22px;padding-top:20px;border-top:1px solid var(--color-line);
+  font-size:.9375rem;line-height:1.6;color:var(--color-text-2);min-height:3.2em;
+}
+.szuk__out b{color:var(--color-brand);font-weight:600}
+.szuk__out a.szuk__tel{
+  font-weight:600;font-size:1.0625rem;color:var(--color-brand);
+  border-bottom:1px solid var(--color-brand-taupe);padding-bottom:1px;
+}
+.szuk__out a.szuk__tel:hover{border-bottom-color:var(--color-brand)}
+.szuk__go{
+  display:inline-flex;align-items:center;gap:8px;margin-top:10px;
+  padding:10px 20px;background:var(--color-brand);color:var(--color-bg-ivory);
+  font-weight:600;font-size:.875rem;
+}
+.szuk__go:hover{background:var(--color-brand-hover)}
+.szuk__brak{color:var(--color-text-muted)}
+
+/* Podpowiedź „nie wiesz, co wybrać" siedzi WEWNĄTRZ białego panelu.
+   Leżała wcześniej na zdjęciu, bielą o kryciu .72, i schodziła do 2,18:1 —
+   na jasnych kadrach była praktycznie nieczytelna. Żadne przyciemnienie tła
+   tego nie ratowało, bo linia biegnie nisko, gdzie nakładka już wygasa.
+   Miejsce w panelu jest zresztą właściwsze: to wyjście awaryjne wybieraka
+   dla kogoś, kto nie potrafi wypełnić dwóch pól nad nim. */
+.szuk__pod{
+  margin:14px 0 0;padding-top:13px;border-top:1px solid var(--color-line);
+  font-size:.875rem;line-height:1.5;color:var(--color-text-muted);
+}
+.szuk__pod a{color:var(--color-brand);font-weight:600;border-bottom:1px solid var(--color-brand-taupe)}
+.szuk__pod a:hover{border-bottom-color:var(--color-brand)}
+
+@media (max-width:52em){
+  .hero3{min-height:0;padding:36px 0 44px}
+  .hero3__scrim{background:linear-gradient(180deg,rgba(38,31,24,.86) 0%,rgba(38,31,24,.78) 60%,rgba(38,31,24,.88) 100%)}
+  /* Widget na telefonie: mniejszy i ciaśniejszy, żeby oba pola zmieściły się
+     obok siebie razem z odpowiedzią, bez spychania jej pod zgięcie. */
+  .szuk{padding:15px 15px 17px}
+  .szuk__row{grid-template-columns:1fr;gap:12px}
+  .szuk__h{margin-bottom:13px;padding-bottom:11px}
+  .szuk__l{font-size:.6875rem;letter-spacing:.06em;line-height:1.3}
+  .szuk__s{padding:10px 26px 10px 10px;font-size:.875rem}
+  .szuk__s{background-position:calc(100% - 15px) 55%,calc(100% - 10px) 55%}
+  .szuk__out{margin-top:13px;padding-top:12px;font-size:.875rem}
+  .szuk__go{margin-top:9px;padding:9px 16px}
+  .hero3__in{padding:0 18px}
+}
+/* Obok siebie wszędzie POZA najwęższymi ekranami. Poniżej ~376 px na pole
+   zostaje ok. 110 px i z nazwy sytuacji widać tylko wielokropek — tam jeden
+   pod drugim jest jedyną czytelną opcją. */
+@media (max-width:52em) and (min-width:23.5em){
+  /* align-items:end — „Gdzie szukasz pomocy?" łamie się na dwa wiersze,
+     a „Z czym przychodzisz?" mieści się w jednym. Bez tego pola wyboru
+     stały na dwóch różnych wysokościach. */
+  .szuk__row{grid-template-columns:1fr 1fr;gap:12px;align-items:end}
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   NAGŁÓWEK WRACA DO WERSJI Z REHABILITACJI
+
+   Nagłówek serwisu głównego jest przezroczysty, bo leży na ciemnym zdjęciu
+   hero. Musiałem dać mu tło, gdy hero było jasne — i wtedy wyszła ciasnota
+   z logiem. Odkąd hero jest pełnoekranowym zdjęciem, pierwotny projekt znów
+   działa, więc wszystkie moje obejścia znikają.
+
+   Solidne tło zostaje tylko tam, gdzie nie ma ciemnego hero: podstrony.
+   ════════════════════════════════════════════════════════════════════ */
+/* Reha Beauty NIE jest w nagłówku — nagłówek ma jeden przycisk siostrzany
+   („Rehabilitacja"), dokładnie jak rehabilitacja ma jeden („Reha Beauty").
+   Reha Beauty żyje w stopce, wśród odsyłaczy serwisowych. */
+
+/* Nagłówek dostaje DOKŁADNIE gradient z rehabilitacji (.55→.22→0). Wcześniej
+   podbiłem go do .68, żeby wyciągnąć kontrast nawigacji — i wtedy zaczął
+   czytać się jak ciemna belka położona na zdjęciu.
+
+   Przyciemnienie przenosi się do samego hero (górna smuga w .hero3__scrim).
+   Piksele wychodzą podobne, ale należą do zdjęcia, nie do nagłówka: czytają
+   się jak winieta kadru, a nagłówek zostaje przezroczysty jak w rehabilitacji.
+   Serwis główny daje białemu tekstowi 1,02:1 na jasnym zdjęciu — tego akurat
+   nie kopiujemy, bo to błąd WCAG. Pomiar niżej w komentarzu przy scrim. */
+body.is-home .site-header:not(.is-scrolled){
+  background:linear-gradient(180deg,
+    rgba(30,22,14,.55) 0%, rgba(30,22,14,.22) 55%, rgba(30,22,14,0) 100%);
+  border-bottom:0;
+}
+body.is-home .site-header:not(.is-scrolled) .topstrip{background:none}
+body.is-home .site-header:not(.is-scrolled) .topstrip::after{opacity:0}
+/* Żadnych nadpisań wysokości — wymiary i przejście po przewinięciu
+   bierzemy w całości ze style.css, czyli z rehabilitacji. */
+/* hero wchodzi POD nagłówek, tak jak w rehabilitacji */
+body.is-home main{padding-top:0}
+/* Odstęp liczony od DOLNEJ krawędzi loga, nie paska: topstrip 38 + pasek 96,
+   logo 102 wyśrodkowane w pasku → sięga 137 px. Wcześniejsze 150 px zostawiało
+   13 px i pierwszy wiersz H1 wchodził w logo. */
+.hero3{padding-top:clamp(190px,21vh,242px)}
+
+/* ── nakładka: dwie warstwy o różnych zadaniach ────────────────────────
+   1. GÓRNA SMUGA — jedyne zadanie: utrzymać nawigację powyżej 4,5:1 na
+      wszystkich sześciu kadrach, także na białych żaluzjach. Gaśnie do zera
+      zanim zacznie się nagłówek H1, więc nie widać jej jako paska.
+      Sięga ~30% wysokości hero; nagłówek zajmuje ~20%.
+   2. WARSTWA UKOŚNA — czytelność tekstu: ciemniej po lewej, gdzie leży
+      treść, prawie przezroczyście po prawej, gdzie są twarze. */
+.hero3__scrim{
+  background:
+    linear-gradient(180deg,
+      rgba(28,21,13,.68) 0%, rgba(28,21,13,.46) 13%,
+      rgba(28,21,13,.16) 24%, rgba(28,21,13,0) 32%),
+    linear-gradient(102deg,
+      /* lewa strona odrobinę mocniej — lead pod H1 schodził tu do 4,27:1
+         przy wymaganych 4,5:1. Dwa prawe przystanki BEZ ZMIAN, żeby twarze
+         po prawej zostały odsłonięte. */
+      rgba(34,27,20,.79) 0%, rgba(34,27,20,.67) 34%,
+      rgba(34,27,20,.26) 64%, rgba(34,27,20,.06) 100%);
+}
+@media (max-width:52em){
+  /* mobile: topstrip 38 + pasek 88, logo 90 → dół loga na 127 px */
+  .hero3{padding-top:clamp(162px,22vh,200px)}
+  .hero3__scrim{background:linear-gradient(180deg,rgba(30,22,14,.80) 0%,rgba(30,22,14,.66) 55%,rgba(30,22,14,.80) 100%)}
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   SKALA ZJAWISKA — jedyny animowany moment poza hero
+
+   Wzorzec: pasek wyników z growtherapy.com. Tam liczbie towarzyszy słupek,
+   który dorasta przy wejściu w kadr. Zachowujemy ten ruch, ale bez wyglądu
+   pulpitu: liczba jest szeryfowa i duża, słupek to WŁOSOWA kreska pod nią,
+   nie wypełniony prostokąt. Kolor z palety marki, zero gradientów.
+
+   Długość kreski = wartość procentowa, więc ruch niesie treść: dłuższa
+   kreska to większa liczba. To nie jest ozdoba.
+   ════════════════════════════════════════════════════════════════════ */
+.skala{background:var(--color-bg-ivory)}
+.skala__head{max-width:62ch}
+.skala__intro{
+  margin:14px 0 0;font-size:clamp(1rem,.94rem + .35vw,1.15rem);
+  line-height:1.6;color:var(--color-text-2);max-width:56ch;
+}
+.skala__lista{
+  list-style:none;margin:clamp(38px,5vw,60px) 0 0;padding:0;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(24px,3vw,40px);
+}
+.skala__i{
+  min-width:0;border-top:1px solid var(--color-line);padding-top:20px;
+  /* komórki siatki są równej wysokości; .skala__t rozpycha się i spycha
+     kreskę z przypisem na sam dół, więc kreski stoją w jednym rzędzie
+     niezależnie od tego, ile wierszy zajmie opis */
+  display:flex;flex-direction:column;
+}
+.skala__t{flex:1 0 auto}
+/* Stopień siedzi na RODZICU, nie na <b>. Wcześniej wielkość miała tylko cyfra,
+   a znak „%" dostawał .62em liczone od rodzica, czyli od zwykłego tekstu —
+   wychodziło ~10 px i nie było wiadomo, co te liczby znaczą.
+   Teraz oba dziedziczą tę samą podstawę: cyfra 1em, procent 0,42em. */
+.skala__v{
+  margin:0;display:flex;align-items:baseline;gap:3px;
+  font-family:var(--font-display);font-weight:400;color:var(--color-brand);
+  font-size:clamp(3rem,1.8rem + 3.6vw,4.6rem);line-height:1;
+}
+.skala__v b{font-weight:400;font-size:1em}
+.skala__jed{font-size:.42em;line-height:1;color:var(--color-brand-taupe)}
+.skala__t{
+  margin:14px 0 0;font-size:.9375rem;line-height:1.5;color:var(--color-text-2);
+  text-wrap:pretty;
+}
+/* włosowa kreska — długość niesie wartość */
+.skala__bar{display:block;margin-top:16px;height:2px;background:var(--color-line)}
+.skala__bar i{
+  display:block;height:100%;width:calc(var(--v) * 1%);
+  background:var(--color-brand);
+  transform:scaleX(0);transform-origin:left center;
+  /* opóźnienie = tyle, ile trwa pojawienie się kafla z [data-animate];
+     kreska rusza dopiero, gdy liczba jest już czytelna */
+  transition:transform 1.1s cubic-bezier(.22,.7,.24,1) .25s;
+}
+/* klasę dokłada istniejący obserwator z main.js ([data-animate] → .is-visible),
+   więc ta sekcja nie dorzuca ani linijki JavaScriptu */
+.skala__i.is-visible .skala__bar i{transform:scaleX(1)}
+.skala__pod{margin:10px 0 0;font-size:.8125rem;color:var(--color-text-muted)}
+.skala__zrodlo{
+  margin:clamp(28px,3.5vw,40px) 0 0;padding-top:16px;
+  border-top:1px solid var(--color-line);
+  font-size:.8125rem;line-height:1.55;color:var(--color-text-muted);max-width:80ch;
+}
+.skala__zrodlo a{color:var(--color-text-2);border-bottom:1px solid var(--color-brand-taupe)}
+.skala__zrodlo a:hover{color:var(--color-brand);border-bottom-color:var(--color-brand)}
+
+@media (max-width:60em){
+  .skala__lista{grid-template-columns:1fr 1fr;gap:clamp(22px,4vw,32px)}
+}
+@media (max-width:30em){
+  .skala__lista{grid-template-columns:1fr;gap:0}
+  .skala__i{padding:18px 0 20px}
+  .skala__v b{font-size:2.8rem}
+}
+/* wyłączony ruch — kreska po prostu jest, od razu w pełnej długości */
+@media (prefers-reduced-motion:reduce){
+  .skala__bar i{transition:none;transform:scaleX(1)}
+}
+
+/* Zakres opinii — zdanie, bez którego sekcja kłamałaby przez przemilczenie:
+   żadna z 14 opinii nie dotyczy opieki psychologicznej. */
+.rv-summary__zakres{
+  margin:14px 0 0;font-size:.8125rem;line-height:1.55;color:var(--color-text-muted);
+  max-width:34ch;
+}
+.rv-summary__zakres b{color:var(--color-text-2);font-weight:600}

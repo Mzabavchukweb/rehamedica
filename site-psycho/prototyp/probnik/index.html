@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRÓBNIK KROJÓW — Reha Medica Psychoterapia</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="../../css/style.css?v=2">
+<style>
+/* PRÓBNIK — do wyrzucenia. Cztery pary krojów na tym samym, prawdziwym tekście. */
+@font-face{font-family:'Literata';src:url('f/Literata.woff2') format('woff2');font-weight:400 600;font-display:block}
+@font-face{font-family:'Faustina';src:url('f/Faustina.woff2') format('woff2');font-weight:400 600;font-display:block}
+@font-face{font-family:'Source Serif 4';src:url('f/Source-Serif-4.woff2') format('woff2');font-weight:400 600;font-display:block}
+@font-face{font-family:'Work Sans';src:url('f/Work-Sans.woff2') format('woff2');font-weight:400 700;font-display:block}
+@font-face{font-family:'Public Sans';src:url('f/Public-Sans.woff2') format('woff2');font-weight:400 700;font-display:block}
+
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--color-bg-ivory);color:var(--color-text)}
+.wrap{max-width:1000px;margin:0 auto;padding:56px 32px 96px}
+.lead{font-family:var(--font-body);font-size:.9375rem;line-height:1.6;color:var(--color-text-2);max-width:62ch;margin:0 0 8px}
+.lead b{color:var(--color-brand)}
+
+.par{border-top:1px solid var(--color-line);padding:44px 0 8px}
+.par__tag{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:14px;margin:0 0 28px;
+  font-family:var(--font-body);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--color-text-muted);
+}
+.par__tag b{font-size:.875rem;letter-spacing:.04em;text-transform:none;color:var(--color-brand)}
+.par__x{margin-left:auto;font-variant-numeric:tabular-nums}
+
+/* hero */
+.h{margin:0 0 4px;font-weight:400;font-size:2.9rem;line-height:1.1;color:var(--color-brand);text-wrap:balance}
+.hsub{margin:0 0 32px;font-size:1.0625rem;line-height:1.5;color:var(--color-text-2);max-width:36ch}
+/* wiersze listy — dokładnie jak w V1 */
+.row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center;
+     padding:17px 0;border-bottom:1px solid var(--color-line)}
+.row:first-of-type{border-top:1px solid var(--color-line)}
+.zd{font-weight:400;font-size:1.45rem;line-height:1.28;color:var(--color-brand);text-wrap:pretty}
+.do{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--color-text-muted);white-space:nowrap}
+/* proza — test małych stopni, tu czytelność boli najbardziej */
+.proza{margin:26px 0 0;font-size:1rem;line-height:1.7;color:var(--color-text-2);max-width:64ch}
+
+/* pary */
+.A .h,.A .zd{font-family:'Literata',Georgia,serif}
+.A .hsub,.A .do,.A .proza{font-family:'Work Sans',system-ui,sans-serif}
+.B .h,.B .zd{font-family:'Faustina',Georgia,serif}
+.B .hsub,.B .do,.B .proza{font-family:'Karla',system-ui,sans-serif}
+.C .h,.C .zd{font-family:'Source Serif 4',Georgia,serif}
+.C .hsub,.C .do,.C .proza{font-family:'Public Sans',system-ui,sans-serif}
+.D .h,.D .zd{font-family:'EB Garamond',Georgia,serif}
+.D .hsub,.D .do,.D .proza{font-family:'Karla',system-ui,sans-serif}
+.D{opacity:.72}
+.D .par__tag b::after{content:" — dziś";color:var(--color-text-muted);font-weight:400}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="lead"><b>PRÓBNIK KROJÓW.</b> Ten sam prawdziwy tekst w czterech parach. Patrz na drobny druk na dole
+  każdej sekcji — tam czytelność rozstrzyga się najszybciej. <b>D</b> to stan dzisiejszy.</p>
+  <p class="lead">x/cap = wysokość małych liter względem wersalika. Im wyżej, tym większy tekst przy tym samym stopniu.</p>
+
+  <section class="par A">
+    <p class="par__tag"><b>A · Literata + Work Sans</b> <span>szeryf do czytania ekranowego · sans humanistyczny</span> <span class="par__x">x/cap 0,723 · 0,758</span></p>
+    <h2 class="h">Nie musisz wiedzieć, od czego zacząć.</h2>
+    <p class="hsub">Powiedz, co się dzieje. Resztę ustalimy razem.</p>
+    <div class="row"><span class="zd">Masz za sobą trudną sytuację — w domu, w pracy, albo straciłeś kogoś bliskiego.</span><span class="do">Poradnia psychologiczna</span></div>
+    <div class="row"><span class="zd">Nastrój, lęk, apatia albo złość, nad którą nie panujesz.</span><span class="do">Lekarz psychiatra</span></div>
+    <p class="proza">W poradni psychologicznej możesz uzyskać pomoc w kryzysie emocjonalnym — po trudnej sytuacji w domu albo w pracy, po odejściu kogoś bliskiego. Zespół tworzą wykwalifikowani psychologowie i psychoterapeuci z dużym doświadczeniem klinicznym. Zgłoszenie telefoniczne nie jest jeszcze potwierdzoną wizytą.</p>
+  </section>
+
+  <section class="par B">
+    <p class="par__tag"><b>B · Faustina + Karla</b> <span>szeryf ciepły, miękki · zostaje dzisiejszy sans</span> <span class="par__x">x/cap 0,762 · 0,761</span></p>
+    <h2 class="h">Nie musisz wiedzieć, od czego zacząć.</h2>
+    <p class="hsub">Powiedz, co się dzieje. Resztę ustalimy razem.</p>
+    <div class="row"><span class="zd">Masz za sobą trudną sytuację — w domu, w pracy, albo straciłeś kogoś bliskiego.</span><span class="do">Poradnia psychologiczna</span></div>
+    <div class="row"><span class="zd">Nastrój, lęk, apatia albo złość, nad którą nie panujesz.</span><span class="do">Lekarz psychiatra</span></div>
+    <p class="proza">W poradni psychologicznej możesz uzyskać pomoc w kryzysie emocjonalnym — po trudnej sytuacji w domu albo w pracy, po odejściu kogoś bliskiego. Zespół tworzą wykwalifikowani psychologowie i psychoterapeuci z dużym doświadczeniem klinicznym. Zgłoszenie telefoniczne nie jest jeszcze potwierdzoną wizytą.</p>
+  </section>
+
+  <section class="par C">
+    <p class="par__tag"><b>C · Source Serif 4 + Public Sans</b> <span>najbardziej neutralne, urzędowo-kliniczne</span> <span class="par__x">x/cap 0,709 · 0,715</span></p>
+    <h2 class="h">Nie musisz wiedzieć, od czego zacząć.</h2>
+    <p class="hsub">Powiedz, co się dzieje. Resztę ustalimy razem.</p>
+    <div class="row"><span class="zd">Masz za sobą trudną sytuację — w domu, w pracy, albo straciłeś kogoś bliskiego.</span><span class="do">Poradnia psychologiczna</span></div>
+    <div class="row"><span class="zd">Nastrój, lęk, apatia albo złość, nad którą nie panujesz.</span><span class="do">Lekarz psychiatra</span></div>
+    <p class="proza">W poradni psychologicznej możesz uzyskać pomoc w kryzysie emocjonalnym — po trudnej sytuacji w domu albo w pracy, po odejściu kogoś bliskiego. Zespół tworzą wykwalifikowani psychologowie i psychoterapeuci z dużym doświadczeniem klinicznym. Zgłoszenie telefoniczne nie jest jeszcze potwierdzoną wizytą.</p>
+  </section>
+
+  <section class="par D">
+    <p class="par__tag"><b>D · EB Garamond + Karla</b> <span>stan dzisiejszy — najniższy x-height z całej stawki</span> <span class="par__x">x/cap 0,615 · 0,761</span></p>
+    <h2 class="h">Nie musisz wiedzieć, od czego zacząć.</h2>
+    <p class="hsub">Powiedz, co się dzieje. Resztę ustalimy razem.</p>
+    <div class="row"><span class="zd">Masz za sobą trudną sytuację — w domu, w pracy, albo straciłeś kogoś bliskiego.</span><span class="do">Poradnia psychologiczna</span></div>
+    <div class="row"><span class="zd">Nastrój, lęk, apatia albo złość, nad którą nie panujesz.</span><span class="do">Lekarz psychiatra</span></div>
+    <p class="proza">W poradni psychologicznej możesz uzyskać pomoc w kryzysie emocjonalnym — po trudnej sytuacji w domu albo w pracy, po odejściu kogoś bliskiego. Zespół tworzą wykwalifikowani psychologowie i psychoterapeuci z dużym doświadczeniem klinicznym. Zgłoszenie telefoniczne nie jest jeszcze potwierdzoną wizytą.</p>
+  </section>
+</div>
+</body>
+</html>

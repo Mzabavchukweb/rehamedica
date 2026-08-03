@@ -1,0 +1,1328 @@
+/* ============================================================
+   SZABLON STRONY USŁUGI — Reha Medica
+   Rytm: ciemne pasmo tytułowe → beżowa belka NFZ → ivory (otwarcie)
+         → pełnowymiarowe zdjęcie → CIEMNY rozdział (Wskazania)
+         → ivory (Wymagania) → kremowe zamknięcie → ciemna stopka.
+   Język ze strony głównej: serif w nagłówkach, numeracja 01–06, cienkie linie,
+   ostre rogi, ciepłe neutrale. Zero ramek-pudełek. Ładowany PO style.css.
+   ============================================================ */
+
+/* ---------- PASMO TYTUŁOWE ---------- */
+.uhero{position:relative;overflow:hidden;background:var(--color-brand-dark);
+  padding:calc(134px + clamp(44px,5vw,76px)) 0 clamp(40px,4.6vw,66px)}
+.uhero__media{position:absolute;inset:0;z-index:0}
+.uhero__img{position:absolute;inset:0;background-size:cover;background-position:56% 46%;
+  animation:heroKen 10s ease-out both}
+/* scrim mocniejszy po lewej — tam leży tytuł; prawa strona zdjęcia zostaje czytelna */
+/* równomierny scrim — tytuł leży na środku, więc nie ma sensu przyciemniać jednej strony */
+/* Górny stop mocniejszy niż reszta: tam leżą okruszki, a przy jasnych kadrach
+   (np. białe ściany gabinetu) kontrast tekstu spadał do 3,8:1 — poniżej AA.
+   Zmierzone na realnych pikselach zdjęć, nie szacowane. */
+.uhero__tint{position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(28,21,15,.78) 0%,rgba(30,23,16,.70) 34%,rgba(32,25,18,.70) 62%,rgba(38,30,23,.78) 100%)}
+.uhero__inner{position:relative;z-index:1;text-align:center}
+
+.ubread{margin-bottom:clamp(16px,2vw,26px);font-family:var(--font-body);font-size:.72rem;
+  font-weight:var(--fw-medium);letter-spacing:.07em;text-transform:uppercase;color:#bcae98}
+.ubread__list{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;list-style:none;margin:0;padding:0}
+.ubread__list li{display:flex;align-items:center;gap:9px}
+.ubread__list li+li::before{content:"/";color:#d2c5b1;font-weight:var(--fw-regular)}
+.ubread a{display:inline-flex;align-items:center;min-height:24px;color:#e8ddcb;
+  border-bottom:1px solid rgba(232,221,203,.18);padding-bottom:1px;transition:border-color .2s,color .2s}
+.ubread a:hover,.ubread a:focus-visible{color:#fff;border-color:#fff}
+
+.uhero__title{font-family:var(--font-display);font-weight:var(--fw-regular);
+  font-size:clamp(2.3rem,4vw,3.5rem);line-height:1.02;letter-spacing:.25px;
+  color:#fff;margin:0 auto;max-width:20ch;text-wrap:balance}
+
+/* ---------- BELKA NFZ ---------- */
+.unfz{background:var(--color-bg-beige);border-bottom:1px solid var(--color-line)}
+.unfz__inner{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;
+  margin:0;padding-top:15px;padding-bottom:15px;
+  font-family:var(--font-body);font-size:var(--t-meta);color:var(--color-text-2);text-align:center}
+.unfz__inner img{height:22px;width:auto}
+
+/* ---------- OTWARCIE ---------- */
+.usluga{background:var(--color-bg-ivory)}
+.uopen{padding-top:clamp(42px,4.6vw,66px);padding-bottom:clamp(38px,4.2vw,58px)}
+/* nagłówek z pasma tytułowego powtarza się w treści (tak jest w źródle) —
+   tutaj pracuje jako nadtytuł, więc nie czyta się jak zdublowany tytuł */
+.uover{font-family:var(--font-body);font-size:.78rem;font-weight:var(--fw-bold);
+  letter-spacing:.16em;text-transform:uppercase;color:var(--color-brand);
+  margin:0 0 clamp(12px,1.4vw,18px)}
+.ulead{font-family:var(--font-body);font-weight:var(--fw-regular);
+  font-size:clamp(1.12rem,1.3vw,1.24rem);line-height:1.68;
+  color:var(--color-text);max-width:62ch;margin:0}
+/* Tekst po lewej, zdjęcie po prawej. Wcześniej zdjęcie szło pasmem pod akapitami
+   i wyglądało jak doklejone — teraz jest częścią kompozycji otwarcia. */
+.ucols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr);
+  gap:clamp(24px,3.4vw,56px);align-items:start;
+  margin-top:clamp(24px,2.6vw,32px);
+  padding-top:clamp(22px,2.4vw,28px);border-top:1px solid var(--color-line)}
+.ucols__text{min-width:0}
+.ubody{font-family:var(--font-body);font-size:clamp(1.02rem,1.08vw,1.08rem);
+  line-height:1.75;color:var(--color-text-2);margin:0}
+.ubody + .ubody{margin-top:clamp(14px,1.6vw,20px)}
+.ufig{position:relative;margin:0}
+/* klamra narożna — sygnatura edytorska ze strony głównej */
+.ufig::before{content:"";position:absolute;left:-16px;bottom:-16px;width:52%;height:56%;
+  background:var(--color-bg-beige-2);z-index:0}
+.ufig img{position:relative;z-index:1;display:block;width:100%;
+  height:clamp(220px,26vw,330px);object-fit:cover;object-position:center 46%;
+  border-radius:var(--radius-img)}
+
+/* ---------- WSKAZANIA — ciemny rozdział ---------- */
+.uchapter{background:var(--color-brand-dark);color:#e8ddcb;
+  padding:clamp(56px,5.6vw,86px) 0}
+.uchapter__h{font-family:var(--font-display);font-weight:var(--fw-regular);
+  font-size:clamp(1.95rem,2.8vw,2.6rem);line-height:1.06;letter-spacing:.25px;
+  color:#fff;margin:0 0 clamp(22px,2.6vw,32px);}
+.uind{list-style:none;margin:0;padding:0;border-top:1px solid rgba(255,255,255,.14)}
+.uind__row{display:flex;align-items:flex-start;gap:clamp(16px,2vw,26px);
+  padding:clamp(14px,1.6vw,19px) 0;border-bottom:1px solid rgba(255,255,255,.14)}
+/* duży numer serifem — sygnatura indeksów ze strony głównej, tylko śmielsza */
+.uind__n{flex:0 0 auto;min-width:clamp(38px,3.4vw,54px);font-family:var(--font-display);
+  font-size:clamp(1.2rem,1.7vw,1.6rem);line-height:1.2;color:#c6b087}
+.uind__t{font-family:var(--font-body);font-size:clamp(1.04rem,1.14vw,1.14rem);
+  line-height:1.65;color:#e2d6c2;max-width:72ch}
+
+/* ---------- WYMAGANIA — czysta typografia, zero ramek ---------- */
+.ureq{padding:clamp(56px,5.6vw,86px) 0}
+.ureq__grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+  gap:clamp(24px,3.4vw,60px);align-items:start}
+.ureq__h{font-family:var(--font-display);font-weight:var(--fw-regular);
+  font-size:clamp(1.9rem,2.7vw,2.5rem);line-height:1.08;letter-spacing:.25px;
+  color:var(--color-text);margin:0;text-wrap:balance;}
+.ureq__body{min-width:0}
+/* hairline nad każdym akapitem zamiast pudełka z obwódką */
+.ureq__p{font-family:var(--font-body);font-size:clamp(1.02rem,1.1vw,1.1rem);
+  line-height:1.72;color:var(--color-text-2);margin:0;max-width:64ch;
+  padding:clamp(15px,1.7vw,20px) 0;border-top:1px solid var(--color-line)}
+.ureq__p:first-child{padding-top:0;border-top:0}
+
+/* ---------- ZAMKNIĘCIE ---------- */
+.uend{background:var(--color-cream);border-top:1px solid var(--color-line);
+  padding:clamp(46px,4.8vw,68px) 0}
+.uend__inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.uend__btn{min-height:58px;padding:17px 38px;font-size:1.06rem}
+.uend__back{display:inline-flex;align-items:center;gap:9px;min-height:24px;
+  font-family:var(--font-body);font-size:.78rem;font-weight:var(--fw-bold);
+  letter-spacing:.1em;text-transform:uppercase;color:var(--color-brand);transition:color .2s}
+.uend__back span{transition:transform .24s}
+.uend__back:hover span,.uend__back:focus-visible span{transform:translateX(-4px)}
+
+/* ══════════════════════════════════════════════════════════════════
+   STRONA USŁUGI — redesign: wąska kolumna edytorska (jak magazyn).
+   Zastępuje misz-masz .splate/.sbody/.uend czystym, spokojnym układem.
+   ══════════════════════════════════════════════════════════════════ */
+.uart{background:var(--color-bg-ivory);padding:clamp(58px,6.6vw,102px) 0 clamp(64px,7.6vw,112px)}
+.uart__col{max-width:726px;margin-inline:auto;padding-inline:clamp(22px,5vw,34px)}
+/* lead — pierwszy akapit jako duży, edytorski wstęp */
+.uart__lead{font-family:var(--font-body);font-size:clamp(1.16rem,1.55vw,1.36rem);line-height:1.64;color:var(--color-text);font-weight:var(--fw-regular);margin:0}
+.uart__lead + .uart__lead{margin-top:1.05em}
+/* zdjęcie — pełna szerokość kolumny */
+.uart__fig{margin:clamp(34px,4.4vw,54px) 0 0}
+.uart__fig img{display:block;width:100%;height:auto}
+.uart__fig figcaption{margin-top:10px;font-size:.86rem;color:var(--color-text-muted);text-align:center}
+/* akordeony — sekcja detali */
+.uart__acc{margin-top:clamp(34px,4.4vw,54px);display:flex;flex-direction:column;gap:0}
+/* karta „umów w placówce" — spokojna, kremowa, z hairline */
+.ubook{margin-top:clamp(40px,5vw,62px);background:var(--color-cream);border:1px solid var(--color-line);padding:clamp(26px,3.4vw,40px)}
+.ubook__label{font-family:var(--font-body);font-size:.8rem;font-weight:var(--fw-bold);letter-spacing:.16em;text-transform:uppercase;color:var(--color-text-muted);margin:0 0 14px}
+.ubook__city{font-family:var(--font-display);font-size:clamp(1.5rem,2vw,1.85rem);color:var(--color-text);margin:0 0 18px;line-height:1.1}
+.ubook__row{display:flex;align-items:center;gap:12px;font-size:1.02rem;color:var(--color-text-2);margin:0 0 12px;text-decoration:none;word-break:break-word}
+.ubook__row svg{color:var(--color-brand);flex:0 0 auto;width:20px;height:20px}
+.ubook__row[href]:focus-visible{outline:2px solid var(--color-brand);outline-offset:3px;border-radius:3px}
+.ubook__cta{margin-top:18px;min-height:54px;padding:15px 30px}
+.ubook__nfz{display:flex;align-items:center;gap:10px;margin:20px 0 0;padding-top:16px;border-top:1px solid var(--color-line);font-size:.9rem;color:var(--color-text-2)}
+.ubook__nfz img{height:18px;width:auto}
+/* koniec — cichy powrót */
+.uart__end{margin-top:clamp(36px,4.6vw,54px);padding-top:clamp(22px,2.8vw,30px);border-top:1px solid var(--color-line);display:flex;justify-content:center}
+.uart__back{font-family:var(--font-body);font-size:.82rem;font-weight:var(--fw-bold);letter-spacing:.1em;text-transform:uppercase;color:var(--color-brand);text-decoration:none;display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.uart__back:focus-visible{outline:2px solid var(--color-brand);outline-offset:3px}
+/* nagłówek sekcji w kolumnie edytorskiej */
+.uart__h{font-family:var(--font-display);font-weight:var(--fw-regular);font-size:clamp(1.5rem,2.2vw,2rem);color:var(--color-text);margin:0 0 clamp(16px,1.8vw,24px);line-height:1.12}
+/* lista usług placówki — elegancka, hairline + serif */
+.plist{list-style:none;margin:0;padding:0;border-top:1px solid var(--color-line)}
+.plist__link{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:clamp(16px,1.9vw,22px) 6px;border-bottom:1px solid var(--color-line);color:var(--color-text);text-decoration:none;font-family:var(--font-display);font-size:clamp(1.22rem,1.6vw,1.55rem);line-height:1.16;min-height:44px}
+.plist__arr{color:var(--color-brand);width:20px;height:20px;flex:0 0 auto;transform:rotate(-90deg)}
+.plist__link:focus-visible{outline:2px solid var(--color-brand);outline-offset:-2px}
+.plist__link--brak{color:var(--color-text-2);cursor:default}
+/* usługa placówki z opisem — nazwa + „czym to jest" + link do strony usługi */
+.pserv{padding:clamp(24px,3vw,34px) 0;border-bottom:1px solid var(--color-line)}
+.pserv:first-of-type{border-top:1px solid var(--color-line)}
+.pserv__name{font-family:var(--font-display);font-weight:var(--fw-regular);font-size:clamp(1.4rem,1.9vw,1.75rem);color:var(--color-text);margin:0 0 10px;line-height:1.16}
+.pserv__desc{font-family:var(--font-body);font-size:1.04rem;line-height:1.62;color:var(--color-text-2);margin:0 0 16px}
+.pserv__link{font-family:var(--font-body);font-size:.8rem;font-weight:var(--fw-bold);letter-spacing:.1em;text-transform:uppercase;color:var(--color-brand);text-decoration:none;display:inline-flex;align-items:center;gap:8px;min-height:32px}
+.pserv__link:focus-visible{outline:2px solid var(--color-brand);outline-offset:3px;border-radius:3px}
+/* usługa placówki jako FEATURE — zdjęcie w klamrach narożnych + opis + link (edytorsko, pod hero) */
+.pfeat{margin-top:clamp(6px,1.4vw,14px)}
+.pfeat__fig{margin:0 0 clamp(24px,3vw,36px);padding:15px 17px;--cf:var(--color-brand);--cfa:22px;--cft:2px}
+.pfeat__fig img{display:block;width:100%;aspect-ratio:2/1;object-fit:cover}
+.pfeat__name{font-family:var(--font-display);font-weight:var(--fw-regular);font-size:clamp(1.6rem,2.3vw,2.05rem);color:var(--color-text);margin:0 0 14px;line-height:1.12}
+.pfeat__desc{font-family:var(--font-body);font-size:clamp(1.05rem,1.35vw,1.18rem);line-height:1.66;color:var(--color-text-2);margin:0 0 24px}
+.pfeat__link{font-family:var(--font-body);font-size:.82rem;font-weight:var(--fw-bold);letter-spacing:.12em;text-transform:uppercase;color:var(--color-brand);text-decoration:none;display:inline-flex;align-items:center;gap:9px;min-height:40px;border-bottom:2px solid var(--color-brand);padding-bottom:3px}
+.pfeat__link:focus-visible{outline:2px solid var(--color-brand);outline-offset:4px}
+
+/* ── USŁUGI W PLACÓWCE — szeroki feature edytorski (zdjęcie z ramką + nachodzący panel) ── */
+.pwide{background:var(--color-bg-ivory);padding:clamp(52px,6.5vw,96px) 0}
+.pwide__head{text-align:center;margin:0 0 clamp(34px,4vw,56px)}
+.pwide__kicker{font-family:var(--font-body);font-size:.8rem;font-weight:var(--fw-bold);letter-spacing:.2em;text-transform:uppercase;color:var(--color-text-muted);margin:0 0 12px}
+.pwide__h{font-family:var(--font-display);font-weight:var(--fw-regular);font-size:clamp(1.9rem,2.8vw,2.6rem);color:var(--color-text);margin:0;line-height:1.08}
+/* jeden feature */
+.pfeat2{position:relative;display:grid;grid-template-columns:repeat(12,1fr);align-items:center;margin-top:clamp(30px,3.4vw,46px)}
+.pfeat2:first-of-type{margin-top:0}
+.pfeat2__media{grid-column:1/8;grid-row:1;position:relative;height:clamp(360px,40vw,520px)}
+.pfeat2__frame{position:absolute;left:-22px;bottom:-22px;width:64%;height:64%;background:var(--color-bg-beige-2);z-index:0}
+.pfeat2__img{position:absolute;inset:0;background-size:cover;background-position:center;z-index:1}
+.pfeat2__panel{grid-column:7/13;grid-row:1;z-index:2;background:var(--color-cream);padding:clamp(30px,3.2vw,50px);box-shadow:0 34px 74px -48px rgba(54,45,36,.5);margin-left:clamp(-72px,-4.5vw,-44px);--cfa:20px;--cft:2px}
+.pfeat2__label{font-family:var(--font-body);font-size:.76rem;font-weight:var(--fw-bold);letter-spacing:.16em;text-transform:uppercase;color:var(--color-text-muted);margin:0 0 12px}
+.pfeat2__name{font-family:var(--font-display);font-weight:var(--fw-regular);font-size:clamp(1.7rem,2.4vw,2.2rem);color:var(--color-text);margin:0 0 16px;line-height:1.12}
+.pfeat2__desc{font-family:var(--font-body);font-size:clamp(1.04rem,1.25vw,1.14rem);line-height:1.66;color:var(--color-text-2);margin:0 0 26px}
+.pfeat2__link{font-family:var(--font-body);font-size:.82rem;font-weight:var(--fw-bold);letter-spacing:.12em;text-transform:uppercase;color:var(--color-brand);text-decoration:none;display:inline-flex;align-items:center;gap:10px;min-height:40px;border-bottom:2px solid var(--color-brand);padding-bottom:3px}
+.pfeat2__link:focus-visible{outline:2px solid var(--color-brand);outline-offset:4px}
+/* naprzemienny rytm dla kolejnych usług */
+.pfeat2:nth-of-type(even) .pfeat2__media{grid-column:6/13}
+.pfeat2:nth-of-type(even) .pfeat2__frame{left:auto;right:-22px}
+.pfeat2:nth-of-type(even) .pfeat2__panel{grid-column:1/7;margin-left:0;margin-right:clamp(-72px,-4.5vw,-44px)}
+@media(max-width:60em){
+  .pfeat2,.pfeat2:nth-of-type(even){display:block;margin-top:clamp(40px,7vw,60px)}
+  .pfeat2__media{height:clamp(240px,58vw,380px)}
+  .pfeat2:nth-of-type(even) .pfeat2__media{grid-column:auto}
+  .pfeat2__frame{left:-14px;right:auto;bottom:-14px;width:56%;height:58%}
+  .pfeat2:nth-of-type(even) .pfeat2__frame{left:-14px;right:auto}
+  .pfeat2__panel,.pfeat2:nth-of-type(even) .pfeat2__panel{margin:-46px 16px 0;position:relative}
+}
+
+/* ── Strona usługi: akapity treści + zakres (siatka) + callout ── */
+.uart__p{font-family:var(--font-body);font-size:1.07rem;line-height:1.7;color:var(--color-text-2);margin:1.05em 0 0}
+.uart__lead + .uart__p{margin-top:1.15em}
+/* zakres pomocy — czytelna siatka 2-kolumnowa z markerami */
+.cap{margin-top:clamp(38px,4.6vw,58px)}
+.cap__h{font-family:var(--font-display);font-weight:var(--fw-regular);font-size:clamp(1.42rem,2vw,1.85rem);color:var(--color-text);margin:0 0 clamp(16px,2vw,24px);line-height:1.14}
+.cap__grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(26px,3vw,48px);border-bottom:1px solid var(--color-line)}
+.cap__grid li{position:relative;padding:15px 0 15px 26px;border-top:1px solid var(--color-line);font-family:var(--font-body);font-size:1.02rem;line-height:1.5;color:var(--color-text)}
+.cap__grid li::before{content:"";position:absolute;left:0;top:23px;width:12px;height:2px;background:var(--color-brand);border-radius:1px}
+/* callout — ważna informacja (np. skierowanie) */
+.callout{margin-top:clamp(40px,4.8vw,60px);background:var(--color-cream);border:1px solid var(--color-line);padding:clamp(24px,3vw,36px)}
+.callout__label{display:flex;align-items:center;gap:10px;font-family:var(--font-body);font-size:.82rem;font-weight:var(--fw-bold);letter-spacing:.14em;text-transform:uppercase;color:var(--color-brand);margin:0 0 14px}
+.callout__label svg{width:20px;height:20px;flex:0 0 auto}
+.callout__p{font-family:var(--font-body);font-size:1rem;line-height:1.62;color:var(--color-text-2);margin:12px 0 0}
+.callout__p:first-of-type{margin-top:0}
+@media(max-width:48em){.cap__grid{grid-template-columns:1fr}}
+
+/* ══ Szeroki układ treściowej usługi (logopedia itp.) — bez wąskiej kolumny i kresek ══ */
+/* NFZ na górze — komercyjnie oraz w ramach NFZ (po hero) */
+/* Pasek NFZ pod hero — ten sam beżowy pas co .unfz na rozdrożach. Wcześniej była tu
+   sama linijka na tle ivory, przez co trzy strony bez karty placówki odstawały od reszty. */
+.lnfz{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;
+  background:var(--color-bg-beige);border-bottom:1px solid var(--color-line);
+  padding:15px 24px;font-family:var(--font-body);font-size:var(--t-meta);
+  color:var(--color-text-2);text-align:center}
+.lnfz img{height:22px;width:auto}
+.lsec{padding:clamp(46px,5.6vw,86px) 0}
+.lsec--ivory{background:var(--color-bg-ivory)}
+/* intro: układ magazynowy — kadr wpuszczony w tekst (float), tekst opływa i płynie dalej */
+.lintro{display:block;max-width:900px;margin-inline:auto}
+.lintro::after{content:"";display:block;clear:both}
+.lintro__lead{font-family:var(--font-body);font-weight:var(--fw-regular);font-size:1.14rem;line-height:1.75;color:var(--color-text);margin:0 0 17px}
+.lintro__p{font-family:var(--font-body);font-size:1.08rem;line-height:1.76;color:var(--color-text-2);margin:0 0 17px}
+.lintro__p:last-child{margin-bottom:0}
+.lintro__fig{float:right;width:min(400px,42%);margin:6px 0 18px clamp(30px,3.4vw,52px);position:relative}
+.lintro__fig::before{content:"";position:absolute;right:-16px;bottom:-16px;width:58%;height:56%;background:var(--color-bg-beige-2);z-index:0}
+.lintro__fig img{position:relative;z-index:1;display:block;width:100%;height:auto}
+
+/* ── Wariant „rytm": opis usługi w czterech taktach zamiast ściany akapitów ──
+   1. otwarcie (nadtytuł + lead + kadr obok)  2. wyróżnik (zdanie-cytat + akapit)
+   3. panel składowych (siatka terminów)      4. domknięcie (wąska miara).
+   Cały tekst pochodzi z akapitów źródłowych — takty tylko porządkują to, co już jest.
+   Miara wiersza pilnowana wszędzie (~34em): bez tego 1180px daje ~110 znaków w wierszu. */
+/* WSZYSTKIE strony usług — treść w wyśrodkowanej kolumnie (na wzór strony EMS),
+   nie rozciągnięta na całą szerokość do samych boków. Wcześniej max-width:none
+   rozpychał kolumnę na cały ekran; teraz spójne, spokojne wyśrodkowanie ~1130px. */
+.lintro--rytm{max-width:1130px;margin-inline:auto}
+.lintro--rytm::after{content:none}
+.lintro--center{max-width:1130px;margin-inline:auto}   /* alias — zgodność wstecz */
+/* EMS na mobile — zwięźlejszy rytm i miara (długa strona czyta się lżej),
+   oraz zabezpieczenie ramki filmu przed wyjściem poza ekran. */
+@media(max-width:48em){
+  .lintro--center .emsstats,
+  .lintro--center .lpull,
+  .lintro--center .lparts,
+  .lintro--center .lcoda{margin-top:clamp(30px,6.5vw,46px)}
+  .lintro--center .lpull{padding-top:clamp(22px,4.6vw,30px)}
+  .lintro--center .lintro__p,
+  .lintro--center .lpull__p,
+  .lintro--center .lparts__p,
+  .lintro--center .lcoda__p,
+  .lintro--center .lcoda__lead{line-height:1.66}
+  /* przesunięty kadr za filmem trzymamy w obrębie paddingu wrapa (bez poziomego scrolla) */
+  .lintro--center .lintro__fig:has(.emsembed)::before{right:-10px;bottom:-10px;width:58%;height:60%}
+}
+
+.lintro__open{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
+  grid-template-rows:auto 1fr;grid-template-areas:"lead kadr" "body kadr";
+  column-gap:clamp(32px,4vw,64px);row-gap:clamp(16px,1.8vw,22px);align-items:start}
+/* bez kadru — jedna kolumna w czytelnej mierze, bez pustej rynny po prawej */
+.lintro__open:not(:has(.lintro__fig)){grid-template-columns:minmax(0,1fr);
+  grid-template-areas:"lead" "body"}
+.lintro__head{grid-area:lead;min-width:0;max-width:34em}
+.lintro__body{grid-area:body;min-width:0;max-width:34em}
+.lintro--rytm .lintro__fig{grid-area:kadr;float:none;width:auto;margin:6px 0 0}
+.lintro--rytm .lintro__fig::before{right:-18px;bottom:-18px;width:60%;height:58%}
+/* kadr przycięty do 4:3 — natywne 1200×1081 byłoby wyższe niż kolumna tekstu
+   i zostawiało pustą rynnę przed kolejnym taktem */
+.lintro--rytm .lintro__fig img{aspect-ratio:4/3;object-fit:cover;object-position:50% 50%}
+
+/* nadtytuł taktu — mała etykieta z kreską dobiegającą do końca kolumny */
+.lkick{display:flex;align-items:center;gap:14px;font-family:var(--font-body);font-size:.76rem;
+  font-weight:var(--fw-bold);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--color-text-muted);margin:0 0 clamp(14px,1.6vw,18px)}
+.lkick::after{content:"";flex:1;height:1px;background:var(--color-line)}
+
+.lintro--rytm .lintro__lead{font-size:clamp(1.16rem,1.4vw,1.32rem);line-height:1.62;margin:0}
+.lintro--rytm .lintro__p{font-size:1.06rem;line-height:1.75;margin:1.05em 0 0;max-width:34em}
+.lintro--rytm .lintro__body > .lintro__p:first-child{margin-top:0}
+
+/* takt 2 — jedno zdanie źródłowe podniesione do rangi cytatu, obok akapit rozwijający */
+.lpull{margin-top:clamp(46px,5.4vw,84px);padding-top:clamp(30px,3.4vw,44px);
+  border-top:1px solid var(--color-line);display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,3.6vw,60px);align-items:start}
+.lpull__q{font-family:var(--font-display);font-weight:var(--fw-regular);
+  font-size:clamp(1.4rem,2.3vw,2rem);line-height:1.26;color:var(--color-text);margin:0;text-wrap:balance}
+.lpull__q::before{content:"";display:block;width:46px;height:2px;background:var(--color-sand);
+  margin-bottom:clamp(16px,1.8vw,22px)}
+.lpull__p{font-family:var(--font-body);font-size:1.06rem;line-height:1.75;
+  color:var(--color-text-2);margin:0;max-width:34em}
+.lpull__p + .lpull__p{margin-top:1.05em}
+/* atrybucja cytatu (np. na stronie EMS) — drobny podpis pod akapitem wspierającym */
+.lpull__by{margin:clamp(14px,1.6vw,18px) 0 0;font-family:var(--font-body);font-size:.8rem;
+  font-weight:var(--fw-bold);letter-spacing:.1em;text-transform:uppercase;color:var(--color-text-muted)}
+
+/* takt 3 — składowe wymienione w zdaniu źródłowym, rozpisane na kremowy panel */
+.lparts{margin-top:clamp(46px,5.4vw,84px);background:var(--color-cream);
+  border:1px solid var(--color-line);
+  padding:clamp(26px,3vw,42px) clamp(24px,3vw,44px) clamp(28px,3.2vw,44px)}
+.lparts__h{font-family:var(--font-display);font-weight:var(--fw-regular);
+  font-size:clamp(1.3rem,1.9vw,1.66rem);line-height:1.2;color:var(--color-text);
+  margin:0 0 clamp(20px,2.4vw,30px);max-width:24em}
+.lparts__grid{list-style:none;margin:0;padding:0;display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(22px,2.6vw,40px);
+  border-bottom:1px solid var(--color-line)}
+.lparts__grid li{position:relative;padding:15px 0 15px 24px;border-top:1px solid var(--color-line);
+  font-family:var(--font-display);font-size:clamp(1.04rem,1.25vw,1.2rem);line-height:1.35;
+  color:var(--color-text)}
+.lparts__grid li::before{content:"";position:absolute;left:0;top:23px;width:12px;height:2px;
+  background:var(--color-sand)}
+/* podgrupy w jednym panelu — źródło potrafi dzielić wyliczenie na nazwane kategorie.
+   Cztery osobne panele obok siebie czytały się jak cztery puste pudełka, więc grupy
+   siedzą w jednym panelu, rozdzielone szeryfowym śródtytułem. */
+.lparts__sub{font-family:var(--font-display);font-weight:var(--fw-regular);
+  font-size:clamp(1.06rem,1.3vw,1.24rem);line-height:1.28;color:var(--color-text);
+  margin:clamp(28px,3.2vw,40px) 0 clamp(12px,1.4vw,17px);max-width:32em}
+.lparts__h + .lparts__sub{margin-top:0}
+/* wariant prozą — gdy akapit źródłowy jest spójnym blokiem tematycznym, a nie wyliczeniem.
+   Rozbijanie takiego akapitu na punkty wymagałoby przepisania zdań, więc zostaje prozą.
+   Nagłówek idzie wtedy do lewej kolumny: proza w mierze 38em nie wypełniłaby panelu
+   na całą szerokość i zostawiała pustą prawą połowę. */
+.lparts:has(.lparts__prose){display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.5fr);
+  column-gap:clamp(28px,3.6vw,58px);align-items:start}
+.lparts:has(.lparts__prose) .lparts__h{margin-bottom:0}
+.lparts__p{font-family:var(--font-body);font-size:1.06rem;line-height:1.75;
+  color:var(--color-text-2);margin:0;max-width:38em}
+/* EMS w sporcie — panel pełnej szerokości (bez układu 2-kol), czytelna lista celów w 2 kolumnach */
+.lparts--sport{display:block}
+.lparts--sport .lparts__p{max-width:64ch;margin-bottom:clamp(8px,1.4vw,14px)}
+.lparts--sport .lparts__grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(30px,5vw,72px)}
+@media(max-width:40em){.lparts--sport .lparts__grid{grid-template-columns:1fr}}
+/* autentyczne zdjęcie wplecione w treść (o-nas i pokrewne) */
+.uopen .ufig{margin:clamp(28px,3.6vw,46px) 0 0;max-width:900px}
+.uopen .ufig img{display:block;width:100%;height:auto;border-radius:var(--radius-img)}
+.uopen .ufig figcaption{margin-top:10px;font-family:var(--font-body);font-size:.85rem;color:var(--color-text-muted)}
+.lparts__p + .lparts__p{margin-top:1.05em}
+
+/* takt 4 — domknięcie: spokojny akapit w wąskiej mierze, oddzielony kreską */
+.lcoda{margin-top:clamp(46px,5.4vw,84px);padding-top:clamp(28px,3.2vw,40px);
+  border-top:1px solid var(--color-line)}
+.lcoda__inner{max-width:36em;margin-inline:auto}
+/* domknięcie otwierające własną sekcję — nie potrzebuje kreski ani odstępu od taktu wyżej */
+.lcoda--sama{margin-top:0;padding-top:0;border-top:0}
+.lcoda__lead{font-family:var(--font-body);font-size:clamp(1.08rem,1.25vw,1.18rem);
+  line-height:1.66;color:var(--color-text);margin:0}
+.lcoda__p{font-family:var(--font-body);font-size:1.06rem;line-height:1.75;
+  color:var(--color-text-2);margin:1.05em 0 0}
+
+@media(max-width:60em){
+  .lintro__open{grid-template-columns:1fr;grid-template-rows:auto;
+    grid-template-areas:"lead" "kadr" "body";row-gap:clamp(22px,4.5vw,30px)}
+  .lintro__head,.lintro__body{max-width:none}
+  .lintro--rytm .lintro__fig{margin:0}
+  .lintro--rytm .lintro__fig::before{display:none}
+  .lpull{grid-template-columns:1fr;gap:clamp(22px,4vw,32px)}
+  .lparts__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .lparts:has(.lparts__prose){grid-template-columns:1fr;row-gap:clamp(18px,3vw,26px)}
+  .lparts:has(.lparts__prose) .lparts__h{margin-bottom:0}
+}
+@media(max-width:40em){
+  .lparts__grid{grid-template-columns:1fr}
+}
+
+/* oferta: beżowy pas + numerowana siatka (żadnych linii) */
+.loffer{background:var(--color-bg-beige);padding:clamp(50px,5.6vw,90px) 0}
+.loffer__h{font-family:var(--font-display);font-weight:var(--fw-regular);font-size:clamp(1.7rem,2.6vw,2.4rem);color:var(--color-text);margin:0 0 clamp(30px,3.6vw,50px);text-align:center;line-height:1.1}
+/* jednakowe odstępy w każdą stronę (góra=dół=bok), żeby pozycje się nie zlewały */
+.loffer__grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(30px,3.4vw,48px)}
+.loffer__grid li{display:flex;gap:18px;align-items:flex-start}
+.loffer__num{font-family:var(--font-display);font-size:clamp(1.6rem,2.1vw,2.1rem);line-height:1;color:var(--color-text-muted);flex:0 0 auto;min-width:2.4ch;padding-top:1px}
+.loffer__txt{font-family:var(--font-body);font-size:1.06rem;line-height:1.5;color:var(--color-text)}
+/* close: metody (duży cytat) + callout obok */
+.lclose{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(34px,4.4vw,64px);align-items:start}
+.lclose__lead{font-family:var(--font-display);font-weight:var(--fw-regular);font-size:clamp(1.28rem,1.9vw,1.7rem);line-height:1.42;color:var(--color-text);margin:0}
+.lclose .callout{margin-top:0}
+/* booking: wyśrodkowana karta + powrót */
+.lbook{margin-top:clamp(44px,5.2vw,76px)}
+.lbook .ubook{max-width:560px;margin-inline:auto;margin-top:0}
+.lback{display:flex;justify-content:center;margin-top:clamp(30px,3.6vw,46px)}
+@media(max-width:60em){
+  .lclose{grid-template-columns:1fr;gap:clamp(28px,5vw,40px)}
+  .lintro{max-width:none}
+  .lintro__fig{float:none;width:auto;margin:0 0 clamp(22px,4.5vw,30px)}
+  .lintro__fig::before{display:none}
+  .loffer__grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:40em){.loffer__grid{grid-template-columns:1fr}}
+
+/* ============================================================ MOBILE */
+@media(max-width:75em){
+  /* header jest wtedy niższy — brak drugiego rzędu nawigacji */
+  .uhero{padding-top:calc(120px + clamp(32px,4.6vw,52px))}
+  .uhero__tint{background:linear-gradient(180deg,rgba(28,21,15,.80) 0%,rgba(30,23,16,.72) 34%,rgba(32,25,18,.72) 62%,rgba(38,30,23,.80) 100%)}
+  .ureq__grid{grid-template-columns:1fr;gap:clamp(18px,3vw,26px)}
+}
+@media(max-width:48em){
+  .uhero__title{max-width:none}
+  .unfz__inner{font-size:.9rem;gap:9px}
+  .ulead{max-width:none}
+  .ucols{grid-template-columns:1fr;gap:clamp(20px,3.4vw,28px)}
+  .ufig::before{left:-10px;bottom:-10px}
+  .uind__row{gap:14px}
+  /* CTA i powrót zostają w jednym rzędzie także na telefonie — kolumna rozbijała
+     parę „akcja główna / wyjście" na dwa niepowiązane bloki. Zamiast zawijać w pion
+     zmniejszamy padding przycisku i skalę linku powrotu; link może złamać się na
+     dwie linie i nadal mieści się obok przycisku przy 360 px. */
+  .uend__inner{flex-wrap:nowrap;align-items:center;justify-content:space-between;gap:14px}
+  .uend__btn{flex:0 0 auto;padding:16px 22px;font-size:1rem;min-height:54px}
+  .uend__back{flex:0 1 auto;font-size:.7rem;letter-spacing:.06em;text-align:right;
+    align-items:flex-start;line-height:1.35}
+  .uend__back span{padding-top:1px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .uhero__img{animation:none!important}
+}
+
+/* ============================================================
+   PANEL WYBORU PLACÓWKI
+   Mobile: arkusz od dołu (zasięg kciuka). Desktop: panel z prawej.
+   Akordeon — wszystkie placówki widoczne, żadna nie preselektowana.
+   ============================================================ */
+.bk{position:fixed;inset:0;z-index:300}
+.bk[hidden]{display:none}
+.bk__veil{position:absolute;inset:0;background:rgba(24,18,12,.55);
+  opacity:0;transition:opacity .26s ease}
+.bk.is-open .bk__veil{opacity:1}
+
+.bk__panel{position:absolute;right:0;top:0;bottom:0;width:min(420px,100%);
+  display:flex;flex-direction:column;background:var(--color-bg-ivory);
+  box-shadow:-18px 0 46px -24px rgba(24,16,8,.55);
+  transform:translateX(100%);transition:transform .3s cubic-bezier(.33,0,.15,1);
+  overflow-y:auto;overscroll-behavior:contain}
+.bk.is-open .bk__panel{transform:none}
+
+.bk__head{position:relative;display:flex;align-items:center;justify-content:center;gap:16px;
+  padding:clamp(20px,2.6vw,28px) clamp(20px,2.6vw,30px);
+  border-bottom:1px solid var(--color-line);position:sticky;top:0;background:var(--color-bg-ivory);z-index:1}
+/* Jedyny tekst w głowie panelu — wyśrodkowany i wyraźny, bez podtytułu. */
+.bk__title{flex:1 0 100%;order:1;text-align:center;margin:0;
+  font-family:var(--font-display);font-weight:400;letter-spacing:.01em;
+  font-size:clamp(1.5rem,2.4vw,1.85rem);line-height:1.15;color:var(--color-text)}
+/* podtytuł ląduje w osobnym wierszu pod tytułem, nie ściska przycisku zamknięcia */
+.bk__head{flex-wrap:wrap}
+.bk__sub{flex:1 0 100%;order:3;margin:6px 0 0;
+  font-family:var(--font-body);font-size:.94rem;line-height:1.45;color:var(--color-text-muted)}
+.bk__x{position:absolute;top:14px;right:14px;width:44px;height:44px;flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;
+  background:none;border:0;color:var(--color-text-2);cursor:pointer}
+.bk__x .ico{width:20px;height:20px}
+.bk__x:hover{color:var(--color-brand)}
+.bk__x:focus-visible{outline:3px solid var(--color-brand);outline-offset:-3px}
+
+.bk__list{list-style:none;margin:0;padding:0}
+.bk__item{border-bottom:1px solid var(--color-line)}
+.bk__row{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;
+  padding:clamp(16px,2vw,20px) clamp(20px,2.6vw,30px);min-height:60px;
+  background:none;border:0;cursor:pointer;text-align:left;
+  font-family:var(--font-display);font-size:1.32rem;color:var(--color-text);
+  transition:background .18s ease}
+@media(hover:hover){.bk__row:hover{background:var(--color-cream)}}
+.bk__row:focus-visible{outline:3px solid var(--color-brand);outline-offset:-3px}
+.bk__chev{width:.7em;height:.7em;color:var(--color-brand);
+  transition:transform .26s cubic-bezier(.33,0,.15,1)}
+.bk__row[aria-expanded="true"]{background:var(--color-cream)}
+.bk__row[aria-expanded="true"] .bk__chev{transform:rotate(180deg)}
+
+/* jedyna placówka świadcząca usługę — nazwa jako nagłówek, bez pozorowanego wyboru */
+.bk__item--solo{border-bottom:0}
+.bk__solo{margin:0;padding:clamp(18px,2.2vw,24px) clamp(20px,2.6vw,30px) 14px;
+  font-family:var(--font-display);font-size:1.5rem;line-height:1.2;color:var(--color-text)}
+.bk__item--solo .bk__detail{padding-top:2px;background:transparent}
+
+.bk__detail{padding:0 clamp(20px,2.6vw,30px) clamp(20px,2.4vw,26px);background:var(--color-cream)}
+.bk__addr{display:flex;align-items:flex-start;gap:10px;margin:0 0 16px;
+  font-family:var(--font-body);font-size:.98rem;line-height:1.5;color:var(--color-text-2)}
+.bk__addr .ico{width:17px;height:17px;color:var(--color-brand);flex:0 0 auto;margin-top:2px}
+
+/* numer jako główna akcja — duży cel, od razu dzwoni */
+.bk__call{display:flex;align-items:center;justify-content:center;gap:11px;min-height:56px;
+  padding:14px 20px;margin-bottom:10px;background:var(--color-brand);color:#fff;
+  font-family:var(--font-body);font-size:1.14rem;font-weight:var(--fw-semibold);
+  letter-spacing:.01em;transition:background .2s ease}
+.bk__call .ico{width:19px;height:19px}
+.bk__call:hover{background:var(--color-brand-hover);color:#fff}
+.bk__call:focus-visible{outline:3px solid var(--color-brand);outline-offset:3px}
+
+.bk__mail{display:flex;align-items:center;gap:10px;min-height:24px;padding:6px 0;
+  font-family:var(--font-body);font-size:.94rem;color:var(--color-text-2);
+  word-break:break-word;transition:color .2s}
+.bk__mail .ico{width:16px;height:16px;color:var(--color-brand);flex:0 0 auto}
+.bk__mail:hover,.bk__mail:focus-visible{color:var(--color-brand)}
+
+/* --- mobile: arkusz od dołu --- */
+@media(max-width:48em){
+  .bk__panel{right:0;left:0;top:auto;bottom:0;width:auto;max-height:86vh;
+    transform:translateY(100%);box-shadow:0 -18px 46px -24px rgba(24,16,8,.55)}
+  .bk.is-open .bk__panel{transform:none}
+  .bk__row{font-size:1.24rem}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .bk__veil,.bk__panel,.bk__chev{transition:none!important}
+}
+
+/* ── SEKCJA LISTY ─────────────────────────────────────────────────────────────
+   Jasny rozdział z wyliczeniem (np. „Skierowanie wystawia:", „Efekty").
+   Bez ramek i kart — wyliczenie niesie treść, nie dekoracja. */
+.ulist{padding:clamp(48px,6vw,82px) 0;background:var(--color-bg-ivory)}
+.ulist + .ulist{padding-top:0}
+.ulist__inner{max-width:860px}
+.ulist__h{font-family:var(--font-display);font-weight:400;letter-spacing:.005em;
+  font-size:clamp(1.6rem,2.6vw,2.15rem);line-height:1.18;color:var(--color-text);margin:0 0 26px;}
+.ulist__ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.ulist__li{position:relative;padding:14px 0 14px 30px;
+  font-family:var(--font-body);font-size:1.02rem;line-height:1.62;color:var(--color-text-2);
+  border-bottom:1px solid var(--color-line)}
+.ulist__li:last-child{border-bottom:0}
+/* znacznik: krótka kreska w kolorze marki, nie kropka-bullet */
+.ulist__li::before{content:"";position:absolute;left:0;top:1.5em;
+  width:16px;height:1px;background:var(--color-brand-taupe)}
+.ulist__after{margin:26px 0 0}
+
+/* ── SEKCJA METOD ─────────────────────────────────────────────────────────────
+   Nazwa metody + opis. Nagłówki pochodzą ze źródła (h5), tu jako h3. */
+.umet{padding:clamp(52px,6.5vw,88px) 0;background:var(--color-cream)}
+.umet__title{color:var(--color-text)}
+.umet__lead{max-width:62ch;margin:0 0 clamp(28px,3.4vw,42px)}
+.umet__item{max-width:74ch;padding:clamp(22px,2.6vw,30px) 0;border-top:1px solid var(--color-line)}
+.umet__item:last-child{border-bottom:1px solid var(--color-line)}
+.umet__h{font-family:var(--font-display);font-weight:400;letter-spacing:.005em;
+  font-size:clamp(1.24rem,1.8vw,1.5rem);line-height:1.24;color:var(--color-text);margin:0 0 12px}
+.umet__p{font-family:var(--font-body);font-size:1.02rem;line-height:1.68;color:var(--color-text-2);margin:0}
+
+@media(max-width:48em){
+  .ulist__inner{max-width:none}
+  .ulist__li{padding-left:24px}
+  .ulist__li::before{width:12px}
+  .umet__item{max-width:none}
+}
+
+/* ── HUB (rozdroże grupy usług) ───────────────────────────────────────────────
+   Sama nawigacja: wykaz podstron. Bez kart i ramek — lista z hairline'ami,
+   spójna z rytmem „Wskazań" i „Efektów". */
+.uhub{padding:clamp(46px,5.4vw,78px) 0}
+/* Etykieta „Wybierz usługę" w tym samym kroju co nadtytuł taktu na stronach usług
+   (.lkick) — rozdroże i strona usługi otwierają się identycznym sygnałem. */
+.uhub__h{display:flex;align-items:center;gap:14px;font-family:var(--font-body);
+  font-size:.76rem;font-weight:var(--fw-bold);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--color-text-muted);margin:0 0 clamp(14px,1.8vw,20px)}
+.uhub__h::after{content:"";flex:1;height:1px;background:var(--color-line)}
+/* Indeks w dwóch kolumnach — jedna kolumna w 900 px zostawiała pustą prawą połowę
+   ekranu. Włoskowate linie i piaskowy znacznik jak w panelu .lparts na stronach usług. */
+.uhub__list{list-style:none;margin:0;padding:0;max-width:none;display:grid;
+  grid-template-columns:1fr;
+  border-top:0;border-bottom:1px solid var(--color-line)}
+.uhub__item{border-top:1px solid var(--color-line);border-bottom:0}
+.uhub__link{position:relative;display:flex;align-items:center;justify-content:space-between;gap:18px;
+  padding:clamp(18px,2.2vw,26px) 0 clamp(18px,2.2vw,26px) 28px;min-height:64px;
+  font-family:var(--font-display);font-size:clamp(1.2rem,1.6vw,1.5rem);line-height:1.3;
+  color:var(--color-text);transition:color .2s}
+.uhub__link::before{content:"";position:absolute;left:0;top:50%;margin-top:-1px;
+  width:12px;height:2px;background:var(--color-sand);transition:width .24s}
+.uhub__arr{width:.62em;height:.62em;flex:0 0 auto;color:var(--color-brand);
+  transform:rotate(-90deg);transition:transform .24s}
+@media(hover:hover){
+  .uhub__link:hover{color:var(--color-brand)}
+  .uhub__link:hover::before{width:19px}
+  .uhub__link:hover .uhub__arr{transform:rotate(-90deg) translateY(-3px)}
+}
+.uhub__link:focus-visible{outline:3px solid var(--color-brand);outline-offset:3px}
+@media(max-width:56em){
+  .uhub__list{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .uhub__link::before,.uhub__arr{transition:none}
+}
+
+/* ── DŁUGOŚĆ WIERSZA ──────────────────────────────────────────────────────────
+   Zmierzone: akapity w sekcjach rozciągały się na 97–136 znaków, bo .ubody
+   i .ulist__li nie miały ograniczenia i brały pełną szerokość .wrap (1180 px).
+   Komfortowy zakres czytania to ~45–75 znaków — poniżej limit w jednostkach ch,
+   więc trzyma się przy każdym rozmiarze czcionki i przy powiększeniu strony. */
+.ubody{max-width:66ch}
+.ulist__li{max-width:70ch}
+.umet__p{max-width:70ch}
+/* w układzie dwukolumnowym kolumna jest i tak węższa — limit nic nie psuje */
+@media(max-width:48em){
+  .ubody,.ulist__li,.umet__p{max-width:none}
+}
+
+/* ── KARTA KONTAKTOWA PLACÓWKI ────────────────────────────────────────────────
+   Adres, telefony, e-mail i godziny. Bez ramek — hairline'y jak w reszcie
+   szablonu. Adres i telefony to cele dotyku, więc mają pełną wysokość wiersza. */
+.plac{margin-top:clamp(20px,2.4vw,28px);border-top:1px solid var(--color-line);max-width:640px}
+.plac__row{display:flex;align-items:center;flex-wrap:wrap;gap:10px 22px;margin:0;
+  padding:clamp(13px,1.5vw,17px) 0;border-bottom:1px solid var(--color-line);
+  font-family:var(--font-body);font-size:1.02rem;line-height:1.5;color:var(--color-text-2)}
+.plac__row .ico{width:18px;height:18px;flex:0 0 auto;color:var(--color-brand)}
+.plac__addr,.plac__mail,.plac__tel{display:inline-flex;align-items:center;gap:10px;
+  min-height:24px;color:var(--color-text);word-break:break-word}
+.plac__tel{font-weight:var(--fw-semibold)}
+@media(hover:hover){
+  .plac__addr:hover,.plac__mail:hover,.plac__tel:hover{color:var(--color-brand)}
+}
+.plac__addr:focus-visible,.plac__mail:focus-visible,.plac__tel:focus-visible{
+  outline:3px solid var(--color-brand);outline-offset:3px}
+
+/* pozycja bez własnej strony — nie udajemy linku */
+.uhub__link--brak{color:var(--color-text-muted);cursor:default}
+/* adres pod nazwą placówki na liście */
+.uhub__meta{display:block;margin-top:5px;font-family:var(--font-body);font-size:.92rem;
+  letter-spacing:0;color:var(--color-text-muted)}
+
+/* ── KONTAKT: siatka placówek ─────────────────────────────────────────────── */
+.kont__karta .plac{margin-top:12px;max-width:none}
+@media(hover:hover){.kont__miasto a:hover{color:var(--color-brand)}}
+
+/* ── ZAKOŃCZENIA STRON NIEUSŁUGOWYCH ──────────────────────────────────────────
+   Wpis o projekcie UE czy polityka prywatności nie kończą się umawianiem wizyty.
+   Wariant cichy: dwa odnośniki nawigacyjne, bez przycisku akcji. */
+.uend--cicha{background:var(--color-bg-ivory)}
+.uend--cicha .uend__inner{justify-content:space-between}
+.uend__obok{display:inline-flex;align-items:center;gap:9px;min-height:24px;
+  font-family:var(--font-body);font-size:.78rem;font-weight:var(--fw-bold);
+  letter-spacing:.1em;text-transform:uppercase;color:var(--color-brand);transition:color .2s}
+.uend__obok span{transition:transform .24s}
+.uend__obok:hover span,.uend__obok:focus-visible span{transform:translateX(4px)}
+/* FAQ: pytanie prowadzące do kontaktu zamiast do rezerwacji */
+.uend__pytanie{margin:0;font-family:var(--font-display);font-weight:400;
+  font-size:clamp(1.24rem,1.8vw,1.55rem);line-height:1.25;color:var(--color-text);max-width:34ch}
+@media(max-width:48em){
+  .uend--cicha .uend__inner{gap:16px}
+  .uend__pytanie{max-width:none;text-align:center}
+}
+
+/* ── FAQ — akordeon ───────────────────────────────────────────────────────────
+   <details>/<summary>: działa bez JS, klawiatura z pudełka, treść zawsze w kodzie
+   (Google widzi odpowiedzi mimo zwinięcia). Bez hoverów — tylko :focus-visible. */
+.faq{padding:clamp(48px,5.6vw,84px) 0;background:var(--color-bg-ivory)}
+.faq__wrap{max-width:860px}
+.faq__list{list-style:none;margin:clamp(18px,2.2vw,26px) 0 0;padding:0;
+  border-top:1px solid var(--color-line)}
+.faq__item{border-bottom:1px solid var(--color-line)}
+
+.faq__q{display:grid;grid-template-columns:auto 1fr auto;align-items:start;
+  gap:clamp(14px,1.8vw,22px);padding:clamp(18px,2.1vw,24px) 0;
+  cursor:pointer;list-style:none}
+.faq__q::-webkit-details-marker{display:none}
+.faq__nr{font-family:var(--font-display);font-size:1rem;line-height:1.55;
+  color:var(--color-text-muted);padding-top:2px}
+.faq__tekst{font-family:var(--font-display);font-weight:400;letter-spacing:.005em;
+  font-size:clamp(1.14rem,1.55vw,1.42rem);line-height:1.34;color:var(--color-text)}
+/* znak +/− rysowany dwiema kreskami: pionowa znika po rozwinięciu */
+.faq__znak{position:relative;width:18px;height:18px;flex:0 0 auto;margin-top:6px}
+.faq__znak::before,.faq__znak::after{content:"";position:absolute;background:var(--color-brand);
+  transition:transform .22s ease,opacity .22s ease}
+.faq__znak::before{left:0;top:8px;width:18px;height:2px}
+.faq__znak::after{left:8px;top:0;width:2px;height:18px}
+.faq__d[open] .faq__znak::after{transform:scaleY(0);opacity:0}
+
+.faq__q:focus-visible{outline:3px solid var(--color-brand);outline-offset:-3px}
+.faq__d[open] .faq__tekst{color:var(--color-brand)}
+
+.faq__a{padding:0 0 clamp(20px,2.4vw,28px) 0;
+  /* wcięcie równe kolumnie numeru, żeby odpowiedź wiązała się wzrokowo z pytaniem */
+  margin-left:calc(1ch + clamp(14px,1.8vw,22px) + 1.4ch)}
+.faq__p{font-family:var(--font-body);font-size:1.04rem;line-height:1.72;
+  color:var(--color-text-2);margin:0;max-width:64ch}
+.faq__p + .faq__p{margin-top:14px}
+
+@media(max-width:48em){
+  .faq__q{gap:12px;padding:16px 0}
+  .faq__a{margin-left:0}
+  .faq__nr{display:none}
+  .faq__q{grid-template-columns:1fr auto}
+}
+
+/* ── KONTAKT — karty placówek ─────────────────────────────────────────────────
+   Poprzednia wersja zlewała się: wszystko tym samym stopniem i kolorem, a kreski
+   dzieliły wiersze, nie grupując kart. Teraz: tło grupuje placówkę, etykiety
+   nazywają dane, a telefon — najważniejszy element strony kontaktu — dominuje. */
+.kont{padding:clamp(46px,5.4vw,80px) 0;background:var(--color-bg-ivory)}
+.kont__lista{list-style:none;margin:clamp(20px,2.4vw,30px) 0 0;padding:0;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+  gap:clamp(18px,2.2vw,26px)}
+.kk{background:var(--color-cream);padding:clamp(24px,2.8vw,34px)}
+
+.kk__miasto{margin:0;font-family:var(--font-body);font-size:.72rem;font-weight:var(--fw-bold);
+  letter-spacing:.18em;text-transform:uppercase;color:var(--color-brand)}
+.kk__nazwa{margin:6px 0 clamp(20px,2.2vw,26px);font-family:var(--font-display);font-weight:400;
+  font-size:clamp(1.3rem,1.8vw,1.5rem);line-height:1.2}
+.kk__nazwa a{color:var(--color-text)}
+.kk__nazwa a:focus-visible{outline:3px solid var(--color-brand);outline-offset:3px}
+
+/* etykieta mówi, czym jest dana wartość — bez niej wszystko było anonimowe */
+.kk__label{margin:0 0 4px;font-family:var(--font-body);font-size:.68rem;font-weight:var(--fw-bold);
+  letter-spacing:.16em;text-transform:uppercase;color:var(--color-text-muted)}
+.kk__label + *{margin-top:0}
+.kk__tel{display:inline-flex;align-items:center;gap:11px;min-height:44px;
+  font-family:var(--font-display);font-size:clamp(1.5rem,2.1vw,1.78rem);line-height:1.1;
+  color:var(--color-text);letter-spacing:.01em}
+.kk__tel .ico{width:20px;height:20px;color:var(--color-brand)}
+.kk__dod{margin:2px 0 0;font-family:var(--font-body);font-size:.95rem;color:var(--color-text-muted)}
+.kk__tel2{color:var(--color-text-2);border-bottom:1px solid var(--color-sand);padding-bottom:1px}
+
+.kk__adres,.kk__mail{display:inline-flex;align-items:center;gap:9px;min-height:24px;
+  font-family:var(--font-body);font-size:1.02rem;line-height:1.55;color:var(--color-text-2)}
+.kk__nav{width:13px;height:13px;flex:0 0 auto;color:var(--color-brand)}
+.kk__mail{word-break:break-word}
+.kk__label:not(:first-of-type){margin-top:clamp(18px,2vw,24px)}
+.kk__tel:focus-visible,.kk__tel2:focus-visible,.kk__adres:focus-visible,.kk__mail:focus-visible{
+  outline:3px solid var(--color-brand);outline-offset:3px}
+
+.kont__stopka{margin:clamp(28px,3.2vw,40px) 0 0;max-width:60ch;
+  font-family:var(--font-body);font-size:1.02rem;line-height:1.75;color:var(--color-text-2)}
+.kont__stopka a{color:var(--color-brand);border-bottom:1px solid var(--color-sand)}
+
+@media(max-width:48em){
+  .kont__lista{grid-template-columns:1fr}
+  .kk__tel{font-size:1.5rem}
+}
+
+/* Adres wieloliniowy: ikona nawigacji ma iść zaraz za tekstem, a nie odklejać się
+   na prawą krawędź karty. inline + vertical-align zamiast flexa załatwia to bez JS. */
+.kk__adres{display:inline;align-items:unset}
+.kk__adres .kk__nav{display:inline-block;vertical-align:-1px;margin-left:7px}
+
+/* ── DOKUMENT PRAWNY ──────────────────────────────────────────────────────────
+   Wcześniej te strony szły przez szablon usługi: 37 sekcji na przemian ivory
+   i kremowych, więc powstawały pasy, a rozdział z samym nagłówkiem tworzył
+   wielką pustkę. Dokument prawny czyta się inaczej — jedna kolumna, jedno tło,
+   gęstszy rytm i spis treści, bo strona ma kilkadziesiąt tysięcy pikseli. */
+.doc{background:var(--color-bg-ivory);padding:clamp(40px,4.6vw,68px) 0 clamp(48px,5.4vw,80px)}
+.doc__wrap{max-width:780px}
+
+.doc__spis{margin:0 0 clamp(36px,4vw,54px);padding:clamp(22px,2.6vw,30px);
+  background:var(--color-cream)}
+.doc__spis-h{margin:0 0 14px;font-family:var(--font-body);font-size:.72rem;font-weight:var(--fw-bold);
+  letter-spacing:.18em;text-transform:uppercase;color:var(--color-brand)}
+.doc__spis-lista{margin:0;padding:0 0 0 1.4em;display:grid;gap:7px}
+.doc__spis-lista li{font-family:var(--font-body);font-size:1rem;line-height:1.5;color:var(--color-text-2)}
+.doc__spis-lista a{color:var(--color-text-2);border-bottom:1px solid transparent;padding-bottom:1px}
+.doc__spis-lista a:focus-visible{outline:3px solid var(--color-brand);outline-offset:3px}
+
+.doc__wstep{margin:0 0 clamp(26px,3vw,38px)}
+.doc__sek{padding:0;margin:0 0 clamp(28px,3.2vw,42px);scroll-margin-top:150px}
+.doc__h{font-family:var(--font-display);font-weight:400;letter-spacing:.005em;
+  font-size:clamp(1.24rem,1.7vw,1.5rem);line-height:1.28;color:var(--color-text);
+  margin:0 0 clamp(12px,1.4vw,16px);padding-bottom:9px;border-bottom:1px solid var(--color-line)}
+.doc__p{font-family:var(--font-body);font-size:1.02rem;line-height:1.72;color:var(--color-text-2);
+  margin:0 0 13px;max-width:68ch}
+.doc__p:last-child{margin-bottom:0}
+.doc__ul{margin:10px 0 13px;padding:0;list-style:none;display:grid;gap:0}
+.doc__ul li{position:relative;padding:7px 0 7px 24px;font-family:var(--font-body);
+  font-size:1rem;line-height:1.62;color:var(--color-text-2);max-width:68ch}
+.doc__ul li::before{content:"";position:absolute;left:0;top:1.05em;width:13px;height:1px;
+  background:var(--color-brand-taupe)}
+
+@media(max-width:48em){
+  .doc__p,.doc__ul li{max-width:none}
+  .doc__spis-lista{gap:9px}
+}
+
+/* ── GDZIE USŁUGA JEST DOSTĘPNA ───────────────────────────────────────────────
+   Fakt z macierzy usługa↔placówka. Pacjent dowiadywał się o tym dopiero po
+   otwarciu panelu; teraz wie od razu i ma odnośnik do strony placówki. */
+.udost .ico{width:16px;height:16px;flex:0 0 auto;color:var(--color-brand)}
+
+/* ── BLOK AKCJI PO „WSKAZANIACH" ──────────────────────────────────────────────
+   Pacjent rozpoznaje objaw i ma akcję pod ręką, zamiast szukać przycisku
+   pięć ekranów niżej. Ocena to dane ze strony głównej, nic dopisanego. */
+.uakcja{background:var(--color-bg-beige);border-bottom:1px solid var(--color-line);
+  padding:clamp(22px,2.6vw,30px) 0}
+.uakcja__inner{display:flex;align-items:center;justify-content:space-between;
+  gap:clamp(16px,2.4vw,32px);flex-wrap:wrap}
+.uakcja__ocena{display:flex;align-items:center;gap:10px;margin:0;
+  font-family:var(--font-body);font-size:1rem;color:var(--color-text-2)}
+.uakcja__ocena strong{font-weight:var(--fw-bold);font-size:1.06rem;color:var(--color-text);
+  font-variant-numeric:tabular-nums}
+.uakcja__gwiazdki{color:var(--color-brand);letter-spacing:.08em}
+.uakcja__btn{min-height:52px;padding:14px 30px}
+@media(max-width:48em){
+  .uakcja__inner{flex-direction:column;align-items:stretch;text-align:center}
+  .uakcja__ocena{justify-content:center}
+  .uakcja__btn{width:100%;justify-content:center}
+}
+
+/* ── HERO PLACÓWKI — na wzór hero ze strony głównej ───────────────────────────
+   Wyższe pasmo, zdjęcie jako tło, pod tytułem fakty (adres, godziny),
+   ocena Google i dwie akcje: telefon oraz umówienie wizyty.
+   Wszystkie dane pochodzą ze źródła — nic nie jest dopisane. */
+.uhero--plac{padding-bottom:clamp(52px,5.6vw,80px)}
+.uhero--plac .uhero__title{max-width:none;margin-bottom:clamp(14px,1.8vw,22px)}
+.uhero__sub{margin:0;font-family:var(--font-body);font-size:clamp(1.02rem,1.2vw,1.14rem);
+  line-height:1.6;color:#e8ddcb}
+.uhero__godz{margin:6px 0 0;font-family:var(--font-body);font-size:.98rem;color:#c9bca6}
+.uhero__ocena{display:inline-flex;align-items:center;gap:10px;
+  margin:clamp(18px,2.2vw,26px) 0 0;padding:9px 16px;
+  background:rgba(255,255,255,.10);
+  font-family:var(--font-body);font-size:.98rem;color:#e8ddcb}
+.uhero__ocena strong{font-weight:var(--fw-bold);font-size:1.06rem;color:#fff;
+  font-variant-numeric:tabular-nums}
+.uhero__gwiazdki{color:#e5c98d;letter-spacing:.08em}
+.uhero__akcje{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;
+  margin-top:clamp(20px,2.4vw,28px)}
+.uhero__akcje .btn{min-height:52px;padding:14px 30px}
+
+@media(max-width:48em){
+  .uhero--plac{padding-bottom:clamp(38px,6vw,54px)}
+  .uhero__akcje{flex-direction:column;align-items:stretch;width:100%}
+  .uhero__akcje .btn{width:100%;justify-content:center}
+  .uhero__ocena{margin-left:auto;margin-right:auto}
+}
+
+/* usługa świadczona w kilku placówkach — sam wykaz, bez pojedynczego telefonu */
+.uhero__gdzie{margin:8px 0 0;font-family:var(--font-body);font-size:1rem;color:#d8cbb6}
+.uhero__gdzie a{color:#fff;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:1px}
+.uhero__gdzie a:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.uhero__sub .ico{width:16px;height:16px;margin-right:8px;vertical-align:-3px;color:#c6b087}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   HERO LANDINGU — układ przeniesiony 1:1 ze strony głównej
+   Wzorzec: kontener o stałej wysokości wewnątrz .wrap (nie na całą szerokość),
+   zdjęcie w tle, a treść w jasnym wycięciu w lewym dolnym rogu.
+   Mobile działa jak na stronie głównej: tekst na biało wprost na zdjęciu.
+   ══════════════════════════════════════════════════════════════════════════════ */
+/* Kontener hero jest szerszy niż standardowy .wrap — tak samo jak na stronie głównej
+   (.hero > .wrap{max-width:1600px;padding:0}). Bez tego zdjęcie było odsunięte
+   o 130 px od lewej i hero nie trzymało się kupy. */
+.uhero--home{position:static;overflow:visible;background:var(--color-bg-ivory);
+  padding:130px 0 44px}
+.uhero--home > .wrap{max-width:1600px;padding:0 34px}
+.uhero--home .uhero__shell{position:relative;height:clamp(628px,77vh,792px);overflow:hidden}
+.uhero--home .uhero__stage{position:absolute;inset:0;z-index:0;overflow:hidden}
+.uhero--home .uhero__img{position:absolute;inset:0;background-size:cover;background-position:56% 46%}
+/* przyciemnienie takie jak na stronie głównej — tekst leży na jasnym wycięciu,
+   więc mocny scrim nie jest potrzebny */
+.uhero--home .uhero__tint{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(38,30,23,.34) 0%,rgba(42,34,26,.20) 45%,rgba(46,37,29,.34) 100%)}
+
+.uhero__cut{position:absolute;left:0;bottom:0;width:49%;min-height:min(45%,332px);z-index:2;
+  background:var(--color-bg-ivory);
+  border-top-right-radius:var(--hero-notch-x,300px) var(--hero-notch-y,225px);
+  padding:28px 46px 26px;display:flex;flex-direction:column;justify-content:center}
+
+.uhero--home .uhero__title{font-size:clamp(2.1rem,3.1vw,2.9rem);line-height:1.06;
+  color:var(--color-text);margin:0;max-width:none;text-align:left;text-wrap:balance}
+.uhero--home .uhero__sub{margin:13px 0 0;font-family:var(--font-body);font-size:1.05rem;
+  line-height:1.5;color:var(--color-text-2);max-width:48ch;text-align:left}
+.uhero--home .uhero__sub .ico{color:var(--color-brand)}
+.uhero--home .uhero__gdzie{margin:7px 0 0;font-family:var(--font-body);font-size:1rem;
+  color:var(--color-text-2);text-align:left}
+.uhero--home .uhero__gdzie a{color:var(--color-text);border-bottom:1px solid var(--color-sand)}
+.uhero--home .uhero__ocena{display:inline-flex;align-items:center;gap:9px;margin:16px 0 0;
+  padding:0;background:none;color:var(--color-text-2);font-size:.98rem}
+.uhero--home .uhero__ocena strong{color:var(--color-text)}
+.uhero--home .uhero__gwiazdki{color:var(--color-brand)}
+.uhero--home .uhero__akcje{display:flex;align-items:center;justify-content:flex-start;
+  gap:14px;flex-wrap:wrap;margin-top:24px}
+.uhero--home .uhero__akcje .btn{min-height:54px;padding:15px 28px}
+
+/* ── mobile: dokładnie jak na stronie głównej — tekst na zdjęciu ── */
+@media(max-width:75em){
+  /* --hmh jest zadeklarowana na .hero strony głównej, więc landing jej nie dziedziczy;
+     bez tego height:var(--hmh) było nieprawidłowe i hero zapadał się do 126 px */
+  .uhero--home{padding:120px 0 30px;--hmh:clamp(500px,76vh,620px)}
+  /* na mobile strona główna idzie na pełną szerokość — kontener bez marginesu */
+  .uhero--home > .wrap{padding:0}
+  .uhero--home .uhero__shell{height:auto;display:block;overflow:visible}
+  .uhero--home .uhero__stage{position:relative;width:100%;height:var(--hmh);overflow:hidden}
+  /* Strona główna wyłącza przyciemnienie, bo jej kadry są ciemne. Nasze zdjęcia usług
+     bywają bardzo jasne (białe fartuchy, ściany gabinetu), więc tekst na biało tonął.
+     Gradient od dołu: obraz zostaje czytelny u góry, tekst dostaje kontrast na dole. */
+  .uhero--home .uhero__tint{display:block;
+    background:linear-gradient(180deg,rgba(28,21,15,.20) 0%,rgba(28,21,15,.45) 30%,rgba(26,20,13,.68) 55%,rgba(24,18,12,.88) 100%)}
+  .uhero__cut{position:absolute;top:0;left:0;right:0;bottom:auto;width:auto;
+    height:var(--hmh);background:transparent;border-radius:0;
+    padding:0 24px 36px;justify-content:flex-end}
+  .uhero--home .uhero__title{color:#fff;font-size:clamp(2rem,7.8vw,2.4rem);
+    text-shadow:0 2px 20px rgba(0,0,0,.45)}
+  .uhero--home .uhero__sub{color:rgba(255,255,255,.9);max-width:33ch;
+    text-shadow:0 1px 12px rgba(0,0,0,.55)}
+  .uhero--home .uhero__sub .ico{color:#e5c98d}
+  .uhero--home .uhero__gdzie{color:rgba(255,255,255,.88);text-shadow:0 1px 12px rgba(0,0,0,.55)}
+  .uhero--home .uhero__gdzie a{color:#fff;border-bottom-color:rgba(255,255,255,.5)}
+  .uhero--home .uhero__ocena{color:rgba(255,255,255,.92);text-shadow:0 1px 12px rgba(0,0,0,.55)}
+  .uhero--home .uhero__ocena strong{color:#fff}
+  .uhero--home .uhero__gwiazdki{color:#e5c98d}
+  .uhero--home .uhero__akcje{flex-direction:column;align-items:stretch;gap:11px;margin-top:22px}
+  .uhero--home .uhero__akcje .btn{width:100%;justify-content:center;min-height:54px}
+  .uhero--home .uhero__akcje .btn--brand{background:#fff;color:var(--color-brand)}
+  .uhero--home .uhero__akcje .btn--outline{border:1px solid rgba(255,255,255,.42);
+    color:#fff;background:rgba(255,255,255,.06)}
+}
+
+/* ══ CZYTELNOŚĆ TREŚCI ═════════════════════════════════════════════════════════
+   Problem: strona usługi była ścianą tekstu — akapity po 300–560 znaków jeden
+   pod drugim, listy bez wagi wizualnej, sekcje w tym samym kolorze tła.
+   Rozwiązanie typograficzne, bez dopisywania ani jednego słowa. */
+
+/* Zdanie wprowadzające do listy (kończy się dwukropkiem) — zapowiedź, nie akapit */
+.uwprow{margin:clamp(26px,3vw,36px) 0 clamp(14px,1.6vw,20px);max-width:62ch;
+  font-family:var(--font-body);font-size:clamp(1.06rem,1.15vw,1.14rem);
+  font-weight:var(--fw-semibold);line-height:1.6;color:var(--color-text)}
+
+/* Lista w sekcji jasnej — numerowana, jak „Wskazania”, ale w wersji dziennej.
+   Numer daje oku punkt zaczepienia i rozbija monotonię bloków tekstu. */
+.unum{list-style:none;margin:0;padding:0;border-top:1px solid var(--color-line);max-width:74ch}
+.unum__row{display:flex;align-items:flex-start;gap:clamp(14px,1.8vw,22px);
+  padding:clamp(13px,1.5vw,17px) 0;border-bottom:1px solid var(--color-line)}
+.unum__n{flex:0 0 auto;min-width:clamp(30px,2.6vw,40px);font-family:var(--font-display);
+  font-size:var(--t-lead);line-height:1.4;color:var(--color-text-muted)}
+.unum__t{font-family:var(--font-body);font-size:1.02rem;line-height:1.65;color:var(--color-text-2)}
+
+/* Więcej powietrza między akapitami — najtańszy sposób na rozbicie ściany tekstu */
+.ubody + .ubody{margin-top:clamp(20px,2.2vw,28px)}
+
+/* Rytm sekcji: jasna i kremowa na przemian, żeby bloki się od siebie odklejały */
+.usluga > .ulist:nth-of-type(even){background:var(--color-cream)}
+.ulist{padding:clamp(52px,6vw,88px) 0}
+
+@media(max-width:48em){
+  .unum__row{gap:12px}
+  .unum__n{min-width:26px}
+  .unum,.uwprow{max-width:none}
+}
+
+/* ── DWA AKAPITY OBOK SIEBIE ──────────────────────────────────────────────────
+   Zamiast czterech bloków tekstu jeden pod drugim — para w kolumnach na kremie.
+   Skraca wrażenie ściany i daje przełamanie rytmu w połowie strony. */
+.udwie{background:var(--color-cream);padding:clamp(44px,5vw,72px) 0}
+.udwie__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(28px,4vw,64px);align-items:start;max-width:1000px}
+.udwie .ubody{max-width:46ch}
+.udwie .ubody + .ubody{margin-top:0}
+
+/* ── CIEMNY ROZDZIAŁ Z AKAPITEM ───────────────────────────────────────────────
+   Ten sam ciemny blok co „Wskazania”, ale niosący prozę. Mocne przełamanie. */
+.uchapter--tekst{padding:clamp(52px,6vw,88px) 0}
+.uchapter__p{font-family:var(--font-body);font-size:clamp(1.06rem,1.16vw,1.16rem);
+  line-height:1.72;color:#e2d6c2;max-width:66ch;margin:0}
+
+@media(max-width:48em){
+  .udwie__grid{grid-template-columns:1fr;gap:clamp(18px,3vw,24px)}
+  .udwie .ubody{max-width:none}
+  .udwie .ubody + .ubody{margin-top:clamp(18px,2.4vw,24px)}
+  .uchapter__p{max-width:none}
+}
+
+/* Ocena prowadzi do wizytówki Google tej konkretnej placówki */
+.uhero__ocenaLink{display:inline-flex;align-items:center;gap:9px;min-height:24px;color:inherit;
+  border-bottom:1px solid transparent;transition:border-color .2s}
+.uhero--home .uhero__ocenaLink{border-bottom-color:var(--color-sand)}
+.uhero__ocenaLink:focus-visible{outline:3px solid var(--color-brand);outline-offset:3px}
+@media(max-width:75em){
+  .uhero--home .uhero__ocenaLink{border-bottom-color:rgba(255,255,255,.45)}
+}
+
+/* ══ CHARAKTER SEKCJI ══════════════════════════════════════════════════════════
+   Sekcje były bezpłciowe: małe nagłówki (1,6–2,15 rem) w jednej kolumnie z tekstem.
+   Strona główna używa nagłówków 2,55–3,4 rem i asymetrii — przenosimy te proporcje. */
+
+/* Nagłówki sekcji w skali ze strony głównej */
+.uchapter__h,.ulist__h{font-size:clamp(2.1rem,3.2vw,3rem);line-height:1.04;letter-spacing:.25px}
+
+/* Układ redakcyjny: nagłówek trzyma lewą kolumnę, treść oddycha po prawej */
+.uchapter__grid,.ulist__grid{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);
+  gap:clamp(28px,4.6vw,80px);align-items:start}
+.uchapter__grid .uchapter__h{margin-bottom:0;text-wrap:balance}
+.uchapter__grid .uchapter__p{max-width:58ch}
+
+/* Zapowiedź listy staje się nagłówkiem bloku — nie akapitem gubiącym się w tekście */
+.ulist__grid .uwprow{margin:0;font-family:var(--font-display);font-weight:400;
+  font-size:clamp(1.44rem,2.1vw,1.9rem);line-height:1.2;color:var(--color-text);
+  max-width:22ch;text-wrap:balance}
+/* klamra narożna — sygnatura marki, ta sama co przy zdjęciach */
+
+
+@media(max-width:60em){
+  .uchapter__grid,.ulist__grid{grid-template-columns:1fr;gap:clamp(16px,3vw,24px)}
+  .ulist__grid .uwprow{max-width:none}
+  .uchapter__grid .uchapter__p{max-width:none}
+}
+
+/* ── JEDEN ZNAK SEKCJI ZAMIAST TRZECH PODKREŚLEŃ ─────────────────────────────
+   Podkreślenia pod nagłówkami łamały się razem z tekstem na urwane odcinki
+   i nic nie wnosiły. W zamian jeden konsekwentny sygnał: krótka kreska
+   nad nagłówkiem, w kolorze marki. Ten sam znak w każdej sekcji. */
+.uchapter__grid,.ulist__grid,.ureq__grid{position:relative;padding-top:clamp(18px,2vw,26px)}
+.uchapter__grid::before,.ulist__grid::before,.ureq__grid::before{
+  content:"";position:absolute;left:0;top:0;width:56px;height:2px;background:var(--color-brand)}
+/* w ciemnym rozdziale kreska musi być widoczna na brązie */
+.uchapter__grid::before{background:#c6b087}
+
+/* ── SKALA ODSTĘPÓW PIONOWYCH ─────────────────────────────────────────────────
+   Było pięć przypadkowych wartości (66/58, 72, 86, 86, 56) bez wspólnej podstawy.
+   Trzy stopnie wystarczą: ciasny, podstawowy, obszerny. Wszystkie sekcje z nich
+   korzystają, więc rytm strony jest przewidywalny. */
+main{--rytm-s:clamp(38px,4vw,56px);--rytm-m:clamp(52px,5.4vw,72px);--rytm-l:clamp(64px,6.6vw,88px)}
+.uopen{padding-top:var(--rytm-m);padding-bottom:var(--rytm-m)}
+.udwie{padding:var(--rytm-m) 0}
+.uchapter{padding:var(--rytm-l) 0}
+.ulist{padding:var(--rytm-l) 0}
+.ureq{padding:var(--rytm-l) 0}
+.umet{padding:var(--rytm-l) 0}
+.uhub{padding:var(--rytm-l) 0}
+.uend{padding:var(--rytm-s) 0}
+
+/* ── SKALA PISMA ──────────────────────────────────────────────────────────────
+   Było 10 stopni, w tym zbitka 15 / 15,7 / 16 / 16,3 / 17 px — pięć rozmiarów
+   w zakresie dwóch pikseli, nie do odróżnienia okiem. Zostaje pięć ról:
+   nagłówek sekcji, nagłówek bloku, lead, tekst, meta. */
+main{--t-tekst:1.06rem;--t-meta:.92rem;--t-lead:1.16rem}
+
+.ubody,.unum__t,.uchapter__p,.ulist__li{font-size:var(--t-tekst)}
+.ulead{font-size:var(--t-lead)}
+.uhero--home .uhero__sub,.uhero--home .uhero__gdzie,.uhero--home .uhero__ocena{font-size:var(--t-meta)}
+.uhero--home .uhero__ocena strong{font-size:var(--t-tekst)}
+
+/* ============================================================
+   ANKIETA SATYSFAKCJI  (/ankieta-satysfakcji/)
+   Struktura pytań i nazwy pól 1:1 z oryginałem WP (patrz archiwum).
+   Język wizualny: ostre rogi, typografia edytorska, bez efektów hover
+   (stan aktywny niesie kolor i obramowanie, nie ruch).
+   ============================================================ */
+
+/* hero bez zdjęcia: ankieta to formularz, nie strona sprzedażowa */
+.uhero--ank{background:var(--color-brand);padding-block:clamp(96px,11vw,150px) clamp(28px,4vw,48px)}
+.uhero--ank .uhero__title{color:#fff}
+.uhero--ank .ubread a,.uhero--ank .ubread span{color:rgba(255,255,255,.82)}
+
+.ank{padding-block:clamp(40px,5vw,72px) clamp(56px,7vw,104px)}
+.ank__wrap{max-width:780px}
+.ank__intro{font-size:clamp(1.02rem,1.5vw,1.16rem);line-height:1.62;color:var(--color-text)}
+.ank__meta{margin-top:18px;font-size:.94rem;color:var(--color-text-muted)}
+
+.ank__form{margin-top:clamp(30px,4vw,48px)}
+
+/* honeypot: poza ekranem, nie display:none — boty pomijają ukryte pola */
+.ank__hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+.ank__q{border:0;border-top:1px solid var(--color-line);margin:0;padding:clamp(24px,3vw,34px) 0 0}
+.ank__q+.ank__q{margin-top:clamp(24px,3vw,34px)}
+.ank__legend{font-family:var(--font-display);font-size:clamp(1.16rem,1.9vw,1.42rem);line-height:1.28;
+  color:var(--color-text);padding:0;margin-bottom:14px;text-wrap:balance}
+.ank__req{color:var(--color-brand)}
+.ank__hint{font-size:.86rem;color:var(--color-text-muted);margin:-6px 0 14px}
+
+/* radio chowamy wizualnie, ale zostaje w drzewie dostępności i łapie fokus */
+.ank__sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+  clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+
+.ank__opts{display:flex;flex-direction:column;gap:10px}
+.ank__opt{display:flex;align-items:center;gap:12px;min-height:48px;padding:11px 16px;
+  border:1px solid var(--color-line);background:#fff;font-size:1rem;color:var(--color-text);cursor:pointer}
+.ank__opt::before{content:"";flex:0 0 auto;width:18px;height:18px;border:1.5px solid var(--color-text-muted);border-radius:50%}
+.ank__sr:checked+.ank__opt{border-color:var(--color-brand);box-shadow:inset 0 0 0 1px var(--color-brand)}
+.ank__sr:checked+.ank__opt::before{border-color:var(--color-brand);border-width:5px}
+.ank__sr:focus-visible+.ank__opt{outline:3px solid var(--color-brand);outline-offset:2px}
+
+/* skala 1–10: cele dotykowe 48×48, zawijanie na wąskich ekranach (WCAG 2.5.8) */
+.ank__scale{display:flex;flex-wrap:wrap;gap:8px}
+.ank__scaleopt{display:flex;align-items:center;justify-content:center;min-width:48px;min-height:48px;
+  padding:0 6px;border:1px solid var(--color-line);background:#fff;
+  font-family:var(--font-body);font-size:1rem;color:var(--color-text);cursor:pointer}
+.ank__sr:checked+.ank__scaleopt{background:var(--color-brand);border-color:var(--color-brand);color:#fff}
+.ank__sr:focus-visible+.ank__scaleopt{outline:3px solid var(--color-brand);outline-offset:2px}
+
+.ank__clabel{display:block;margin-top:16px;font-size:.86rem;font-weight:var(--fw-bold);
+  letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-muted)}
+.ank__comment{width:100%;margin-top:8px;min-height:48px;padding:12px 14px;
+  border:1px solid var(--color-line);background:#fff;font-family:var(--font-body);font-size:1rem;color:var(--color-text)}
+.ank__comment:focus-visible{outline:3px solid var(--color-brand);outline-offset:2px}
+
+.ank__err{margin-top:10px;font-size:.9rem;color:#8a2b20}
+.ank__q[data-invalid]{border-left:3px solid #8a2b20;padding-left:14px}
+
+.ank__submit{margin-top:clamp(30px,4vw,44px);padding-top:clamp(24px,3vw,32px);border-top:1px solid var(--color-line)}
+.ank__send{background:var(--color-brand);color:#fff;border-color:var(--color-brand);width:100%;max-width:320px}
+.ank__status{margin-top:14px;font-size:.96rem;line-height:1.5;color:var(--color-text)}
+.ank__status[data-typ="blad"]{color:#8a2b20}
+
+@media (max-width:520px){
+  .ank__scale{gap:6px}
+  .ank__scaleopt{min-width:44px;min-height:44px}
+  .ank__send{max-width:none}
+}
+
+/* ============================================================
+   NOWY UKŁAD STRONY USŁUGI (prototyp)
+   Cel: „wszystko na tacy" — tytuł + czym jest + gdzie + umów widoczne
+   od razu, bez długiego scrollowania. Hero edytorski, BEZ kremowego
+   wcięcia (to sygnatura strony głównej) — świadomie inny niż home.
+   ============================================================ */
+
+/* --- HERO usługi: zwarte pasmo ze zdjęciem, scrim, tytuł + lead --- */
+.shero{position:relative;overflow:hidden;background:var(--color-brand-dark);
+  padding-top:calc(138px + clamp(28px,4vw,52px));padding-bottom:clamp(34px,4.5vw,60px)}
+.shero__media{position:absolute;inset:0;z-index:0}
+.shero__img{position:absolute;inset:0;background-size:cover;background-position:50% 42%}
+/* lżejszy scrim — zdjęcie wyraźnie widoczne; czytelność białego tekstu daje cień,
+   nie ciemna płachta. Dół nieco mocniejszy, bo tam siedzi tytuł. */
+.shero__scrim{position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(22,16,10,.30) 0%,rgba(24,18,12,.40) 52%,rgba(28,21,15,.62) 100%)}
+/* treść wyśrodkowana */
+.shero__inner{position:relative;z-index:1;max-width:920px;margin-inline:auto;text-align:center}
+.shero .ubread{margin-bottom:clamp(14px,2vw,22px)}
+.shero .ubread__list{justify-content:center}
+.shero .ubread a,.shero .ubread span{color:#fff;text-shadow:0 1px 10px rgba(12,8,4,.7)}
+.shero .ubread a:focus-visible{outline:3px solid #fff;outline-offset:2px}
+@media(max-width:48em){
+  .ubread{font-size:.6rem;letter-spacing:.045em}
+  .ubread__list{gap:6px}
+  .ubread__list li{gap:6px}
+  .ubread a{border-bottom:0;padding-bottom:0}
+  .shero .ubread{margin-bottom:clamp(10px,3vw,16px)}
+}
+.shero__kicker{font-family:var(--font-body);font-size:.8rem;font-weight:var(--fw-bold);
+  letter-spacing:.18em;text-transform:uppercase;color:var(--color-sand);margin-bottom:12px;
+  text-shadow:0 1px 10px rgba(12,8,4,.7)}
+.shero__title{font-family:var(--font-display);color:#fff;font-weight:400;line-height:1.04;
+  font-size:clamp(2.3rem,5vw,3.7rem);letter-spacing:.2px;margin-bottom:clamp(14px,1.8vw,20px);
+  text-shadow:0 2px 22px rgba(10,6,3,.6),0 1px 3px rgba(10,6,3,.5)}
+.shero__lead{color:#fff;font-size:clamp(1.04rem,1.5vw,1.22rem);line-height:1.58;max-width:60ch;
+  margin-inline:auto;text-shadow:0 1px 12px rgba(12,8,4,.7)}
+
+/* --- NA TACY: placówka(i) + umów, od razu pod hero --- */
+.splate{background:var(--color-bg-ivory);border-bottom:1px solid var(--color-line)}
+.splate__inner{padding-block:clamp(26px,3.4vw,42px)}
+.splate__head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.splate__label{font-family:var(--font-body);font-size:.8rem;font-weight:var(--fw-bold);letter-spacing:.14em;text-transform:uppercase;color:var(--color-text-muted)}
+.splate__nfz{display:inline-flex;align-items:center;gap:10px;font-size:.92rem;color:var(--color-text-muted)}
+.splate__nfz img{display:block}
+.splate__also{margin-top:clamp(16px,1.8vw,22px);font-size:.96rem;color:var(--color-text-2)}
+.splate__also a{color:var(--color-brand);font-weight:var(--fw-semibold);text-underline-offset:2px}
+/* karty + wymagania jako RODZEŃSTWO w jednym flexie (display:contents na wrapperze),
+   żeby kilka kart stało obok siebie, a wymagania obok kart — nie pod spodem.
+   row-gap 16px (przy zawijaniu), column-gap większy (między kartą a kolumną obok). */
+.splate__grid{display:flex;flex-wrap:wrap;gap:16px clamp(24px,3.5vw,48px);align-items:flex-start}
+.splate__cards{display:contents}
+.splate__req{flex:1 1 100%;max-width:74ch;padding-top:clamp(16px,2vw,22px);margin-top:clamp(14px,1.8vw,20px);border-top:1px solid var(--color-line)}
+.splate__reqLabel{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);
+  font-size:.8rem;font-weight:var(--fw-bold);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--color-brand);margin-bottom:14px}
+.splate__reqLabel .ico{width:20px;height:20px}
+.splate__reqP{color:var(--color-text-2);line-height:1.62;margin-bottom:11px;font-size:.99rem}
+.splate__reqP:last-child{margin-bottom:0}
+@media(max-width:52em){ .splate__cards{grid-template-columns:1fr} }
+
+.pcard{flex:1 1 300px;max-width:360px;display:flex;flex-direction:column;gap:9px;padding:clamp(18px,2vw,24px);
+  background:#fff;border:1px solid var(--color-line)}
+.pcard__city{font-family:var(--font-display);font-size:1.4rem;line-height:1.1;color:var(--color-text)}
+.pcard__city a{color:inherit;text-decoration:none;border-bottom:1px solid var(--color-line);transition:border-color .2s,color .2s}
+.pcard__city a:hover,.pcard__city a:focus-visible{color:var(--color-brand);border-color:var(--color-brand)}
+/* min-height 24px: telefon i e-mail w karcie mierzyły ~19 px wysokości — poniżej progu
+   WCAG 2.2 AA „Target Size (Minimum)". Ten sam wymiar dla adresu, żeby rytm się zgadzał. */
+.pcard__row{display:flex;align-items:flex-start;gap:9px;min-height:24px;
+  font-size:.98rem;color:var(--color-text-2);line-height:1.4}
+.pcard__row .ico{width:18px;height:18px;flex:0 0 auto;margin-top:2px;color:var(--color-text-muted)}
+.pcard a.pcard__row{text-decoration:none}
+.pcard a.pcard__row:focus-visible{outline:3px solid var(--color-brand);outline-offset:2px}
+.pcard__cta{margin-top:6px}
+.pcard__cta .btn{width:100%}
+
+/* Jedna placówka i brak kolumny wymagań (35 z 36 stron usług): pionowa karta zostawiała
+   dwie trzecie pasa pustych. Wtedy karta rozkłada się poziomo na całą szerokość —
+   miasto, dane kontaktowe, przycisk w jednej linii. Te same dane, inny układ. */
+@media(min-width:52em){
+  .splate__grid .pcard:only-child{
+    flex:1 1 100%;max-width:none;flex-direction:row;flex-wrap:wrap;align-items:center;
+    gap:10px clamp(20px,2.6vw,38px);padding-block:clamp(16px,1.8vw,20px)}
+  .splate__grid .pcard:only-child .pcard__city{flex:0 0 auto}
+  .splate__grid .pcard:only-child .pcard__row{flex:0 1 auto;align-items:center}
+  .splate__grid .pcard:only-child .pcard__row .ico{margin-top:0}
+  .splate__grid .pcard:only-child .pcard__cta{margin:0 0 0 auto}
+  .splate__grid .pcard:only-child .pcard__cta .btn{width:auto}
+}
+
+/* --- TREŚĆ: zwarta, ale ta sama typografia --- */
+.sbody{padding-block:clamp(40px,5vw,72px)}
+.sbody .wrap{max-width:1080px}
+/* dwie kolumny tylko gdy jest zdjęcie; bez zdjęcia tekst na pełną (czytelną) szerokość */
+.sbody__grid{display:block}
+.sbody__grid:has(.sbody__fig){display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,4vw,56px);align-items:start}
+.sbody__grid:not(:has(.sbody__fig)) .sbody__text{max-width:68ch}
+.sbody__lead{font-size:clamp(1.06rem,1.5vw,1.2rem);line-height:1.62;color:var(--color-text);margin-bottom:16px}
+.sbody__p{color:var(--color-text-2);line-height:1.66;margin-bottom:14px}
+.sbody__fig{margin:0}
+.sbody__fig img{width:100%;height:auto;border-radius:var(--radius-img);display:block}
+/* mobile: grid MUSI zejść do 1 kolumny. Selektor z :has, bo inaczej reguła
+   :has(.sbody__fig) (wyższa specyficzność) trzyma 2 kolumny i tekst ląduje
+   w wąskim pasku po prawej. */
+@media(max-width:60em){
+  .sbody__grid,
+  .sbody__grid:has(.sbody__fig){display:block}
+  .sbody__fig{margin-top:clamp(18px,3vw,26px)}
+}
+
+/* listy wyliczeniowe w treści usługi (wykazy ze źródła: świadczenia, prądy, zabiegi) */
+.sbody__intro{color:var(--color-text-2);line-height:1.62;margin:2px 0 6px;font-weight:var(--fw-semibold)}
+.sbody__list{list-style:none;margin:4px 0 18px;padding:0}
+.sbody__list li{position:relative;padding:9px 0 9px 22px;border-bottom:1px solid var(--color-line);
+  line-height:1.55;color:var(--color-text-2)}
+.sbody__list li:last-child{border-bottom:0}
+.sbody__list li::before{content:"";position:absolute;left:2px;top:17px;width:8px;height:1.5px;background:var(--color-brand)}
+
+/* ============================================================
+   DŁUGA TREŚĆ USŁUGI w sekcjach — rozbicie „ściany tekstu"
+   Intro (lead + zdjęcie) u góry, dalej nazwane sekcje z nagłówkami.
+   Węższa kolumna czytania, wyraźny rytm — skanowalne, nie monolit.
+   ============================================================ */
+.sbody--intro{padding-block:clamp(40px,5vw,68px) clamp(28px,3.5vw,44px)}
+.sbody--intro .sbody__lead{font-size:clamp(1.12rem,1.7vw,1.34rem);line-height:1.55;color:var(--color-text);
+  font-family:var(--font-body);margin:0}
+
+.susec{padding-block:clamp(26px,3.4vw,40px)}
+.susec:nth-of-type(even){background:var(--color-bg-ivory)}   /* delikatny rytm tła między sekcjami */
+.susec__wrap{max-width:720px}                                 /* ~66ch — komfort czytania */
+.susec__h{font-family:var(--font-display);font-weight:400;line-height:1.12;
+  font-size:clamp(1.5rem,2.4vw,2rem);color:var(--color-text);margin-bottom:clamp(14px,1.6vw,20px);
+  padding-bottom:12px;border-bottom:1px solid var(--color-line)}
+.susec__sub{font-family:var(--font-body);font-weight:var(--fw-bold);font-size:1.02rem;
+  letter-spacing:.01em;color:var(--color-brand);margin:clamp(18px,2.4vw,26px) 0 8px}
+.susec__wrap p{color:var(--color-text-2);line-height:1.7;margin-bottom:14px}
+.susec__wrap p:last-child{margin-bottom:0}
+.susec__wrap .sbody__list{margin-block:6px 16px}
+
+/* ============================================================
+   AKORDEON treści usługi — PŁYNNY (bez skakania).
+   Nie <details> (który skacze) — przycisk + panel animowany
+   grid-template-rows 0fr→1fr, jak mobilne submenu w tym kodzie.
+   ============================================================ */
+.sufolds{padding-block:clamp(30px,4vw,52px);display:flex;flex-direction:column;gap:12px}
+.sufolds__wrap{max-width:860px}
+.sufold{border:1px solid var(--color-line);background:#fff}
+.sufold__sum{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:clamp(16px,2vw,22px) clamp(18px,2.4vw,26px);background:var(--color-bg-ivory);border:0;cursor:pointer;text-align:left;
+  font-family:var(--font-display);font-weight:400;line-height:1.15;
+  font-size:clamp(1.24rem,1.9vw,1.62rem);color:var(--color-text)}
+.sufold__sum::after{content:"";flex:0 0 auto;width:11px;height:11px;
+  border-right:2px solid var(--color-brand);border-bottom:2px solid var(--color-brand);
+  transform:rotate(45deg);transition:transform .3s cubic-bezier(.4,0,.2,1)}
+.sufold.is-open>.sufold__sum::after{transform:rotate(-135deg)}
+.sufold.is-open>.sufold__sum{border-bottom:1px solid var(--color-line)}
+.sufold__sum:focus-visible{outline:3px solid var(--color-brand);outline-offset:-3px}
+/* panel: animowana wysokość bez skoku (0fr→1fr), treść klipowana overflow:hidden */
+.sufold__panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s cubic-bezier(.4,0,.2,1)}
+.sufold.is-open>.sufold__panel{grid-template-rows:1fr}
+.sufold__panel>.sufold__body{overflow:hidden;min-height:0}
+.sufold__inner{padding:clamp(18px,2.4vw,26px);max-width:760px}
+.sufold__inner>p{color:var(--color-text-2);line-height:1.7;margin-bottom:14px}
+.sufold__inner>p:last-child{margin-bottom:0}
+.sufold__sub{font-family:var(--font-body);font-weight:var(--fw-bold);font-size:1.02rem;
+  color:var(--color-brand);margin:clamp(16px,2.2vw,22px) 0 8px}
+.sufold__list{list-style:none;margin:0;padding:0;columns:2;column-gap:34px}
+.sufold__list li{break-inside:avoid;position:relative;padding:7px 0 7px 20px;line-height:1.5;color:var(--color-text-2)}
+.sufold__list li::before{content:"";position:absolute;left:2px;top:15px;width:7px;height:1.5px;background:var(--color-brand)}
+@media(max-width:640px){.sufold__list{columns:1}}
+/* bez JS: pokaż całą treść (panel otwarty), żeby nic nie było ukryte */
+html:not(.js) .sufold__panel{grid-template-rows:1fr}
+@media(prefers-reduced-motion:reduce){.sufold__panel,.sufold__sum::after{transition:none}}
+
+/* treść strony placówki — naturalna proza (nie uboga lista); kontakt jest w panelu hero */
+.facnote{padding-block:clamp(40px,5.5vw,80px)}
+.facnote__wrap{max-width:680px}
+.facnote__lead{font-family:var(--font-body);font-size:clamp(1.12rem,1.7vw,1.34rem);line-height:1.6;
+  color:var(--color-text);margin-bottom:16px}
+.facnote__p{color:var(--color-text-2);line-height:1.7;margin-bottom:14px}
+.facnote__p:last-child{margin-bottom:0}
+.facnote__p a{color:var(--color-brand);text-decoration:underline;text-underline-offset:2px}
+
+/* strona przejściowa placówki psychologicznej (przenoszona na osobny serwis) */
+.facmove{min-height:60vh;display:flex;align-items:center;padding-block:clamp(120px,14vw,180px) clamp(60px,8vw,110px)}
+.facmove__wrap{max-width:660px;margin-inline:auto;text-align:center}
+.facmove__kicker{font-family:var(--font-body);font-size:.82rem;font-weight:var(--fw-bold);letter-spacing:.16em;
+  text-transform:uppercase;color:var(--color-text-muted);margin-bottom:14px}
+.facmove__h{font-family:var(--font-display);font-weight:400;line-height:1.1;
+  font-size:clamp(1.9rem,4vw,3rem);color:var(--color-text);margin-bottom:clamp(16px,2vw,22px)}
+.facmove__lead{font-size:clamp(1.04rem,1.5vw,1.2rem);line-height:1.62;color:var(--color-text-2);margin-bottom:clamp(24px,3vw,34px)}
+.facmove__contact{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;margin-bottom:clamp(26px,3vw,36px)}
+.facmove__contact a{display:inline-flex;align-items:center;gap:9px;font-size:1.05rem;color:var(--color-text);text-decoration:none}
+.facmove__contact a:focus-visible{outline:3px solid var(--color-brand);outline-offset:3px}
+.facmove__contact .ico{width:20px;height:20px;color:var(--color-text-muted)}
+
+/* ============================================================
+   TRENING EMS  (/uslugi/trening-ems/) + zajawka na stronie głównej
+   Nowa usługa. Treść i cytaty pochodzą z materiału prasowego
+   iszczecinek.pl powstałego przy współpracy z Reha Medica (źródło
+   podlinkowane na stronie). Film z Facebooka ładowany dopiero po
+   kliknięciu (facade) — zero żądań do stron trzecich przed zgodą
+   użytkownika, zgodnie z zasadą prywatności całego serwisu.
+   ============================================================ */
+
+/* — Intro EMS: film w prawej kolumnie taktu otwarcia, w ramce edytorskiej —
+     przesunięty piaskowy kadr za spodem (jak przy zdjęciach na innych stronach usług). */
+.lintro__fig:has(.emsembed){align-self:center}
+.lintro__fig:has(.emsembed)::before{display:block;right:-18px;bottom:-18px;
+  width:64%;height:66%;background:var(--color-bg-beige-2);z-index:0}
+
+/* pasek liczb — estetyczne kremowe kafelki (bez obramowań/kresek), pasujące do ciepłej
+   palety serwisu. Duża serifowa liczba z piaskowym akcentem + krótki opis. */
+.emsstats{margin-top:clamp(40px,5vw,72px);display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,18px)}
+.emsstat{background:var(--color-cream);padding:clamp(22px,2.4vw,30px) clamp(20px,2.2vw,28px)}
+.emsstat__n{font-family:var(--font-display);font-weight:var(--fw-regular);
+  font-size:clamp(1.8rem,2.7vw,2.5rem);line-height:1.02;color:var(--color-text);
+  margin:0 0 clamp(10px,1.2vw,14px);padding-bottom:clamp(10px,1.2vw,14px);
+  position:relative}
+.emsstat__n::after{content:"";position:absolute;left:0;bottom:0;width:34px;height:2px;
+  background:var(--color-sand)}
+.emsstat__t{font-family:var(--font-body);font-size:.97rem;line-height:1.5;
+  color:var(--color-text-2);margin:0}
+@media(max-width:40em){
+  .emsstats{grid-template-columns:1fr;gap:10px}
+  .emsstat{padding:clamp(18px,4.6vw,24px) clamp(18px,4.6vw,22px)}
+  .emsstat__n{font-size:clamp(1.6rem,7.5vw,2rem)}
+}
+
+/* — Źródło materiału — drobna nota z linkiem do artykułu. — */
+.emssource{margin-top:clamp(30px,3.6vw,46px);font-family:var(--font-body);
+  font-size:.86rem;line-height:1.6;color:var(--color-text-muted)}
+.emssource a{color:var(--color-brand);text-decoration:underline;text-underline-offset:2px}

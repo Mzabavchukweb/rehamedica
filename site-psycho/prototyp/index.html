@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PROTOTYP — kierunek strony głównej · Reha Medica Psychoterapia</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="preload" href="../assets/fonts/literata-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/worksans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<!-- style.css TYLKO dla @font-face i tokenów :root — zero klas układu -->
+<link rel="stylesheet" href="../css/style.css?v=2">
+<style>/* PROTOTYP — do wyrzucenia. Zero klas z serwisu; z style.css bierzemy
+   wyłącznie @font-face i tokeny :root. Układ napisany od zera. */
+
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--color-bg-ivory);
+  color:var(--color-text);
+  font-family:var(--font-body);
+  -webkit-font-smoothing:antialiased;
+}
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:16px;top:16px;z-index:99;background:var(--color-brand);color:#fff;padding:10px 16px}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--color-brand);outline-offset:4px}
+.pwrap{max-width:1140px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+
+/* ── chrom: nagłówek i wybór miasta jako JEDEN blok ────────────────────
+   Były dwa osobne paski, razem 220 px zanim zaczęła się treść. Telefon
+   wjeżdża do paska miasta, bo to jest ta sama myśl: wybierasz miasto →
+   dostajesz numer tamtejszej recepcji. */
+.chrome{border-bottom:1px solid var(--color-line)}
+.ph{
+  display:flex;align-items:center;gap:clamp(20px,4vw,44px);
+  max-width:1140px;margin:0 auto;padding:20px clamp(20px,5vw,48px) 16px;
+}
+.ph__logo img{display:block;height:60px;width:auto}
+.ph__nav{display:flex;gap:30px;margin-left:auto;font-size:.9375rem;color:var(--color-text-2)}
+.ph__nav a{padding:4px 0;border-bottom:1px solid transparent}
+.ph__nav a:hover{color:var(--color-brand);border-bottom-color:var(--color-brand)}
+
+/* ── pasek miasta ─────────────────────────────────────────────────────
+   Nic nie jest wybrane na starcie (reguła CLAUDE.md). */
+.cb{
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;
+  max-width:1140px;margin:0 auto;padding:0 clamp(20px,5vw,48px) 18px;
+}
+.cb__q{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--color-text-muted)}
+.cb__opts{display:flex;flex-wrap:wrap;gap:4px 18px}
+.cb__opt{
+  border:0;background:none;padding:3px 0;cursor:pointer;
+  font-family:var(--font-body);font-size:.9375rem;color:var(--color-text-2);
+  border-bottom:1px solid transparent;
+}
+.cb__opt:hover{border-bottom-color:var(--color-brand-taupe)}
+.cb__opt[aria-pressed="true"]{color:var(--color-brand);font-weight:600;border-bottom-color:var(--color-brand)}
+.cb__clear{
+  border:0;background:none;cursor:pointer;
+  font-family:var(--font-body);font-size:.8125rem;color:var(--color-text-muted);text-decoration:underline;
+}
+/* telefon: akcja, nie nagłówek — Work Sans, z etykietą czyja to recepcja */
+.cb__tel{margin-left:auto;display:flex;align-items:baseline;gap:10px;white-space:nowrap}
+.cb__tel small{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--color-text-muted)}
+.cb__tel a{
+  font-family:var(--font-body);font-weight:600;font-size:1.0625rem;
+  color:var(--color-brand);border-bottom:1px solid var(--color-brand-taupe);padding-bottom:2px;
+}
+.cb__tel a:hover{border-bottom-color:var(--color-brand)}
+@media (max-width:52em){.cb__tel{margin-left:0;width:100%}}
+
+/* ── teza: jedyny moment ruchu na całej stronie ───────────────────────── */
+.teza{
+  margin:0;font-family:var(--font-display);font-weight:400;
+  color:var(--color-brand);text-wrap:balance;
+}
+.teza__a,.teza__b{display:block}
+.teza__a{max-width:19ch;font-size:clamp(2.1rem,1.1rem + 3.4vw,3.4rem);line-height:1.1}
+.teza__b{
+  margin-top:1.1rem;font-family:var(--font-body);font-weight:400;
+  font-size:clamp(1rem,.9rem + .5vw,1.1875rem);line-height:1.5;color:var(--color-text-2);
+  max-width:34ch;
+}
+body:not(.in) .teza__a,body:not(.in) .teza__b{opacity:0;transform:translateY(10px)}
+.in .teza__a,.in .teza__b{opacity:1;transform:none;transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.3,1)}
+.in .teza__b{transition-delay:.18s}
+@media (prefers-reduced-motion:reduce){.teza__a,.teza__b{transition:none!important}}
+
+.pomoc{margin:0;font-size:.9375rem;color:var(--color-text-muted)}
+.pomoc a{border-bottom:1px solid var(--color-brand-taupe);color:var(--color-text-2)}
+.pomoc a:hover{border-bottom-color:var(--color-brand);color:var(--color-brand)}
+
+/* ── dostępność w wybranym mieście ────────────────────────────────────── */
+[data-avail="no"]{opacity:.4}
+[data-avail="no"] .v1__do::after,[data-avail="no"] .v2__do::after{content:" · nie w tym mieście"}
+[data-avail="ask"] .v1__do::after,[data-avail="ask"] .v2__do::after{content:" · zapytaj recepcję"}
+
+/* przełącznik wariantów */
+body[data-v="1"] .v2,body[data-v="1"] .v3,
+body[data-v="2"] .v1,body[data-v="2"] .v3,
+body[data-v="3"] .v1,body[data-v="3"] .v2{display:none}
+
+/* ══════════════ WARIANT 1 — LISTA ══════════════
+   Spis rzeczy, które mogą być prawdziwe. Włoskowate linie, pełna szerokość,
+   gęsto — wszystkie sześć widać bez przewijania. */
+.v1{padding:clamp(52px,8vw,92px) 0 88px}
+.v1__list{max-width:1000px;margin:clamp(38px,5vw,56px) 0 40px;border-top:1px solid var(--color-line)}
+.v1__row{
+  display:grid;grid-template-columns:52px minmax(0,1fr) auto 22px;
+  align-items:center;gap:24px;
+  padding:22px 0;border-bottom:1px solid var(--color-line);
+}
+.v1__ico{width:52px;height:auto;color:var(--color-brand);--ico-blob:transparent}
+.v1__zd{
+  font-family:var(--font-display);font-weight:400;
+  font-size:clamp(1.2rem,.95rem + 1vw,1.6rem);line-height:1.25;color:var(--color-brand);
+  text-wrap:pretty;
+}
+.v1__do{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--color-text-muted);white-space:nowrap}
+.v1__arw{color:var(--color-brand-taupe);font-size:1.1rem;justify-self:end}
+.v1__row:hover .v1__ico{--ico-blob:var(--color-bg-beige-2)}
+.v1__row:hover .v1__arw{color:var(--color-brand)}
+
+/* ══════════════ WARIANT 2 — ROZMOWA ══════════════
+   Wąska kolumna wciśnięta w lewo, prawa strona celowo pusta.
+   Wersy jak w transkrypcji: duża interlinia, brak linii, brak ikon. */
+.v2{padding:clamp(56px,9vw,112px) 0 96px}
+.v2__grid{display:grid;grid-template-columns:minmax(0,52ch) 1fr;gap:0}
+.v2__col{max-width:52ch}
+.v2__list{margin:clamp(48px,8vw,88px) 0 44px;display:flex;flex-direction:column;gap:clamp(26px,3.5vw,40px)}
+.v2__row{display:block;position:relative;padding-left:30px}
+.v2__mark{
+  position:absolute;left:0;top:.62em;width:14px;height:1px;background:var(--color-brand-taupe);
+}
+.v2__row:hover .v2__mark{width:22px;background:var(--color-brand);transition:width .25s ease}
+.v2__zd{
+  display:block;font-family:var(--font-display);font-weight:400;
+  font-size:clamp(1.25rem,1rem + 1.1vw,1.7rem);line-height:1.42;color:var(--color-brand);
+  text-wrap:pretty;
+}
+.v2__do{
+  display:block;margin-top:8px;
+  font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--color-text-muted);
+}
+@media (max-width:60em){.v2__grid{grid-template-columns:1fr}}
+
+/* ══════════════ WARIANT 3 — PROZA ══════════════
+   Bez listy. Jeden akapit, w którym klikalne są całe zdania.
+   Nawigacja schowana w tekście — najodważniejsze i najbardziej ryzykowne. */
+.v3{padding:clamp(56px,9vw,104px) 0 96px}
+.teza--v3{max-width:16ch}
+.v3__proza{
+  max-width:60ch;margin:clamp(40px,6vw,64px) 0 36px;
+  font-family:var(--font-display);font-weight:400;
+  font-size:clamp(1.15rem,.95rem + .85vw,1.5rem);line-height:1.85;
+  color:var(--color-text-2);
+}
+.v3__zd{
+  color:var(--color-brand);
+  box-shadow:inset 0 -1px 0 var(--color-brand-taupe);
+}
+.v3__zd:hover{box-shadow:inset 0 -2px 0 var(--color-brand);background:var(--color-cream)}
+.v3__zd[data-avail="no"]{box-shadow:none;text-decoration:line-through}
+
+/* ── stopka + przełącznik prototypu ───────────────────────────────────── */
+.pf{
+  max-width:1140px;margin:0 auto;padding:36px clamp(20px,5vw,48px) 120px;
+  border-top:1px solid var(--color-line);
+  font-size:.875rem;color:var(--color-text-muted);
+}
+.pf p{margin:0 0 6px}
+.pf__proto{letter-spacing:.14em;text-transform:uppercase;font-size:.6875rem;color:var(--color-brand-taupe)}
+.switch{
+  position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:50;
+  display:flex;align-items:center;gap:4px;
+  padding:7px 8px;border-radius:100px;
+  background:var(--color-brand-dark);color:#fff;
+  box-shadow:0 8px 28px rgba(54,45,36,.28);
+  font-size:.8125rem;
+}
+.switch__l{padding:0 10px 0 8px;opacity:.55;font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase}
+.switch a{display:flex;align-items:center;gap:7px;padding:7px 15px;border-radius:100px;opacity:.62}
+.switch a b{font-family:var(--font-display);font-size:1rem;font-weight:400}
+.switch a:hover{opacity:1}
+.switch a[aria-current="true"]{background:rgba(255,255,255,.16);opacity:1}
+
+@media (max-width:37.5em){
+  .ph{flex-wrap:wrap;gap:14px}
+  .ph__nav{order:3;width:100%;margin-left:0;gap:20px}
+  .v1__row{grid-template-columns:34px minmax(0,1fr) 18px;gap:16px}
+  .v1__do{grid-column:2;white-space:normal}
+  .v1__ico{width:34px}
+  .switch{font-size:.75rem}
+  .switch a{padding:6px 11px}
+}
+</style>
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="p-kryzys" viewBox="0 0 200 200"><path d="M28 72 C44 36 88 12 128 24 C168 36 190 78 178 116 C164 158 116 186 76 174 C36 162 12 108 28 72 Z" style="fill:var(--ico-blob,#ece4d7)"></path>
+      <g style="fill:none;stroke:currentColor;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round">
+      <path d="M46 66 C50 50 66 40 82 44" style="stroke-width:2.2"></path>
+      <path d="M34 52 L26 44 M44 34 L40 24 M66 28 L66 18" style="stroke-width:2.2"></path>
+      <path d="M66 122 C52 122 42 112 42 100 C42 88 52 78 64 79 C68 62 86 54 100 61 C108 48 128 48 136 61 C152 57 166 70 163 86 C173 91 176 102 171 112 C167 119 158 122 148 122 Z"></path>
+      <path d="M74 134 L68 152 M98 134 L92 156 M122 134 L116 150 M146 132 L141 146" style="stroke-width:2.4"></path>
+      </g></symbol>
+<symbol id="p-napiecie" viewBox="0 0 200 200"><path d="M22 96 C22 56 58 18 104 20 C146 22 184 52 178 96 C172 140 132 178 88 170 C46 162 22 136 22 96 Z" style="fill:var(--ico-blob,#ece4d7)"></path>
+      <g style="fill:none;stroke:currentColor;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round">
+      <g transform="translate(0 14)">
+      <path d="M38 130 A62 62 0 0 1 162 130"></path>
+      <path d="M38 130 L48 130 M50 94 L58 99 M81 71 L84 81 M119 71 L116 81 M150 94 L142 99 M162 130 L152 130" style="stroke-width:2.4"></path>
+      <path d="M100 130 L136 104" style="stroke-width:3.2"></path>
+      <circle cx="100" cy="130" r="6"></circle>
+      <path d="M52 142 C60 148 140 148 148 142" style="stroke-width:2.5"></path>
+      <path d="M144 87 L152 81 M155 100 L164 97" style="stroke-width:2.6"></path>
+      </g>
+      </g></symbol>
+<symbol id="p-emocje" viewBox="0 0 200 200"><path d="M34 118 C18 82 34 36 74 22 C114 8 164 30 176 68 C188 108 166 152 124 168 C84 183 50 154 34 118 Z" style="fill:var(--ico-blob,#ece4d7)"></path>
+      <g style="fill:none;stroke:currentColor;stroke-width:2.9;stroke-linecap:round;stroke-linejoin:round">
+      <g transform="translate(20 12) scale(0.95)" style="stroke-width:3.05"><path d="M56 130 C40 126 30 112 30 92 C30 68 50 50 76 50 C98 50 114 64 116 82 C117 92 122 96 124 100 C126 103 123 106 119 106 C116 106 115 108 115 112 C115 117 111 121 105 121 C101 121 98 121 97 123 C95 126 96 133 97 138 L58 138 C57 135 56 133 56 130 Z"></path>
+      <path d="M58 138 C44 143 32 152 26 166 M97 138 C111 143 123 152 129 166"></path>
+      <path d="M100 76 C104 72 112 73 115 77" style="stroke-width:2.4"></path>
+      <circle cx="106" cy="86" r="3.4" style="fill:currentColor;stroke:none"></circle>
+      <path d="M104 114 C108 110 114 111 117 115" style="stroke-width:2.4"></path>
+      </g>
+      <ellipse cx="84" cy="96" rx="20" ry="9" style="stroke-width:2.2"></ellipse>
+      <ellipse cx="84" cy="96" rx="20" ry="9" transform="rotate(60 84 96)" style="stroke-width:2.2"></ellipse>
+      <ellipse cx="84" cy="96" rx="20" ry="9" transform="rotate(-60 84 96)" style="stroke-width:2.2"></ellipse>
+      </g></symbol>
+<symbol id="p-relacje" viewBox="0 0 200 200"><path d="M28 72 C44 36 88 12 128 24 C168 36 190 78 178 116 C164 158 116 186 76 174 C36 162 12 108 28 72 Z" style="fill:var(--ico-blob,#ece4d7)" transform="rotate(180 100 100)"></path>
+      <g style="fill:none;stroke:currentColor;stroke-width:2.9;stroke-linecap:round;stroke-linejoin:round">
+      <g transform="translate(-6 0)">
+      <path d="M42 50 H98 L90 84 L102 110 L88 146 H42 C37 146 34 143 34 138 V58 C34 53 37 50 42 50 Z"></path>
+      <path d="M68 122 C68 122 54 114 54 104 C54 99 58 96 62 96 C65 96 67 98 68 100 C69 98 71 96 74 96 C78 96 82 99 82 104 C82 114 68 122 68 122 Z" style="stroke-width:2.4"></path>
+      </g>
+      <g transform="translate(10 0)">
+      <path d="M112 50 H158 C163 50 166 53 166 58 V138 C166 143 163 146 158 146 H102 L116 110 L104 84 L112 50 Z"></path>
+      <path d="M124 96 C132 92 144 92 152 96 M124 116 C132 112 144 112 152 116" style="stroke-width:2.2;opacity:0.75"></path>
+      </g>
+      </g></symbol>
+<symbol id="p-zrozumienie" viewBox="0 0 200 200"><path d="M22 96 C22 56 58 18 104 20 C146 22 184 52 178 96 C172 140 132 178 88 170 C46 162 22 136 22 96 Z" style="fill:var(--ico-blob,#ece4d7)" transform="rotate(180 100 100)"></path>
+      <g style="fill:none;stroke:currentColor;stroke-width:2.9;stroke-linecap:round;stroke-linejoin:round">
+      <g transform="translate(20 12) scale(0.95)" style="stroke-width:3.05"><path d="M56 130 C40 126 30 112 30 92 C30 68 50 50 76 50 C98 50 114 64 116 82 C117 92 122 96 124 100 C126 103 123 106 119 106 C116 106 115 108 115 112 C115 117 111 121 105 121 C101 121 98 121 97 123 C95 126 96 133 97 138 L58 138 C57 135 56 133 56 130 Z"></path>
+      <path d="M58 138 C44 143 32 152 26 166 M97 138 C111 143 123 152 129 166"></path>
+      <path d="M100 76 C104 72 112 73 115 77" style="stroke-width:2.4"></path>
+      <circle cx="106" cy="86" r="3.4" style="fill:currentColor;stroke:none"></circle>
+      <path d="M104 112 C108 116 114 115 117 111" style="stroke-width:2.4"></path>
+      </g>
+      <path d="M86 112 C86 112 66 100 66 87 C66 79 72 74 79 74 C82 74 85 77 86 81 C87 77 90 74 93 74 C100 74 106 79 106 87 C106 100 86 112 86 112 Z" style="stroke-width:2.5"></path>
+      <path d="M150 44 L154 32 L158 44 L170 48 L158 52 L154 64 L150 52 L138 48 Z" style="stroke-width:2"></path>
+      </g></symbol>
+<symbol id="p-jakosc-zycia" viewBox="0 0 200 200"><path d="M34 118 C18 82 34 36 74 22 C114 8 164 30 176 68 C188 108 166 152 124 168 C84 183 50 154 34 118 Z" style="fill:var(--ico-blob,#ece4d7)" transform="rotate(180 100 100)"></path>
+      <g style="fill:none;stroke:currentColor;stroke-width:2.9;stroke-linecap:round;stroke-linejoin:round">
+      <path d="M28 130 C24 150 38 168 64 174 C98 182 140 174 162 154 C172 145 174 134 170 128"></path>
+      <path d="M28 130 C28 122 36 118 44 121 C50 123 54 128 56 133"></path>
+      <path d="M170 128 C162 123 152 123 145 128"></path>
+      <path d="M60 152 C76 162 102 164 126 156" style="stroke-width:1.9;opacity:0.8"></path>
+      </g>
+      <g style="fill:none;stroke:currentColor;stroke-width:2.7;stroke-linecap:round;stroke-linejoin:round">
+      <path d="M100 152 C100 128 98 106 96 90"></path>
+      <path d="M96 104 C76 101 62 85 67 64 C91 60 105 79 99 106 Z"></path>
+      <path d="M98 120 C120 120 134 104 129 82 C106 78 92 96 98 120 Z"></path>
+      </g>
+      <path d="M152 38 L156 26 L160 38 L172 42 L160 46 L156 58 L152 46 L140 42 Z" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round"></path></symbol>
+</defs></svg>
+
+<a class="skip" href="#main">Przejdź do treści</a>
+
+<div class="chrome">
+<header class="ph">
+  <a class="ph__logo" href="../"><img src="../assets/logo-brand.svg" alt="Reha Medica Psychoterapia" width="58" height="68"></a>
+  <nav class="ph__nav" aria-label="Nawigacja">
+    <a href="../poradnia-psychologiczna/">Zakres pomocy</a>
+    <a href="../placowki/">Placówki</a>
+    <a href="../kontakt/">Kontakt</a>
+  </nav>
+</header>
+
+<div class="cb" role="group" aria-label="Wybierz miasto">
+  <span class="cb__q">Gdzie szukasz pomocy?</span>
+  <div class="cb__opts"><button type="button" class="cb__opt" data-city="szczecinek" aria-pressed="false">Szczecinek</button>
+<button type="button" class="cb__opt" data-city="szczecin" aria-pressed="false">Szczecin</button>
+<button type="button" class="cb__opt" data-city="walcz" aria-pressed="false">Wałcz</button>
+<button type="button" class="cb__opt" data-city="bialogard" aria-pressed="false">Białogard</button>
+<button type="button" class="cb__opt" data-city="bobolice" aria-pressed="false">Bobolice</button></div>
+  <button type="button" class="cb__clear" hidden>zmień</button>
+  <span class="cb__tel"><small data-tel-label>Centrala</small><a href="tel:+48943721451" data-tel>94 372 14 51</a></span>
+</div>
+</div>
+
+<main id="main">
+<section class="v1" aria-labelledby="teza">
+  <div class="pwrap">
+    <h1 class="teza" id="teza"><span class="teza__a">Nie musisz wiedzieć, od czego zacząć.</span><span class="teza__b">Powiedz, co się dzieje. Resztę ustalimy razem.</span></h1>
+    <div class="v1__list">
+      <a class="v1__row" href="../poradnia-psychologiczna/" data-fac="szczecinek szczecin walcz bialogard bobolice" title="Poradnia: „kryzysu emocjonalnego spowodowanego sytuacją osobistą lub zawodową, problemami rodzinnymi czy utratą osoby bliskiej”">
+          <svg class="pico v1__ico" viewBox="0 0 200 200" aria-hidden="true"><use href="#p-kryzys"></use></svg>
+          <span class="v1__zd">Masz za sobą trudną sytuację — w domu, w pracy, albo straciłeś kogoś bliskiego.</span>
+          <span class="v1__do">Poradnia psychologiczna</span>
+          <span class="v1__arw" aria-hidden="true">&rarr;</span>
+        </a><a class="v1__row" href="../konsultacje-psychologiczne/" data-fac="szczecinek" title="Konsultacje: „Czasami możesz mieć problem z określeniem źródła czy natury Twoich trudności” — niemal dosłownie, źródło już mówi na Ty">
+          <svg class="pico v1__ico" viewBox="0 0 200 200" aria-hidden="true"><use href="#p-napiecie"></use></svg>
+          <span class="v1__zd">Czasem trudno powiedzieć, skąd biorą się Twoje trudności.</span>
+          <span class="v1__do">Konsultacje psychologiczne</span>
+          <span class="v1__arw" aria-hidden="true">&rarr;</span>
+        </a><a class="v1__row" href="../lekarz-psychiatra/" data-fac="" title="Psychiatra: „Zaburzenia nastroju, smutek, niekontrolowane napady agresji, apatia […] napady lęku”">
+          <svg class="pico v1__ico" viewBox="0 0 200 200" aria-hidden="true"><use href="#p-emocje"></use></svg>
+          <span class="v1__zd">Nastrój, lęk, apatia albo złość, nad którą nie panujesz.</span>
+          <span class="v1__do">Lekarz psychiatra</span>
+          <span class="v1__arw" aria-hidden="true">&rarr;</span>
+        </a><a class="v1__row" href="../poradnia-psychologiczna/" data-fac="szczecinek szczecin walcz bialogard bobolice" title="Poradnia: „dla osób dorosłych, młodzieży, dzieci, rodzin oraz par” + „porady […] dla rodziców dzieci sprawiających trudności wychowawcze”">
+          <svg class="pico v1__ico" viewBox="0 0 200 200" aria-hidden="true"><use href="#p-relacje"></use></svg>
+          <span class="v1__zd">Coś nie działa w Twojej rodzinie, w związku albo z dzieckiem.</span>
+          <span class="v1__do">Poradnia psychologiczna</span>
+          <span class="v1__arw" aria-hidden="true">&rarr;</span>
+        </a><a class="v1__row" href="../konsultacja-psychoterapeutyczna/" data-fac="" title="Konsultacja psychoter.: „rozpoznanie potrzeb pacjenta i zrozumienie natury zgłaszanych problemów” + „określają cele i oczekiwania”">
+          <svg class="pico v1__ico" viewBox="0 0 200 200" aria-hidden="true"><use href="#p-zrozumienie"></use></svg>
+          <span class="v1__zd">Chcesz zrozumieć, co się z Tobą dzieje, i coś z tym zrobić.</span>
+          <span class="v1__do">Konsultacja psychoterapeutyczna</span>
+          <span class="v1__arw" aria-hidden="true">&rarr;</span>
+        </a><a class="v1__row" href="../poradnia-psychologiczna/" data-fac="szczecinek szczecin walcz bialogard bobolice" title="Poradnia: „deficytami poznawczo-emocjonalnymi powstałymi w następstwie przebytych udarów mózgu, urazów mózgowych” + „funkcji mnestycznych”">
+          <svg class="pico v1__ico" viewBox="0 0 200 200" aria-hidden="true"><use href="#p-jakosc-zycia"></use></svg>
+          <span class="v1__zd">Po udarze albo urazie mózgu trudniej Ci się skupić i zapamiętać.</span>
+          <span class="v1__do">Poradnia psychologiczna</span>
+          <span class="v1__arw" aria-hidden="true">&rarr;</span>
+        </a>
+    </div>
+    <p class="pomoc">Albo od razu <a href="../kontakt/">zadzwoń do recepcji</a> — nie trzeba wiedzieć, o co poprosić.</p>
+  </div>
+</section>
+<section class="v2" aria-labelledby="teza">
+  <div class="pwrap v2__grid">
+    <div class="v2__col">
+      <h1 class="teza" id="teza"><span class="teza__a">Nie musisz wiedzieć, od czego zacząć.</span><span class="teza__b">Powiedz, co się dzieje. Resztę ustalimy razem.</span></h1>
+      <div class="v2__list">
+        <a class="v2__row" href="../poradnia-psychologiczna/" data-fac="szczecinek szczecin walcz bialogard bobolice" title="Poradnia: „kryzysu emocjonalnego spowodowanego sytuacją osobistą lub zawodową, problemami rodzinnymi czy utratą osoby bliskiej”">
+          <span class="v2__mark" aria-hidden="true"></span>
+          <span class="v2__zd">Masz za sobą trudną sytuację — w domu, w pracy, albo straciłeś kogoś bliskiego.</span>
+          <span class="v2__do">Poradnia psychologiczna</span>
+        </a><a class="v2__row" href="../konsultacje-psychologiczne/" data-fac="szczecinek" title="Konsultacje: „Czasami możesz mieć problem z określeniem źródła czy natury Twoich trudności” — niemal dosłownie, źródło już mówi na Ty">
+          <span class="v2__mark" aria-hidden="true"></span>
+          <span class="v2__zd">Czasem trudno powiedzieć, skąd biorą się Twoje trudności.</span>
+          <span class="v2__do">Konsultacje psychologiczne</span>
+        </a><a class="v2__row" href="../lekarz-psychiatra/" data-fac="" title="Psychiatra: „Zaburzenia nastroju, smutek, niekontrolowane napady agresji, apatia […] napady lęku”">
+          <span class="v2__mark" aria-hidden="true"></span>
+          <span class="v2__zd">Nastrój, lęk, apatia albo złość, nad którą nie panujesz.</span>
+          <span class="v2__do">Lekarz psychiatra</span>
+        </a><a class="v2__row" href="../poradnia-psychologiczna/" data-fac="szczecinek szczecin walcz bialogard bobolice" title="Poradnia: „dla osób dorosłych, młodzieży, dzieci, rodzin oraz par” + „porady […] dla rodziców dzieci sprawiających trudności wychowawcze”">
+          <span class="v2__mark" aria-hidden="true"></span>
+          <span class="v2__zd">Coś nie działa w Twojej rodzinie, w związku albo z dzieckiem.</span>
+          <span class="v2__do">Poradnia psychologiczna</span>
+        </a><a class="v2__row" href="../konsultacja-psychoterapeutyczna/" data-fac="" title="Konsultacja psychoter.: „rozpoznanie potrzeb pacjenta i zrozumienie natury zgłaszanych problemów” + „określają cele i oczekiwania”">
+          <span class="v2__mark" aria-hidden="true"></span>
+          <span class="v2__zd">Chcesz zrozumieć, co się z Tobą dzieje, i coś z tym zrobić.</span>
+          <span class="v2__do">Konsultacja psychoterapeutyczna</span>
+        </a><a class="v2__row" href="../poradnia-psychologiczna/" data-fac="szczecinek szczecin walcz bialogard bobolice" title="Poradnia: „deficytami poznawczo-emocjonalnymi powstałymi w następstwie przebytych udarów mózgu, urazów mózgowych” + „funkcji mnestycznych”">
+          <span class="v2__mark" aria-hidden="true"></span>
+          <span class="v2__zd">Po udarze albo urazie mózgu trudniej Ci się skupić i zapamiętać.</span>
+          <span class="v2__do">Poradnia psychologiczna</span>
+        </a>
+      </div>
+      <p class="pomoc">Albo od razu <a href="../kontakt/">zadzwoń do recepcji</a>.</p>
+    </div>
+  </div>
+</section>
+<section class="v3" aria-labelledby="teza">
+  <div class="pwrap">
+    <h1 class="teza teza--v3" id="teza"><span class="teza__a">Nie musisz wiedzieć, od czego zacząć.</span></h1>
+    <p class="v3__proza">
+      Powiedz, co się dzieje. Resztę ustalimy razem. Przychodzisz, kiedy <a class="v3__zd" href="../poradnia-psychologiczna/" data-fac="szczecinek szczecin walcz bialogard bobolice" title="Poradnia: „kryzysu emocjonalnego spowodowanego sytuacją osobistą lub zawodową, problemami rodzinnymi czy utratą osoby bliskiej”">masz za sobą trudną sytuację w domu albo w pracy, albo straciłeś kogoś bliskiego</a>.
+      Kiedy <a class="v3__zd" href="../konsultacje-psychologiczne/" data-fac="szczecinek" title="Konsultacje: „Czasami możesz mieć problem z określeniem źródła czy natury Twoich trudności” — niemal dosłownie, źródło już mówi na Ty">trudno powiedzieć, skąd biorą się Twoje trudności</a>.
+      Kiedy <a class="v3__zd" href="../lekarz-psychiatra/" data-fac="" title="Psychiatra: „Zaburzenia nastroju, smutek, niekontrolowane napady agresji, apatia […] napady lęku”">dokucza nastrój, lęk, apatia albo złość, nad którą nie panujesz</a>.
+      Kiedy <a class="v3__zd" href="../poradnia-psychologiczna/" data-fac="szczecinek szczecin walcz bialogard bobolice" title="Poradnia: „dla osób dorosłych, młodzieży, dzieci, rodzin oraz par” + „porady […] dla rodziców dzieci sprawiających trudności wychowawcze”">coś nie działa w Twojej rodzinie, w związku albo z dzieckiem</a>.
+      Kiedy <a class="v3__zd" href="../konsultacja-psychoterapeutyczna/" data-fac="" title="Konsultacja psychoter.: „rozpoznanie potrzeb pacjenta i zrozumienie natury zgłaszanych problemów” + „określają cele i oczekiwania”">chcesz zrozumieć, co się z Tobą dzieje, i coś z tym zrobić</a>.
+      Albo kiedy <a class="v3__zd" href="../poradnia-psychologiczna/" data-fac="szczecinek szczecin walcz bialogard bobolice" title="Poradnia: „deficytami poznawczo-emocjonalnymi powstałymi w następstwie przebytych udarów mózgu, urazów mózgowych” + „funkcji mnestycznych”">po udarze albo urazie mózgu trudniej Ci się skupić i zapamiętać</a>.
+    </p>
+    <p class="pomoc">Kliknij to zdanie, które jest prawdziwe. Albo <a href="../kontakt/">zadzwoń</a>.</p>
+  </div>
+</section>
+</main>
+
+<footer class="pf">
+  <p>Reha Medica — opieka psychologiczna, psychoterapeutyczna i psychiatryczna.</p>
+  <p class="pf__proto">PROTOTYP · do wyrzucenia po wyborze kierunku</p>
+</footer>
+
+<nav class="switch" aria-label="Przełącz wariant">
+  <span class="switch__l">Wariant</span>
+  <a href="?v=1" data-v="1"><b>1</b> Lista</a>
+  <a href="?v=2" data-v="2"><b>2</b> Rozmowa</a>
+  <a href="?v=3" data-v="3"><b>3</b> Proza</a>
+</nav>
+
+<script>
+(function(){
+  var v = new URLSearchParams(location.search).get('v') || '1';
+  if (!['1','2','3'].includes(v)) v = '1';
+  document.body.setAttribute('data-v', v);
+  document.querySelectorAll('.switch a').forEach(function(a){
+    if (a.dataset.v === v) a.setAttribute('aria-current','true');
+  });
+
+  // wejście strony — jedyny ruch na stronie (ustalenie 7)
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches)
+    requestAnimationFrame(function(){ document.body.classList.add('in'); });
+  else document.body.classList.add('in');
+
+  // pasek miasta: nic nie jest zaznaczone na starcie (reguła CLAUDE.md)
+  var TEL = {szczecinek:['94 372 14 51','+48943721451'], szczecin:['530 661 982','+48530661982'],
+              walcz:['530 661 982','+48530661982'], bialogard:['535 960 018','+48535960018'],
+              bobolice:['530 645 059','+48530645059']};
+  var opts = document.querySelectorAll('.cb__opt'), clear = document.querySelector('.cb__clear');
+  function apply(city){
+    document.body.setAttribute('data-city', city || '');
+    opts.forEach(function(o){ o.setAttribute('aria-pressed', String(o.dataset.city === city)); });
+    clear.hidden = !city;
+    var t = document.querySelector('[data-tel]');
+    var lab = document.querySelector('[data-tel-label]');
+    var NAZWA = {szczecinek:'Szczecinek',szczecin:'Szczecin',walcz:'Wałcz',bialogard:'Białogard',bobolice:'Bobolice'};
+    if (city && TEL[city]) { t.textContent = TEL[city][0]; t.href = 'tel:' + TEL[city][1]; lab.textContent = 'Recepcja ' + NAZWA[city]; }
+    else { t.textContent = '94 372 14 51'; t.href = 'tel:+48943721451'; lab.textContent = 'Centrala'; }
+    document.querySelectorAll('[data-fac]').forEach(function(el){
+      var lista = el.dataset.fac.split(' ').filter(Boolean);
+      // brak potwierdzonego miasta = nie ukrywamy, ale oznaczamy „zapytaj recepcję”
+      var stan = !city ? '' : (lista.length === 0 ? 'ask' : (lista.includes(city) ? 'yes' : 'no'));
+      el.setAttribute('data-avail', stan);
+    });
+  }
+  opts.forEach(function(o){ o.addEventListener('click', function(){
+    apply(o.getAttribute('aria-pressed') === 'true' ? '' : o.dataset.city); }); });
+  clear.addEventListener('click', function(){ apply(''); });
+})();
+</script>
+</body>
+</html>
