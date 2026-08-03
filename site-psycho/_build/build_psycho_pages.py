@@ -480,7 +480,8 @@ def build_home():
 # ══════════════════════════════════════════════ STRONA USŁUGI (ogólna)
 def build_service(sk):
     s = SERVICES[sk]
-    cnt = SERVICE_CONTENT[sk]
+    cnt = dict(SERVICE_CONTENT[sk])
+    cnt["_kogo"] = DLA_KOGO.get(sk)          # etykiety odbiorców, jeśli źródło je wylicza
     depth = 1
     r = rel(depth)
     url = f"{BASE}/{sk}/"

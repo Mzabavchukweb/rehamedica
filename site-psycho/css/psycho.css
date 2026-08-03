@@ -1280,3 +1280,49 @@ body.is-home main{padding-top:0}
 @supports not ((-webkit-mask:none) or (mask:none)){
   .formy__ico{display:none}
 }
+
+/* ════════════════════════════════════════════════════════════════════
+   STRONA USŁUGI — czytelność i interakcja
+
+   Stan wyjściowy: 4609 px, jedno zdjęcie, ZERO elementów interaktywnych.
+   Cała strona była ciągiem bloków prozy. Wzorzec z centrumsobota.pl:
+   krótki wstęp, etykiety odbiorców, potem treść rozbita na kawałki,
+   które da się skanować.
+   ════════════════════════════════════════════════════════════════════ */
+
+/* ── DLA KOGO: etykiety zamiast wyliczenia w zdaniu ──────────────────── */
+.kogo{
+  list-style:none;display:flex;flex-wrap:wrap;gap:10px;
+  margin:20px 0 0;padding:0;
+}
+.kogo__i{
+  padding:8px 16px;border:1px solid var(--color-line);border-radius:var(--radius-pill);
+  background:var(--color-cream);
+  font-size:.875rem;line-height:1.35;color:var(--color-text-2);
+}
+
+/* ── AKORDEON: definicje kliniczne na żądanie ─────────────────────────
+   Pierwszy otwarty, żeby było widać, że to się rozwija. Bez JS. */
+.lparts__akord{border-top:1px solid var(--color-line)}
+.lpart{border-bottom:1px solid var(--color-line)}
+.lpart__s{
+  display:flex;align-items:center;gap:14px;
+  padding:20px 0;cursor:pointer;list-style:none;
+  font-family:var(--font-display);font-weight:400;
+  font-size:clamp(1.1rem,1rem + .5vw,1.35rem);line-height:1.25;color:var(--color-brand);
+}
+.lpart__s::-webkit-details-marker{display:none}
+/* znacznik rysowany CSS-em — obraca się przy otwarciu */
+.lpart__s::after{
+  content:"";margin-left:auto;flex:0 0 auto;width:11px;height:11px;
+  border-right:1.8px solid var(--color-brand-taupe);
+  border-bottom:1.8px solid var(--color-brand-taupe);
+  transform:rotate(45deg);transform-origin:center;
+  transition:transform .25s ease,border-color .2s ease;
+}
+.lpart[open] .lpart__s::after{transform:rotate(-135deg);border-color:var(--color-brand)}
+.lpart__s:hover::after{border-color:var(--color-brand)}
+.lpart__s:focus-visible{outline:3px solid var(--color-brand);outline-offset:3px}
+.lpart__b{padding:0 0 22px}
+.lpart__b p{margin:0;max-width:68ch;line-height:1.65;color:var(--color-text-2);text-wrap:pretty}
+@media (prefers-reduced-motion:reduce){.lpart__s::after{transition:none}}

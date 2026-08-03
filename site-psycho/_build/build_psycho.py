@@ -362,6 +362,14 @@ def prose_block(cnt, img_src, img_alt, depth):
     o.append('        <div class="lintro__head">')
     o.append(f'          <p class="lkick">{cnt.get("kicker","Dla kogo")}</p>')
     o.append(f'          <p class="lintro__lead">{cnt["lead"]}</p>')
+    if cnt.get("_kogo"):
+        # Odbiorcy jako etykiety, nie jako wyliczenie wewnątrz zdania.
+        # Wzorzec „Kogo wspieramy" z Centrum Sobota: pacjent ma w sekundę
+        # sprawdzić, czy jest na właściwej stronie.
+        # WEWNĄTRZ .lintro__head — siatka ma obszary "lead kadr"/"body kadr",
+        # więc dziecko bez przypisanego obszaru spadało pod całą prozę.
+        chip = "".join(f'<li class="kogo__i">{t}</li>' for t, _ in cnt["_kogo"])
+        o.append('          <ul class="kogo" aria-label="Dla kogo jest ta pomoc">' + chip + '</ul>')
     o.append('        </div>')
     if img_src:
         o.append('        <figure class="lintro__fig">')
@@ -381,11 +389,32 @@ def prose_block(cnt, img_src, img_alt, depth):
         o.append('        </div>')
         o.append('      </div>')
     if cnt.get("parts_h"):
+        # Akordeon zamiast gęstych akapitów klinicznych. Każdy zaczyna się od
+        # <b>Nazwa</b> — nazwa zostaje widoczna i skanowalna, definicja otwiera
+        # się na żądanie. Kto szuka „czy robicie diagnozę neuro", znajduje
+        # odpowiedź od razu; kto chce szczegółu, klika.
+        # Bez JS — <details> działa przy wyłączonym skrypcie i przy druku.
+        import re as _re
         o.append('\n      <div class="lparts">')
         o.append(f'        <h2 class="lparts__h">{cnt["parts_h"]}</h2>')
-        o.append('        <div class="lparts__prose">')
-        for p in cnt.get("parts") or []:
-            o.append(f'          <p class="lparts__p">{p}</p>')
+        o.append('        <div class="lparts__akord">')
+        for n, tekst in enumerate(cnt.get("parts") or []):
+            m = _re.match(r'\s*<b>(.*?)</b>\s*(.*)$', tekst, _re.S)
+            if m:
+                tytul, reszta = m.group(1), m.group(2).lstrip(" —–-")
+                # Tekst źródłowy jest ciągiem dalszym nazwy („Diagnoza … obejmuje
+                # pełną ocenę"). Po wyniesieniu nazwy do nagłówka trzeba go
+                # domknąć gramatycznie: spójka „to" traci podmiot, więc znika,
+                # a zdanie zaczyna się wielką literą. Znaczenie bez zmian.
+                if reszta.lower().startswith("to "):
+                    reszta = reszta[3:]
+                reszta = reszta[:1].upper() + reszta[1:] if reszta else reszta
+            else:
+                tytul, reszta = cnt["parts_h"], tekst
+            o.append(f'          <details class="lpart"{" open" if n == 0 else ""}>')
+            o.append(f'            <summary class="lpart__s">{tytul}</summary>')
+            o.append(f'            <div class="lpart__b"><p>{reszta}</p></div>')
+            o.append('          </details>')
         o.append('        </div>')
         o.append('      </div>')
     if cnt.get("coda_lead"):

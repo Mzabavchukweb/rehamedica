@@ -289,7 +289,7 @@ PORADNIA_MIASTA = {
     "funkcje mnestyczne, językowe, wykonawcze i wzrokowo-przestrzenne. Badanie dotyczy pacjentów po "
     "przebytych udarach mózgu, urazach mózgowych oraz po zabiegach neurochirurgicznych, a także "
     "diagnozy różnicowej otępienia.",
-    "<b>Terapię neuropsychologiczną</b> prowadzimy u osób, u których po udarze, urazie mózgu lub "
+    "<b>Terapia neuropsychologiczna</b> — prowadzimy ją u osób, u których po udarze, urazie mózgu lub "
     "zabiegu neurochirurgicznym — albo w przebiegu choroby neurodegeneracyjnej — pojawiły się "
     "deficyty poznawczo-emocjonalne.",
   ],
@@ -666,5 +666,28 @@ FORMY = {
    ("p-fm-wychowawcze",        "Wsparcie wychowawcze",         "„oferują wsparcie wychowawcze… dla rodziców”"),
    ("p-fm-diag-neuro",         "Diagnoza neuropsychologiczna", "„pełna ocena sprawności poznawczej”"),
    ("p-fm-terapia-neuro",      "Terapia neuropsychologiczna",  "„dedykowana pacjentom z deficytami poznawczo-emocjonalnymi”"),
+ ],
+}
+
+# ─────────────────────────────────────────────────────────────────────────
+# DLA KOGO — etykiety zamiast wyliczenia w zdaniu.
+# Wzorzec: centrumsobota.pl, siatka „Kogo wspieramy” tuż pod nagłówkiem.
+# Każda pozycja to dosłowny fragment materiałów klienta, nie nasza kategoria.
+DLA_KOGO = {
+ "poradnia-psychologiczna": [
+   ("Dorośli",  "„dla osób dorosłych”"),
+   ("Młodzież", "„młodzieży”"),
+   ("Dzieci",   "„dzieci”"),
+   ("Rodziny",  "„rodzin”"),
+   ("Pary",     "„oraz par”"),
+ ],
+ "osrodek-psychologiczno-psychoterapeutyczny": [
+   ("Dzieci poniżej 7. roku życia",     "„dzieci poniżej 7. roku życia”"),
+   ("Dzieci i młodzież do 21. roku",    "„objęte obowiązkiem szkolnym — do 21. roku życia”"),
+   ("Rodziny",                          "„oraz rodziny”"),
+   ("Opiekunowie prawni",               "„i opiekunowie prawni”"),
+ ],
+ "lekarz-psychiatra": [
+   ("Pacjenci od 14. roku życia", "„Pacjenci od 14. roku życia”"),
  ],
 }
