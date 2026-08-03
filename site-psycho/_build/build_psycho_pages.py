@@ -397,10 +397,14 @@ def build_home():
   </div>
 </section>
 
-<!-- OPINIE. Uwaga treściowa: żadna z 14 opinii nie dotyczy psychoterapii —
-     wszystkie mówią o rehabilitacji, zabiegach i recepcji. Sekcja mówi to
-     wprost, bo inaczej sugerowałaby opinie o opiece psychologicznej, których
-     nie ma. Dane: site-psycho/data/reviews.json, weryfikacja ręczna. -->
+<!-- OPINIE. Wizytówka Google „Reha Medica Centrum Rehabilitacyjno Medyczne"
+     stoi pod ul. Kościuszki 57 — tym samym adresem co poradnia psychologiczna.
+     To JEDNA wizytówka na całą działalność, więc ocena 4,8/58 obejmuje także
+     opiekę psychologiczną; Google nie rozdziela usług.
+     Osobno: żadna z 14 cytowanych TREŚCI nie wymienia psychologii wprost,
+     ale 13 z 14 ocenia placówkę ogólnie — personel, podejście, atmosferę.
+     Dlatego zastrzeżenie mówi o zakresie oceny, a nie zaprzecza, że dotyczy
+     psychologii. Dane: site-psycho/data/reviews.json, weryfikacja ręczna. -->
 <section class="reviews" id="opinie" aria-labelledby="rv-h">
   <h2 class="visually-hidden" id="rv-h">Opinie pacjentów o Reha Medica</h2>
   <div class="reviews__inner">
@@ -411,7 +415,7 @@ def build_home():
       <p class="rv-summary__score"><span data-rv-rating>4,8</span><span class="rv-summary__of">/5</span></p>
       <p class="rv-summary__count">Na podstawie <span data-rv-count>58</span> opinii</p>
       <p class="rv-summary__brand"><img src="assets/img/google-g-mono.svg" alt="Google" width="18" height="18"><span>Opinie zweryfikowane w Google</span></p>
-      <p class="rv-summary__zakres">Oceny dotyczą centrum Reha Medica w Szczecinku — rehabilitacji, zabiegów i obsługi recepcji. <b>Nie są to opinie o opiece psychologicznej.</b></p>
+      <p class="rv-summary__zakres">Ocena dotyczy <b>całego centrum Reha Medica</b> przy ul. Kościuszki 57 — jednej wizytówki Google obejmującej wszystkie usługi, w tym opiekę psychologiczną. Cytowane opinie mówią o personelu, podejściu i atmosferze placówki.</p>
       <a class="rv-summary__cta" data-rv-more href="https://share.google/ACPY9joNkVJVdrKvZ" target="_blank" rel="noopener">Zobacz wszystkie opinie w Google <span class="rv-summary__arw" aria-hidden="true">&rarr;</span></a>
     </div>
     <div class="rv-slider">
