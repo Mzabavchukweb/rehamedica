@@ -569,7 +569,7 @@ def build_service(sk):
     html_out = head(depth, f"{s['title']} — Reha Medica Psychoterapia", s["lead"], f"{sk}/",
                     img=s["img"] if s["img"].endswith(".jpg") else "og-psychoterapia.jpg",
                     extra_ld=ld) + f"""
-<body class="no-hero">
+<body class="ma-hero">
 
 <a class="skip-link" href="#main">Przejdź do treści</a>
 
@@ -651,7 +651,7 @@ def build_city_service(city, sk):
     html_out = head(depth, f"{title} | Reha Medica Psychoterapia",
                     f"{s['title']} w {f['name']}: {f['addr']}. Telefon, e-mail i godziny recepcji. {s['lead']}",
                     f"{city}/{sk}/", extra_ld=ld) + f"""
-<body class="no-hero">
+<body class="ma-hero">
 
 <a class="skip-link" href="#main">Przejdź do treści</a>
 
@@ -762,7 +762,7 @@ def build_city(city):
     html_out = head(depth, f"Reha Medica {f['name']} — opieka psychologiczna",
                     f"Opieka psychologiczna Reha Medica w {f['name']}: {lista_uslug}. {f['addr']}, telefon i e-mail do recepcji.",
                     f"{city}/", extra_ld=ld) + f"""
-<body class="no-hero">
+<body class="ma-hero">
 
 <a class="skip-link" href="#main">Przejdź do treści</a>
 
@@ -861,7 +861,7 @@ def build_placowki():
     html_out = head(depth, "Placówki — Reha Medica Psychoterapia",
                     "Adresy, telefony i e-maile placówek Reha Medica prowadzących opiekę psychologiczną: Szczecinek, Szczecin, Wałcz, Białogard, Bobolice.",
                     "placowki/", extra_ld=ld) + f"""
-<body class="no-hero">
+<body class="ma-hero">
 
 <a class="skip-link" href="#main">Przejdź do treści</a>
 
@@ -930,7 +930,7 @@ def build_kontakt():
     html_out = head(depth, "Kontakt — Reha Medica Psychoterapia",
                     "Telefony i adresy e-mail do recepcji placówek Reha Medica prowadzących opiekę psychologiczną i psychoterapeutyczną.",
                     "kontakt/", extra_ld=ld) + f"""
-<body class="no-hero">
+<body class="ma-hero">
 
 <a class="skip-link" href="#main">Przejdź do treści</a>
 

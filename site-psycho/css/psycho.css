@@ -1350,3 +1350,57 @@ body.is-home main{padding-top:0}
 @media (max-width:52em){.pil__w{max-width:none}}
 /* brak obsługi maski — ilustracja znika, treść strony nie ucierpi */
 @supports not ((-webkit-mask-image:none) or (mask-image:none)){.pil{display:none}}
+
+/* ════════════════════════════════════════════════════════════════════
+   NAGŁÓWEK NA STRONACH USŁUG — taki sam jak na stronie głównej
+
+   Strony usług miały <body class="no-hero">, przez co nagłówek dostawał
+   solidny brąz i siedział jak belka NAD wąskim paskiem zdjęcia. A one mają
+   hero (.shero) — klasa była po prostu błędna.
+   Teraz zachowują się jak strona główna: przezroczysty nagłówek leży NA
+   zdjęciu, topstrip bez własnego tła. Gradient identyczny co w rehabilitacji.
+   ════════════════════════════════════════════════════════════════════ */
+body.ma-hero .site-header:not(.is-scrolled){
+  background:linear-gradient(180deg,
+    rgba(30,22,14,.55) 0%, rgba(30,22,14,.22) 55%, rgba(30,22,14,0) 100%);
+  border-bottom:0;
+}
+body.ma-hero .site-header:not(.is-scrolled) .topstrip{background:none}
+body.ma-hero .site-header:not(.is-scrolled) .topstrip::after{opacity:0}
+/* hero wchodzi POD nagłówek — bez tego treść zaczynałaby się dopiero
+   pod belką i zdjęcie byłoby tylko wąskim paskiem */
+body.ma-hero main{padding-top:0}
+
+/* Hero podstrony ma nieść przezroczysty nagłówek, więc musi mieć wysokość —
+   378 px to była opaska, nie hero. Niższy niż na stronie głównej (817 px),
+   bo to podstrona, ale zdjęcie ma się liczyć. */
+body.ma-hero .shero{
+  min-height:clamp(440px,56vh,600px);
+  display:flex;align-items:flex-end;
+  padding-top:calc(138px + clamp(40px,6vw,80px));
+  padding-bottom:clamp(48px,6vw,76px);
+}
+/* Górna smuga utrzymuje nawigację czytelną na każdym kadrze — dokładnie ta
+   sama metoda co w hero strony głównej: przyciemnienie należy do zdjęcia,
+   nie do nagłówka, więc nie czyta się jak belka. */
+body.ma-hero .shero__scrim{
+  /* Kadry podstron są jasne: poradnia 204/255, ośrodek 191, recepcja 166.
+     Nakładka musi wystarczyć na NAJJAŚNIEJSZY, inaczej okruszki i nawigacja
+     schodzą poniżej progu — zmierzone 1,00:1 na ośrodku przed poprawką. */
+  background:
+    linear-gradient(180deg,
+      rgba(26,19,12,.74) 0%, rgba(26,19,12,.56) 14%,
+      rgba(26,19,12,.30) 26%, rgba(26,19,12,.16) 38%),
+    linear-gradient(180deg,
+      rgba(22,16,10,.30) 22%, rgba(23,17,11,.52) 46%, rgba(24,17,11,.74) 100%);
+}
+/* Separator „/" dziedziczył taupe rgb(188,174,152) — na zdjęciu 1,70:1.
+   Na tle fotograficznym cała ścieżka musi być biała; wagę różnicuje krycie,
+   nie barwa, bo barwa nie ma tu stałego tła. */
+body.ma-hero .shero .ubread,
+body.ma-hero .shero .ubread li{color:rgba(255,255,255,.92);
+  text-shadow:0 1px 10px rgba(12,8,4,.7)}
+@media (max-width:56em){
+  body.ma-hero .shero{min-height:clamp(340px,44vh,440px);
+    padding-top:calc(126px + clamp(28px,5vw,48px))}
+}
