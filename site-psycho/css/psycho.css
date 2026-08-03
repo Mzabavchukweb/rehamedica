@@ -1493,15 +1493,18 @@ body.ma-hero .shero .ubread li{color:rgba(255,255,255,.92);
   .wiz__ludzie{grid-template-columns:minmax(0,1fr);gap:26px}
 }
 
-/* ── POJEDYNCZA KARTA W „GDZIE SKORZYSTASZ" ──────────────────────────
-   Siatka ma trzy kolumny, więc jedna karta siadała w lewej i zostawiała
-   dwie trzecie pustki — wyglądało jak brakująca treść, a nie jak wybór.
-   Gdy karta jest jedna, kolumna zwęża się do niej i cały blok idzie
-   na środek razem z nagłówkiem. */
-.splate__grid:has(.pcard:only-child){
-  grid-template-columns:minmax(0,min(520px,100%));
-  justify-content:center;
-}
-.splate__inner:has(.pcard:only-child) .splate__head{text-align:center}
-.splate__inner:has(.pcard:only-child) .splate__meta{justify-content:center}
-/* przeglądarki bez :has() — karta zostaje po lewej, ale nic się nie psuje */
+/* ── „GDZIE SKORZYSTASZ" — przycisk na środku karty ───────────────────
+   Przycisk był rozciągnięty na całą szerokość karty (width:100%), przez co
+   czytał się jak pasek, nie jak przycisk. Teraz ma szerokość własnej treści
+   i stoi na środku — tak samo w karcie pojedynczej i w siatce pięciu. */
+.pcard__cta{display:flex;justify-content:center}
+.pcard__cta .btn{width:auto;min-width:min(220px,100%)}
+/* Jedna karta nie ma rozciągać się na trzy kolumny ani siedzieć w lewej —
+   zwęża się do swojej miary i zostaje przy lewej krawędzi treści, tak jak
+   nagłówek sekcji nad nią. */
+.splate__grid:has(.pcard:only-child){grid-template-columns:minmax(0,min(520px,100%))}
+
+/* Zakończenie strony usługi — po usunięciu zdublowanego „Umów wizytę"
+   został sam odsyłacz powrotny, więc idzie na środek zamiast wisieć
+   przy prawej krawędzi po nieistniejącym już przycisku. */
+.uend__inner:not(:has(.btn)){justify-content:center}

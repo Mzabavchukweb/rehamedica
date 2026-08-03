@@ -617,9 +617,12 @@ def build_service(sk):
     </div>
   </section>
 {splate}
+  <!-- Bez drugiego „Umów wizytę". Kazda karta w „Gdzie skorzystasz" ma juz
+       wlasny przycisk, i to lepszy: prowadzi do KONKRETNEJ placowki, a nie
+       do ogolnego wyboru. Powtorzenie go tutaj tworzylo trzy CTA obok siebie,
+       z czego dwa robily to samo. Zostaje ciche wyjscie. -->
   <section class="uend">
     <div class="wrap uend__inner">
-      <a class="btn btn--brand uend__btn" href="{r}index.html#placowki" data-booking>Umów wizytę <span class="btn__arrow" aria-hidden="true">→</span></a>
       <a class="uend__back" href="{r}index.html"><span aria-hidden="true">←</span> Wróć do strony głównej</a>
     </div>
   </section>
@@ -912,9 +915,12 @@ def build_placowki():
 </section>
 
 <article class="usluga">
+  <!-- Bez drugiego „Umów wizytę". Kazda karta w „Gdzie skorzystasz" ma juz
+       wlasny przycisk, i to lepszy: prowadzi do KONKRETNEJ placowki, a nie
+       do ogolnego wyboru. Powtorzenie go tutaj tworzylo trzy CTA obok siebie,
+       z czego dwa robily to samo. Zostaje ciche wyjscie. -->
   <section class="uend">
     <div class="wrap uend__inner">
-      <a class="btn btn--brand uend__btn" href="{r}index.html#placowki" data-booking>Umów wizytę <span class="btn__arrow" aria-hidden="true">→</span></a>
       <a class="uend__back" href="{r}index.html"><span aria-hidden="true">←</span> Wróć do strony głównej</a>
     </div>
   </section>
