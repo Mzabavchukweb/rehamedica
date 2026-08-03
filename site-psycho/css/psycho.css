@@ -1492,3 +1492,16 @@ body.ma-hero .shero .ubread li{color:rgba(255,255,255,.92);
   .wiz__k::before{top:20px}
   .wiz__ludzie{grid-template-columns:minmax(0,1fr);gap:26px}
 }
+
+/* ── POJEDYNCZA KARTA W „GDZIE SKORZYSTASZ" ──────────────────────────
+   Siatka ma trzy kolumny, więc jedna karta siadała w lewej i zostawiała
+   dwie trzecie pustki — wyglądało jak brakująca treść, a nie jak wybór.
+   Gdy karta jest jedna, kolumna zwęża się do niej i cały blok idzie
+   na środek razem z nagłówkiem. */
+.splate__grid:has(.pcard:only-child){
+  grid-template-columns:minmax(0,min(520px,100%));
+  justify-content:center;
+}
+.splate__inner:has(.pcard:only-child) .splate__head{text-align:center}
+.splate__inner:has(.pcard:only-child) .splate__meta{justify-content:center}
+/* przeglądarki bez :has() — karta zostaje po lewej, ale nic się nie psuje */
