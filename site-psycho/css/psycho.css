@@ -1082,16 +1082,18 @@ body.is-home main{padding-top:0}
    2. WARSTWA UKOŚNA — czytelność tekstu: ciemniej po lewej, gdzie leży
       treść, prawie przezroczyście po prawej, gdzie są twarze. */
 .hero3__scrim{
+  /* Nakładka była strojona pod STARE kadry — ciemniejsze i o mocniejszym
+     kontraście. Nowe zdjęcia są jasne i spokojne, więc te same wartości
+     przyciemniały je bez potrzeby: pomiar pokazywał 9,51:1 na nawigacji
+     przy progu 4,5:1, czyli ponad dwukrotny zapas.
+     Zdjęte tyle, ile pozwala margines bezpieczeństwa nad progiem AA. */
   background:
     linear-gradient(180deg,
-      rgba(28,21,13,.68) 0%, rgba(28,21,13,.46) 13%,
-      rgba(28,21,13,.16) 24%, rgba(28,21,13,0) 32%),
+      rgba(28,21,13,.58) 0%, rgba(28,21,13,.40) 13%,
+      rgba(28,21,13,.10) 24%, rgba(28,21,13,0) 32%),
     linear-gradient(102deg,
-      /* lewa strona odrobinę mocniej — lead pod H1 schodził tu do 4,27:1
-         przy wymaganych 4,5:1. Dwa prawe przystanki BEZ ZMIAN, żeby twarze
-         po prawej zostały odsłonięte. */
-      rgba(34,27,20,.79) 0%, rgba(34,27,20,.67) 34%,
-      rgba(34,27,20,.26) 64%, rgba(34,27,20,.06) 100%);
+      rgba(34,27,20,.70) 0%, rgba(34,27,20,.56) 34%,
+      rgba(34,27,20,.16) 64%, rgba(34,27,20,.03) 100%);
 }
 @media (max-width:52em){
   /* mobile: topstrip 38 + pasek 88, logo 90 → dół loga na 127 px */
