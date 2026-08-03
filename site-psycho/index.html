@@ -806,25 +806,21 @@
      częściej niż cena. Zamiast trzech kart — sekwencja z ciągłą linią, bo to
      jest droga, nie zestaw. Kadra wyciągnięta na wierzch: badania rynku PL
      mówią wprost, że zaufanie buduje informacja o tym, KTO przyjmie. -->
+<!-- PIERWSZA WIZYTA — przebudowana 2026-08-03.
+     Było: lewa kolumna jako worek na trzy niezwiązane rzeczy (nagłówek,
+     kwalifikacje, zdjęcie), kroki w wąskiej prawej kolumnie, pod nimi 360 px
+     pustki, a na dole dwa osierocone akapity.
+     Jest: nagłówek na pełną szerokość → trzy kroki jako TRZY KOLUMNY (to jest
+     sekwencja, więc numer niesie treść, a poziomo czyta się szybciej i nie
+     zostawia pustej połowy) → pas o LUDZIACH (kto przyjmie + co gdy nie pasuje)
+     → przypis o psychiatrii. -->
 <section class="sec wiz" id="pierwsza-wizyta" aria-labelledby="wiz-h">
-  <div class="wrap wiz__grid">
-    <div class="wiz__intro">
+  <div class="wrap">
+    <header class="wiz__head" data-animate>
       <p class="kicker">Zanim zadzwonisz</p>
       <h2 class="sec__h" id="wiz-h">Jak wygląda pierwsza wizyta</h2>
-      <p class="sec__lead">Nie musisz umieć nazwać tego, co się dzieje. Pierwsze spotkanie służy właśnie temu, żeby to określić.</p>
-      <div class="wiz__kto">
-        <p class="wiz__kto-l">Kto Cię przyjmie</p>
-        <p class="wiz__kto-t">Wykwalifikowani <b>psychologowie i psychoterapeuci z dużym doświadczeniem klinicznym</b>. W Ośrodku dla Dzieci i Młodzieży — psycholog kliniczny, terapeuta środowiskowy i psychoterapeuci.</p>
-      </div>
-      <!-- Autentyczne wejście Reha Medica. Sekcja odpowiada na pytanie „co się
-           wydarzy", a zdjęcie odpowiada na jego cichą część: „jak tam będzie".
-           Stało tu wcześniej ok. 150 px pustki pod tekstem. -->
-      <figure class="wiz__foto">
-        <img src="assets/img/recepcja-konsultacje.webp" alt="Wejście i poczekalnia w placówce Reha Medica"
-             width="1200" height="800" loading="lazy" decoding="async">
-        <figcaption>Wejście do placówki w Szczecinku</figcaption>
-      </figure>
-    </div>
+      <p class="wiz__lead">Nie musisz umieć nazwać tego, co się dzieje. Pierwsze spotkanie służy właśnie temu, żeby to określić.</p>
+    </header>
 
     <ol class="wiz__kroki">
       <li class="wiz__k">
@@ -841,7 +837,20 @@
       </li>
     </ol>
 
-    <p class="wiz__ulga"><b>Terapeuta też jest do sprawdzenia.</b> Czasem zdarza się, że dany terapeuta nie pasuje pacjentowi. Konsultacja jest dobrym czasem, żeby to sprawdzić i dokonać zmiany.</p>
+    <!-- Oba bloki mówią o LUDZIACH, więc stoją razem. „Kto Cię przyjmie" to
+         najmocniejszy sygnał zaufania na tej stronie — wcześniej leżał
+         drobnym drukiem w kącie lewej kolumny. -->
+    <div class="wiz__ludzie" data-animate>
+      <div class="wiz__blok">
+        <p class="wiz__bl">Kto Cię przyjmie</p>
+        <p class="wiz__bt">Wykwalifikowani <b>psychologowie i psychoterapeuci z dużym doświadczeniem klinicznym</b>. W Ośrodku dla Dzieci i Młodzieży — psycholog kliniczny, terapeuta środowiskowy i psychoterapeuci.</p>
+      </div>
+      <div class="wiz__blok">
+        <p class="wiz__bl">Jeśli nie poczujesz kontaktu</p>
+        <p class="wiz__bt">Czasem zdarza się, że <b>dany terapeuta nie pasuje pacjentowi</b>. Konsultacja jest dobrym czasem, żeby to sprawdzić i dokonać zmiany.</p>
+      </div>
+    </div>
+
     <p class="wiz__uwaga">Pierwsza wizyta u lekarza psychiatry ma charakter diagnostyczny i trwa dłużej niż późniejsze wizyty kontrolne.</p>
   </div>
 </section>
