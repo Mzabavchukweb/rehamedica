@@ -1326,3 +1326,27 @@ body.is-home main{padding-top:0}
 .lpart__b{padding:0 0 22px}
 .lpart__b p{margin:0;max-width:68ch;line-height:1.65;color:var(--color-text-2);text-wrap:pretty}
 @media (prefers-reduced-motion:reduce){.lpart__s::after{transition:none}}
+
+/* ── ILUSTRACJA KOTWICZĄCA (zestaw C) ─────────────────────────────────
+   Dwie maski jedna na drugiej: plama i kreska. Obie wybarwiane z CSS-a,
+   więc grafika reaguje na motyw sekcji tak samo jak ikony — i nie niesie
+   ze sobą granatu ani brzoskwini z pliku PNG.
+   Proporcja przez aspect-ratio, więc nic nie skacze przy wczytywaniu. */
+.pil{margin:clamp(30px,4vw,48px) 0 0;padding:0}
+.pil__w{
+  display:block;position:relative;width:100%;max-width:620px;
+  aspect-ratio:760/500;
+}
+.pil__w::before,.pil__w::after{
+  content:"";position:absolute;inset:0;
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  -webkit-mask-position:center;mask-position:center;
+  -webkit-mask-size:contain;mask-size:contain;
+}
+.pil__w::before{background:var(--ico-blob,var(--color-bg-beige-2));
+  -webkit-mask-image:var(--plama);mask-image:var(--plama)}
+.pil__w::after{background:var(--color-brand);
+  -webkit-mask-image:var(--linie);mask-image:var(--linie)}
+@media (max-width:52em){.pil__w{max-width:none}}
+/* brak obsługi maski — ilustracja znika, treść strony nie ucierpi */
+@supports not ((-webkit-mask-image:none) or (mask-image:none)){.pil{display:none}}

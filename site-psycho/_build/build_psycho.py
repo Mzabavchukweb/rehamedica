@@ -388,6 +388,16 @@ def prose_block(cnt, img_src, img_alt, depth):
             o.append(f'          <p class="lpull__p">{p}</p>')
         o.append('        </div>')
         o.append('      </div>')
+    if cnt.get("_ilustracja"):
+        # Kotwica wizualna przy najgęstszym bloku strony. Dwie maski —
+        # osobno kreska, osobno plama — więc obie warstwy biorą kolor z CSS
+        # i grafika reaguje na motyw sekcji tak samo jak ikony.
+        ik, alt = cnt["_ilustracja"]
+        r = rel(depth)
+        o.append(f'\n      <figure class="pil" role="img" aria-label="{alt}">')
+        o.append(f'        <span class="pil__w" style="--plama:url({r}assets/ikony/{ik}-plama.png);'
+                 f'--linie:url({r}assets/ikony/{ik}.png)"></span>')
+        o.append('      </figure>')
     if cnt.get("parts_h"):
         # Akordeon zamiast gęstych akapitów klinicznych. Każdy zaczyna się od
         # <b>Nazwa</b> — nazwa zostaje widoczna i skanowalna, definicja otwiera

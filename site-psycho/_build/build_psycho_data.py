@@ -691,3 +691,15 @@ DLA_KOGO = {
    ("Pacjenci od 14. roku życia", "„Pacjenci od 14. roku życia”"),
  ],
 }
+
+# ─────────────────────────────────────────────────────────────────────────
+# ILUSTRACJE KOTWICZĄCE (zestaw C z briefu) — dostarczone 2026-08-03.
+# Wzorzec Centrum Sobota: duża grafika przy bloku tekstu, przy której oko
+# odpoczywa. Jedna na stronę usługi; opis alt niesie treść sceny.
+ILUSTRACJE = {
+ "poradnia-psychologiczna":         ("p-il-poradnia",           "Dwie osoby rozmawiające w fotelach w gabinecie poradni"),
+ "osrodek-psychologiczno-psychoterapeutyczny": ("p-il-osrodek", "Dziecko z opiekunem naprzeciw specjalisty"),
+ "konsultacje-psychologiczne":      ("p-il-pierwsze-spotkanie", "Rozmowa, w której padają pytania"),
+ "konsultacja-psychoterapeutyczna": ("p-il-dopasowanie",        "Dwie osoby składające puzzle — sprawdzenie, czy mogą pracować razem"),
+ "lekarz-psychiatra":               ("p-il-motywacja",          "Osoba w ruchu, przed nią wytyczona droga"),
+}

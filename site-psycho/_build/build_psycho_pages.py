@@ -482,6 +482,7 @@ def build_service(sk):
     s = SERVICES[sk]
     cnt = dict(SERVICE_CONTENT[sk])
     cnt["_kogo"] = DLA_KOGO.get(sk)          # etykiety odbiorców, jeśli źródło je wylicza
+    cnt["_ilustracja"] = ILUSTRACJE.get(sk)  # kotwica wizualna przy gęstym bloku
     depth = 1
     r = rel(depth)
     url = f"{BASE}/{sk}/"
