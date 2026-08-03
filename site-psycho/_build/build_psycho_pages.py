@@ -730,7 +730,6 @@ def build_city_service(city, sk):
 
   <section class="uend">
     <div class="wrap uend__inner">
-      <a class="btn btn--brand uend__btn" href="tel:{f['phones'][0][1]}">Zadzwoń: {f['phones'][0][0]} <span class="btn__arrow" aria-hidden="true">→</span></a>
       <a class="uend__back" href="{r}{city}/"><span aria-hidden="true">←</span> Wróć do placówki {f['name']}</a>
     </div>
   </section>
@@ -845,7 +844,6 @@ def build_city(city):
 
   <section class="uend">
     <div class="wrap uend__inner">
-      <a class="btn btn--brand uend__btn" href="tel:{f['phones'][0][1]}">Zadzwoń: {f['phones'][0][0]} <span class="btn__arrow" aria-hidden="true">→</span></a>
       <a class="uend__back" href="{r}placowki/"><span aria-hidden="true">←</span> Wszystkie placówki</a>
     </div>
   </section>
@@ -1005,7 +1003,6 @@ def build_kontakt():
 
   <section class="uend">
     <div class="wrap uend__inner">
-      <a class="btn btn--brand uend__btn" href="{r}placowki/">Wszystkie placówki <span class="btn__arrow" aria-hidden="true">→</span></a>
       <a class="uend__back" href="{r}index.html"><span aria-hidden="true">←</span> Wróć do strony głównej</a>
     </div>
   </section>
