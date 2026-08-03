@@ -14,6 +14,18 @@ RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+# Stara sitemapa WordPressa (index + podsitemapy) → nowa. Google przejdzie płynnie
+# zamiast dostawać 404 na zapamiętanym z WP adresie wp-sitemap*.xml.
+RewriteRule ^wp-sitemap.*\.xml$ https://rehamedica.info.pl/sitemap.xml [R=301,L]
+
+# ── Projekty UE zdjęte z serwisu 2026-08-03 (decyzja właściciela: nie realizujemy
+#    już takich projektów). Trzy strony zniknęły, więc stare adresy muszą oddawać
+#    301 zamiast 404 — były indeksowane i linkowane ze stopki każdej podstrony.
+RewriteRule ^projekty-ue/projekt-mindspots/?$ https://rehamedica.info.pl/aktualnosci/ [R=301,L]
+RewriteRule ^projekty-ue/zakonczenie-postepowania-ofertowego-komputery-mindspots/?$ https://rehamedica.info.pl/aktualnosci/ [R=301,L]
+RewriteRule ^projekty-ue/?$ https://rehamedica.info.pl/aktualnosci/ [R=301,L]
+
 RewriteRule ^placowki/szczecinek/?$ https://rehamedica.info.pl/ [R=301,L]
 RewriteRule ^uslugi/masaze/masaz-leczniczy/?$ https://rehamedica.info.pl/uslugi/masaze/leczniczy/ [R=301,L]
 RewriteRule ^uslugi/masaze/masaz-modelujacy-antycellulitowy/?$ https://rehamedica.info.pl/uslugi/masaze/modelujacy-antycellulitowy/ [R=301,L]
@@ -38,9 +50,9 @@ RewriteRule ^uslugi/rehabilitacja/rehabilitacja-ortopedyczna/?$ https://rehamedi
 RewriteRule ^uslugi/rehabilitacja/rehabilitacja-reumatologiczna/?$ https://rehamedica.info.pl/uslugi/rehabilitacja/reumatologiczna/ [R=301,L]
 RewriteRule ^uslugi/rehabilitacja/rehabilitacja-sportowa/?$ https://rehamedica.info.pl/uslugi/rehabilitacja/sportowa/ [R=301,L]
 RewriteRule ^uslugi/rehabilitacja/rehabilitacja-domowa-walcz/?$ https://rehamedica.info.pl/uslugi/rehabilitacja/domowa-walcz/ [R=301,L]
-RewriteRule ^aktalnosci-projektow-lista/?$ https://rehamedica.info.pl/projekty-ue/ [R=301,L]
-RewriteRule ^aktalnosci-projektow-lista/projekt-pt-mindspots/?$ https://rehamedica.info.pl/projekty-ue/projekt-mindspots/ [R=301,L]
-RewriteRule ^aktalnosci-projektow-lista/zakonczenie-postepowania-ofertowego-na-zakup-komputerow-projekt-mindspots/?$ https://rehamedica.info.pl/projekty-ue/zakonczenie-postepowania-ofertowego-komputery-mindspots/ [R=301,L]
+RewriteRule ^aktalnosci-projektow-lista/?$ https://rehamedica.info.pl/aktualnosci/ [R=301,L]
+RewriteRule ^aktalnosci-projektow-lista/projekt-pt-mindspots/?$ https://rehamedica.info.pl/aktualnosci/ [R=301,L]
+RewriteRule ^aktalnosci-projektow-lista/zakonczenie-postepowania-ofertowego-na-zakup-komputerow-projekt-mindspots/?$ https://rehamedica.info.pl/aktualnosci/ [R=301,L]
 RewriteRule ^author/admin2024/?$ https://rehamedica.info.pl/ [R=301,L]
 RewriteRule ^author/ohhpr/?$ https://rehamedica.info.pl/ [R=301,L]
 RewriteRule ^bialogard/?$ https://rehamedica.info.pl/placowki/bialogard/ [R=301,L]
@@ -83,8 +95,8 @@ RewriteRule ^placowka-szczecinek/?$ https://rehamedica.info.pl/ [R=301,L]
 RewriteRule ^polityka-prywatnosci-2/?$ https://rehamedica.info.pl/polityka-prywatnosci/ [R=301,L]
 RewriteRule ^poradnia-logopedyczna/?$ https://rehamedica.info.pl/uslugi/poradnia-logopedyczna/ [R=301,L]
 RewriteRule ^poradnia-rehabilitacyjna/?$ https://rehamedica.info.pl/uslugi/rehabilitacja/poradnia-rehabilitacyjna/ [R=301,L]
-RewriteRule ^projekt-mindspots/?$ https://rehamedica.info.pl/projekty-ue/projekt-mindspots/ [R=301,L]
-RewriteRule ^projekty-ue-aktualnosci/?$ https://rehamedica.info.pl/projekty-ue/ [R=301,L]
+RewriteRule ^projekt-mindspots/?$ https://rehamedica.info.pl/aktualnosci/ [R=301,L]
+RewriteRule ^projekty-ue-aktualnosci/?$ https://rehamedica.info.pl/aktualnosci/ [R=301,L]
 RewriteRule ^reha-medica-dolacza-do-programu-innowacja-model-dom/?$ https://rehamedica.info.pl/aktualnosci/reha-medica-dolacza-do-programu-innowacja-model-dom/ [R=301,L]
 RewriteRule ^rehabilitacja-bolu/?$ https://rehamedica.info.pl/uslugi/rehabilitacja/bolu/ [R=301,L]
 RewriteRule ^rehabilitacja-domowa-2/?$ https://rehamedica.info.pl/uslugi/rehabilitacja/domowa/ [R=301,L]
@@ -113,4 +125,12 @@ RewriteRule ^walcz/?$ https://rehamedica.info.pl/placowki/walcz/ [R=301,L]
 RewriteRule ^wspolpraca-reha-medica-z-medicover/?$ https://rehamedica.info.pl/aktualnosci/wspolpraca-reha-medica-z-medicover/ [R=301,L]
 RewriteRule ^zabiegi-fizykoterapeutyczne-2/?$ https://rehamedica.info.pl/uslugi/zabiegi-fizykoterapeutyczne/ [R=301,L]
 RewriteRule ^zabiegi-fizykoterapeutyczne/?$ https://rehamedica.info.pl/uslugi/zabiegi-fizykoterapeutyczne/ [R=301,L]
+
+# Katalog bez końcowego slasha → dodaj slash OD RAZU na https.
+# Bez tego DirectorySlash na home.pl buduje Location z http:// (serwer za proxy SSL widzi
+# połączenie jako http) i powstaje łańcuch https→http→https. Ta reguła go eliminuje.
+# -d = tylko realne katalogi, więc stare adresy WP (wyżej) mają pierwszeństwo.
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(.+)$ https://%{HTTP_HOST}/$1/ [R=301,L]
 </IfModule>

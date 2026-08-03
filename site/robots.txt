@@ -1,6 +1,11 @@
 User-agent: *
 Allow: /
 
+# Panel administracyjny (newsletter, ankiety) — nie do indeksowania.
+# To nie blokuje formularzy na stronie: one wysyłają dane przez fetch przeglądarki,
+# a robots.txt dotyczy tylko robotów wyszukiwarek.
+Disallow: /panel/
+
 # Mapa strony — jedyne źródło adresów dla wyszukiwarki.
 # Zawiera wyłącznie strony, które realnie istnieją.
 Sitemap: https://rehamedica.info.pl/sitemap.xml

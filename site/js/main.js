@@ -555,14 +555,36 @@ var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches || (f
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    if (!form.checkValidity()) { form.reportValidity(); return; }
-    var endpoint = (form.getAttribute('data-endpoint') || '').trim();
-    if (!endpoint) { msg('Zapisy do newslettera zostaną uruchomione wkrótce.', false); return; }
 
     var emailEl = form.querySelector('[name="email"]');
     var consentEl = form.querySelector('[name="consent"]');
+    var email = emailEl ? emailEl.value.trim() : '';
+
+    // Walidacja po stronie klienta z czytelnym komunikatem i fokusem. Nie polegamy na
+    // natywnym reportValidity() — stylowany checkbox zgody bywa niefokusowalny, przez co
+    // walidacja „przechodziła", a serwer odrzucał zapis (422). Przy braku zgody / złym
+    // e-mailu NIE wysyłamy już żądania — użytkownik od razu widzi, co poprawić.
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      msg('Podaj poprawny adres e-mail.', true);
+      if (emailEl) emailEl.focus();
+      return;
+    }
+    if (consentEl && !consentEl.checked) {
+      msg('Zaznacz zgodę na otrzymywanie newslettera, aby się zapisać.', true);
+      consentEl.focus();
+      return;
+    }
+    if (tel && tel.value.trim() && smsInput && !smsInput.checked) {
+      msg('Zaznacz zgodę na SMS albo usuń numer telefonu.', true);
+      smsInput.focus();
+      return;
+    }
+
+    var endpoint = (form.getAttribute('data-endpoint') || '').trim();
+    if (!endpoint) { msg('Zapisy do newslettera zostaną uruchomione wkrótce.', false); return; }
+
     var payload = {
-      email: emailEl ? emailEl.value.trim() : '',
+      email: email,
       consent_email: (consentEl && consentEl.checked) ? 1 : 0
     };
     var phone = tel && tel.value.trim();

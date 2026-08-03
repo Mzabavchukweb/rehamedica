@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+<!--
+  Chcesz taką stronę dla siebie lub swojej firmy?
+  Projektujemy i kodujemy od zera. Napisz do nas: codingmaks.com
+-->
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Poprzednie: 97 zn. tytuł i 186 zn. opis, oba ucinane w wynikach. Miasta bez oferty
-     na głównym serwisie (matryca etapu 3) zabierały miejsce frazie kluczowej; ich lokalne
-     SEO robią strony placówek, nie strona główna. -->
+
 <title>Reha Medica Szczecinek — centrum rehabilitacyjno-medyczne</title>
 <meta name="description" content="Centrum rehabilitacyjno-medyczne Reha Medica. Rehabilitacja, fizjoterapia, konsultacje i zabiegi w pięciu placówkach na Pomorzu Zachodnim. Umów wizytę.">
 <link rel="canonical" href="https://rehamedica.info.pl/">
 
-<!-- Open Graph / Twitter — stara strona nie ma żadnego: link wklejony na FB/WhatsApp pokazuje pusty prostokąt -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pl_PL">
 <meta property="og:site_name" content="Reha Medica">
 <meta property="og:url" content="https://rehamedica.info.pl/">
-<meta property="og:title" content="Reha Medica: rehabilitacja i fizjoterapia, Pomorze Zachodnie">
+<meta property="og:title" content="Rehabilitacja i fizjoterapia, Pomorze Zachodnie — Reha Medica">
 <meta property="og:description" content="Rehabilitacja, fizjoterapia, konsultacje i odnowa biologiczna w pięciu placówkach: Szczecinek, Szczecin, Wałcz, Białogard, Bobolice. NFZ i prywatnie.">
 <meta property="og:image" content="https://rehamedica.info.pl/assets/img/og-rehamedica.jpg">
 <meta property="og:image:width" content="1200">
@@ -27,18 +29,14 @@
 <link rel="icon" href="assets/favicon.png">
 <link rel="preload" href="assets/fonts/instrumentserif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/sourcesans3-latin.woff2" as="font" type="font/woff2" crossorigin>
-<!-- Pierwszy slajd hero ładowany priorytetowo — natychmiastowe malowanie zdjęcia (mobile: pionowe, desktop: poziome). -->
+
 <link rel="preload" as="image" href="assets/img/hero-0-budynek-m.webp" media="(max-width:75em)" fetchpriority="high">
 <link rel="preload" as="image" href="assets/img/hero-0-budynek.webp" media="(min-width:75.0625em)" fetchpriority="high">
-<link rel="stylesheet" href="css/style.css?v=133">
+<link rel="stylesheet" href="css/style.css?v=137">
 <script>document.documentElement.className+=' js';</script>
-<!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
+
 <script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
 
-<!-- Dane strukturalne — WYŁĄCZNIE fakty potwierdzone przez klienta (working-docs/confirmed-client-answers.md:
-     adresy, telefony, maile, godziny „wszystko tak jak na stronach", anomalie A1-A4 zaakceptowane).
-     Świadomie NIE deklarujemy usług per placówka — matryca usług to Etap 3, nierozstrzygnięta.
-     Stara strona nie ma żadnych danych strukturalnych. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -288,8 +286,6 @@
 
 <a class="skip-link" href="#main">Przejdź do treści</a>
 
-<!-- Sprite ikon — cienka linia, spójna z językiem ikonograficznym marki (Stage 7).
-     Zastępuje Font Awesome z CDN: 9 ikon zamiast całej biblioteki, zero żądań do stron trzecich. -->
 <svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
@@ -320,7 +316,7 @@
     <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M14 4.5h5.5V10M19.5 4.5 11 13"/><path d="M18 14.4v4.1a1.6 1.6 0 0 1-1.6 1.6H5.5a1.6 1.6 0 0 1-1.6-1.6V7.6A1.6 1.6 0 0 1 5.5 6h4.1"/>
     </symbol>
-    <!-- strzałka nawigacji — sygnał, że klik w adres prowadzi do map, nie kopiuje tekstu -->
+    
     <symbol id="i-nav" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
       <path d="M3.4 11.2 21 3l-8.2 17.6-2-7.4-7.4-2Z"/>
     </symbol>
@@ -387,13 +383,7 @@
             <li><a href="uslugi/odnowa-biologiczna/masaze-relaksacyjne/">Masaże relaksacyjne</a></li>
           </ul>
         </li>
-        <li class="nav__item nav__item--sub">
-          <button type="button" class="nav__top" aria-expanded="false" aria-controls="sub-ue">Projekty UE<svg class="ico nav__chev" aria-hidden="true" focusable="false"><use href="#i-chevron"></use></svg></button>
-          <ul class="nav__sub" id="sub-ue">
-            <li><a href="projekty-ue/">Aktualności – projekty</a></li>
-            <li><a href="projekty-ue/projekt-mindspots/">Projekt „MINDSpots”</a></li>
-          </ul>
-        </li>
+        <li class="nav__item"><a href="aktualnosci/">Aktualności</a></li>
         <li class="nav__item"><a href="faq/">FAQ</a></li>
         <li class="nav__item"><a href="kontakt/">Kontakt</a></li>
       </ul>
@@ -409,10 +399,8 @@
       </div>
     </nav>
     <div class="headerbar__cta">
-      <!-- Numer jako przycisk w tym samym rozmiarze co „Umów wizytę", ale wariant outline:
-           dwa identyczne kremowe przyciski obok siebie spłaszczyłyby hierarchię.
-           Tu telefon = akcja drugorzędna, „Umów wizytę" = główna. -->
-      <a class="btn btn--sm btn--outline-light header-phone" href="tel:+48943721451" aria-label="Zadzwoń: 94 372 14 51">94 372 14 51</a>
+      
+      <a class="btn btn--sm btn--outline-light header-phone" href="https://rehabeauty.pl" rel="noopener" target="_blank" aria-label="Reha Beauty — serwis odnowy biologicznej (otwiera się w nowej karcie)">Reha Beauty <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-external"></use></svg></a>
       <a class="header-survey" href="ankieta-satysfakcji/" aria-label="Ankieta satysfakcji pacjenta">
         <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-survey"></use></svg>
         <span>Ankieta</span>
@@ -426,13 +414,11 @@
 
 <main id="main">
 
-<!-- HERO -->
 <section class="hero" id="hero">
   <div class="wrap">
     <div class="hero__shell">
       <div class="hero__stage" aria-hidden="true">
-        <!-- Slajd 1: autentyczne zdjęcie budynku Reha Medica w Szczecinku (dostarczone przez klienta).
-             Dalej grafiki ze starej strony: rehabilitacja, terapia manualna, odnowa biologiczna, współpraca. -->
+        
         <div class="hero__slide is-active" data-bg="assets/img/hero-0-budynek.webp"></div>
         <div class="hero__slide" data-bg="assets/img/hero-1-rehabilitacja.webp"></div>
         <div class="hero__slide" data-bg="assets/img/hero-2-terapia-manualna.webp"></div>
@@ -442,7 +428,7 @@
       <div class="hero__tint" aria-hidden="true"></div>
 
       <div class="hero__inner">
-      <!-- LEWY-GÓRA: premium karta placówek -->
+      
       <div class="hero__card" id="placowki">
         <p class="hcard__label">Nasze placówki</p>
         <div class="hcard__tabs" role="tablist" aria-label="Placówki Reha Medica">
@@ -456,10 +442,7 @@
           <p class="hcard__empty" data-fac-empty>Wskaż miasto, aby zobaczyć adres i kontakt do recepcji.</p>
           <div class="hcard__detail" data-fac-detail hidden>
             <p class="hcard__city" data-city></p>
-            <!-- Cały wiersz jest linkiem, a układ to flex: pinezka | adres (zawija się) | strzałka.
-                 Strzałka jako element flex NIE MA JAK spaść pod tekst — inline-block potrafił,
-                 bo łamanie wiersza jest dozwolone przed elementem atomowym nawet bez spacji.
-                 href i etykietę ustawia main.js: Apple Maps na iOS, Google Maps gdzie indziej. -->
+            
             <p class="hcard__row hcard__row--addr">
               <a class="hcard__addr" data-maps href="#" target="_blank" rel="noopener">
                 <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-pin"></use></svg>
@@ -478,7 +461,6 @@
         <p class="hcard__nfz"><span>Usługi komercyjnie oraz w ramach:</span><img src="assets/nfz.svg" alt="Narodowy Fundusz Zdrowia" height="22"></p>
       </div>
 
-      <!-- LEWY-DÓŁ: biały cut-out — komplet: nagłówek + zdanie + CTA + wskaźniki -->
       <div class="hero__cut">
         <h1 class="hero__title">Centrum rehabilitacyjno-medyczne</h1>
         <p class="hero__sub" data-hero-sub>Pełen zakres rehabilitacji, fizjoterapii i opieki medycznej w pięciu placówkach na Pomorzu Zachodnim.</p>
@@ -499,7 +481,6 @@
   </div>
 </section>
 
-<!-- BODŹCE — potrzeba pacjenta → ścieżka do właściwej usługi -->
 <section class="section needs" id="pomoc" aria-labelledby="needs-h">
   <div class="wrap needs__grid">
     <div class="needs__intro" data-animate>
@@ -549,7 +530,6 @@
   <p class="wrap needs__note">Zakres i dostępność świadczeń zależą od wybranej placówki. <a href="#placowki">Sprawdź dostępność w placówce →</a></p>
 </section>
 
-<!-- USŁUGI -->
 <section class="section section--beige svc" id="uslugi" aria-labelledby="svc-h">
   <div class="wrap">
     <header class="svc__head" data-animate="word-reveal">
@@ -560,7 +540,6 @@
       </div>
     </header>
 
-    <!-- scena aktywnego obszaru -->
     <div class="svc__stage">
       <div class="svc__media" aria-hidden="true">
         <span class="svc__frame"></span>
@@ -580,7 +559,6 @@
       </div>
     </div>
 
-    <!-- typograficzny indeks obszarów — linki do podstron usług -->
     <nav class="svc__index" aria-label="Obszary opieki">
       <a class="svc__item" href="uslugi/rehabilitacja/" data-svc="0"><span class="svc__inum">01</span><span class="svc__iname">Rehabilitacja i fizjoterapia</span><span class="svc__iarrow" aria-hidden="true">→</span><span class="svc__iline" aria-hidden="true"></span></a>
       <a class="svc__item" href="uslugi/konsultacje/" data-svc="1"><span class="svc__inum">02</span><span class="svc__iname">Konsultacje medyczne</span><span class="svc__iarrow" aria-hidden="true">→</span><span class="svc__iline" aria-hidden="true"></span></a>
@@ -594,8 +572,6 @@
   </div>
 </section>
 
-<!-- TRENING EMS — zajawka nowej usługi z filmem (ładowanym po kliknięciu).
-     Tekst dosłownie z materiału iszczecinek.pl (współpraca z Reha Medica). -->
 <section class="section emshl" id="trening-ems" aria-labelledby="ems-h">
   <div class="wrap">
     <header class="section__head" data-animate="word-reveal">
@@ -608,10 +584,9 @@
         <p class="emshl__p">Coraz więcej osób w Szczecinku sięga po trening EMS – nowoczesną metodę aktywności fizycznej, która pozwala osiągać widoczne rezultaty w krótkim czasie. W Reha Medica Centrum Rehabilitacyjno-Medycznym treningi prowadzone są indywidualnie i poprzedzone dokładną analizą potrzeb uczestnika.</p>
         <a class="link-strong" href="uslugi/trening-ems/">Poznaj trening EMS →</a>
       </div>
-      <!-- Bez data-animate: transform/will-change na rodzicu iframe'a powoduje
-           przeładowanie i „skakanie" filmu przy odtwarzaniu. Kadr wchodzi statycznie. -->
+      
       <div class="emshl__media">
-        <!-- Film osadzony natywnie z Facebooka (odtwarzacz FB, bez własnych nakładek) -->
+        
         <div class="emsembed" data-cc-embed>
           <iframe data-cc-provider="Facebook" data-cc-src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F788602250471275%2F&show_text=0&width=560" title="Trening EMS w Reha Medica — film na Facebooku" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe>
         </div>
@@ -620,7 +595,6 @@
   </div>
 </section>
 
-<!-- KONSULTACJE — ciemny rozdział edytorski -->
 <section class="section kons" id="konsultacje" aria-labelledby="kons-h">
   <div class="wrap">
     <header class="kons__head" data-animate="word-reveal">
@@ -655,7 +629,6 @@
   </div>
 </section>
 
-<!-- O REHA MEDICA -->
 <section class="section section--beige o-nas" id="o-nas" aria-labelledby="about-h">
   <div class="wrap about__grid">
     <figure class="about__figure" data-animate="scale-reveal">
@@ -670,11 +643,10 @@
   </div>
 </section>
 
-<!-- OPINIE PACJENTÓW — otwarta kompozycja: podsumowanie + slider dużych kart Google -->
 <section class="reviews" id="opinie" aria-labelledby="rv-h">
   <h2 class="visually-hidden" id="rv-h">Opinie pacjentów o Reha Medica</h2>
   <div class="reviews__inner">
-    <!-- LEWE: mocne podsumowanie Google (nie karta) -->
+    
     <div class="rv-summary" data-animate>
       <p class="kicker rv-summary__eyebrow">Opinie pacjentów</p>
       <p class="rv-summary__label" data-rv-label>DOSKONAŁA</p>
@@ -685,7 +657,6 @@
       <a class="rv-summary__cta" data-rv-more href="https://share.google/ACPY9joNkVJVdrKvZ" target="_blank" rel="noopener">Zobacz wszystkie opinie w Google <span class="rv-summary__arw" aria-hidden="true">→</span></a>
     </div>
 
-    <!-- PRAWE: slider dużych kart -->
     <div class="rv-slider">
       <ul class="rv-track" id="rv-track" data-rv-track role="list" tabindex="0" aria-label="Opinie pacjentów Reha Medica — karuzela">
         <li class="rv-card rv-card--empty" aria-hidden="true"></li>
@@ -700,7 +671,6 @@
   </div>
 </section>
 
-<!-- FINANSOWANIE / NFZ — jasna sekcja -->
 <section class="section fin" id="nfz" aria-labelledby="nfz-h">
   <div class="wrap fin__grid">
     <div class="fin__intro" data-animate>
@@ -716,34 +686,23 @@
       </div>
     </aside>
   </div>
-  <!-- pasek dofinansowania UE — grafika z archiwum klienta (unia-1.png) -->
-  <div class="wrap fin__eu" data-animate>
-    <img class="fin__eubar" src="assets/img/eu-funding.png" width="605" height="68" alt="Fundusze Europejskie dla Pomorza Zachodniego, Rzeczpospolita Polska, Dofinansowane przez Unię Europejską, Pomorze Zachodnie">
-    <p class="fin__eunote">Reha Medica realizuje projekty dofinansowane ze środków Unii Europejskiej.<!-- szczegóły i linki do projektów UE = DO POTWIERDZENIA --></p>
-  </div>
 </section>
 
-<!-- AKTUALNOŚCI -->
 <section class="section section--beige aktualnosci" id="aktualnosci" aria-labelledby="news-h">
   <div class="wrap">
     <header class="section__head" data-animate="word-reveal">
       <p class="kicker">Aktualności</p>
-      <h2 class="section__title" id="news-h">Aktualności i projekty</h2>
+      <h2 class="section__title" id="news-h">Aktualności</h2>
     </header>
     <div class="news">
       <article class="news__feature" data-animate>
-        <a class="news__thumb" href="projekty-ue/projekt-mindspots/"><img src="assets/img/budynek-rehamedica.webp" alt="Budynek Reha Medica — Centrum Rehabilitacyjno-Medyczne w Szczecinku" width="1400" height="933" loading="lazy" decoding="async"></a>
-        <span class="news__cat news__cat--eu">Projekt UE</span>
-        <time class="news__date" datetime="2025-11-25">25 listopada 2025</time>
-        <h3 class="news__title"><a href="projekty-ue/projekt-mindspots/">MINDSpots — Rozwój Ośrodków Opieki Psychologicznej i Psychoterapeutycznej w województwie zachodniopomorskim</a></h3>
-        <a class="link-strong" href="projekty-ue/projekt-mindspots/">Czytaj więcej →</a>
+        <a class="news__thumb" href="aktualnosci/wspolpraca-reha-medica-z-medicover/"><img src="assets/img/budynek-rehamedica.webp" alt="Budynek Reha Medica — Centrum Rehabilitacyjno-Medyczne w Szczecinku" width="1400" height="933" loading="lazy" decoding="async"></a>
+        <span class="news__cat news__cat--partner">Partnerstwo</span>
+        <time class="news__date" datetime="2025-10-25">25 października 2025</time>
+        <h3 class="news__title"><a href="aktualnosci/wspolpraca-reha-medica-z-medicover/">Współpraca Reha Medica z MEDICOVER</a></h3>
+        <a class="link-strong" href="aktualnosci/wspolpraca-reha-medica-z-medicover/">Czytaj więcej →</a>
       </article>
       <div class="news__list">
-        <article class="news__item" data-animate data-animate-delay="150">
-          <span class="news__cat news__cat--partner">Partnerstwo</span>
-          <time class="news__date" datetime="2025-10-25">25 października 2025</time>
-          <h3 class="news__title"><a href="aktualnosci/wspolpraca-reha-medica-z-medicover/">Współpraca Reha Medica z MEDICOVER</a></h3>
-        </article>
         <article class="news__item" data-animate data-animate-delay="300">
           <span class="news__cat news__cat--news">Aktualność</span>
           <time class="news__date" datetime="2023-07-25">25 lipca 2023</time>
@@ -760,7 +719,6 @@
   </div>
 </section>
 
-<!-- NEWSLETTER (UI — backend DO PODŁĄCZENIA) -->
 <section class="section newsletter" id="newsletter" aria-labelledby="nl-h">
   <div class="wrap newsletter__inner" data-animate>
     <div class="newsletter__text">
@@ -779,9 +737,6 @@
         <p class="field__hint" id="nl-tel-hint">Tylko jeśli chcesz otrzymywać powiadomienia SMS. Bez numeru zapiszesz się na sam e-mail.</p>
       </div>
 
-      <!-- Ostateczna treść zgód = DO ZATWIERDZENIA (prawne).
-           SMS to ODRĘBNY kanał marketingowy — świadomie osobna zgoda, nie doklejona do e-mailowej.
-           Zgoda SMS pojawia się i staje wymagana dopiero po wpisaniu numeru (patrz main.js). -->
       <label class="consent consent--nl">
         <input type="checkbox" name="consent" required>
         <span>Wyrażam zgodę na otrzymywanie newslettera Reha Medica na podany adres e-mail. Szczegóły dotyczące przetwarzania danych znajdują się w <a href="polityka-prywatnosci/">polityce prywatności</a>.</span>
@@ -800,7 +755,7 @@
 </main>
 
 <footer class="site-footer" id="kontakt">
-  <!-- główna stopka -->
+  
   <div class="wrap footer__top">
     <div class="footer__brand">
       <img src="assets/logo.svg" alt="Reha Medica" width="72" height="84">
@@ -824,7 +779,6 @@
         <li><a href="uslugi/">Usługi</a></li>
         <li><a href="uslugi/konsultacje/">Konsultacje</a></li>
         <li><a href="uslugi/odnowa-biologiczna/">Odnowa biologiczna</a></li>
-        <li><a href="projekty-ue/">Projekty UE</a></li>
         <li><a href="faq/">FAQ</a></li>
         <li><a href="https://rehabeauty.pl" rel="noopener">Reha Beauty ↗</a></li>
       </ul>
@@ -841,7 +795,6 @@
     </nav>
   </div>
 
-  <!-- C. pasek prawny -->
   <div class="wrap footer__bottom">
     <p class="footer__copy">© 2026 Reha Medica. Wszelkie prawa zastrzeżone.</p>
     <p class="footer__by">Realizacja: <a href="https://codingmaks.com" target="_blank" rel="noopener">codingmaks.com</a></p>
@@ -853,26 +806,15 @@
   </div>
 </footer>
 
-<!-- zagięty róg strony: ankieta satysfakcji (desktop) -->
 <a class="dogear" href="ankieta-satysfakcji/" aria-label="Wypełnij ankietę satysfakcji pacjenta">
   <span class="dogear__fold" aria-hidden="true"></span>
   <span class="dogear__label">Ankieta<br>satysfakcji</span>
 </a>
 
-<!-- pływający przycisk zadzwoń (mobile) -->
-<!-- Sama ikona — słuchawka czytelnie niesie „zadzwoń", napis był zbędny.
-     Nazwa dla czytników ekranu zostaje w aria-label. -->
 <a class="callfab" href="tel:+48943721451" aria-label="Zadzwoń do Reha Medica: 94 372 14 51">
   <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-phone"></use></svg>
 </a>
 
-<!-- boczna zakładka: siostrzana marka Reha Beauty -->
-<a class="beautytab" href="https://rehabeauty.pl" rel="noopener" aria-label="Reha Beauty — serwis odnowy biologicznej (otwiera się w nowej karcie)">
-  <span class="beautytab__text">Reha Beauty</span>
-  <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-external"></use></svg>
-</a>
-
-<!-- Menu dostępności — self-hosted, zero stron trzecich. Logika: js/main.js. -->
 <button class="a11y-fab" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="a11y-panel" aria-label="Menu dostępności">
   <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
     <circle cx="12" cy="3.6" r="2.15"/>
@@ -939,6 +881,6 @@
   </div>
   <button class="a11y-reset" type="button" data-a11y-reset>Przywróć ustawienia domyślne</button>
 </div>
-<script src="js/main.js?v=104"></script>
+<script src="js/main.js?v=105"></script>
 </body>
 </html>

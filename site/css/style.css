@@ -85,6 +85,12 @@
 /* scroll-padding = najwyższy stan nagłówka (138px w stanie górnym), by element
    sfokusowany klawiaturą lub cel kotwicy nigdy nie chował się pod nagłówkiem — WCAG 2.4.11 */
 html{font-size:100%;scroll-padding-top:144px}
+/* Duże ekrany: treść nie tonie w pustych marginesach i nie wygląda drobno.
+   Skalujemy kontener i bazowy font w górę — px breakpointy, więc laptopy (≤1499px)
+   pozostają bez zmian, a menu dostępności (inline font-size na html) ma pierwszeństwo. */
+@media (min-width:1500px){:root{--wrap:1280px;font-size:16.5px}}
+@media (min-width:2000px){:root{--wrap:1360px;font-size:17.5px}}
+@media (min-width:2560px){:root{--wrap:1440px;font-size:18px}}
 body{
   font-family:var(--font-body);
   font-size:1.125rem;              /* 18px */
@@ -245,7 +251,7 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
 .hero > .wrap{max-width:none;padding:0}
 .hero__shell{position:relative;width:100%;height:clamp(700px,96vh,1010px);border-radius:0;overflow:hidden;background:var(--color-brand);
   /* --gx = lewa krawędź siatki treści (jak .wrap: --wrap 1180 + padding 34) → tytuł równa się z sekcjami niżej i omija pasek „Reha Beauty" */
-  --gx:max(34px,calc((100% - 1180px) / 2 + 34px))}
+  --gx:max(34px,calc((100% - var(--wrap)) / 2 + 34px))}
 .hero__inner{display:contents}
 
 .hero__stage{position:absolute;inset:0;z-index:0;overflow:hidden}
@@ -297,10 +303,10 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
    krawędzi siatki treści, zakotwiczony u dołu — nad mocniejszą częścią nakładki. */
 /* treść wyśrodkowana w pionie — ten sam poziom niezależnie od długości tytułu
    (krótki tytuł placówki i długi tytuł homepage lądują na tej samej wysokości) */
-.hero__cut{position:absolute;left:0;right:auto;top:0;bottom:0;width:auto;max-width:min(660px,58%);z-index:2;
-  background:none;border-radius:0;padding:clamp(124px,15vh,152px) 24px clamp(56px,8vh,88px) var(--gx);
+.hero__cut{position:absolute;left:var(--gx);right:auto;top:0;bottom:0;width:min(560px,44vw);max-width:600px;box-sizing:border-box;z-index:2;
+  background:none;border-radius:0;padding:clamp(124px,15vh,152px) 24px clamp(56px,8vh,88px) 0;
   display:flex;flex-direction:column;justify-content:center}
-.hero__title{font-family:var(--font-display);font-weight:var(--fw-regular);font-size:clamp(2.5rem,4.2vw,4rem);line-height:1.03;letter-spacing:.25px;color:#fff;max-width:16ch;text-shadow:0 2px 30px rgba(14,8,3,.75),0 1px 4px rgba(14,8,3,.6);transition:opacity .5s ease,transform .5s ease}
+.hero__title{font-family:var(--font-display);font-weight:var(--fw-regular);font-size:clamp(2.5rem,4.2vw,4rem);line-height:1.03;letter-spacing:.25px;color:#fff;max-width:16ch;overflow-wrap:normal;word-break:normal;text-shadow:0 2px 30px rgba(14,8,3,.75),0 1px 4px rgba(14,8,3,.6);transition:opacity .5s ease,transform .5s ease}
 .hero__title.is-swapping{opacity:0;transform:translateY(10px)}
 .hero__sub{font-family:var(--font-body);font-size:1.08rem;font-weight:var(--fw-regular);line-height:1.55;color:#fff;max-width:46ch;margin-top:16px;text-shadow:0 1px 4px rgba(14,8,3,.7),0 2px 22px rgba(14,8,3,.7);transition:opacity .5s ease .05s,transform .5s ease .05s}
 .hero__sub.is-swapping{opacity:0;transform:translateY(10px)}
@@ -604,9 +610,6 @@ h1,h2,h3,.section__title,.svc__title,.svc__iname,.kons__h,.kons__atitle,.kons__r
 .fin__nfz{display:flex;flex-direction:column;align-items:flex-start;gap:16px;padding:0}
 .fin__nfzlogo{height:42px;width:auto}
 .fin__nfztext{font-family:var(--font-body);font-size:1rem;color:var(--color-text-2);line-height:1.55;margin:0}
-.fin__eu{margin-top:clamp(38px,4vw,58px);padding-top:30px;border-top:1px solid var(--color-line);display:flex;align-items:center;gap:clamp(20px,3vw,40px);flex-wrap:wrap}
-.fin__eubar{height:46px;width:auto;max-width:100%}
-.fin__eunote{font-family:var(--font-body);font-size:.92rem;color:var(--color-text-2);line-height:1.5;max-width:42ch;margin:0}
 
 /* ============================================================ AKTUALNOŚCI (edytorialnie: feature + lista) */
 .news{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:stretch}

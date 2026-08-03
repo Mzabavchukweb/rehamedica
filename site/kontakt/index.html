@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+<!--
+  Chcesz taką stronę dla siebie lub swojej firmy?
+  Projektujemy i kodujemy od zera. Napisz do nas: codingmaks.com
+-->
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Wzorzec z etapu 6: {Usługa} + miasto. Miasto = Szczecinek, bo wg matrycy etapu 3
-     to jedyna placówka świadcząca tę usługę. Bez NFZ w meta: dostępność NFZ per usługa
-     jest wciąż DO POTWIERDZENIA (#10/#11). -->
+
 <title>Kontakt | Reha Medica Szczecinek, Szczecin, Wałcz</title>
 <meta name="description" content="Kontakt do wszystkich placówek Reha Medica: adresy, telefony i adresy e-mail w Szczecinku, Szczecinie, Wałczu, Białogardzie i Bobolicach.">
 <link rel="canonical" href="https://rehamedica.info.pl/kontakt/">
@@ -28,11 +31,9 @@
 <link rel="stylesheet" href="../css/style.css?v=132">
 <link rel="stylesheet" href="../css/usluga.css?v=109">
 <script>document.documentElement.className+=' js';</script>
-<!-- Menu dostępności: zastosuj zapisane ustawienia przed malowaniem (bez mignięcia) -->
+
 <script>(function(){try{var s=JSON.parse(localStorage.getItem('rm-a11y')||'{}'),h=document.documentElement;if(s.scale&&s.scale!==100)h.style.fontSize=s.scale+'%';if(s.space)h.setAttribute('data-a11y-space',s.space);if(s.lineh)h.setAttribute('data-a11y-lineh',s.lineh);['contrast','invert','gray','underline','cursor','font','hideimg','guide','reduce'].forEach(function(k){if(s[k])h.setAttribute('data-a11y-'+k,'');});if((s.scale&&s.scale>100)||s.font)h.setAttribute('data-a11y-compact','');}catch(e){}})();</script>
 
-<!-- Okruszki dla wyszukiwarki — Google pokazuje ścieżkę zamiast surowego URL-a.
-     Wyłącznie odwzorowanie widocznej nawigacji, zero dodanych twierdzeń. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -53,11 +54,6 @@
 }
 </script>
 
-<!-- Schemat usługi wg etapu 6. Zasada: wyłącznie fakty potwierdzone.
-     - powiązanie z placówką: matryca etapu 3 (Poradnia rehabilitacyjna = tylko Szczecinek),
-     - NAP Szczecinka: potwierdzony, identyczny jak w całym serwisie,
-     - BEZ offers/price (niepotwierdzone), BEZ openingHours dla poradni (DO POTWIERDZENIA),
-     - BEZ physician (nazwiska specjalistów niepotwierdzone). -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -77,8 +73,6 @@
 
 <a class="skip-link" href="#main">Przejdź do treści</a>
 
-<!-- Sprite ikon — cienka linia, spójna z językiem ikonograficznym marki (Stage 7).
-     Zastępuje Font Awesome z CDN: 9 ikon zamiast całej biblioteki, zero żądań do stron trzecich. -->
 <svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
@@ -109,7 +103,7 @@
     <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M14 4.5h5.5V10M19.5 4.5 11 13"/><path d="M18 14.4v4.1a1.6 1.6 0 0 1-1.6 1.6H5.5a1.6 1.6 0 0 1-1.6-1.6V7.6A1.6 1.6 0 0 1 5.5 6h4.1"/>
     </symbol>
-    <!-- strzałka nawigacji — sygnał, że klik w adres prowadzi do map, nie kopiuje tekstu -->
+    
     <symbol id="i-nav" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
       <path d="M3.4 11.2 21 3l-8.2 17.6-2-7.4-7.4-2Z"/>
     </symbol>
@@ -176,13 +170,7 @@
             <li><a href="../uslugi/odnowa-biologiczna/masaze-relaksacyjne/">Masaże relaksacyjne</a></li>
           </ul>
         </li>
-        <li class="nav__item nav__item--sub">
-          <button type="button" class="nav__top" aria-expanded="false" aria-controls="sub-ue">Projekty UE<svg class="ico nav__chev" aria-hidden="true" focusable="false"><use href="#i-chevron"></use></svg></button>
-          <ul class="nav__sub" id="sub-ue">
-            <li><a href="../projekty-ue/">Aktualności – projekty</a></li>
-            <li><a href="../projekty-ue/projekt-mindspots/">Projekt „MINDSpots”</a></li>
-          </ul>
-        </li>
+        <li class="nav__item"><a href="../aktualnosci/">Aktualności</a></li>
         <li class="nav__item"><a href="../faq/">FAQ</a></li>
         <li class="nav__item"><a href="../kontakt/">Kontakt</a></li>
       </ul>
@@ -198,10 +186,8 @@
       </div>
     </nav>
     <div class="headerbar__cta">
-      <!-- Numer jako przycisk w tym samym rozmiarze co „Umów wizytę", ale wariant outline:
-           dwa identyczne kremowe przyciski obok siebie spłaszczyłyby hierarchię.
-           Tu telefon = akcja drugorzędna, „Umów wizytę" = główna. -->
-      <a class="btn btn--sm btn--outline-light header-phone" href="tel:+48943721451" aria-label="Zadzwoń: 94 372 14 51">94 372 14 51</a>
+      
+      <a class="btn btn--sm btn--outline-light header-phone" href="https://rehabeauty.pl" rel="noopener" target="_blank" aria-label="Reha Beauty — serwis odnowy biologicznej (otwiera się w nowej karcie)">Reha Beauty <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-external"></use></svg></a>
       <a class="header-survey" href="../ankieta-satysfakcji/" aria-label="Ankieta satysfakcji pacjenta">
         <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-survey"></use></svg>
         <span>Ankieta</span>
@@ -342,7 +328,7 @@
 </main>
 
 <footer class="site-footer" id="kontakt">
-  <!-- główna stopka -->
+  
   <div class="wrap footer__top">
     <div class="footer__brand">
       <img src="../assets/logo.svg" alt="Reha Medica" width="72" height="84">
@@ -366,7 +352,6 @@
         <li><a href="../uslugi/">Usługi</a></li>
         <li><a href="../uslugi/konsultacje/">Konsultacje</a></li>
         <li><a href="../uslugi/odnowa-biologiczna/">Odnowa biologiczna</a></li>
-        <li><a href="../projekty-ue/">Projekty UE</a></li>
         <li><a href="../faq/">FAQ</a></li>
         <li><a href="https://rehabeauty.pl" rel="noopener">Reha Beauty ↗</a></li>
       </ul>
@@ -383,7 +368,6 @@
     </nav>
   </div>
 
-  <!-- C. pasek prawny -->
   <div class="wrap footer__bottom">
     <p class="footer__copy">© 2026 Reha Medica. Wszelkie prawa zastrzeżone.</p>
     <p class="footer__by">Realizacja: <a href="https://codingmaks.com" target="_blank" rel="noopener">codingmaks.com</a></p>
@@ -395,33 +379,15 @@
   </div>
 </footer>
 
-<!-- zagięty róg strony: ankieta satysfakcji (desktop) -->
 <a class="dogear" href="../ankieta-satysfakcji/" aria-label="Wypełnij ankietę satysfakcji pacjenta">
   <span class="dogear__fold" aria-hidden="true"></span>
   <span class="dogear__label">Ankieta<br>satysfakcji</span>
 </a>
 
-<!-- pływający przycisk zadzwoń (mobile) -->
-<!-- Sama ikona — słuchawka czytelnie niesie „zadzwoń", napis był zbędny.
-     Nazwa dla czytników ekranu zostaje w aria-label. -->
 <a class="callfab" href="tel:+48943721451" aria-label="Zadzwoń do Reha Medica: 94 372 14 51">
   <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-phone"></use></svg>
 </a>
 
-<!-- boczna zakładka: siostrzana marka Reha Beauty -->
-<a class="beautytab" href="https://rehabeauty.pl" rel="noopener" aria-label="Reha Beauty — serwis odnowy biologicznej (otwiera się w nowej karcie)">
-  <span class="beautytab__text">Reha Beauty</span>
-  <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-external"></use></svg>
-</a>
-
-
-<!-- PANEL WYBORU PLACÓWKI
-     wszystkie placówki naraz i jednym tapnięciem dostaje numer — bez cofania się.
-     Żadna placówka NIE jest preselektowana (reguła CLAUDE.md).
-     Etykiety pochodzą z serwisu („Wybierz placówkę", „Umów wizytę"), nic nie wymyślono. -->
-<!-- data-bk-places: placówki świadczące TĘ usługę wg macierzy etapu 3 (potwierdzona 2026-07-14).
-     Poradnia rehabilitacyjna = tylko Szczecinek. Nie dopisywać placówek bez wpisu w macierzy. -->
-<!-- Menu dostępności — self-hosted, zero stron trzecich. Logika: js/main.js. -->
 <button class="a11y-fab" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="a11y-panel" aria-label="Menu dostępności">
   <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
     <circle cx="12" cy="3.6" r="2.15"/>
