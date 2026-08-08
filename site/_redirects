@@ -1,4 +1,9 @@
-# Reha Medica — przekierowania (Cloudflare Pages / produkcja: https://rehamedica.info.pl)
+# Reha Medica — przekierowania w formacie Cloudflare Pages.
+#
+# UWAGA: na obecnym hostingu (home.pl, Apache) ten plik NIE JEST CZYTANY.
+# Żywym mechanizmem produkcyjnym jest `site/.htaccess` i to jego trzeba zmieniać.
+# Ten plik trzymamy zsynchronizowany na wypadek przeprowadzki na Cloudflare —
+# rozjazd między nim a .htaccess już raz kosztował edycję w martwym pliku.
 # Wygenerowane z working-docs/stage-5-redirects.csv. Cele zweryfikowane względem plików w site/.
 # Kolejność: Cloudflare bierze PIERWSZĄ pasującą regułę.
 
@@ -108,33 +113,35 @@
 /zabiegi-fizykoterapeutyczne/                                                                           /uslugi/zabiegi-fizykoterapeutyczne/  301
 
 # --- PSYCHOLOGIA / PSYCHOTERAPIA / PSYCHIATRIA → przyszły osobny serwis ---
-# DOMENA DO POTWIERDZENIA. Reguły poniżej są NIEAKTYWNE (zakomentowane).
-# Po podaniu domeny: zamień [SERWIS-PSYCHOLOGICZNY] na docelowy host i odkomentuj.
+# Domena potwierdzona 2026-08-08: psychologia.rehamedica.info.pl.
+# CELOWO 302, nie 301 — decyzja właściciela 2026-08-08. Subdomena w chwili
+# włączenia jeszcze nie serwowała, a 302 jest odwracalne i nie deindeksuje.
+# Po potwierdzeniu, że serwis zwraca 200, zamienić 302 na 301.
 # Do tego czasu strony /placowki/{szczecin,bialogard,bobolice}/ zostają jako noindex-nota.
-# /bialogard-osrodek-psychologiczno-psychoterapeutyczny/   https://[SERWIS-PSYCHOLOGICZNY]/bialogard/osrodek-psychologiczno-psychoterapeutyczny/  301
-# /bobolice-osrodek-psychologiczno-psychoterapeutyczny/    https://[SERWIS-PSYCHOLOGICZNY]/bobolice/osrodek-psychologiczno-psychoterapeutyczny/  301
-# /konsultacje-psychologiczne-2/                           https://[SERWIS-PSYCHOLOGICZNY]/konsultacje-psychologiczne/  301
-# /konsultacje-psychologiczne/                             https://[SERWIS-PSYCHOLOGICZNY]/konsultacja-psychoterapeutyczna/  301
-# /lekarz-psychiatra/                                      https://[SERWIS-PSYCHOLOGICZNY]/lekarz-psychiatra/  301
-# /osrodek-psychologiczno-psychoterapeutyczny-2/           https://[SERWIS-PSYCHOLOGICZNY]/osrodek-psychologiczno-psychoterapeutyczny/  301
-# /osrodek-psychologiczno-psychoterapeutyczny-bialogard/   https://[SERWIS-PSYCHOLOGICZNY]/bialogard/osrodek-psychologiczno-psychoterapeutyczny/  301
-# /osrodek-psychologiczno-psychoterapeutyczny-bobolice/    https://[SERWIS-PSYCHOLOGICZNY]/bobolice/osrodek-psychologiczno-psychoterapeutyczny/  301
-# /osrodek-psychologiczno-psychoterapeutyczny-szczecin/    https://[SERWIS-PSYCHOLOGICZNY]/szczecin/osrodek-psychologiczno-psychoterapeutyczny/  301
-# /osrodek-psychologiczno-psychoterapeutyczny-szczecinek/  https://[SERWIS-PSYCHOLOGICZNY]/szczecinek/osrodek-psychologiczno-psychoterapeutyczny/  301
-# /osrodek-psychologiczno-psychoterapeutyczny-walcz/       https://[SERWIS-PSYCHOLOGICZNY]/walcz/osrodek-psychologiczno-psychoterapeutyczny/  301
-# /osrodek-psychologiczno-psychoterapeutyczny/             https://[SERWIS-PSYCHOLOGICZNY]/osrodek-psychologiczno-psychoterapeutyczny/  301
-# /poradnia-psychologiczna-2/                              https://[SERWIS-PSYCHOLOGICZNY]/poradnia-psychologiczna/  301
-# /poradnia-psychologiczna-bialogard/                      https://[SERWIS-PSYCHOLOGICZNY]/bialogard/poradnia-psychologiczna/  301
-# /poradnia-psychologiczna-bobolice/                       https://[SERWIS-PSYCHOLOGICZNY]/bobolice/poradnia-psychologiczna/  301
-# /poradnia-psychologiczna-szczecin/                       https://[SERWIS-PSYCHOLOGICZNY]/szczecin/poradnia-psychologiczna/  301
-# /poradnia-psychologiczna-szczecinek/                     https://[SERWIS-PSYCHOLOGICZNY]/szczecinek/poradnia-psychologiczna/  301
-# /poradnia-psychologiczna-walcz/                          https://[SERWIS-PSYCHOLOGICZNY]/walcz/poradnia-psychologiczna/  301
-# /poradnia-psychologiczna/                                https://[SERWIS-PSYCHOLOGICZNY]/poradnia-psychologiczna/  301
-# /szczecin-osrodek-psychologiczno-psychoterapeutyczny/    https://[SERWIS-PSYCHOLOGICZNY]/szczecin/osrodek-psychologiczno-psychoterapeutyczny/  301
-# /szczecin-poradnia-psychologiczna/                       https://[SERWIS-PSYCHOLOGICZNY]/szczecin/poradnia-psychologiczna/  301
-# /szczecinek-konsultacje-psychologiczne-2/                https://[SERWIS-PSYCHOLOGICZNY]/szczecinek/konsultacje-psychologiczne/  301
-# /szczecinek-konsultacje-psychologiczne/                  https://[SERWIS-PSYCHOLOGICZNY]/szczecinek/konsultacje-psychologiczne/  301
-# /szczecinek-osrodek-psycho-psycho/                       https://[SERWIS-PSYCHOLOGICZNY]/szczecinek/osrodek-psychologiczno-psychoterapeutyczny/  301
-# /szczecinek-poradnia-psychologiczna/                     https://[SERWIS-PSYCHOLOGICZNY]/szczecinek/poradnia-psychologiczna/  301
-# /walcz-osrodek-psychologiczno-psychoterapeutyczny/       https://[SERWIS-PSYCHOLOGICZNY]/walcz/osrodek-psychologiczno-psychoterapeutyczny/  301
+/bialogard-osrodek-psychologiczno-psychoterapeutyczny/   https://psychologia.rehamedica.info.pl/bialogard/osrodek-psychologiczno-psychoterapeutyczny/  302
+/bobolice-osrodek-psychologiczno-psychoterapeutyczny/    https://psychologia.rehamedica.info.pl/bobolice/osrodek-psychologiczno-psychoterapeutyczny/  302
+/konsultacje-psychologiczne-2/                           https://psychologia.rehamedica.info.pl/konsultacje-psychologiczne/  302
+/konsultacje-psychologiczne/                             https://psychologia.rehamedica.info.pl/konsultacja-psychoterapeutyczna/  302
+/lekarz-psychiatra/                                      https://psychologia.rehamedica.info.pl/lekarz-psychiatra/  302
+/osrodek-psychologiczno-psychoterapeutyczny-2/           https://psychologia.rehamedica.info.pl/osrodek-psychologiczno-psychoterapeutyczny/  302
+/osrodek-psychologiczno-psychoterapeutyczny-bialogard/   https://psychologia.rehamedica.info.pl/bialogard/osrodek-psychologiczno-psychoterapeutyczny/  302
+/osrodek-psychologiczno-psychoterapeutyczny-bobolice/    https://psychologia.rehamedica.info.pl/bobolice/osrodek-psychologiczno-psychoterapeutyczny/  302
+/osrodek-psychologiczno-psychoterapeutyczny-szczecin/    https://psychologia.rehamedica.info.pl/szczecin/osrodek-psychologiczno-psychoterapeutyczny/  302
+/osrodek-psychologiczno-psychoterapeutyczny-szczecinek/  https://psychologia.rehamedica.info.pl/szczecinek/osrodek-psychologiczno-psychoterapeutyczny/  302
+/osrodek-psychologiczno-psychoterapeutyczny-walcz/       https://psychologia.rehamedica.info.pl/walcz/osrodek-psychologiczno-psychoterapeutyczny/  302
+/osrodek-psychologiczno-psychoterapeutyczny/             https://psychologia.rehamedica.info.pl/osrodek-psychologiczno-psychoterapeutyczny/  302
+/poradnia-psychologiczna-2/                              https://psychologia.rehamedica.info.pl/poradnia-psychologiczna/  302
+/poradnia-psychologiczna-bialogard/                      https://psychologia.rehamedica.info.pl/bialogard/poradnia-psychologiczna/  302
+/poradnia-psychologiczna-bobolice/                       https://psychologia.rehamedica.info.pl/bobolice/poradnia-psychologiczna/  302
+/poradnia-psychologiczna-szczecin/                       https://psychologia.rehamedica.info.pl/szczecin/poradnia-psychologiczna/  302
+/poradnia-psychologiczna-szczecinek/                     https://psychologia.rehamedica.info.pl/szczecinek/poradnia-psychologiczna/  302
+/poradnia-psychologiczna-walcz/                          https://psychologia.rehamedica.info.pl/walcz/poradnia-psychologiczna/  302
+/poradnia-psychologiczna/                                https://psychologia.rehamedica.info.pl/poradnia-psychologiczna/  302
+/szczecin-osrodek-psychologiczno-psychoterapeutyczny/    https://psychologia.rehamedica.info.pl/szczecin/osrodek-psychologiczno-psychoterapeutyczny/  302
+/szczecin-poradnia-psychologiczna/                       https://psychologia.rehamedica.info.pl/szczecin/poradnia-psychologiczna/  302
+/szczecinek-konsultacje-psychologiczne-2/                https://psychologia.rehamedica.info.pl/szczecinek/konsultacje-psychologiczne/  302
+/szczecinek-konsultacje-psychologiczne/                  https://psychologia.rehamedica.info.pl/szczecinek/konsultacje-psychologiczne/  302
+/szczecinek-osrodek-psycho-psycho/                       https://psychologia.rehamedica.info.pl/szczecinek/osrodek-psychologiczno-psychoterapeutyczny/  302
+/szczecinek-poradnia-psychologiczna/                     https://psychologia.rehamedica.info.pl/szczecinek/poradnia-psychologiczna/  302
+/walcz-osrodek-psychologiczno-psychoterapeutyczny/       https://psychologia.rehamedica.info.pl/walcz/osrodek-psychologiczno-psychoterapeutyczny/  302
 

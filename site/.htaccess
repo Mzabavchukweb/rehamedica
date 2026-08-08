@@ -126,6 +126,54 @@ RewriteRule ^wspolpraca-reha-medica-z-medicover/?$ https://rehamedica.info.pl/ak
 RewriteRule ^zabiegi-fizykoterapeutyczne-2/?$ https://rehamedica.info.pl/uslugi/zabiegi-fizykoterapeutyczne/ [R=301,L]
 RewriteRule ^zabiegi-fizykoterapeutyczne/?$ https://rehamedica.info.pl/uslugi/zabiegi-fizykoterapeutyczne/ [R=301,L]
 
+
+# ── PSYCHOLOGIA / PSYCHOTERAPIA / PSYCHIATRIA → osobny serwis ────────────────
+# Domena docelowa potwierdzona 2026-08-08: psychologia.rehamedica.info.pl
+#
+# CELOWO 302, NIE 301 — decyzja właściciela 2026-08-08.
+# Powód: w chwili wgrania subdomena jeszcze nie serwowała (certyfikat serwera
+# to *.home.pl, po HTTP wracało 403). 302 jest odwracalne — nie zapisuje się
+# w przeglądarce na stałe i nie każe Google wyrejestrować starych adresów.
+# 301 w tym stanie oznaczałby trwałe wypadnięcie tych 26 stron z indeksu.
+#
+# Dlaczego mimo to włączone: te adresy i tak zwracały już 404 (treść
+# psychologiczna została zdjęta z serwisu rehabilitacji), więc 302 niczego nie
+# psuje, a zaczyna działać poprawnie w chwili, gdy subdomena odpowie.
+#
+# PO POTWIERDZENIU, że https://psychologia.rehamedica.info.pl/ zwraca 200:
+#   zamienić R=302 na R=301 w 26 liniach poniżej — dopiero wtedy przekazanie
+#   mocy starych adresów jest trwałe i zamierzone.
+# WYCOFANIE: dopisać „# " na początku 26 linii poniżej.
+# Kolejność ma znaczenie — te reguły muszą zostać PRZED regułą DirectorySlash.
+RewriteRule ^bialogard-osrodek-psychologiczno-psychoterapeutyczny/?$ https://psychologia.rehamedica.info.pl/bialogard/osrodek-psychologiczno-psychoterapeutyczny/ [R=302,L]
+RewriteRule ^bobolice-osrodek-psychologiczno-psychoterapeutyczny/?$ https://psychologia.rehamedica.info.pl/bobolice/osrodek-psychologiczno-psychoterapeutyczny/ [R=302,L]
+# KOREKTA 2026-07-19: to NIE duplikat - tu lezy wlasciwa tresc "Konsultacje psychologiczne"
+RewriteRule ^konsultacje-psychologiczne-2/?$ https://psychologia.rehamedica.info.pl/konsultacje-psychologiczne/ [R=302,L]
+# KOREKTA 2026-07-19: strona serwuje "Konsultacja psychoterapeutyczna", nie psychologiczna; 301 aktywne PO starcie serwisu
+RewriteRule ^konsultacje-psychologiczne/?$ https://psychologia.rehamedica.info.pl/konsultacja-psychoterapeutyczna/ [R=302,L]
+RewriteRule ^lekarz-psychiatra/?$ https://psychologia.rehamedica.info.pl/lekarz-psychiatra/ [R=302,L]
+RewriteRule ^osrodek-psychologiczno-psychoterapeutyczny-2/?$ https://psychologia.rehamedica.info.pl/osrodek-psychologiczno-psychoterapeutyczny/ [R=302,L]
+RewriteRule ^osrodek-psychologiczno-psychoterapeutyczny-bialogard/?$ https://psychologia.rehamedica.info.pl/bialogard/osrodek-psychologiczno-psychoterapeutyczny/ [R=302,L]
+RewriteRule ^osrodek-psychologiczno-psychoterapeutyczny-bobolice/?$ https://psychologia.rehamedica.info.pl/bobolice/osrodek-psychologiczno-psychoterapeutyczny/ [R=302,L]
+RewriteRule ^osrodek-psychologiczno-psychoterapeutyczny-szczecin/?$ https://psychologia.rehamedica.info.pl/szczecin/osrodek-psychologiczno-psychoterapeutyczny/ [R=302,L]
+RewriteRule ^osrodek-psychologiczno-psychoterapeutyczny-szczecinek/?$ https://psychologia.rehamedica.info.pl/szczecinek/osrodek-psychologiczno-psychoterapeutyczny/ [R=302,L]
+RewriteRule ^osrodek-psychologiczno-psychoterapeutyczny-walcz/?$ https://psychologia.rehamedica.info.pl/walcz/osrodek-psychologiczno-psychoterapeutyczny/ [R=302,L]
+RewriteRule ^osrodek-psychologiczno-psychoterapeutyczny/?$ https://psychologia.rehamedica.info.pl/osrodek-psychologiczno-psychoterapeutyczny/ [R=302,L]
+RewriteRule ^poradnia-psychologiczna-2/?$ https://psychologia.rehamedica.info.pl/poradnia-psychologiczna/ [R=302,L]
+RewriteRule ^poradnia-psychologiczna-bialogard/?$ https://psychologia.rehamedica.info.pl/bialogard/poradnia-psychologiczna/ [R=302,L]
+RewriteRule ^poradnia-psychologiczna-bobolice/?$ https://psychologia.rehamedica.info.pl/bobolice/poradnia-psychologiczna/ [R=302,L]
+RewriteRule ^poradnia-psychologiczna-szczecin/?$ https://psychologia.rehamedica.info.pl/szczecin/poradnia-psychologiczna/ [R=302,L]
+RewriteRule ^poradnia-psychologiczna-szczecinek/?$ https://psychologia.rehamedica.info.pl/szczecinek/poradnia-psychologiczna/ [R=302,L]
+RewriteRule ^poradnia-psychologiczna-walcz/?$ https://psychologia.rehamedica.info.pl/walcz/poradnia-psychologiczna/ [R=302,L]
+RewriteRule ^poradnia-psychologiczna/?$ https://psychologia.rehamedica.info.pl/poradnia-psychologiczna/ [R=302,L]
+RewriteRule ^szczecin-osrodek-psychologiczno-psychoterapeutyczny/?$ https://psychologia.rehamedica.info.pl/szczecin/osrodek-psychologiczno-psychoterapeutyczny/ [R=302,L]
+RewriteRule ^szczecin-poradnia-psychologiczna/?$ https://psychologia.rehamedica.info.pl/szczecin/poradnia-psychologiczna/ [R=302,L]
+RewriteRule ^szczecinek-konsultacje-psychologiczne-2/?$ https://psychologia.rehamedica.info.pl/szczecinek/konsultacje-psychologiczne/ [R=302,L]
+RewriteRule ^szczecinek-konsultacje-psychologiczne/?$ https://psychologia.rehamedica.info.pl/szczecinek/konsultacje-psychologiczne/ [R=302,L]
+RewriteRule ^szczecinek-osrodek-psycho-psycho/?$ https://psychologia.rehamedica.info.pl/szczecinek/osrodek-psychologiczno-psychoterapeutyczny/ [R=302,L]
+RewriteRule ^szczecinek-poradnia-psychologiczna/?$ https://psychologia.rehamedica.info.pl/szczecinek/poradnia-psychologiczna/ [R=302,L]
+RewriteRule ^walcz-osrodek-psychologiczno-psychoterapeutyczny/?$ https://psychologia.rehamedica.info.pl/walcz/osrodek-psychologiczno-psychoterapeutyczny/ [R=302,L]
+
 # Katalog bez końcowego slasha → dodaj slash OD RAZU na https.
 # Bez tego DirectorySlash na home.pl buduje Location z http:// (serwer za proxy SSL widzi
 # połączenie jako http) i powstaje łańcuch https→http→https. Ta reguła go eliminuje.
